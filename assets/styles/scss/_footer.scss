@@ -1,0 +1,41 @@
+footer {
+    position: relative;
+    z-index: 99999;
+}
+body.home {
+    .bottom-footer {
+        padding-bottom: 105px;
+    }
+}
+.bottom-footer {
+    background: #000;
+    position: relative;
+    padding: 50px 0;
+    &__left {
+        float: left;
+        .footer-logo {
+            @include background-image-retina(footer-logo,png,48px,59px);
+            width: 48px;
+            height: 59px;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #777777;
+            font-size: 12px;
+        }
+    }
+    &__right {
+        float: right;
+        text-align: right;
+        color: #fff;
+        .social {
+            margin-top: 8px;
+            font-size: 24px;
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 3px;
+            }
+        }
+    }
+}

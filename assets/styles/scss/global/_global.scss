@@ -1,0 +1,108 @@
+html {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    color: $main-text-color;
+    background: #eee;
+}
+
+h1 {
+    @include h-1;
+}
+h2 {
+    @include h-2;
+}
+
+main {
+    position: relative;
+    background-color: #fff;
+    z-index: 50;
+    box-shadow: 0 -5px 25px -5px #000000;
+}
+
+.header-gradient {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: 20;
+}
+.link {
+    position:relative;
+    text-transform: uppercase;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #24AAE1;
+    &.black {
+        color: #000;
+        &:hover,
+            &:visited,
+            &:active,
+            &:focus{
+            color: #000;
+        }
+    }
+    &.white {
+        color: #fff;
+        &:hover,
+            &:visited,
+            &:active,
+            &:focus{
+            color: #fff;
+        }
+    }
+    &:before {
+        content: '>';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0,-50%);
+        font-size: 11px;
+    }
+    &:hover,
+        &:visited,
+        &:active{
+        font-size: 12px;
+        color: #24AAE1;
+    }
+}
+body {
+    &.home {
+        .col-xs-6 {
+            @include breakpoint(_550) {
+                width: 100%;
+            }
+        }
+    }// Homepage - template
+    &.archive {
+        h1 {
+            margin-bottom: 40px;  
+        }
+        h2 {
+            font-size: 1.714rem;
+            font-weight: 700;
+        }
+    } // Archive - template
+    &.single  {
+        h1 {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    } // Single - template
+    &.page {
+        h1 {
+            margin-bottom: 25px;
+        }
+    } // Page - template
+    &.search {
+        h1 {
+            margin-bottom: 45px;
+        }
+    }// Search - template
+    &.sidr-open {
+        height: 100%;
+        overflow: hidden;
+    }
+}

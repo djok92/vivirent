@@ -1,0 +1,30 @@
+.post {
+    padding: 150px 0 100px;
+    background: #eee;
+    &__content {
+        max-width: 620px;
+        > * {
+            margin-bottom: 25px;
+        }
+        span {
+            font-size: 24px;
+            display: block;
+        }
+        h2 {
+            line-height: 1;
+            a {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+       // &_text {
+
+       // }
+        &_links {
+            a {
+                margin-right: 12px;
+            }
+        }
+    }
+}

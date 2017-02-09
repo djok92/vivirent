@@ -1,0 +1,28 @@
+.region-holder {
+    width: 100%;
+    position: relative;
+    .front-part {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translate(0,-50%);
+        z-index: 60;
+        h2 {
+            margin-bottom: 20px;
+        }
+        .thumbs-holder {
+            margin: 20px 0;
+            a {
+                display: inline-block;
+            }
+        }
+    }
+    .gradient {
+        position: absolute;
+        left: 0; top: 0;
+        right: 0; bottom: 0;
+        background: rgba(0,0,0,0.8);   
+        z-index: 50;
+    }
+}
