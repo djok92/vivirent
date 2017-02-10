@@ -85,3 +85,16 @@ body.home {
     height: 59px;
     margin-left: 45px;
 }
+
+
+
+.header-img {
+    position: relative;
+    max-height: 600px;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        position: fixed;
+    }
+}

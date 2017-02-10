@@ -39,3 +39,21 @@ body.home {
         }
     }
 }
+
+.top-footer {
+    .apartments-section {
+        background: #333;
+        color: #fff;
+        .link.black {
+            color: #fff;
+            transition: all .2s ease-in-out;
+        }
+        .apartments-box:hover {
+            background: #fff;
+            color: #000;
+            .link.black {
+                color: #000;
+            }
+        }
+    }
+}
