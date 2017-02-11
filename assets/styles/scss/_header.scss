@@ -1,6 +1,5 @@
 header {
     position: relative;
-    height: 100vh;
     overflow: hidden;
 }
 .top-header {
@@ -16,6 +15,9 @@ header {
 }
 
 body.home {
+    header {
+        height: 100vh;
+    }
     .menu-holder {
         display: inline-block;
         vertical-align: middle;
@@ -26,6 +28,11 @@ body.home {
         vertical-align: middle;
         float: none;
         margin: 0;
+    }
+}
+body.page-template-page-apartman {
+    header {
+        height: 100vh;
     }
 }
 .menu-holder {
@@ -91,10 +98,27 @@ body.home {
 .header-img {
     position: relative;
     max-height: 600px;
+    &:after {
+        padding-top: 31.3%;
+        display: block;
+        content: '';
+    }
     img {
         max-height: 100%;
         max-width: 100%;
+        width: 100%;
         object-fit: cover;
         position: fixed;
+    }
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 700;
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 1px 1px 9px #000;
+        text-transform: uppercase;
     }
 }

@@ -18,7 +18,9 @@ main {
     z-index: 50;
     box-shadow: 0 -5px 25px -5px #000000;
 }
-
+.text-white {
+    color: #fff;
+}
 .header-gradient {
     background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
@@ -28,6 +30,18 @@ main {
     top: 0; bottom: 0;
     left: 0; right: 0;
     z-index: 20;
+}
+.bottom-gradient {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    height: 115px;
 }
 .link {
     position:relative;
@@ -68,6 +82,15 @@ main {
         color: #24AAE1;
     }
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
+.p-100-0 {
+    padding: 100px 0;
+}
+/*
+
 body {
     &.home {
         .col-xs-6 {
@@ -105,4 +128,4 @@ body {
         height: 100%;
         overflow: hidden;
     }
-}
+}*/

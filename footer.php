@@ -11,7 +11,7 @@
 <footer>
     <?php if (!is_home()) { ?>
         <div class="top-footer">
-            <?php get_template_part('apartments-related') ?>
+            <?php get_template_part('parts/apartments', 'related') ?>
         </div>
     <?php } ?>
     <div class="bottom-footer">

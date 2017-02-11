@@ -55,10 +55,10 @@
                         </div>
                     </div> <!-- /.right-holder -->
                 </div> <!-- /.top-header -->
-                <?php if (is_home() || is_page_template('page-apartmani.php')) { ?>
+                <?php if (is_page_template('page-apartman.php') || is_front_page()) { ?>
                     <div class="hero-holder">
-                        <?php if (is_home()) { ?>
-                            <?php get_template_part('booking-form'); ?>
+                        <?php if (is_front_page()) { ?>
+                            <?php get_template_part('parts/booking,', 'form'); ?>
                             <div class="hero-holder__content">
                                 <div class="hero-holder__content_logo"></div> <!-- /.home-logo -->
                                 <div class="hero-holder__content_text">
@@ -68,18 +68,24 @@
                             </div> <!-- /.hero-holder__content -->
                             <?php get_template_part('slider'); ?>
                             <?php
-                        } else if (is_page_template('page-apartman.php')) {
-                            get_template_part('slider-apartman');
+                        }
+                        if (is_page_template('page-apartman.php')) {
+                            get_template_part('parts/slider', "apartman");
                         }
                         ?>
                     </div> <!-- /.hero-holder -->
                 <?php } else { ?>
                     <div class="header-img">
                         <div class="header-gradient"></div>
+                        <div class="bottom-gradient"></div>
                         <img alt="header-img" src="<?php echo get_template_directory_uri(); ?>/dist/images/header-img.jpg" />
+                        <h1>
+                            Aktuelnosti
+                        </h1>
                     </div>
                 <?php }
                 ?>
+
             </header>
 
             <main>

@@ -10,7 +10,7 @@ get_header();
 
 
 
-<?php get_template_part('apartments-related') ?>
+<?php get_template_part('parts/apartments', 'related') ?>
 
 
 <section class="section_bkg">
@@ -18,7 +18,7 @@ get_header();
             <li class="slide-nav _1">Istra</li>
             <li class="slide-nav _2">Brioni</li>
         </div>-->
-    <div id="region-slider" class="region-holder royalSlider rsUni">
+    <div id="region-slider" class="region-holder with-bkg royalSlider rsUni">
         <?php for ($i = 1; $i < 5; $i++) { ?>
             <div>
                 <div class="img-holder">

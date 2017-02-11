@@ -7,7 +7,7 @@
 ?>
 
 <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-    <div><input type="text" size="18" name="s" id="s" value="" onfocus="if (this.value === this.defaultValue)
+    <div><input autocomplete="off" type="text" size="18" name="s" id="s" value="" onfocus="if (this.value === this.defaultValue)
                 this.value = '';" onblur="if (this.value == '')
                             this.value = this.defaultValue;"/>
     </div>
