@@ -139,6 +139,8 @@ require get_template_directory() . '/inc/custom_taxonomies.php';
  * Aktivacija thumbnailova i velicine
  */
 add_theme_support('post-thumbnails');
+add_image_size( 'full-width', 1920, 600, true );
+add_image_size( 'archive-size', 455, 380, ['center','center'] );
 //add_image_size( 'cat-thumb', 300, 200, true );
 
 

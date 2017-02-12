@@ -48,6 +48,12 @@
     font-size: 32px;
 }
 
+@mixin h-4 {
+    @include heading;
+    font-size: 16px; 
+    font-weight: 700;
+    margin-top: 13px;
+}
 // Animation tranform
 
 @mixin transform($transform...) {
@@ -187,6 +193,7 @@
         @media (max-width: 359px)  { @content ; }
     }
 } 
+
 
 // Retina images support
 

@@ -11,7 +11,12 @@ h1 {
 h2 {
     @include h-2;
 }
-
+h3 {
+    @include h-3;
+}
+h4 {
+    @include h-4;
+}
 main {
     position: relative;
     background-color: #fff;
@@ -129,3 +134,18 @@ body {
         overflow: hidden;
     }
 }*/
+
+.page-content {
+    ul,ol {
+        margin-left: 15px;
+        padding-top: 15px;
+        ul,ol {
+            margin-left: 15px;
+            padding-top: 15px;
+            ul,ol {
+                margin-left: 15px;
+                padding-top: 15px;
+            }
+        }
+    }
+}

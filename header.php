@@ -78,9 +78,18 @@
                     <div class="header-img">
                         <div class="header-gradient"></div>
                         <div class="bottom-gradient"></div>
-                        <img alt="header-img" src="<?php echo get_template_directory_uri(); ?>/dist/images/header-img.jpg" />
+                        <?php
+                        $page_id = get_queried_object_id();
+                        if (has_post_thumbnail($page_id)) :
+                            $image_array = wp_get_attachment_image_src(get_post_thumbnail_id($page_id), 'full-width');
+                            $image = $image_array[0];
+                        else :
+                            $image = get_template_directory_uri() . '/dist/images/header-img.jpg';
+                        endif;
+                        ?>
+                        <img alt="header-img" src="<?php echo $image ?>" />
                         <h1>
-                            Aktuelnosti
+                           <?php echo get_the_title($page_id); ?>
                         </h1>
                     </div>
                 <?php }
