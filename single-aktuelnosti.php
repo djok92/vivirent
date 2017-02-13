@@ -29,7 +29,7 @@ get_header();
         <div class="row">
             <div class="col-md-12">
                 <div id="related-posts">
-                    <p>Preporucujemo</p>
+                    <p>ostale AKTUELNOSTI</p>
                     <div class="row">
                         <?php
                         $currentID = get_the_ID();

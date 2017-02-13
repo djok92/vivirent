@@ -58,36 +58,7 @@ main {
     } // Left aside navigation
 } // Left aside
 
-// bread crumbs
 
-.breadcrumbs {
-    margin: 0;
-    a {
-        display: inline-block;
-        color: #777;
-        text-decoration: underline;
-        padding-right: 10px;
-        font: {
-            size: 12px;
-            style: italic;  
-        }
-        &:after {
-            content: '>';
-            margin: 0 4px;
-            font-size: 10px;
-            position: absolute;
-        }
-    }
-    span {
-        display: inline-block;
-        color: #777;
-        padding-right: 10px;
-        font: {
-            size: 12px;
-            style: italic;  
-        }
-    }
-}
 
 .page-content {
     padding-bottom: 60px;

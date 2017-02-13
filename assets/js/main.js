@@ -98,20 +98,6 @@ $(document).ready(function () {
             keyboardNavEnabled: true
 
         });
-//        var slider = $('#region-slider').data('royalSlider');
-//        var i;
-//
-//
-//        $('.slide-nav').each(function () {
-//            for (i = 0; i < slider.numSlides; ) {
-//                console.log("aa");
-//                console.log($('.slide-nav_' + i));
-//                slider.goTo(i);
-//                i++;
-//            }
-//        });
-
-
 
     })();
 
@@ -121,12 +107,14 @@ $(document).ready(function () {
 
     (function () {
 
-        var handler = $('.date-picker input');
+        var handler = $('.datepicker');
         if (!handler.length) {
             return;
         }
-        $('.date-picker input').datepicker({
-            format: "dd/mm/yyyy"
+        $('.datepicker').datepicker({
+            format: "dd/mm/yyyy",
+            changeMonth: false,
+            multidate: true
         });
 
 
@@ -151,7 +139,8 @@ $(document).ready(function () {
         $(this).removeClass('active');
     }, config);
 
-});
+
+}); // $document.ready
 
 hidePageLoading = function () {
     $('#xLoader').fadeOut(300);
@@ -164,3 +153,4 @@ scrollhandler = function () {
         $('.booking-form').removeClass('fixed');
     }
 };
+

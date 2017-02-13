@@ -56,6 +56,7 @@ gulp.task('css', function () {
         src + 'styles/css/reset.css',
         src + 'styles/css/xloader.css',
         src + 'styles/css/bootstrap.css',
+        src + 'styles/css/bootstrap-datepicker3.min.css',
         src + 'styles/css/font-awesome.min.css',
         src + 'styles/css/royalslider.css',
         src + 'styles/css/rs-universal.css',

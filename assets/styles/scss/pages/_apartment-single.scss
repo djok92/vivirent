@@ -2,6 +2,7 @@
     padding: 35px 0 75px;
     h1 {
         @include h-2;
+        margin-bottom: 45px; 
     }
     .apartment-name {
         font-size: 18px;

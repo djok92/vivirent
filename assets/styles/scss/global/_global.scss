@@ -19,7 +19,7 @@ h4 {
 }
 main {
     position: relative;
-    background-color: #fff;
+    background-color: #eee;
     z-index: 50;
     box-shadow: 0 -5px 25px -5px #000000;
 }
@@ -146,6 +146,41 @@ body {
                 margin-left: 15px;
                 padding-top: 15px;
             }
+        }
+    }
+}
+
+
+// bread crumbs
+
+.breadcrumbs {
+    margin-bottom: 50px;
+    li {
+        display: inline-block;
+    }
+    a {
+        display: inline-block;
+        color: #777;
+        text-decoration: underline;
+        padding-right: 10px;
+        font: {
+            size: 12px;
+            style: italic;  
+        }
+        &:after {
+            content: '>';
+            margin: 0 4px;
+            font-size: 10px;
+            position: absolute;
+        }
+    }
+    span {
+        display: inline-block;
+        color: #777;
+        padding-right: 10px;
+        font: {
+            size: 12px;
+            style: italic;  
         }
     }
 }
