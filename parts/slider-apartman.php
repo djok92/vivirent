@@ -7,16 +7,23 @@
 ?>
 
 <div id="apartman-slider" class="full-height-slider royalSlider rsUni">
-    <?php for ($i = 0; $i < 2; $i++) { ?>
-        <div>
-            <div class="header-gradient"></div>
-            <img alt="slider-img" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/slider-apartman-single-img.jpg" />
-            <div class="rsTmb"><img alt="slider-img" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/slider-apartman-single-img.jpg" /></div>
-        </div>
-        <div>
-            <div class="header-gradient"></div>
-            <img alt="slider-img" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/slider-apartman-single-img.jpg" />
-            <div class="rsTmb"><img alt="slider-img" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/slider-apartman-single-img.jpg" /></div>
-        </div>
-    <?php } ?>
+
+    <?php 
+
+    $images = get_field('galerija');
+
+    if( $images ): ?>
+
+            <?php foreach( $images as $image ): ?>
+
+                <div>
+                    <div class="header-gradient"></div>
+                    <img alt="slider-img" src="<?php echo $image['url']; ?>" />
+                    <div class="rsTmb"><img alt="slider-img" src="<?php echo $image['sizes']['thumbnail']; ?>" /></div>
+                </div>
+             
+            <?php endforeach; ?>
+
+    <?php endif; ?>
+
 </div>

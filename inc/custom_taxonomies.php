@@ -9,9 +9,9 @@
 function custom_taxonomy() {
 
 	$labels = array(
-		'name'                       => _x( 'Taxonomies', 'Taxonomy General Name', 'wpog' ),
-		'singular_name'              => _x( 'Taxonomy', 'Taxonomy Singular Name', 'wpog' ),
-		'menu_name'                  => __( 'Taxonomy', 'wpog' ),
+		'name'                       => _x( 'Vile', 'Taxonomy General Name', 'wpog' ),
+		'singular_name'              => _x( 'Vila', 'Taxonomy Singular Name', 'wpog' ),
+		'menu_name'                  => __( 'Vila', 'wpog' ),
 		'all_items'                  => __( 'All Items', 'wpog' ),
 		'parent_item'                => __( 'Parent Item', 'wpog' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'wpog' ),
@@ -31,14 +31,15 @@ function custom_taxonomy() {
 	);
 	$args = array(
 		'labels'                     => $labels,
-		'hierarchical'               => false,
+		'hierarchical'               => true,
 		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
+		'show_tagcloud'              => false,
 	);
-	register_taxonomy( 'taxonomy', array( 'post' ), $args );
+	register_taxonomy( 'vila', array( 'apartman' ), $args );
 
 }
-//add_action( 'init', 'custom_taxonomy', 0 );
+
+add_action( 'init', 'custom_taxonomy', 0 );

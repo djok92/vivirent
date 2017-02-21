@@ -55,10 +55,10 @@
                         </div>
                     </div> <!-- /.right-holder -->
                 </div> <!-- /.top-header -->
-                <?php if (is_page_template('page-apartman.php') || is_front_page()) { ?>
+                <?php if (is_singular( 'apartman' ) || is_home()) { ?>
                     <div class="hero-holder">
-                        <?php if (is_front_page()) { ?>
-                            <?php get_template_part('parts/booking,', 'form'); ?>
+                        <?php if (is_home()) { ?>
+                            <?php get_template_part('parts/booking', 'form'); ?>
                             <div class="hero-holder__content">
                                 <div class="hero-holder__content_logo"></div> <!-- /.home-logo -->
                                 <div class="hero-holder__content_text">
@@ -69,12 +69,15 @@
                             <?php get_template_part('slider'); ?>
                             <?php
                         }
-                        if (is_page_template('page-apartman.php')) {
+                        if (is_singular( 'apartman' )) {
                             get_template_part('parts/slider', "apartman");
                         }
                         ?>
                     </div> <!-- /.hero-holder -->
                 <?php } else { ?>
+
+
+
                     <div class="header-img">
                         <div class="header-gradient"></div>
                         <div class="bottom-gradient"></div>
@@ -89,9 +92,22 @@
                         ?>
                         <img alt="header-img" src="<?php echo $image ?>" />
                         <h1>
-                           <?php echo get_the_title($page_id); ?>
+                            <?php
+                            $post_type = get_post_type_object(get_post_type($post));
+
+                            if (is_page_template()) {
+                                echo get_the_title($page_id);
+                            } elseif (is_singular()) {
+                                echo get_the_title($page_id);
+                            } else {
+                                echo $post_type->label;
+                            }
+                            ?>
                         </h1>
                     </div>
+
+
+
                 <?php }
                 ?>
 
