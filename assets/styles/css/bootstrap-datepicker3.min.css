@@ -22,11 +22,11 @@
     color: #00BFFF;
 }
 
-.datepicker thead tr:nth-child(2) {
+.datepicker thead tr:nth-child(1) {
     background: #000;
     color: #fff;
 }
-.datepicker thead tr:nth-child(3) {
+.datepicker thead tr:nth-child(2) {
     background: #333;
     color: #fff;
 }
@@ -76,7 +76,10 @@
     cursor: default;
     pointer-events: none;
 }
-
+.datepicker table tr td, 
+.datepicker table tr th {
+    height: auto;
+}
 /*.datepicker tbody tr td {
     cursor: default;
     pointer-events: none;

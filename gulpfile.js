@@ -85,7 +85,8 @@ gulp.task('sass', function () {
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src([
-        src + 'js/jquery-2.2.1.min.js',
+        src + 'js/jquery-2.2.1.min.js', 
+        src + 'js/moment.js',
         src + 'js/bootstrap-datepicker.min.js',
         src + 'js/jquery.royalslider.js',
         src + 'js/select2.full.min.js',

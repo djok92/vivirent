@@ -123,15 +123,13 @@ $(document).ready(function () {
         if (!handler.length) {
             return;
         }
-        $('#calendar_available').datepicker({
-            format: "dd/mm/yyyy",
-            changeMonth: false,
-            multidate: true
-        });
+        $('#calendar_available').datetimepicker({
+            format: 'DD/MM/YYYY'
+      });
 
 
     })();
-    
+
     (function () {
 
         var handler = $('#date_arival');
@@ -139,9 +137,10 @@ $(document).ready(function () {
             return;
         }
         $('#date_arival').datetimepicker({
-            format: "dd/mm/yyyy",
-            changeMonth: false,
-            multidate: false
+            format: 'DD/MM/YYYY',
+            collapse: false,
+            keepOpen: true,
+            debug: true
         });
 
 
