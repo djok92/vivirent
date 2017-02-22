@@ -39,6 +39,18 @@ $(document).ready(function () {
 
     })();
 
+    (function () {
+
+        var handler = $('select.select2');
+        if (!handler.length) {
+            return;
+        }
+
+        $('select.select2').select2();
+
+    })();
+
+
 
     /**
      * Apartman slider 
@@ -107,11 +119,11 @@ $(document).ready(function () {
 
     (function () {
 
-        var handler = $('.datepicker');
+        var handler = $('#calendar_available');
         if (!handler.length) {
             return;
         }
-        $('.datepicker').datepicker({
+        $('#calendar_available').datepicker({
             format: "dd/mm/yyyy",
             changeMonth: false,
             multidate: true
@@ -119,7 +131,21 @@ $(document).ready(function () {
 
 
     })();
+    
+    (function () {
 
+        var handler = $('#date_arival');
+        if (!handler.length) {
+            return;
+        }
+        $('#date_arival').datetimepicker({
+            format: "dd/mm/yyyy",
+            changeMonth: false,
+            multidate: false
+        });
+
+
+    })();
     var config = {
         sensitivity: 10,
         interval: 5000,

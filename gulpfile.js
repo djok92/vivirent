@@ -54,12 +54,13 @@ gulp.task('jshint', function () {
 gulp.task('css', function () {
     gulp.src([
         src + 'styles/css/reset.css',
-        src + 'styles/css/xloader.css',
         src + 'styles/css/bootstrap.css',
+        src + 'styles/css/xloader.css',
         src + 'styles/css/bootstrap-datepicker3.min.css',
         src + 'styles/css/font-awesome.min.css',
         src + 'styles/css/royalslider.css',
         src + 'styles/css/rs-universal.css',
+        src + 'styles/css/select2.css',
         src + 'styles/css/pagination.css',
         src + 'styles/css/default.css',
         src + 'styles/css/responsive.css'
@@ -87,6 +88,7 @@ gulp.task('scripts', function () {
         src + 'js/jquery-2.2.1.min.js',
         src + 'js/bootstrap-datepicker.min.js',
         src + 'js/jquery.royalslider.js',
+        src + 'js/select2.full.min.js',
         src + 'js/jquery.sidr.min.js',
         src + 'js/main.js'
     ])
