@@ -46,7 +46,9 @@ $(document).ready(function () {
             return;
         }
 
-        $('select.select2').select2();
+        $('select.select2').select2({
+            minimumResultsForSearch: -1
+        });
 
     })();
 
@@ -123,9 +125,11 @@ $(document).ready(function () {
         if (!handler.length) {
             return;
         }
-        $('#calendar_available').datetimepicker({
-            format: 'DD/MM/YYYY'
-      });
+        $('#calendar_available').datepicker({
+            format: 'DD.MM.YYYY',
+            leftArrow: "",
+            rightArrow: ""
+        });
 
 
     })();
@@ -137,10 +141,10 @@ $(document).ready(function () {
             return;
         }
         $('#date_arival').datetimepicker({
-            format: 'DD/MM/YYYY',
-            collapse: false,
-            keepOpen: true,
-            debug: true
+            format: 'DD.MM.YYYY',
+//            collapse: false,
+//            keepOpen: true,
+//            debug: true  
         });
 
 

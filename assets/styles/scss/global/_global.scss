@@ -3,6 +3,9 @@ html {
     font-family: 'Raleway', sans-serif;
     color: $main-text-color;
     background: #eee;
+    overflow-x: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 h1 {

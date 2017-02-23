@@ -45,3 +45,70 @@
         }
     }
 }
+.booking-box .datepicker-holder .bootstrap-datetimepicker-widget {
+    position: absolute;
+    top: 30px !important;
+    bottom: auto !important;
+    left: 0px;
+    right: auto;
+    z-index: 200;
+    width: 100%;
+}
+.select2-container {
+    width: 100% !important;
+    z-index: 999992;
+}
+.select2-selection__rendered {
+    position: relative;
+    padding-left: 27px !important;
+}
+.select2-container .select2-selection--single {
+    height: 30px;
+}
+#select2-count_nights-container:before {
+    content: '\f186';
+    font-family: 'FontAwesome';
+    font-size: 16px;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+#select2-count_persons-container:before {
+    content: '\f183';
+    font-family: 'FontAwesome';
+    font-size: 16px;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.datepicker.date-icon:before {
+    content: '\f133';
+    font-family: 'FontAwesome';
+    font-size: 16px;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.form-item input[type='text'] {
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    padding-left: 27px;
+    position: relative;
+}
+.datepicker-holder {
+    position: relative;
+    i.fa.fa-calendar-o {
+        position: absolute;
+        left: 5px;
+        z-index: 20;
+        font-size: 16px;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+}

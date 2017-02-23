@@ -22,11 +22,11 @@
     color: #00BFFF;
 }
 
-.datepicker thead tr:nth-child(1) {
+.datepicker thead tr:nth-last-child(2) {
     background: #000;
     color: #fff;
 }
-.datepicker thead tr:nth-child(2) {
+.datepicker thead tr:last-child {
     background: #333;
     color: #fff;
 }
@@ -39,7 +39,7 @@
 .datepicker table tr td.new, 
 .datepicker table tr td.old {
     color: #ADADAD;
-}
+} 
 .datepicker table tr td.active.active, 
 .datepicker table tr td.active.highlighted.active,
 .datepicker table tr td.active.highlighted:active, 
@@ -72,7 +72,8 @@
     background: rgba(178,0,0,0.5) !important;
     color: #fff !important;
 }
-.datepicker .datepicker-days thead .datepicker-switch {
+.datepicker .datepicker-days thead .datepicker-switch,
+.datepicker .datepicker-days thead .picker-switch {
     cursor: default;
     pointer-events: none;
 }
@@ -84,3 +85,6 @@
     cursor: default;
     pointer-events: none;
 }*/
+.table-condensed {
+    width: 98%;
+}

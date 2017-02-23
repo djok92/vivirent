@@ -38,8 +38,8 @@ var autoprefixerOptions = {browsers: [
         'FirefoxAndroid >= 4',
         'ExplorerMobile >= 9'
     ]};
-gulp.task('js', ['jshint', 'scripts']);
 
+gulp.task('js', ['jshint', 'scripts']);
 
 gulp.task('jshint', function () {
 
@@ -85,9 +85,10 @@ gulp.task('sass', function () {
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src([
-        src + 'js/jquery-2.2.1.min.js', 
+        src + 'js/jquery-2.2.1.min.js',
         src + 'js/moment.js',
         src + 'js/bootstrap-datepicker.min.js',
+        src + 'js/bootstrap-datepicker.static.min.js',
         src + 'js/jquery.royalslider.js',
         src + 'js/select2.full.min.js',
         src + 'js/jquery.sidr.min.js',
