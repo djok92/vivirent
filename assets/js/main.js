@@ -53,7 +53,6 @@ $(document).ready(function () {
     })();
 
 
-
     /**
      * Apartman slider 
      */
@@ -119,20 +118,6 @@ $(document).ready(function () {
      *  Datepicker
      */
 
-    (function () {
-
-        var handler = $('#calendar_available');
-        if (!handler.length) {
-            return;
-        }
-        $('#calendar_available').datepicker({
-            format: 'DD.MM.YYYY',
-            leftArrow: "",
-            rightArrow: ""
-        });
-
-
-    })();
 
     (function () {
 
@@ -140,11 +125,11 @@ $(document).ready(function () {
         if (!handler.length) {
             return;
         }
-        $('#date_arival').datetimepicker({
+        $('#date_arival').datepicker({
             format: 'DD.MM.YYYY',
 //            collapse: false,
 //            keepOpen: true,
-//            debug: true  
+//            debug: true
         });
 
 
@@ -167,6 +152,28 @@ $(document).ready(function () {
         $(this).find('ul.sub-menu').fadeOut(300);
         $(this).removeClass('active');
     }, config);
+
+
+
+    (function () {
+
+        // Scroll down smoothly (menu items)
+        $('a[href^="#"]').click(function (e) {
+
+            e.preventDefault();
+
+            var target = $($(this).attr('href'));
+            if (target.length === 0) {
+                return false;
+            }
+
+            var offset = target.offset().top;
+            var margin = parseInt(target.css('margin-top').replace('px', ''));
+            var padding = parseInt(target.css('padding-top').replace('px', ''));
+
+            $('html,body').animate({scrollTop: (offset )}, 1000);
+        });
+    })($);
 
 
 }); // $document.ready

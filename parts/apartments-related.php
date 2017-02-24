@@ -1,4 +1,4 @@
-<section class="apartments-section ">
+<section id="apartment-section" class="apartments-section ">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

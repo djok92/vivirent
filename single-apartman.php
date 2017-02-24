@@ -76,50 +76,45 @@ get_header();
                 <div class="col-md-3">
                     <div class="booking-box">
                         <p>Kalendar dostupnosti</p>
-                        <div id="calendar_available" class="datepicker" data-date="21/02/2017"></div>
-                        <form method="POST" action="">
+                        <div id="af-calendar"></div>
+                        
+                        <form action="<?php if (function_exists('af_booking')) echo af_booking()->getBookingURL(); ?>" method="get">
+                        	<input type="hidden" id="af-acm-id" name="acm_id" value="<?php the_id(); ?>">
+                        	<input id="af-selection" type="hidden" name="checkin" value="">
+                        	
                             <div class="form-item">
                                 <p>Datum dolaska:</p>
                                 <div class="datepicker-holder">
                                     <i class="fa fa-calendar-o"></i>
-                                    <input id="date_arival" type="text" name="date_arival" class="datepicker date-icon form-control" />
+                                    <div id="af-date">Izaberite iz kalendara</div>
                                 </div>
                             </div> <!-- /.form-item --> 
                             <div class="form-item">
                                 <p>Broj noci:</p>
-                                <select id="count_nights" type="text" name="count_nights" class="select2 night" >
-                                    <option>1 noć</option>
-                                    <option>2 noći</option>
-                                    <option>3 noći</option>
-                                    <option>4 noći</option>
-                                    <option>5 noći</option>
-                                    <option>6 noći</option>
-                                    <option>7 noći</option>
+                                <select id="count_nights" type="text" name="nights" class="select2 night" >
+                                    <option value="1">1 noć</option>
+                                    <?php for ($i = 2; $i <= 30; $i++): ?>
+                                    	<option value="<?php echo $i; ?>"><?php echo $i; ?> noći</option>
+                                    <?php endfor; ?>
                                 </select> 
                             </div> <!-- /.form-item --> 
                             <div class="form-item">
                                 <p>Broj osoba:</p>
-                                <select id="count_persons" type="text" name="count_persons" class="select2 person" >
-                                    <option>1 osoba</option>
-                                    <option>2 osobe</option>
-                                    <option>3 osobe</option>
-                                    <option>4 osobe</option>
-                                    <option>5 osoba</option>
-                                    <option>6 osoba</option>
-                                    <option>7 osoba</option>
+                                <select id="count_persons" type="text" name="guests" class="select2 person" >
+                                    <option value="1">1 osoba</option>
+                                    <option value="2">2 osobe</option>
+                                    <option value="3">3 osobe</option>
+                                    <option value="4">4 osobe</option>
+                                    <option value="5">5 osoba</option>
+                                    <option value="6">6 osoba</option>
+                                    <option value="7">7 osoba</option>
                                 </select> 
                             </div> <!-- /.form-item -->
                             <div class="form-item">
-                                <p>Kalkulator:</p>
-                                <span>5475&euro;</span>
-                            </div> <!-- /.form-item --> 
-                            <div class="form-item">
-                                <input type="submit" name="submit" value="rezerviši" /> 
-                            </div> <!-- /.form-item --> 
-                            <div class="form-item">
-                                <a href="#">cenovnik</a>
-                            </div> <!-- /.form-item --> 
+                                <input id="af-reserve" type="submit" value="REZERVIŠI">
+                            </div> <!-- /.form-item -->                             
                         </form>
+                        <script>document.addEventListener('DOMContentLoaded', function() { af_booking.init(); });</script>
                     </div> <!-- /.booking-box -->
                 </div> <!-- /.col-md-3 -->
 

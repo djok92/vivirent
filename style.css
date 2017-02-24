@@ -10,3 +10,29 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wpog
 Tags:
 */
+
+/*
+	af_booking plugin
+*/
+
+#af-date {
+	padding: 7px;
+	padding-left: 30px;
+	background: #fff;
+}
+
+#af-reserve {
+	width: 100%;
+	margin-top: 20px;
+	border: 0;
+	padding: 7px;
+	background: #ff8809;
+	color: #fff;
+}
+
+.af-booking-errors {
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid #e00000;
+	background: #fff;
+}

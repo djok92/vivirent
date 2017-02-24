@@ -31,18 +31,6 @@
                     <?php }
                     ?>
                     <div class="menu-holder">
-                        <!--                        <nav>
-                                                    <ul>
-                                                        <li><a href="#">pocetna</a></li>
-                                                        <li><a href="#">lokacija</a></li>
-                                                        <li><a href="#">galerija</a></li>
-                                                        <li><a href="#">aktuelnosti</a></li>
-                                                        <li><a href="#">zdrav zivot</a></li>
-                                                        <li><a href="#">gurme</a></li>
-                                                        <li><a href="#">rezervacije</a></li>
-                                                        <li><a href="#">kontakt</a></li>
-                                                    </ul>
-                                                </nav>-->
                         <?php get_template_part('navigation'); ?>
                     </div> <!-- /.menu-holder -->
                     <div class="right-holder">
@@ -55,9 +43,10 @@
                         </div>
                     </div> <!-- /.right-holder -->
                 </div> <!-- /.top-header -->
-                <?php if (is_singular( 'apartman' ) || is_home()) { ?>
+                <?php if (is_singular('apartman') || is_home()) { ?>
                     <div class="hero-holder">
                         <?php if (is_home()) { ?>
+                            <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x" aria-hidden="true"></i></a>
                             <?php get_template_part('parts/booking', 'form'); ?>
                             <div class="hero-holder__content">
                                 <div class="hero-holder__content_logo"></div> <!-- /.home-logo -->
@@ -69,7 +58,7 @@
                             <?php get_template_part('slider'); ?>
                             <?php
                         }
-                        if (is_singular( 'apartman' )) {
+                        if (is_singular('apartman')) {
                             get_template_part('parts/slider', "apartman");
                         }
                         ?>

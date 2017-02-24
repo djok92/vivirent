@@ -97,7 +97,6 @@ gulp.task('scripts', function () {
             .pipe(uglify())
             .pipe(concat('all.min.js'))
             .pipe(gulp.dest(dest + 'js'));
-
 });
 
 // Fonts

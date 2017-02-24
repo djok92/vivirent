@@ -85,6 +85,14 @@
     cursor: default;
     pointer-events: none;
 }*/
+.datepicker table tr td.disabled {
+    background: #c0c0c0;
+    color: #888;
+}
+.datepicker table tr th {
+    border-radius: 0;	
+}
+
 .table-condensed {
     width: 98%;
 }

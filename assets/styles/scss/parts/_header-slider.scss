@@ -38,6 +38,17 @@
             }
         }
     }
+    #scroll-btn {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+        bottom: 97px;
+        display: block;
+        text-align: center;
+        text-shadow: 2px 2px 2px #000;
+        color: #fff;
+        z-index: 8888;
+    }
 }
 .full-height-slider { 
     width: 100%;

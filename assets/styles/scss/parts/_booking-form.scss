@@ -17,6 +17,14 @@
         vertical-align: bottom;
         font-size: 14px;
         margin: 0 5px;
+        width: 100px;
+        &:nth-last-child(2) { 
+            width: 190px;
+        }
+        &:first-child {
+            width: 130px;
+        } 
+
         label {
             display: block;
             color: #fff;
@@ -24,9 +32,12 @@
             margin-bottom: 4px;
         }
         input {
+            width: 130px;
             border: none;
             height: 30px;
             line-height: 30px;
+            border-radius: 0;
+            padding-left: 28px;
             &[type='submit'] {
                 background: transparent;
                 padding: 0 20px;
@@ -42,6 +53,11 @@
             border: none;
             height: 30px;
             line-height: 30px;
+        }
+        .bootstrap-datetimepicker-widget {
+            width: 210px;
+            position: absolute;
+            bottom: 30px !important; 
         }
     }
 }
@@ -61,36 +77,36 @@
 .select2-selection__rendered {
     position: relative;
     padding-left: 27px !important;
+    text-align: left;
 }
 .select2-container .select2-selection--single {
     height: 30px;
 }
-#select2-count_nights-container:before {
-    content: '\f186';
+%form-icon {
     font-family: 'FontAwesome';
     font-size: 16px;
     position: absolute;
     left: 8px;
     top: 50%;
-    transform: translate(0,-50%);
+    transform: translate(0,-50%); 
+}
+#select2-count_nights-container:before {
+    content: '\f186';
+    @extend %form-icon;
 }
 #select2-count_persons-container:before {
     content: '\f183';
-    font-family: 'FontAwesome';
-    font-size: 16px;
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translate(0,-50%);
+    @extend %form-icon;
+}
+#select2-special_requests-container:before {
+    content: '\f006';
+    @extend %form-icon;
+}
+#select2-special_requests-container {
+    padding-left: 30px !important;
 }
 .datepicker.date-icon:before {
     content: '\f133';
-    font-family: 'FontAwesome';
-    font-size: 16px;
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translate(0,-50%);
 }
 .form-item input[type='text'] {
     height: 30px;
