@@ -78,7 +78,7 @@ get_header();
                         <p>Kalendar dostupnosti</p>
                         <div id="af-calendar"></div>
                         
-                        <form action="<?php if (function_exists('af_booking')) echo af_booking()->getBookingURL(); ?>" method="get">
+                        <form action="<?php if (function_exists('af_booking')) echo af_booking()->getBookingURL(); ?>" method="get" onsubmit="return af_booking.checkForm();">
                         	<input type="hidden" id="af-acm-id" name="acm_id" value="<?php the_id(); ?>">
                         	<input id="af-selection" type="hidden" name="checkin" value="">
                         	
@@ -91,12 +91,7 @@ get_header();
                             </div> <!-- /.form-item --> 
                             <div class="form-item">
                                 <p>Broj noci:</p>
-                                <select id="count_nights" type="text" name="nights" class="select2 night" >
-                                    <option value="1">1 noć</option>
-                                    <?php for ($i = 2; $i <= 30; $i++): ?>
-                                    	<option value="<?php echo $i; ?>"><?php echo $i; ?> noći</option>
-                                    <?php endfor; ?>
-                                </select> 
+                                <select id="count_nights" type="text" name="nights" class="select2 night" ></select> 
                             </div> <!-- /.form-item --> 
                             <div class="form-item">
                                 <p>Broj osoba:</p>
@@ -111,10 +106,14 @@ get_header();
                                 </select> 
                             </div> <!-- /.form-item -->
                             <div class="form-item">
+                                <p>Kalkulator:</p>
+                                <div id="af-calc-price"></div>
+                            </div> <!-- /.form-item --> 
+                            <div class="form-item">
                                 <input id="af-reserve" type="submit" value="REZERVIŠI">
                             </div> <!-- /.form-item -->                             
                         </form>
-                        <script>document.addEventListener('DOMContentLoaded', function() { af_booking.init(); });</script>
+                        <script>document.addEventListener('DOMContentLoaded', function() { af_booking.init('noć', 'noći'); });</script>
                     </div> <!-- /.booking-box -->
                 </div> <!-- /.col-md-3 -->
 

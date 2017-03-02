@@ -4,7 +4,7 @@
             <label>Datum dolaska</label>
             <div class="datepicker-holder">
                 <i class="fa fa-calendar-o"></i>
-                <input id="date_arival" type="text" name="date_arival" class="datepicker date-icon form-control" />
+                <input id="datepicker" type="text" name="date_arival" class="datepicker date-icon form-control" />
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">

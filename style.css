@@ -28,6 +28,7 @@ Tags:
 	padding: 7px;
 	background: #ff8809;
 	color: #fff;
+	font-weight: bold;
 }
 
 .af-booking-errors {
@@ -35,4 +36,16 @@ Tags:
 	padding: 10px;
 	border: 1px solid #e00000;
 	background: #fff;
+}
+
+#af-calc-price {
+	color: #fff;
+	font-weight: bold;
+	font-size: 64px;
+	text-align: center;
+}
+
+#af-calc-price .af-calc-currency {
+	vertical-align: super;
+	font-size: 40px;
 }

@@ -97,6 +97,22 @@ textarea:focus, input:focus{
 .p-100-0 {
     padding: 100px 0;
 }
+
+.datepicker-holder {
+    .datepicker-dropdown {
+        position: absolute;
+        left: -4px !important;
+        top: auto !important;
+        bottom: 26px;
+        width: 230px;
+        &:after,
+            &:before {
+            display: none;
+        }
+    }
+}
+
+
 /*
 
 body {

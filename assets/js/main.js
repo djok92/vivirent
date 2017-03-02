@@ -117,8 +117,13 @@ $(document).ready(function () {
     /**
      *  Datepicker
      */
+ 
+        $('#datepicker').datepicker({
+            format: 'dd.mm.yyyy',
+            container: '.datepicker-holder'
+        });
 
-
+ 
     (function () {
 
         var handler = $('#date_arival');
@@ -134,6 +139,7 @@ $(document).ready(function () {
 
 
     })();
+
     var config = {
         sensitivity: 10,
         interval: 5000,
@@ -171,7 +177,7 @@ $(document).ready(function () {
             var margin = parseInt(target.css('margin-top').replace('px', ''));
             var padding = parseInt(target.css('padding-top').replace('px', ''));
 
-            $('html,body').animate({scrollTop: (offset )}, 1000);
+            $('html,body').animate({scrollTop: (offset)}, 1000);
         });
     })($);
 
