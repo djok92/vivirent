@@ -1,126 +1,130 @@
 header {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
+
 .top-header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 20px;
-    text-align: center;
-    color: #fff;
-    z-index: 500;
-    height: 60px;
-    line-height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  text-align: center;
+  color: #fff;
+  z-index: 500;
+  height: 60px;
+  line-height: 60px;
 }
 
 body.home {
-    header {
-        height: 100vh;
-    }
-    .menu-holder {
-        display: inline-block;
-        vertical-align: middle;
-        position: static; 
-    }
-    .right-holder {
-        display: inline-block;
-        vertical-align: middle;
-        float: none;
-        margin: 0;
-        position: absolute;
-    }
-}
-body.page-template-page-apartman {
-    header {
-        height: 100vh;
-    }
-}
-.menu-holder {
+  header {
+    height: 100vh;
+  }
+  .menu-holder {
+    display: inline-block;
+    vertical-align: middle;
+    position: static;
+  }
+  .right-holder {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin: 0;
     position: absolute;
-    left: 0;
-    right: 0;
-    li {
-        display: inline-block;
-        color: #fff;
-        margin: 0 10px;
-        text-transform: uppercase;
-        a {
-            &:hover { 
-                text-decoration: none;
-            }
-        }
+  }
+}
+
+body.page-template-page-apartman {
+  header {
+    height: 100vh;
+  }
+}
+
+.menu-holder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  li {
+    display: inline-block;
+    color: #fff;
+    margin: 0 10px;
+    text-transform: uppercase;
+    a {
+      &:hover {
+        text-decoration: none;
+      }
     }
+  }
 }
 
 .right-holder {
-    float: right;
-    margin-right: 35px;
-    .search {
-        position: relative;
-        .fa-search {
-            position: absolute;
-            right: 18px;
-            top: 50%;
-            transform: translate(0,-50%);
-        }
-        input {
-            height: 30px;
-            line-height: 30px;
-            background: none;
-            border: none;
-            padding-left: 10px;
-            padding-right: 40px;
-            border-left: 1px solid #535F6D;
-            border-right: 1px solid #535F6D;
-            width: 50px;
-            position: relative;
-            z-index: 50;
-            transition: all .3s ease-in-out;
-            &:focus {
-                width: 150px;
-            }
-        }
+  float: right;
+  margin-right: 35px;
+  .search {
+    position: relative;
+    .fa-search {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translate(0, -50%);
     }
+    input {
+      height: 30px;
+      line-height: 30px;
+      background: none;
+      border: none;
+      padding-left: 10px;
+      padding-right: 40px;
+      border-left: 1px solid #535F6D;
+      border-right: 1px solid #535F6D;
+      width: 50px;
+      position: relative;
+      z-index: 50;
+      transition: all .3s ease-in-out;
+      &:focus {
+        width: 150px;
+      }
+    }
+  }
 }
 
 .left-holder {
-    float: left;
+  float: left;
+  position: relative;
+  z-index: 50;
 }
+
 .header-logo {
-    @include background-image-retina(header-logo,png,48,59);
-    width: 48px;
-    height: 59px;
-    margin-left: 45px;
+  @include background-image-retina(header-logo, png, 48, 59);
+  width: 48px;
+  height: 59px;
+  margin-left: 45px;
 }
-
-
 
 .header-img {
-    position: relative;
-    max-height: 600px;
-    &:after {
-        padding-top: 31.3%;
-        display: block;
-        content: '';
-    }
-    img {
-        max-height: 100%;
-        max-width: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: fixed;
-    }
-    h1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        z-index: 700;
-        color: #fff;
-        font-weight: 700;
-        text-shadow: 1px 1px 9px #000;
-        text-transform: uppercase;
-        text-align: center;
-    }
+  position: relative;
+  max-height: 600px;
+  &:after {
+    padding-top: 31.3%;
+    display: block;
+    content: '';
+  }
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+  }
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 700;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 1px 1px 9px #000;
+    text-transform: uppercase;
+    text-align: center;
+  }
 }

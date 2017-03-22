@@ -26,7 +26,7 @@
                 <div class="top-header">
                     <?php if (!is_home()) { ?>
                         <div class='left-holder'>
-                            <a href="#"><div class="header-logo"></div></a>
+                            <a href="/"><div class="header-logo"></div></a>
                         </div>
                     <?php }
                     ?>

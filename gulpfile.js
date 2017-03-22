@@ -23,7 +23,8 @@ var sassOptions = {
     errLogToConsole: true,
     outputStyle: 'expanded'
 };
-var autoprefixerOptions = {browsers: [
+var autoprefixerOptions = {
+    browsers: [
         'Android >= 2.3',
         'BlackBerry >= 7',
         'Chrome >= 9',
@@ -37,7 +38,8 @@ var autoprefixerOptions = {browsers: [
         'ChromeAndroid >= 9',
         'FirefoxAndroid >= 4',
         'ExplorerMobile >= 9'
-    ]};
+    ]
+};
 
 gulp.task('js', ['jshint', 'scripts']);
 
@@ -46,8 +48,8 @@ gulp.task('jshint', function () {
     return gulp.src([
         src + 'js/main.js'
     ])
-            .pipe(jshint())
-            .pipe(jshint.reporter('jshint-stylish'));
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 // Stylesheet
@@ -58,6 +60,7 @@ gulp.task('css', function () {
         src + 'styles/css/xloader.css',
         src + 'styles/css/bootstrap-datepicker3.min.css',
         src + 'styles/css/font-awesome.min.css',
+        src + 'styles/css/jquery.accordion.css',
         src + 'styles/css/royalslider.css',
         src + 'styles/css/rs-universal.css',
         src + 'styles/css/select2.css',
@@ -65,20 +68,20 @@ gulp.task('css', function () {
         src + 'styles/css/default.css',
         src + 'styles/css/responsive.css'
     ])
-            .pipe(minifyCSS())
-            .pipe(concat('plugins.css'))
-            .pipe(gulp.dest(dest + 'css'));
+        .pipe(minifyCSS())
+        .pipe(concat('plugins.css'))
+        .pipe(gulp.dest(dest + 'css'));
 });
 
 
 gulp.task('sass', function () {
     return gulp.src('assets/styles/scss/main.scss')
-            .pipe(sourcemaps.init())
-            .pipe(sass(sassOptions).on('error', sass.logError))
-            .pipe(autoprefixer(autoprefixerOptions))
-            .pipe(sourcemaps.write('./maps'))
-            //  .pipe(minifyCSS())
-            .pipe(gulp.dest(dest + 'css'));
+        .pipe(sourcemaps.init())
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(sourcemaps.write('./maps'))
+        //  .pipe(minifyCSS())
+        .pipe(gulp.dest(dest + 'css'));
 });
 
 
@@ -87,31 +90,31 @@ gulp.task('scripts', function () {
     return gulp.src([
         src + 'js/jquery-2.2.1.min.js',
         src + 'js/moment.js',
-        src + 'js/bootstrap-datepicker.min.js',
         src + 'js/bootstrap-datepicker.static.min.js',
+        src + 'js/jquery.accordion.js',
         src + 'js/jquery.royalslider.js',
         src + 'js/select2.full.min.js',
         src + 'js/jquery.sidr.min.js',
         src + 'js/main.js'
     ])
-            .pipe(uglify())
-            .pipe(concat('all.min.js'))
-            .pipe(gulp.dest(dest + 'js'));
+        .pipe(uglify())
+        .pipe(concat('all.min.js'))
+        .pipe(gulp.dest(dest + 'js'));
 });
 
 // Fonts
 gulp.task('fonts', function () {
     return gulp.src(src + 'fonts/**/*')
-            .pipe(gulp.dest(dest + 'fonts'));
+        .pipe(gulp.dest(dest + 'fonts'));
 });
 
 // Images 
 gulp.task('images', function () {
     return gulp.src(src + 'images/**/*.+(png|jpg|jpeg|gif|svg)')
-            .pipe(imagemin({
-                interlaced: true
-            }))
-            .pipe(gulp.dest(dest + 'images'));
+        .pipe(imagemin({
+            interlaced: true
+        }))
+        .pipe(gulp.dest(dest + 'images'));
 });
 
 // Watch Files For Changes
@@ -129,11 +132,11 @@ gulp.task('clean', require('del').bind(null, ['dist']));
 
 gulp.task('build', function (callback) {
     runSequence(
-            'css',
-            'sass',
-            'scripts',
-            ['fonts', 'images'],
-            callback);
+        'css',
+        'sass',
+        'scripts',
+        ['fonts', 'images'],
+        callback);
 });
 
 // ### Gulp
