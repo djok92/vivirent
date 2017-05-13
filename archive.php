@@ -9,25 +9,44 @@
 
 get_header(); ?>
 
-
-
-
-		<?php if ( have_posts() ) : ?>
-
-				<?php
-					the_archive_title( '<h1>', '</h1>' );
-					the_archive_description( '<div>', '</div>' );
-				?>
-
+<section class="p-100-0">
+		<div class="container">
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
+				
 
-				<!-- CONTENT GOES HERE -- >			
+					            <div class="single-post">
+					                <div class="row">
+					                    <div class="col-md-5">
+					                        <div class="img-holder">
+						                        <a href="<?php the_permalink(); ?>">
+							                        <?php if (get_the_post_thumbnail()) {
+						                               the_post_thumbnail('archive-size');
+						                            } else { ?>
+						                                <img src="<?php the_field('defimg','options'); ?>"/>
+						                            <?php }?>
+						                        </a>
+					                        </div>
+					                    </div> <!-- /.col-md-5 -->
+					                    <div class="col-md-7">
+					                        <div class="archive-content">
+					                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					                            <div>
+					                                <?php the_excerpt(); ?>
+					                            </div>
+					                            <a href="<?php the_permalink(); ?>" class="link blue">VIŠE INFORMACIJA</a>
+					                        </div>
+					                    </div> <!-- /.col-md-7 -->
+					                </div> <!-- /.row -->
+					            </div> 
+		
 
-			<?php endwhile; endif; ?>
-			
+			<?php endwhile; ?>
+
+	    </div> <!-- /.container -->
+</section>
 
 
 <?php get_footer(); ?>

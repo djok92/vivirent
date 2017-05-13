@@ -6,3 +6,30 @@ Developer iz ovog CSSa korekcije treba da integrise u glavni style.css
 
 */
 
+.apartments-box_img img {
+	height: auto !important;
+}
+
+.header-img {
+	background-color: #333;
+}
+
+.page-content p, .section-content p {
+	line-height: 1.6;
+	font-size: 16px;
+	margin-bottom: 16px;
+}
+
+.page-content h3, .section-content h3 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.page-content img, .section-content img {
+	height: 100%;
+}
+
+.related-post img {
+	height: 100%;
+}
+

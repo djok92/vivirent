@@ -9,12 +9,16 @@
 ?>
 
 <div class="breadcrumbs">
+
     <ul>
-        <li><a href="#">Home</a></li>
+    <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<li>','</li>'); } ?>
+		<!-- <li><a href="#">Home</a></li>
         <li><a href="#">Aktuelnosti</a></li>
-        <span>Lorem ipsum dolor sit amet discipui</span>
+        <span>Lorem ipsum dolor sit amet discipui</span> -->
     </ul>
+
     <div class="social-share">
-        
+        Social share ide ovde
     </div>
+
 </div>

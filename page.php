@@ -12,17 +12,31 @@
 
 get_header(); ?>
 
-
 <!-- start the loop -->
 <?php while ( have_posts() ) : the_post(); ?>
 
-<!-- CONTENT GOES HERE -->
+<section class="p-100-0">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+            	<div class="page-content">
+                    <?php the_content(); ?>
+                </div> <!-- /.page-content -->
+            </div> <!-- /.col-md-12 -->
+        </div> <!-- /.row -->
+
+        <div class="row"> 
+            <div class="col-md-12">
+                <?php get_template_part('breadcrumbs'); ?>
+            </div> <!-- /.col-md-12 -->
+        </div> <!-- /.row -->        
+
+    </div>
+</div> <!-- /.container -->
+</section>
 
 <?php endwhile; ?>
 <!-- end the loop -->
 
-
-
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

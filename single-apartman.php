@@ -10,7 +10,7 @@ get_header();
 
 
     <!-- start the loop -->
-<?php while ( have_posts() ) : the_post(); ?>
+<?php while( have_posts() ) : the_post(); ?>
 
 
     <section class='apartment-single'>
@@ -19,7 +19,10 @@ get_header();
 
 
                 <div class="col-md-9">
-                    <p class="apartment-name">Villa Fasana</p>
+                    <p class="apartment-name"><?php $terms = get_the_terms( $post->ID, 'vila' );
+						foreach ( $terms as $term ) {
+							echo $term->name;
+						} ?> </p>
                     <h1><?php the_title(); ?></h1>
                     <div class="row">
                         <div class="col-md-7">
@@ -32,28 +35,56 @@ get_header();
                         <div class="col-md-5">
                             <div class='apartment-table'>
 
-								<?php
-								// check if the repeater field has rows of data
-								if ( have_rows( 'specifikacije_repeater' ) ):
+                                <div class="table-row">
+                                    <div>Maksimalan broj gostiju</div>
+                                    <div><?php the_field( 'broj_gostiju' ); ?></div>
+                                </div> <!-- /.table-row -->
+                                <div class="table-row">
+                                    <div>Kvadratura apartmana</div>
+                                    <div><?php the_field( 'kvadratura' ); ?></div>
+                                </div> <!-- /.table-row -->
+                                <div class="table-row">
+                                    <div>Lokacija u objektu</div>
+                                    <div><?php the_field( 'lokacija' ); ?></div>
+                                </div> <!-- /.table-row -->
+                                <div class="table-row">
+                                    <div>Broj soba</div>
+                                    <div><?php the_field( 'soba' ); ?></div>
+                                </div> <!-- /.table-row -->
+                                <div class="table-row">
+                                    <div>Broj kupatila</div>
+                                    <div><?php the_field( 'kupaonica' ); ?></div>
+                                </div> <!-- /.table-row -->
+                                <div class="table-row">
+                                    <div>Broj toaleta</div>
+                                    <div><?php the_field( 'toalet' ); ?></div>
+                                </div> <!-- /.table-row -->
+                                <div class="table-row">
+                                    <div>Broj parking mesta</div>
+                                    <div><?php the_field( 'parking' ); ?></div>
+                                </div> <!-- /.table-row -->
 
-									// loop through the rows of data
-									while ( have_rows( 'specifikacije_repeater' ) ) : the_row();
-										?>
+								<?php if ( get_field( 'pristup_bazenu' ) ) { ?>
+                                    <div class="table-row">
+                                        <div>Broj parking mesta</div>
+                                        <div><?php the_field( 'vrednost' ); ?></div>
+                                    </div> <!-- /.table-row -->
+								<?php } ?>
 
-                                        <div class="table-row">
-                                            <div><?php the_sub_field( 'funkcionalnost' ); ?></div>
-                                            <div><?php the_sub_field( 'vrednost' ); ?></div>
-                                        </div> <!-- /.table-row -->
+								<?php if ( get_field( 'terasa' ) ) { ?>
+                                    <div class="table-row">
+                                        <div>Broj terasa</div>
+                                        <div><?php the_field( 'terasa' ); ?></div>
+                                    </div> <!-- /.table-row -->
+								<?php } ?>
 
-										<?php
-									endwhile;
+								<?php if ( get_field( 'jacuzzi' ) ) { ?>
+                                    <div class="table-row">
+                                        <div>Broj jacuzzi kada</div>
+                                        <div><?php the_field( 'jacuzzi' ); ?></div>
+                                    </div> <!-- /.table-row -->
+								<?php } ?>
 
-								else :
-
-									echo 'Trenutno nema unetih specifikacija za ovaj apartman.';
-
-								endif;
-								?>
 
                             </div> <!-- /.apartment-desc -->
                         </div> <!-- /.col-md-5 -->
@@ -62,7 +93,7 @@ get_header();
                     <div class="row">
                         <div class="col-md-12">
                             <div class='accordion-holder'>
-                                <p class="section-name">KARAKTERISTIKE PO PROSTORIJAMA</p>
+                                <p class="section-name"><?php _e( 'KARAKTERISTIKE PO PROSTORIJAMA', 'wpog' ) ?></p>
 
                                 <div data-accordion-group>
                                     <div class="accordion" data-accordion>
@@ -115,26 +146,13 @@ get_header();
                         </div> <!-- /.col-md-12 -->
 
                     </div> <!-- /.row -->
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="box">
-                                <p class="section-name">VILLA FASANA</p>
-                                <img alt="vila-img"
-                                     src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/vila-img.jpg"/>
-                            </div>
-                        </div> <!-- /.col-md-7 -->
-                        <div class="col-md-5">
-                            <div class="box">
 
-                            </div> <!-- /.box -->
-                        </div> <!-- /.col-md-5 -->
-                    </div> <!-- /.row -->
                 </div> <!-- /.col-md-9 -->
 
 
                 <div class="col-md-3">
                     <div class="booking-box">
-                        <p>Kalendar dostupnosti</p>
+                        <p><?php _e( 'Kalendar dostupnosti', 'wpog' ); ?></p>
                         <div id="af-calendar"></div>
 
                         <form action="<?php if ( function_exists( 'af_booking' ) ) {

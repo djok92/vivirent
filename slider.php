@@ -7,13 +7,22 @@
 ?>
 
 <div id="home-slider" class="full-height-slider royalSlider rsUni">
-    <div>
-        <div class="header-gradient"></div>
-        <img alt="slider-img" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/hero-img.jpg" />
-    </div>
-    <div>
-        <div class="header-gradient"></div>
-        <img alt="slider-img" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/hero-img.jpg" />
-    </div>
+
+<?php 
+
+	$images = get_field('hs1_slider','options');
+
+	if( $images ): ?>
+	  
+	        <?php foreach( $images as $image ): ?>
+
+	        	    <div>
+				        <div class="header-gradient"></div>
+				        <img alt="<?php echo $image['alt']; ?>" src="<?php echo $image['url']; ?>" />
+				    </div>
+				    
+	        <?php endforeach; ?>
+
+	<?php endif; ?>
 
 </div>
