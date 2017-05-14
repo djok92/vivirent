@@ -1,117 +1,129 @@
 html {
-    font-size: 14px;
-    font-family: 'Raleway', sans-serif;
-    color: $main-text-color;
-    background: #eee;
-    overflow-x: hidden;
-    max-width: 1920px;
-    margin: 0 auto;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  color: $main-text-color;
+  background: #eee;
+  overflow-x: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 h1 {
-    @include h-1;
-}
-h2 {
-    @include h-2;
-}
-h3 {
-    @include h-3;
-}
-h4 {
-    @include h-4;
-}
-main {
-    position: relative;
-    background-color: #eee;
-    z-index: 50;
-    box-shadow: 0 -5px 25px -5px #000000;
-}
-.text-white {
-    color: #fff;
-}
-.header-gradient {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    z-index: 20;
-}
-.bottom-gradient {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    height: 115px;
-}
-.link {
-    position:relative;
-    text-transform: uppercase;
-    padding-left: 10px;
-    font-size: 12px;
-    color: #24AAE1;
-    &.black {
-        color: #000;
-        &:hover,
-            &:visited,
-            &:active,
-            &:focus{
-            color: #000;
-        }
-    }
-    &.white {
-        color: #fff;
-        &:hover,
-            &:visited,
-            &:active,
-            &:focus{
-            color: #fff;
-        }
-    }
-    &:before {
-        content: '>';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translate(0,-50%);
-        font-size: 11px;
-    }
-    &:hover,
-        &:visited,
-        &:active{
-        font-size: 12px;
-        color: #24AAE1;
-    }
+  @include h-1;
 }
 
-textarea:focus, input:focus{
-    outline: none;
+h2 {
+  @include h-2;
 }
+
+h3 {
+  @include h-3;
+}
+
+h4 {
+  @include h-4;
+}
+
+main {
+  position: relative;
+  background-color: #eee;
+  z-index: 50;
+  box-shadow: 0 -5px 25px -5px #000000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.header-gradient {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.bottom-gradient {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  height: 115px;
+}
+
+.link {
+  position: relative;
+  text-transform: uppercase;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #24aae1;
+  &.black {
+    color: #000;
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      color: #000;
+      font-size: 12px;
+    }
+  }
+  &.white {
+    color: #fff;
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+  &:before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 11px;
+  }
+  &:hover,
+  &:visited,
+  &:active {
+    font-size: 12px;
+    color: #24aae1;
+  }
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
 .p-100-0 {
-    padding: 100px 0;
+  padding: 100px 0;
 }
 
 .datepicker-holder {
-    .datepicker-dropdown {
-        position: absolute;
-        left: -4px !important;
-        top: auto !important;
-        bottom: 26px;
-        width: 230px;
-        &:after,
-            &:before {
-            display: none;
-        }
+  .datepicker-dropdown {
+    position: absolute;
+    left: -4px !important;
+    top: auto !important;
+    bottom: 26px;
+    width: 230px;
+    &:after,
+    &:before {
+      display: none;
     }
+  }
 }
-
 
 /*
 
@@ -155,51 +167,50 @@ body {
 }*/
 
 .page-content {
-    ul,ol {
+  ul, ol {
+    margin-left: 15px;
+    padding-top: 15px;
+    ul, ol {
+      margin-left: 15px;
+      padding-top: 15px;
+      ul, ol {
         margin-left: 15px;
         padding-top: 15px;
-        ul,ol {
-            margin-left: 15px;
-            padding-top: 15px;
-            ul,ol {
-                margin-left: 15px;
-                padding-top: 15px;
-            }
-        }
+      }
     }
+  }
 }
-
 
 // bread crumbs
 
 .breadcrumbs {
-    margin-bottom: 50px;
-    li {
-        display: inline-block;
+  margin-bottom: 50px;
+  li {
+    display: inline-block;
+  }
+  a {
+    display: inline-block;
+    color: #777;
+    text-decoration: underline;
+    padding-right: 10px;
+    font: {
+      size: 12px;
+      style: italic;
     }
-    a {
-        display: inline-block;
-        color: #777;
-        text-decoration: underline;
-        padding-right: 10px;
-        font: {
-            size: 12px;
-            style: italic;  
-        }
-        &:after {
-            content: '>';
-            margin: 0 4px;
-            font-size: 10px;
-            position: absolute;
-        }
+    &:after {
+      content: '>';
+      margin: 0 4px;
+      font-size: 10px;
+      position: absolute;
     }
-    span {
-        display: inline-block;
-        color: #777;
-        padding-right: 10px;
-        font: {
-            size: 12px;
-            style: italic;  
-        }
+  }
+  span {
+    display: inline-block;
+    color: #777;
+    padding-right: 10px;
+    font: {
+      size: 12px;
+      style: italic;
     }
+  }
 }
