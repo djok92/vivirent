@@ -10,17 +10,16 @@ get_header();
 
 <?php
 // check if the repeater field has rows of data
+$i = 1;
 if ( have_rows( 'sekcije_repeater' ) ):
 	// loop through the rows of data
 	while ( have_rows( 'sekcije_repeater' ) ) : the_row(); ?>
 		<?php $vrsta = get_sub_field( 'vrsta' );
 		if ( $vrsta == 0 ) {// bez pozadine templejt  ?>
-
             <section class="p-100-0">
                 <div class="region-holder">
                     <div class="front-part">
                         <div class="container">
-
                             <div class="row">
                                 <div class="col-md-4">
                                     <img alt="<?php the_sub_field( 'naslov' ); ?>"
@@ -48,7 +47,12 @@ if ( have_rows( 'sekcije_repeater' ) ):
 											<?php endif; ?>
                                         </div> <!-- /.thumbs-holder -->
 
-                                        <a href="#" class="link black">više informacija</a>
+                                        <a href="" class="link black" data-toggle="modal"
+                                           data-target="#modal<?php echo $i; ?>">više
+                                            informacija
+                                        </a>
+
+
                                     </div> <!-- section content -->
                                 </div> <!-- /.col-md-6 -->
                             </div> <!-- /.row -->
@@ -89,7 +93,10 @@ if ( have_rows( 'sekcije_repeater' ) ):
 												<?php endforeach; ?>
 											<?php endif; ?>
                                         </div> <!-- /.thumbs-holder -->
-                                        <a href="#" class="link white">više informacija</a>
+                                        <a href="" class="link white" data-toggle="modal"
+                                           data-target="#modal<?php echo $i; ?>">više
+                                            informacija
+                                        </a>
 
                                     </div> <!-- section content -->
 
@@ -107,7 +114,8 @@ if ( have_rows( 'sekcije_repeater' ) ):
                 </div>
             </section>
 
-		<?php } ?>
+		<?php }
+		$i ++; ?>
 
 	<?php endwhile;
 else :

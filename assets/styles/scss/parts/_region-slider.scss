@@ -22,6 +22,29 @@
     background: rgba(0, 0, 0, 0.8);
     z-index: 50;
   }
+  .slider-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    .rsNav {
+      height: 42px;
+      background: none;
+      .rsThumb {
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+        &.rsNavSelected {
+          background: none;
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+    .rsThumbsContainer {
+      transform: none !important;
+    }
+  }
 }
 
 .with-bkg {
@@ -33,6 +56,5 @@
     z-index: 60;
   }
   .rsNav {
-    position: absolute;
   }
 } 

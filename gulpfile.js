@@ -89,6 +89,7 @@ gulp.task('sass', function () {
 gulp.task('scripts', function () {
     return gulp.src([
         src + 'js/jquery-2.2.1.min.js',
+        src + 'js/bootstrap.min.js',
         src + 'js/moment.js',
         src + 'js/bootstrap-datepicker.static.min.js',
         src + 'js/jquery.accordion.js',

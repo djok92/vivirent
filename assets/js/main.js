@@ -107,7 +107,7 @@ $(document).ready(function () {
                 fitInViewport: false
             }
         });
-        slider.find("rsNav").wrap('<div class="container"><div class="col-md-6 col-md-offset-5"></div></div>');
+        slider.find(".rsNav").wrap('<div class="slider-nav"></div>').wrap('<div class="container"></div>').wrap('<div class="row"></div>').wrap('<div class="col-md-6 col-md-offset-5"></div>');
     })();
 
     /**
