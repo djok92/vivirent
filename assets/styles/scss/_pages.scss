@@ -26,7 +26,7 @@ main {
           @include transition(all .1s ease-in);
           &:hover {
             text-decoration: none;
-            background: #00A54F;
+            background: #00a54f;
             color: #fff;
             @include transition(all .1s ease-in);
           }
@@ -117,7 +117,7 @@ main {
 
 aside {
   .aside-banner {
-    border: 1px solid #D6D6D6;
+    border: 1px solid #d6d6d6;
     margin-bottom: 20px;
   }
 }
@@ -137,7 +137,7 @@ aside {
     flex: 1;
     margin-left: 20px;
     position: relative;
-    font-size:16px;
+    font-size: 16px;
     p {
       margin-bottom: 5px;
     }
@@ -162,9 +162,8 @@ aside {
   }
   &.open {
     div[data-control] {
-      background-color: #24AAE1;
+      background-color: #24aae1;
       color: #fff;
     }
   }
 }
-

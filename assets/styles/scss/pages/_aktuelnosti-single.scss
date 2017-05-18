@@ -1,8 +1,16 @@
 #related-posts {
-    p {
-        font-size: 24px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 25px;
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  .img-holder {
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      width: auto;
     }
+  }
 }

@@ -1,34 +1,60 @@
 .region-holder {
-    width: 100%;
-    position: relative;
-    .front-part {
+  width: 100%;
+  position: relative;
+  .front-part {
 
-        h2 {
-            margin-bottom: 20px;
-        }
-        .thumbs-holder {
-            margin: 20px 0;
-            a {
-                display: inline-block;
-            }
-        }
+    h2 {
+      margin-bottom: 20px;
     }
-    .gradient {
-        position: absolute;
-        left: 0; top: 0;
-        right: 0; bottom: 0;
-        background: rgba(0,0,0,0.8);   
-        z-index: 50;
+    .thumbs-holder {
+      margin: 20px 0;
+      a {
+        display: inline-block;
+      }
     }
+  }
+  .gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 50;
+  }
+  .slider-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    .rsNav {
+      height: 42px;
+      background: none;
+      .rsThumb {
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+        &.rsNavSelected {
+          background: none;
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+    .rsThumbsContainer {
+      transform: none !important;
+    }
+  }
 }
 
 .with-bkg {
-    .front-part {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        transform: translate(0,-50%);
-        z-index: 60;
-    }  
+  .front-part {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 22%;
+    z-index: 60;
+  }
+  .rsNav {
+  }
 } 
