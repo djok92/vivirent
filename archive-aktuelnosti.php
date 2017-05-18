@@ -30,7 +30,7 @@ get_header();
                             <div>
                                 <?php the_excerpt(); ?>
                             </div>
-                            <a href="<?php the_permalink(); ?>" class="link blue">VIŠE INFORMACIJA</a>
+                            <a href="<?php the_permalink(); ?>" class="link blue"><?php _e('VIŠE INFORMACIJA', 'wpog'); ?></a>
                         </div>
                     </div> <!-- /.col-md-7 -->
                 </div> <!-- /.row -->

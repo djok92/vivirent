@@ -28,7 +28,7 @@ get_header();
                         <div class="col-md-7">
                             <div class='apartment-desc'>
 								<?php the_content(); ?>
-                                <a href="#" class='link blue'>Više informacija</a>
+                                <a href="#" class='link blue'><?php _e('Više informacija', 'wpog'); ?></a>
                             </div> <!-- /.apartment-desc -->
                         </div> <!-- /.col-md-7 -->
 
@@ -36,51 +36,51 @@ get_header();
                             <div class='apartment-table'>
 
                                 <div class="table-row">
-                                    <div>Maksimalan broj gostiju</div>
+                                    <div><?php _e('Maksimalan broj gostiju', 'wpog'); ?></div>
                                     <div><?php the_field( 'broj_gostiju' ); ?></div>
                                 </div> <!-- /.table-row -->
                                 <div class="table-row">
-                                    <div>Kvadratura apartmana</div>
+                                    <div><?php _e('Kvadratura apartmana', 'wpog'); ?></div>
                                     <div><?php the_field( 'kvadratura' ); ?></div>
                                 </div> <!-- /.table-row -->
                                 <div class="table-row">
-                                    <div>Lokacija u objektu</div>
+                                    <div><?php _e('Lokacija u objektu', 'wpog'); ?></div>
                                     <div><?php the_field( 'lokacija' ); ?></div>
                                 </div> <!-- /.table-row -->
                                 <div class="table-row">
-                                    <div>Broj soba</div>
+                                    <div><?php _e('Broj soba', 'wpog'); ?></div>
                                     <div><?php the_field( 'soba' ); ?></div>
                                 </div> <!-- /.table-row -->
                                 <div class="table-row">
-                                    <div>Broj kupatila</div>
+                                    <div><?php _e('Broj kupatila', 'wpog'); ?></div>
                                     <div><?php the_field( 'kupaonica' ); ?></div>
                                 </div> <!-- /.table-row -->
                                 <div class="table-row">
-                                    <div>Broj toaleta</div>
+                                    <div><?php _e('Broj toaleta', 'wpog'); ?></div>
                                     <div><?php the_field( 'toalet' ); ?></div>
                                 </div> <!-- /.table-row -->
                                 <div class="table-row">
-                                    <div>Broj parking mesta</div>
+                                    <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
                                     <div><?php the_field( 'parking' ); ?></div>
                                 </div> <!-- /.table-row -->
 
 								<?php if ( get_field( 'pristup_bazenu' ) ) { ?>
                                     <div class="table-row">
-                                        <div>Broj parking mesta</div>
+                                        <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
                                         <div><?php the_field( 'vrednost' ); ?></div>
                                     </div> <!-- /.table-row -->
 								<?php } ?>
 
 								<?php if ( get_field( 'terasa' ) ) { ?>
                                     <div class="table-row">
-                                        <div>Broj terasa</div>
+                                        <div><?php _e('Broj terasa', 'wpog'); ?></div>
                                         <div><?php the_field( 'terasa' ); ?></div>
                                     </div> <!-- /.table-row -->
 								<?php } ?>
 
 								<?php if ( get_field( 'jacuzzi' ) ) { ?>
                                     <div class="table-row">
-                                        <div>Broj jacuzzi kada</div>
+                                        <div><?php _e('Broj jacuzzi kada', 'wpog'); ?></div>
                                         <div><?php the_field( 'jacuzzi' ); ?></div>
                                     </div> <!-- /.table-row -->
 								<?php } ?>
@@ -162,38 +162,42 @@ get_header();
                             <input id="af-selection" type="hidden" name="checkin" value="">
 
                             <div class="form-item">
-                                <p>Datum dolaska:</p>
+                                <p><?php _e('Datum dolaska', 'wpog'); ?>:</p>
                                 <div class="datepicker-holder">
                                     <i class="fa fa-calendar-o"></i>
-                                    <div id="af-date">Izaberite iz kalendara</div>
+                                    <div id="af-date"><?php _e('Izaberite iz kalendara', 'wpog'); ?></div>
                                 </div>
                             </div> <!-- /.form-item -->
                             <div class="form-item">
-                                <p>Broj noci:</p>
+                                <p><?php _e('Broj noci', 'wpog'); ?>:</p>
                                 <select id="count_nights" type="text" name="nights" class="select2 night"></select>
                             </div> <!-- /.form-item -->
                             <div class="form-item">
-                                <p>Broj osoba:</p>
+                                <p><?php _e('Broj osoba', 'wpog'); ?>:</p>
                                 <select id="count_persons" type="text" name="guests" class="select2 person">
-                                    <option value="1">1 osoba</option>
-                                    <option value="2">2 osobe</option>
-                                    <option value="3">3 osobe</option>
-                                    <option value="4">4 osobe</option>
-                                    <option value="5">5 osoba</option>
-                                    <option value="6">6 osoba</option>
-                                    <option value="7">7 osoba</option>
+                                	<?php
+                                	if (function_exists('af_booking')) {
+                                		
+                                		$max_guests = af_booking()->getMaxGuests();
+                                		
+                                		for ($i = 1; $i <= $max_guests; $i++) {
+                                			$str = $i == 1 ? __('osoba', 'wpog') : __('osobe', 'wpog');
+                                			echo '<option value="' . $i . '">' . $i . ' ' . $str . '</option>';                                			
+                                		}
+                                	}
+                                	?>
                                 </select>
                             </div> <!-- /.form-item -->
                             <div class="form-item">
-                                <p>Kalkulator:</p>
+                                <p><?php _e('Kalkulator', 'wpog'); ?>:</p>
                                 <div id="af-calc-price"></div>
                             </div> <!-- /.form-item -->
                             <div class="form-item">
-                                <input id="af-reserve" type="submit" value="REZERVIŠI">
+                                <input id="af-reserve" type="submit" value="<?php _e('REZERVIŠI', 'wpog'); ?>">
                             </div> <!-- /.form-item -->
                         </form>
                         <script>document.addEventListener('DOMContentLoaded', function () {
-                                af_booking.init('noć', 'noći');
+                                af_booking.init('<?php _e('noć', 'wpog'); ?>', '<?php _e('noći', 'wpog'); ?>');
                             });</script>
                     </div> <!-- /.booking-box -->
                 </div> <!-- /.col-md-3 -->

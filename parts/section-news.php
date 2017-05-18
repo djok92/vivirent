@@ -20,7 +20,7 @@
 
                             <div class="col-md-7">
                                 <div class="post__content">
-                                    <span><a href="<?php the_field('hs4_link','options'); ?>">Aktualnosti</a></span>
+                                    <span><a href="<?php the_field('hs4_link','options'); ?>"><?php _e('Aktualnosti', 'wpog'); ?></a></span>
 
                                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                     <div class="post__content_text">
@@ -28,8 +28,8 @@
                                     </div>
 
                                     <div class="post__content_links">
-                                        <a href="<?php the_permalink(); ?>" class="link black">više informacija</a>
-                                        <a href="<?php the_field('hs4_link','options'); ?>" class="link">arhiva aktualnosti</a>
+                                        <a href="<?php the_permalink(); ?>" class="link black"><?php _e('više informacija', 'wpog'); ?></a>
+                                        <a href="<?php the_field('hs4_link','options'); ?>" class="link"><?php _e('arhiva aktualnosti', 'wpog'); ?></a>
                                     </div>          
 
                                     
@@ -52,9 +52,9 @@
 
                             <?php }
                 } else { ?>
+                	
+                		<?php printf(__('Stranica nije dostupna. Vratite se na <a href="%s">početnu stranu</a>.', 'wpog'), home_url()); ?>
                     
-                    Stranica nije dostupna. Vratite se na <a href="<?php echo home_url(); ?>">početnu stranu</a>.
-
                 <?php }
 
                 // Restore original Post Data

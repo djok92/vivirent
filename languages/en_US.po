@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-05-08 16:10+0200\n"
-"PO-Revision-Date: 2017-05-08 16:11+0200\n"
+"POT-Creation-Date: 2017-05-17 14:08+0200\n"
+"PO-Revision-Date: 2017-05-17 14:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -18,6 +18,21 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: dist\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: 404.php:17
+msgid "Stranica koju tražite ne postoji na sajtu ili nije trenutno dostupna."
+msgstr ""
+
+#: 404.php:19
+#, php-format
+msgid ""
+"Molimo vas da se vratite na <a href=\"%s\">početnu stranu</a> ili da "
+"odaberete drugu stranu iz navigacije."
+msgstr ""
+
+#: archive.php:39
+msgid "VIŠE INFORMACIJA"
+msgstr ""
 
 #: comments.php:35 comments.php:52
 msgid "Comment navigation"
@@ -35,20 +50,19 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content.php:22
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#: footer.php:75
+msgid "Zatvori"
 msgstr ""
 
-#: content.php:29
-msgid "Pages:"
+#: footer.php:86 page-location.php:120
+msgid "Materijal nije trenutno dostupan."
 msgstr ""
 
 #: functions.php:38
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:78
+#: functions.php:97
 msgid "Sidebar"
 msgstr ""
 
@@ -258,9 +272,198 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
+#: page-booking.php:28
+msgid "Uspešan booking"
+msgstr ""
+
+#: page-booking.php:31
+#, php-format
+msgid "Vaš broj bookinga je %s"
+msgstr ""
+
+#: page-booking.php:47
+msgid "Greška"
+msgstr ""
+
+#: page-booking.php:54
+msgid "Uneti podaci nisu ispravni, molimo pokušajte ponovo."
+msgstr ""
+
+#: page-booking.php:58
+msgid "Molimo unesite obavezna polja"
+msgstr ""
+
+#: page-booking.php:62
+msgid "Loše ste uneli email adresu"
+msgstr ""
+
+#: page-booking.php:71
+msgid "Podaci bookinga"
+msgstr ""
+
+#: page-booking.php:74
+#, php-format
+msgid "Apartman: %s"
+msgstr ""
+
+#: page-booking.php:78
+#, php-format
+msgid "Dolazak: %s"
+msgstr ""
+
+#: page-booking.php:82
+#, php-format
+msgid "Odlazak: %s"
+msgstr ""
+
+#: page-booking.php:86
+#, php-format
+msgid "Broj noćenja: %s"
+msgstr ""
+
+#: page-booking.php:90
+#, php-format
+msgid "Broj gostiju: %s"
+msgstr ""
+
+#: page-booking.php:95
+msgid "Korisnički podaci"
+msgstr ""
+
+#: page-booking.php:106
+msgid "Ime"
+msgstr ""
+
+#: page-booking.php:113
+msgid "Prezime"
+msgstr ""
+
+#: page-booking.php:120
+msgid "Telefon"
+msgstr ""
+
+#: page-booking.php:127
+msgid "Email"
+msgstr ""
+
+#: page-booking.php:134
+msgid "Adresa"
+msgstr ""
+
+#: page-booking.php:141
+msgid "Grad"
+msgstr ""
+
+#: page-booking.php:148
+msgid "Zemlja"
+msgstr ""
+
+#: page-booking.php:154
+msgid "Izaberite"
+msgstr ""
+
+#: page-booking.php:168
+msgid "Promo kupon"
+msgstr ""
+
+#: page-booking.php:174
+msgid "Potvrdi"
+msgstr ""
+
+#: page-booking.php:180
+msgid "Nazad"
+msgstr ""
+
+#: page-location.php:51 page-location.php:96 parts/section-apartments.php:58
+#: parts/section-location.php:42 parts/section-news.php:31
+msgid "više informacija"
+msgstr ""
+
+#: parts/posts-related.php:2
+msgid "ostali članci iz"
+msgstr ""
+
+#: parts/section-apartments.php:50
+msgid "Karakteristike"
+msgstr ""
+
+#: parts/section-apartments.php:51
+msgid "max broj osoba"
+msgstr ""
+
+#: parts/section-apartments.php:53
+msgid "sobe"
+msgstr ""
+
+#: parts/section-apartments.php:54
+msgid "kupatila"
+msgstr ""
+
+#: parts/section-apartments.php:59
+msgid "rezerviši"
+msgstr ""
+
+#: parts/section-apartments.php:67 parts/section-news.php:56
+#, php-format
+msgid ""
+"Stranica nije dostupna. Vratite se na <a href=\"%s\">početnu stranu</a>."
+msgstr ""
+
+#: parts/section-location.php:50
+msgid "Materijal nije dostupan."
+msgstr ""
+
+#: parts/section-news.php:23
+msgid "Aktualnosti"
+msgstr ""
+
+#: parts/section-news.php:32
+msgid "arhiva aktualnosti"
+msgstr ""
+
 #: search.php:16
 #, php-format
-msgid "Search Results for: %s"
+msgid "Rezultati pretrage za: %s"
+msgstr "Search Results for: %s"
+
+#: single-apartman.php:31
+msgid "Više informacija"
+msgstr ""
+
+#: single-apartman.php:39
+msgid "Maksimalan broj gostiju"
+msgstr ""
+
+#: single-apartman.php:43
+msgid "Kvadratura apartmana"
+msgstr ""
+
+#: single-apartman.php:47
+msgid "Lokacija u objektu"
+msgstr ""
+
+#: single-apartman.php:51
+msgid "Broj soba"
+msgstr ""
+
+#: single-apartman.php:55
+msgid "Broj kupatila"
+msgstr ""
+
+#: single-apartman.php:59
+msgid "Broj toaleta"
+msgstr ""
+
+#: single-apartman.php:63 single-apartman.php:69
+msgid "Broj parking mesta"
+msgstr ""
+
+#: single-apartman.php:76
+msgid "Broj terasa"
+msgstr ""
+
+#: single-apartman.php:83
+msgid "Broj jacuzzi kada"
 msgstr ""
 
 #: single-apartman.php:96
@@ -270,3 +473,43 @@ msgstr "Room specification"
 #: single-apartman.php:155
 msgid "Kalendar dostupnosti"
 msgstr "Availability calendar"
+
+#: single-apartman.php:165
+msgid "Datum dolaska"
+msgstr ""
+
+#: single-apartman.php:168
+msgid "Izaberite iz kalendara"
+msgstr ""
+
+#: single-apartman.php:172
+msgid "Broj noci"
+msgstr ""
+
+#: single-apartman.php:176
+msgid "Broj osoba"
+msgstr ""
+
+#: single-apartman.php:184
+msgid "osoba"
+msgstr ""
+
+#: single-apartman.php:184
+msgid "osobe"
+msgstr ""
+
+#: single-apartman.php:192
+msgid "Kalkulator"
+msgstr ""
+
+#: single-apartman.php:196
+msgid "REZERVIŠI"
+msgstr ""
+
+#: single-apartman.php:200
+msgid "noć"
+msgstr ""
+
+#: single-apartman.php:200
+msgid "noći"
+msgstr ""

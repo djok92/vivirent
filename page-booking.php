@@ -25,9 +25,11 @@ get_header(); ?>
                 	
                 		<?php if ($action == 'success'): ?>
 
-                    	<h1>Uspešan booking</h1>
+                    	<h1><?php _e('Uspešan booking', 'wpog'); ?></h1>
                     	
-                    	<p>Vaš broj bookinga je <?php echo $booking_id; ?></p>
+                    	<p>
+                    		<?php printf(__('Vaš broj bookinga je %s', 'wpog'), $booking_id); ?>
+                    	</p>
                     	<br><br>
                 		
                 		<?php else: ?>
@@ -42,22 +44,23 @@ get_header(); ?>
                     	
                     		<div class="af-booking-errors">
                     			
-                    			<p><strong>Greška</strong></p>
+                    			<p><strong><?php _e('Greška', 'wpog'); ?></strong></p>
                     			
                     			<?php	foreach ($errors as $e): ?>
                     				<p>
                     					<?php
                     					if ($e == 'invalid_booking') {
                     						
-                    						echo 'Uneti podaci nisu ispravni, molimo pokušajte ponovo.';
+                    						_e('Uneti podaci nisu ispravni, molimo pokušajte ponovo.', 'wpog');
                     					
                     					} elseif ($e == 'required') {
                     						
-                    						echo 'Molimo unesite obavezna polja';
+                    						_e('Molimo unesite obavezna polja', 'wpog');
                     						
                     					} elseif ($e == 'email') {
                     						
-                    						echo 'Loše ste uneli email adresu';
+                    						_e('Loše ste uneli email adresu', 'wpog');
+                    						
                     					}
                     					?>
                     				</p>
@@ -65,31 +68,31 @@ get_header(); ?>
                     		</div>
                     	<?php endif; ?>
                     	
-                    	<h3>Podaci bookinga</h3>
+                    	<h3><?php _e('Podaci bookinga', 'wpog'); ?></h3>
 
                     	<p>
-                    		Apartman: <?php echo $data['acm_name']; ?>
+                    		<?php printf(__('Apartman: %s', 'wpog'), $data['acm_name']); ?>
                     	</p>
                     	
                     	<p>
-                    		Dolazak: <?php echo $data['user_checkin']; ?>
+                    		<?php printf(__('Dolazak: %s', 'wpog'), $data['user_checkin']); ?>
                     	</p>
                     	
                     	<p>
-                    		Odlazak: <?php echo $data['user_checkout']; ?>
+                    		<?php printf(__('Odlazak: %s', 'wpog'), $data['user_checkout']); ?>
                     	</p>
                     	
                     	<p>
-                    		Broj noćenja: <?php echo $data['nights']; ?>
+                    		<?php printf(__('Broj noćenja: %s', 'wpog'), $data['nights']); ?>
                     	</p>
                     	
                     	<p>
-                    		Broj gostiju: <?php echo $data['guests']; ?>
+                    		<?php printf(__('Broj gostiju: %s', 'wpog'), $data['guests']); ?>
                     	</p>
                     	
                     	<br><br>
                     	
-                    	<h3>Korisnički podaci</h3>
+                    	<h3><?php _e('Korisnički podaci', 'wpog'); ?></h3>
                     	
                     	<form action="" method="post">
                     		<input type="hidden" name="action" value="booking">
@@ -100,55 +103,55 @@ get_header(); ?>
                     	
                     		<p>
                     			<label>
-                    				Ime
+                    				<?php _e('Ime', 'wpog'); ?>
                     				<input type="text" name="first_name" value="<?php echo esc_attr($data['first_name']); ?>">
                     			</label>
                     		</p>
                     	  
                     	  <p>
                     			<label>
-                    				Prezime
+                    				<?php _e('Prezime', 'wpog'); ?>
                     				<input type="text" name="last_name" value="<?php echo esc_attr($data['last_name']); ?>">
                     			</label>
                     		</p>
                     	
                     	  <p>
                     			<label>
-                    				Telefon
+                    				<?php _e('Telefon', 'wpog'); ?>
                     				<input type="text" name="phone" value="<?php echo esc_attr($data['phone']); ?>">
                     			</label>
                     		</p>
                     	
                     	  <p>
                     			<label>
-                    				Email
+                    				<?php _e('Email', 'wpog'); ?>
                     				<input type="text" name="email" value="<?php echo esc_attr($data['email']); ?>">
                     			</label>
                     		</p>
                     	
                     	  <p>
                     			<label>
-                    				Address
+                    				<?php _e('Adresa', 'wpog'); ?>
                     				<input type="text" name="address" value="<?php echo esc_attr($data['address']); ?>">
                     			</label>
                     		</p>
                     	
                     	  <p>
                     			<label>
-                    				City
+                    				<?php _e('Grad', 'wpog'); ?>
                     				<input type="text" name="city" value="<?php echo esc_attr($data['city']); ?>">
                     			</label>
                     		</p>
                     	
                     	  <p>
                     			<label>
-                    				Country
+                    				<?php _e('Zemlja', 'wpog'); ?>
                     				<select name="country" class="select2" >
                     					<?php
                     					$country = $data['country'];
                     					if (function_exists('af_booking')) {
                     						
-                    						echo '<option value="">Izaberite</option>';
+                    						echo '<option value="">' . __('Izaberite', 'wpog') . '</option>';
                     						
                     						foreach (af_booking()->getCountries() as $cc => $cname) {
                     							echo '<option value="' . $cc . '" ' . selected($cc, $country, false) . '>' . $cname . '</option>';
@@ -162,19 +165,19 @@ get_header(); ?>
                     		<br><br>
                     	  <p>
                     			<label>
-                    				Promo kupon
+                    				<?php _e('Promo kupon', 'wpog'); ?>
                     				<input type="text" name="promo" value="<?php echo esc_attr($data['promo']); ?>">
                     			</label>
                     		</p>
                     		
                     		<br><br>                   	
-                    		<input type="submit" value="Potvrdi">                  	                    	
+                    		<input type="submit" value="<?php _e('Potvrdi', 'wpog'); ?>">                  	                    	
                     		<br><br>
                     		
                     	</form>
 
                     	<p>
-                    		<a href="<?php the_permalink($data['acm_id']); ?>">&laquo;Nazad</a>
+                    		<a href="<?php the_permalink($data['acm_id']); ?>">&laquo;<?php _e('Nazad', 'wpog'); ?></a>
                     	</p>
                     	                    	
                     <?php endif; ?>

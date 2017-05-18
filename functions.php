@@ -34,7 +34,7 @@ if ( ! function_exists( 'wpog_setup' ) ) :
 		 */
 		//add_theme_support( 'post-thumbnails' );
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
+		register_nav_menus( array (
 			'primary' => __( 'Primary Menu', 'wpog' ),
 		) );
 
@@ -42,7 +42,7 @@ if ( ! function_exists( 'wpog_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
+		add_theme_support( 'html5', array (
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -59,14 +59,33 @@ if ( ! function_exists( 'wpog_setup' ) ) :
 		// 	'aside', 'image', 'video', 'quote', 'link',
 		// ) );
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'wpog_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'wpog_custom_background_args', array (
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
+		remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 	}
+
 
 endif; // wpog_setup
 add_action( 'after_setup_theme', 'wpog_setup' );
+
+
+function custom_field_excerpt() {
+	global $post;
+	$text = get_sub_field( 'opis' ); //Replace 'your_field_name'
+	if ( '' != $text ) {
+		$text           = strip_shortcodes( $text );
+		$text           = apply_filters( 'the_content', $text );
+		$text           = str_replace( ']]&gt;', ']]&gt;', $text );
+		$excerpt_length = 60; // 60 words
+		$excerpt_more   = apply_filters( 'excerpt_more', '' . '...' );
+		$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+
+	return apply_filters( 'the_excerpt', $text );
+}
+
 
 /**
  * Register widget area.
@@ -74,7 +93,7 @@ add_action( 'after_setup_theme', 'wpog_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function wpog_widgets_init() {
-	register_sidebar( array(
+	register_sidebar( array (
 		'name'          => __( 'Sidebar', 'wpog' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
@@ -118,7 +137,7 @@ function child_styles() {
 	if ( ! is_admin() ) {
 
 		// register styles
-		wp_register_style( 'googlefont-raleway', 'https://fonts.googleapis.com/css?family=Raleway:300,400,700&amp;subset=latin-ext', array(), false, 'all' );
+		wp_register_style( 'googlefont-raleway', 'https://fonts.googleapis.com/css?family=Raleway:300,400,700&amp;subset=latin-ext', array (), false, 'all' );
 		// wp_register_style('googlefont-robotocon', 'http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,300,700&subset=latin,latin-ext', array(), false, 'all');
 		// wp_register_style('googlefont-robotosla', 'http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,latin-ext', array(), false, 'all');
 		// wp_register_style('googlefont-scada', 'http://fonts.googleapis.com/css?family=Scada:400italic,400,700&subset=latin,latin-ext', array(), false, 'all');
@@ -150,12 +169,30 @@ add_image_size( 'cat-thumb', 300, 200, true );
 
 /**
  *
+ * Brisanje nepotrebnih stvari iz titlova arhivnih strana
+ */
+add_filter( 'get_the_archive_title', function ( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	}
+
+	return $title;
+} );
+
+/**
+ *
  * Aktivacija THEME OPTIONS kroz ACF
  *
  */
 if ( function_exists( 'acf_add_options_page' ) ) {
 
-	$page = acf_add_options_page( array(
+	$page = acf_add_options_page( array (
 		'page_title' => 'Theme General Settings',
 		'menu_title' => 'Theme Options',
 		'menu_slug'  => 'theme-general-settings',
@@ -165,19 +202,19 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'   => false
 	) );
 
-	acf_add_options_sub_page( array(
+	acf_add_options_sub_page( array (
 		'page_title'  => 'Theme Header Settings',
 		'menu_title'  => 'Header',
 		'parent_slug' => 'theme-general-settings',
 	) );
 
-	acf_add_options_sub_page( array(
+	acf_add_options_sub_page( array (
 		'page_title'  => 'Theme Sidebar Settings',
 		'menu_title'  => 'Sidebar',
 		'parent_slug' => 'theme-general-settings',
 	) );
 
-	acf_add_options_sub_page( array(
+	acf_add_options_sub_page( array (
 		'page_title'  => 'Theme Footer Settings',
 		'menu_title'  => 'Footer',
 		'parent_slug' => 'theme-general-settings',
@@ -189,6 +226,3 @@ add_action( 'after_setup_theme', 'my_theme_setup' );
 function my_theme_setup() {
 	load_theme_textdomain( 'wpog', get_template_directory() . '/languages' );
 }
-
-
-remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
