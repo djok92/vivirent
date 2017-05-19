@@ -42,7 +42,10 @@ $(document).ready(function () {
         $('select.select2').select2({
             minimumResultsForSearch: -1
         });
-
+        // $('select.select2').select2().on('select2:open', function () {
+        //     var container = $('.select2-container').last();
+        //     container.addClass('');
+        // });
     })();
 
 
@@ -128,9 +131,6 @@ $(document).ready(function () {
         }
         $('#date_arival').datepicker({
             format: 'DD.MM.YYYY',
-//            collapse: false,
-//            keepOpen: true,
-//            debug: true
         });
 
     })();

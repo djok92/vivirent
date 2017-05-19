@@ -103,6 +103,7 @@ body.page-template-page-apartman {
 .header-img {
   position: relative;
   max-height: 600px;
+  min-height: 300px;
   &:after {
     padding-top: 31.3%;
     display: block;

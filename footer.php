@@ -41,7 +41,7 @@
     </div><!-- /.bottom-footer -->
 </footer>
 <?php
-if ( is_page_template( 'page-location' ) ): ?>
+if ( is_page_template( 'page-location.php' ) ): ?>
     <div class="locations">
 		<?php
 		$args  = [
@@ -86,7 +86,7 @@ if ( is_page_template( 'page-location' ) ): ?>
 			else :
 				_e( 'Materijal nije trenutno dostupan.', 'wpog' );
 			endif;
-			echo $page . '</br>';
+
 		}
 		?>
     </div>
