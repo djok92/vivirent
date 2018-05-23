@@ -10,20 +10,9 @@
   }
 }
 
-.apartments-row {
-  @include row;
-  margin: 40px 0;
-}
-
 .apartments-box {
-  @include col(1, 5, 0, top, false, false);
   text-align: left;
   transition: all 0.2s linear;
-
-  &:hover {
-    background: #fff;
-  }
-
   &_img {
     max-height: 250px;
     overflow: hidden;
@@ -31,11 +20,12 @@
     img {
       max-width: 100%;
       max-height: 100%;
+      object-fit: cover;
     }
   }
 
   &__content {
-    padding: 30px 20px 25px 35px;
+
 
     &_name {
       font-size: 18px;

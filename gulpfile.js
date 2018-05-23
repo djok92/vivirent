@@ -90,8 +90,8 @@ gulp.task('sass', function () {
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src([
-        './node_modules/jquery/dist/jquery.min.js',
-        './node_modules/swiper/dist/js/swiper.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/swiper/dist/js/swiper.min.js',
         'node_modules/jquery.mmenu/dist/jquery.mmenu.all.js',
         src + 'js/bootstrap.min.js',
         src + 'js/moment.js',
