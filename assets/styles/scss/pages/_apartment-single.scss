@@ -1,13 +1,24 @@
-.apartment-single {
-  padding: 35px 0 75px;
+.apartmentNameHolder {
+  position: absolute;
+  bottom: 110px;
+  width: 100%;
+  z-index: 50;
+  color: #fff;
   h1 {
     @include h-2;
-    margin-bottom: 45px;
+    text-transform: uppercase;
+    text-shadow: 5px 3px 5px #000;
   }
   .apartment-name {
     font-size: 18px;
     font-weight: 300;
+    text-shadow: 5px 3px 5px #000;
   }
+}
+
+.apartment-single {
+  padding: 35px 0 75px;
+
   .apartment-desc {
     a {
       display: block;

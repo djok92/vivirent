@@ -45,4 +45,15 @@
 			<?php endif; ?>
         </div>
     </div>
+    <div class="apartmentNameHolder">
+        <div class="container">
+            <p class="apartment-name"><?php $terms = get_the_terms($post->ID, 'vila');
+				foreach($terms as $term) {
+					echo $term->name;
+				} ?>
+            </p>
+            <h1><?php the_title(); ?></h1>
+        </div><!-- /.container -->
+    </div><!-- /.apartmentNameHolder -->
+
 </div>
