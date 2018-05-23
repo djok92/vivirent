@@ -40,10 +40,10 @@
 
             </div> <!-- /.menu-holder -->
             <div class="right-holder">
-                <div class="search">
-                    <i class="fa fa-search"></i>
-					<?php get_template_part('searchform'); ?>
-                </div>
+<!--                <div class="search">-->
+<!--                    <i class="fa fa-search"></i>-->
+<!--					--><?php //get_template_part('searchform'); ?>
+<!--                </div>-->
                 <div class="language">
 
                 </div>
