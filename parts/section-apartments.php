@@ -52,14 +52,14 @@
 
                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-                                <div class="apartments-box__content_specification">
-                                    <p><?php _e('Karakteristike', 'wpog'); ?>:</p>
-                                    <span><?php _e('max broj osoba', 'wpog'); ?>
-                                        : <?php the_field('broj_gostiju'); ?></span>,
-                                    <span><?php the_field('kvadratura'); ?></span>,
-                                    <span><?php the_field('soba'); ?><?php _e('sobe', 'wpog'); ?></span>,
-                                    <span><?php the_field('kupaonica'); ?><?php _e('kupatila', 'wpog'); ?></span>
-                                </div><!-- /.apartments-box__content_specification -->
+<!--                                <div class="apartments-box__content_specification">-->
+<!--                                    <p>--><?php //_e('Karakteristike', 'wpog'); ?><!--:</p>-->
+<!--                                    <span>--><?php //_e('max broj osoba', 'wpog'); ?>
+<!--                                        : --><?php //the_field('broj_gostiju'); ?><!--</span>,-->
+<!--                                    <span>--><?php //the_field('kvadratura'); ?><!--</span>,-->
+<!--                                    <span>--><?php //the_field('soba'); ?><!----><?php //_e('sobe', 'wpog'); ?><!--</span>,-->
+<!--                                    <span>--><?php //the_field('kupaonica'); ?><!----><?php //_e('kupatila', 'wpog'); ?><!--</span>-->
+<!--                                </div><!-- /.apartments-box__content_specification -->
 
                                 <div class="apartments-box__content_links">
                                     <a href="<?php the_permalink(); ?>"
