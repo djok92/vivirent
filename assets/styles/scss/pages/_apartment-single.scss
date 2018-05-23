@@ -27,27 +27,6 @@
   }
 }
 
-.apartment-table {
-  display: table;
-  width: 100%;
-  .table-row {
-    display: table-row;
-    &:nth-child(odd) {
-      background: #ddd;
-    }
-    div {
-      display: table-cell;
-      vertical-align: middle;
-      font-weight: 300;
-      padding: 4px 7px;
-      &:last-child {
-        font-weight: 700;
-        text-align: right;
-      }
-    }
-  }
-}
-
 .section-name {
   font-size: 24px;
   font-weight: 700;
@@ -83,4 +62,3 @@
     opacity: 1;
   }
 }
-
