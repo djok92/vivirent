@@ -9,13 +9,13 @@ get_header();
 ?>
 
 <!-- sekcija - lista 5 apartmana -->
-<?php get_template_part( 'parts/section', 'apartments' ) ?>
+<?php get_template_part('parts/section', 'apartments') ?>
 
 <!-- sekcija - lokacija -->
-<?php get_template_part( 'parts/section', 'location' ) ?>
+<?php get_template_part('parts/section', 'location') ?>
 
 <!-- sekcija - lokacija -->
-<?php get_template_part( 'parts/section', 'news' ) ?>
+<?php get_template_part('parts/section', 'news') ?>
 
 
 <?php get_footer(); ?>

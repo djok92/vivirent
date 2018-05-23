@@ -33,3 +33,10 @@ Developer iz ovog CSSa korekcije treba da integrise u glavni style.css
 	height: 100%;
 }
 
+.datepicker table {
+/* background-color: #000 !important; */
+}
+
+.apartment-desc p {
+ margin-bottom: 20px;
+}

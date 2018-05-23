@@ -18,6 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+									<div class="footer-items-wrapper">
                     <div class="bottom-footer__left">
                         <a href="#">
                             <div class="footer-logo"></div>
@@ -35,6 +36,7 @@
                                         class="fa fa-linkedin-square"></i></a>
                         </div>
                     </div> <!-- /.bottom-footer__right -->
+									</div>
                 </div> <!-- /.col-md-12 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->

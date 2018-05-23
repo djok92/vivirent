@@ -13,6 +13,8 @@ header {
   z-index: 500;
   height: 60px;
   line-height: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 
 body.home {
@@ -23,13 +25,12 @@ body.home {
     display: inline-block;
     vertical-align: middle;
     position: static;
+
   }
   .right-holder {
     display: inline-block;
     vertical-align: middle;
     float: none;
-    margin: 0;
-    position: absolute;
   }
 }
 
@@ -43,6 +44,12 @@ body.page-template-page-apartman {
   position: absolute;
   left: 0;
   right: 0;
+  margin: auto;
+  @include breakpoint(_1200) {
+    position: static;
+    order: 3;
+    margin: 0 45px 0 0;
+  }
   li {
     display: inline-block;
     color: #fff;
@@ -54,11 +61,29 @@ body.page-template-page-apartman {
       }
     }
   }
+
+  #menu-button {
+    display: none;
+    font-size: 30px;
+    margin-right: 10px;
+    @include breakpoint(_1200) {
+      display: block;
+    }
+  }
+  .main-nav {
+    @include breakpoint(_1200) {
+      display: none;
+    }
+  }
 }
 
 .right-holder {
   float: right;
   margin-right: 35px;
+  @include breakpoint(_1200) {
+    margin-left: auto;
+    margin-right: 15px;
+  }
   .search {
     position: relative;
     .fa-search {
@@ -82,6 +107,9 @@ body.page-template-page-apartman {
       transition: all .3s ease-in-out;
       &:focus {
         width: 150px;
+      }
+      @include breakpoint (_1200) {
+        border: none;
       }
     }
   }
@@ -111,7 +139,7 @@ body.page-template-page-apartman {
   }
   img {
     max-height: 600px;
-    max-width: 100%;
+    max-width: 1920px;
     width: 100%;
     object-fit: cover;
     position: fixed;
@@ -127,5 +155,16 @@ body.page-template-page-apartman {
     text-shadow: 1px 1px 9px #000;
     text-transform: uppercase;
     text-align: center;
+  }
+}
+
+.mm-listview {
+  li.lang-item {
+    @include breakpoint(_1200) {
+      display: inline-block;
+      &::after {
+        border-bottom: 0;
+      }
+    }
   }
 }

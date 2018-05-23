@@ -10,6 +10,9 @@ html {
 
 h1 {
   @include h-1;
+  @include breakpoint(_480) {
+    font-size: 46px;
+  }
 }
 
 h2 {
@@ -108,7 +111,21 @@ textarea:focus, input:focus {
 }
 
 .p-100-0 {
+  position: relative;
   padding: 100px 0;
+  @include breakpoint(_800) {
+    padding: 50px 0;
+    margin: 0 auto;
+  }
+  @include breakpoint(_480) {
+    padding: 30px 0;
+    margin: 0 auto;
+  }
+  h2 { 
+    @include breakpoint(_800) {
+    padding: 10px 0;
+    }
+  }
 }
 
 .datepicker-holder {
@@ -137,7 +154,7 @@ body {
     }// Homepage - template
     &.archive {
         h1 {
-            margin-bottom: 40px;  
+            margin-bottom: 40px;
         }
         h2 {
             font-size: 1.714rem;
@@ -212,5 +229,34 @@ body {
       size: 12px;
       style: italic;
     }
+  }
+}
+
+.swiper-container {
+  .swiper-button-next:not(.swiper-button-white) {
+    font-size: 42px;
+    background: none;
+    color: #fff;
+    &:after {
+      content: '\f054';
+      font-family: Fontawesome, sans-serif;
+    }
+  }
+  .swiper-button-prev:not(.swiper-button-white) {
+    font-size: 42px;
+    background: none;
+    color: #fff;
+    &:after {
+      content: '\f053';
+      font-family: Fontawesome, sans-serif;
+    }
+  }
+}
+
+//Thumbs Holder
+
+.thumbs-holder {
+  @include breakpoint(_800) {
+    padding-bottom: 15px;
   }
 }

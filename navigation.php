@@ -11,9 +11,9 @@
 <?php
 
 $defaults = array(
-	'theme_location'  => '',
+	'theme_location'  => 'primary',
 	'menu'            => '',
-	'container'       => 'div',
+	'container'       => '',
 	'container_class' => '',
 	'container_id'    => '',
 	'menu_class'      => 'menu',
@@ -29,6 +29,6 @@ $defaults = array(
 	'walker'          => ''
 );
 
-wp_nav_menu( $defaults );
+wp_nav_menu($defaults);
 
 ?>

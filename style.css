@@ -31,6 +31,11 @@ Tags:
 	font-weight: bold;
 }
 
+#af-reserve:disabled {
+	background: #2096c6;
+	color: #24AAE1;
+}
+
 .af-booking-errors {
 	margin: 10px 0;
 	padding: 10px;
@@ -49,3 +54,11 @@ Tags:
 	vertical-align: super;
 	font-size: 40px;
 }
+
+#af-calendar-loader {
+	position: absolute;
+	top: 150px;
+	left: 40%;
+	left: calc(50% - 40px);
+}
+

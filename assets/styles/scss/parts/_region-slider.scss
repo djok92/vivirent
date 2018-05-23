@@ -1,8 +1,31 @@
 .region-holder {
   width: 100%;
-  position: relative;
+  &#region-slider {
+    position: relative;
+    height: 550px;
+    .front-part {
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 100%;
+      padding: 20px 0;
+    }
+  }
+  &.with-bkg {
+    .front-part {
+      color: #fff;
+    }
+  }
   .front-part {
-
+    position: relative;
+    z-index: 10;
+    color: #000;
+    padding: 20px 0;
+    @include breakpoint(_991) {
+      text-align: center;
+      img {
+        max-width: 220px;
+      }
+    }
     h2 {
       margin-bottom: 20px;
     }
@@ -13,6 +36,19 @@
       }
     }
   }
+  .img-holder {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   .gradient {
     position: absolute;
     left: 0;
@@ -20,41 +56,6 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 50;
-  }
-  .slider-nav {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 40px;
-    .rsNav {
-      height: 42px;
-      background: none;
-      .rsThumb {
-        height: 42px;
-        line-height: 42px;
-        text-align: center;
-        &.rsNavSelected {
-          background: none;
-          border-top: 1px solid #fff;
-          border-bottom: 1px solid #fff;
-        }
-      }
-    }
-    .rsThumbsContainer {
-      transform: none !important;
-    }
+    z-index: 2;
   }
 }
-
-.with-bkg {
-  .front-part {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 22%;
-    z-index: 60;
-  }
-  .rsNav {
-  }
-} 

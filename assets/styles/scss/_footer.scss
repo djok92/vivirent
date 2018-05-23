@@ -1,59 +1,100 @@
 footer {
-    position: relative;
-    z-index: 99999;
+  position: relative;
+  z-index: 99999;
 }
+
 body.home {
-    .bottom-footer {
-        padding-bottom: 105px;
-    }
+  .bottom-footer {
+    padding-bottom: 105px;
+  }
 }
+
 .bottom-footer {
-    background: #000;
-    position: relative;
-    padding: 50px 0;
-    &__left {
-        float: left;
-        .footer-logo {
-            @include background-image-retina(footer-logo,png,48px,59px);
-            width: 48px;
-            height: 59px;
-            margin-bottom: 15px;
-        }
-        p {
-            color: #777777;
-            font-size: 12px;
-        }
+  background: #000;
+  position: relative;
+  padding: 50px 0;
+
+  &__left {
+    float: left;
+
+    .footer-logo {
+      @include background-image-retina(footer-logo,png,48px,59px);
+      width: 48px;
+      height: 59px;
+      margin-bottom: 15px;
     }
-    &__right {
-        float: right;
-        text-align: right;
-        color: #fff;
-        .social {
-            margin-top: 8px;
-            font-size: 24px;
-            a {
-                display: inline-block;
-                vertical-align: middle;
-                margin: 0 3px;
-            }
-        }
+
+    p {
+      color: #777777;
+      font-size: 12px;
     }
+  }
+
+  &__right {
+    float: right;
+    text-align: right;
+    color: #fff;
+
+    .social {
+      margin-top: 8px;
+      font-size: 24px;
+
+      a {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 3px;
+      }
+    }
+  }
 }
 
 .top-footer {
-    .apartments-section {
-        background: #333;
-        color: #fff;
-        .link.black {
-            color: #fff;
-            transition: all .2s ease-in-out;
-        }
-        .apartments-box:hover {
-            background: #fff;
-            color: #000;
-            .link.black {
-                color: #000;
-            }
-        }
+  .apartments-section {
+    background: #333;
+    color: #fff;
+
+    .link.black {
+      color: #fff;
+      transition: all 0.2s ease-in-out;
     }
+
+    .apartments-box:hover {
+      background: #fff;
+      color: #000;
+
+      .link.black {
+        color: #000;
+      }
+    }
+  }
+}
+
+@include breakpoint (_800) {
+  .footer-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+    .bottom-footer__left {
+      padding-top: 20px;
+
+      .footer-logo {
+        margin: 0 auto;
+      }
+
+      p {
+        padding-top: 20px;
+      }
+    }
+
+    .bottom-footer__left,
+    .bottom-footer__right {
+      text-align: center;
+    }
+
+    .bottom-footer__right {
+      order: -1;
+    }
+  }
 }

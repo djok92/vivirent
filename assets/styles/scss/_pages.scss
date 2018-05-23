@@ -7,14 +7,15 @@ main {
 
 .left-aside {
   .button.red.round {
-    margin: 0;
-    margin-bottom: 26px;
+    margin: 0 0 26px;
   }
+
   &-nav {
     > ul {
       margin: 0;
       list-style: none;
       background: #eee;
+
       > li {
         a {
           display: block;
@@ -23,25 +24,28 @@ main {
           border-top: 1px solid #ccc;
           padding: 12px 16px;
           background: #eee;
-          @include transition(all .1s ease-in);
+          @include transition(all 0.1s ease-in);
+
           &:hover {
             text-decoration: none;
             background: #00a54f;
             color: #fff;
-            @include transition(all .1s ease-in);
+            @include transition(all 0.1s ease-in);
           }
         }
+
         ul {
           margin: 0;
           list-style: none;
           padding-bottom: 10px;
+
           li {
             a {
               text-transform: capitalize;
               border: none;
-              padding: 5px 0;
-              padding-left: 26px;
+              padding: 5px 0 5px 26px;
               font-size: 14px;
+
               &:before {
                 content: '>';
                 font-size: 12px;
@@ -53,6 +57,7 @@ main {
             }
           }
         }
+
         &:last-child {
           border-bottom: 1px solid #ccc;
         }
@@ -61,48 +66,60 @@ main {
   }
   // Left aside navigation
 }
-
 // Left aside
-
 .page-content {
   padding-bottom: 60px;
+  @include breakpoint (_480px) {
+    padding-bottom: 21px; 
+  }
+
   &-header {
     .breadcrumbs {
       margin-bottom: 37px;
     }
   }
+
   h2 {
     margin-top: 35px;
     margin-bottom: 18px;
   }
+
   &-footer {
     @include clearfix;
     border-top: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
     padding: 12px 0;
+
     .breadcrumbs {
       float: left;
     }
+
     .social-share {
       float: right;
+
       a {
         display: inline-block;
         width: 20px;
         height: 20px;
-        background-image: url('../images/sprite-social.png');
+        background-image: url("../images/sprite-social.png");
         background-repeat: no-repeat;
+
         &.fb {
           background-position: 0 0;
         }
+
         &.tw {
           background-position: -24px 0;
         }
+
         &.gg {
           background-position: -48px 0;
         }
+
         &.ln {
           background-position: -72px 0;
         }
+
         &.pi {
           background-position: -96px 0;
         }
@@ -110,27 +127,24 @@ main {
     }
   }
 }
-
 // page-content
-
-// Aside 
-
+// Aside
 aside {
   .aside-banner {
     border: 1px solid #d6d6d6;
     margin-bottom: 20px;
   }
 }
-
 // Accordion
-
 .accordion-content {
   display: flex;
+
   .img-holder {
     vertical-align: top;
     max-width: 240px;
     flex: 1;
   }
+
   .accordion-desc {
     display: inline-block;
     vertical-align: top;
@@ -138,9 +152,11 @@ aside {
     margin-left: 20px;
     position: relative;
     font-size: 16px;
+
     p {
       margin-bottom: 5px;
     }
+
     .accordion-spec {
       position: absolute;
       bottom: 0;
@@ -151,15 +167,17 @@ aside {
 
 .accordion {
   margin-bottom: 7px;
+
   div[data-control] {
     background-color: #333;
     color: #fff;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
+
   &.open {
     div[data-control] {
       background-color: #24aae1;

@@ -1,5 +1,7 @@
 .booking-form {
   background: rgba(36, 170, 225, 0.8);
+  max-width: 1920px;
+  margin: 0 auto;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -8,7 +10,13 @@
   font-size: 0;
   z-index: 999991;
   padding: 16px 0;
-  transition: all .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  @include breakpoint(_768) {
+    transform: translate3d(0, calc(100% - 15px), 0);
+  }
+  @include breakpoint(_560) {
+    transform: translate3d(0, calc(100% - 15px), 0);
+  }
   &.fixed {
     padding: 7px 0;
   }
@@ -18,11 +26,20 @@
     font-size: 14px;
     margin: 0 5px;
     width: 100px;
+    @include breakpoint(_768) {
+      width: 46%;
+    }
     &:nth-last-child(2) {
       width: 190px;
+      @include breakpoint(_768) {
+        width: 46%;
+      }
     }
     &:first-child {
       width: 130px;
+      @include breakpoint(_768) {
+        width: 46%;
+      }
     }
 
     label {
@@ -38,6 +55,9 @@
       line-height: 30px;
       border-radius: 0;
       padding-left: 28px;
+      @include breakpoint(_768) {
+        width: 100%;
+      }
       &[type='submit'] {
         background: transparent;
         padding: 0 20px;
@@ -47,6 +67,9 @@
         font-size: 16px;
         font-weight: 700;
         transition: all .2s ease-in-out;
+        @include breakpoint(_768) {
+          margin-top: 15px;
+        }
       }
     }
     select {

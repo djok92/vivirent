@@ -1,223 +1,246 @@
 // Clear fix
 @mixin clearfix() {
-    &:before,
-        &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
-}
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
 
-// Columns grid 
+  &:after {
+    clear: both;
+  }
+}
+// Columns grid
 @mixin row() {
-    font-size: 0;
+  font-size: 0;
 }
 @mixin col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+  @media only screen and (min-width: 768px) {
     width: percentage($col/$sum);
-    font-size: 16px;
-    display: inline-block;
     vertical-align: $align;
-    padding-left: if($first, 0, $gap);
-    padding-right: if($last, 0, $gap);
-    @media only screen and (min-width: 768px) {
-        width: percentage($col/$sum);
-        vertical-align: $align;
-    }
+  }
 }
-
 // Headings
 @mixin heading {
-    line-height: 1.2;
-    color: inherit;
+  line-height: 1.2;
+  color: inherit;
 }
 @mixin h-1 {
-    @include heading;
-    font-size: 64px;
+  @include heading;
+  font-size: 64px;
 }
-
 @mixin h-2 {
-    @include heading;
-    font-size: 48px;
-    font-weight: 700;
+  @include heading;
+  font-size: 48px;
+  font-weight: 700;
 }
-
 @mixin h-3 {
-    @include heading;
-    font-size: 32px;
+  @include heading;
+  font-size: 32px;
 }
-
 @mixin h-4 {
-    @include heading;
-    font-size: 16px; 
-    font-weight: 700;
-    margin-top: 13px;
+  @include heading;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 13px;
 }
 // Animation tranform
-
 @mixin transform($transform...) {
-    -moz-transform: $transform;
-    -o-transform: $transform;
-    -ms-transform: $transform;
-    -webkit-transform: $transform;
-    transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
 }
-
 // Animations transition
-
 @mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
 }
 @mixin transition-property($property...) {
-    -moz-transition-property:    $property;
-    -o-transition-property:      $property;
-    -webkit-transition-property: $property;
-    transition-property:         $property;
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  -webkit-transition-property: $property;
+  transition-property: $property;
 }
 @mixin transition-duration($duration...) {
-    -moz-transition-property:    $duration;
-    -o-transition-property:      $duration;
-    -webkit-transition-property: $duration;
-    transition-property:         $duration;
+  -moz-transition-property: $duration;
+  -o-transition-property: $duration;
+  -webkit-transition-property: $duration;
+  transition-property: $duration;
 }
 @mixin transition-timing-function($timing...) {
-    -moz-transition-timing-function:    $timing;
-    -o-transition-timing-function:      $timing;
-    -webkit-transition-timing-function: $timing;
-    transition-timing-function:         $timing;
+  -moz-transition-timing-function: $timing;
+  -o-transition-timing-function: $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function: $timing;
 }
 @mixin transition-delay($delay...) {
-    -moz-transition-delay:    $delay;
-    -o-transition-delay:      $delay;
-    -webkit-transition-delay: $delay;
-    transition-delay:         $delay;
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
 }
-
-
 @mixin animation($animate...) {
-    $max: length($animate);
-    $animations: '';
-
-    @for $i from 1 through $max {
-        $animations: #{$animations + nth($animate, $i)};
-
-        @if $i < $max {
-            $animations: #{$animations + ", "};
-        }
+  $max: length($animate);
+  $animations: '';
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+    @if $i < $max {
+      $animations: #{$animations + ", "};
     }
-    -webkit-animation: $animations;
-    -moz-animation:    $animations;
-    -o-animation:      $animations;
-    animation:         $animations;
+  }
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
 }
-
 //Animation keyframes
-
 @mixin keyframes($animationName) {
-    @-webkit-keyframes #{$animationName} {
-        @content;
-    }
-    @-moz-keyframes #{$animationName} {
-        @content;
-    }
-    @-o-keyframes #{$animationName} {
-        @content;
-    }
-    @keyframes #{$animationName} {
-        @content;
-    }
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
 }
-
-// Responsive img 
-
+// Responsive img
 @mixin responsive {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
-
 // BREAKPOINTS
-
-
 @mixin breakpoint($point) {
-    @if $point == _1919 {
-        @media (max-width: 1919px) { @content; }
+  @if $point == _1919 {
+    @media (max-width: 1919px) {
+      @content;
     }
-    @if $point == _1366 {
-        @media (max-width: 1366px) { @content; }
+  }
+  @if $point == _1366 {
+    @media (max-width: 1366px) {
+      @content;
     }
-    @if $point == _1200 {
-        @media (max-width: 1200px) { @content; }
+  }
+  @if $point == _1200 {
+    @media (max-width: 1200px) {
+      @content;
     }
-    @if $point == _1200_991 {
-        @media (max-width: 1200px) and (min-width: 991px) { @content; }
+  }
+  @if $point == _1200_991 {
+    @media (max-width: 1200px) and (min-width: 991px) {
+      @content;
     }
-    @else if $point == _1024 {
-        @media (max-width: 1024px) { @content ; }
+  } @else
+  if $point == _1024 {
+    @media (max-width: 1024px) {
+      @content;
     }
-    @else if $point == _991 {
-        @media (max-width: 991px) { @content ; }
+  } @else
+  if $point == _1300 {
+    @media (max-width: 1300px) {
+      @content;
     }
-    @else if $point == _990 {
-        @media (max-width: 990px) { @content ; }
+  } @else
+  if $point == _991 {
+    @media (max-width: 991px) {
+      @content;
     }
-    @else if $point == _768 {
-        @media (max-width: 768px) { @content ; }
+  } @else
+  if $point == _990 {
+    @media (max-width: 990px) {
+      @content;
     }
-    @else if $point == _766 {
-        @media (max-width: 766px) { @content ; }
-    } 
-    @else if $point == _680 {
-        @media (max-width: 680px)  { @content ; }
+  } @else
+  if $point == _800 {
+    @media (max-width: 800px) {
+      @content;
     }
-    @else if $point == _600 {
-        @media (max-width: 600px)  { @content ; }
+  } @else
+  if $point == _768 {
+    @media (max-width: 768px) {
+      @content;
     }
-    @else if $point == _550 {
-        @media (max-width: 550px)  { @content ; }
+  } @else
+  if $point == _766 {
+    @media (max-width: 766px) {
+      @content;
     }
-    @else if $point == _480 {
-        @media (max-width: 480px)  { @content ; }
+  } @else
+  if $point == _680 {
+    @media (max-width: 680px) {
+      @content;
     }
-    @else if $point == _479 {
-        @media (max-width: 479px)  { @content ; }
+  } @else
+  if $point == _600 {
+    @media (max-width: 600px) {
+      @content;
     }
-    @else if $point == _360 {
-        @media (max-width: 360px)  { @content ; }
+  } @else
+  if $point == _550 {
+    @media (max-width: 550px) {
+      @content;
     }
-    @else if $point == _359 {
-        @media (max-width: 359px)  { @content ; }
+  } @else
+  if $point == _480 {
+    @media (max-width: 480px) {
+      @content;
     }
-} 
+  } @else
+  if $point == _479 {
+    @media (max-width: 479px) {
+      @content;
+    }
+  } @else
+  if $point == _360 {
+    @media (max-width: 360px) {
+      @content;
+    }
+  } @else
+  if $point == _359 {
+    @media (max-width: 359px) {
+      @content;
+    }
+  }
 
-
+  /*Height*/
+  @else
+  if $point == _740 {
+    @media (max-height: 740px) {
+      @content;
+    }
+  }
+  @else
+  if $point == _560 {
+    @media (max-height: 560px) {
+      @content;
+    }
+  }
+}
 // Retina images support
-
 @mixin background-image-retina($file, $type, $width, $height) {
-    background-image: url($img_path + $file + '.' + $type);
-        @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (-moz-min-device-pixel-ratio: 2),
-        only screen and (-o-min-device-pixel-ratio: 2/1),
-        only screen and (min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx){
-        & {
-        background-image: url($img_path + $file + '@2x.' + $type);
-        -webkit-background-size: $width $height;
-        -moz-background-size: $width $height;
-        -o-background-size: $width $height;
-        background-size: $width $height;
-        }
-        }
-        } 
-
-
-
-
-
-
-
+  background-image: url($img_path + $file + '.' + $type);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url($img_path + $file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    }
+  }
+}

@@ -18,7 +18,7 @@
     </ul>
 
     <div class="social-share">
-        Social share ide ovde
+        <!-- Social share ide ovde -->
     </div>
 
 </div>

@@ -10,7 +10,6 @@ var minify = require('gulp-minify');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
-var browserSync = require('browser-sync').create();
 var jshint = require('gulp-jshint');
 var watch = require('gulp-watch');
 var imagemin = require('gulp-imagemin');
@@ -58,11 +57,14 @@ gulp.task('css', function () {
         src + 'styles/css/reset.css',
         src + 'styles/css/bootstrap.css',
         src + 'styles/css/xloader.css',
+        'node_modules/swiper/dist/css/swiper.min.css',
+        'node_modules/jquery.mmenu/dist/jquery.mmenu.all.css',
         src + 'styles/css/bootstrap-datepicker3.min.css',
         src + 'styles/css/font-awesome.min.css',
         src + 'styles/css/jquery.accordion.css',
         src + 'styles/css/royalslider.css',
         src + 'styles/css/rs-universal.css',
+        src + 'styles/css/lightbox.css',
         src + 'styles/css/select2.css',
         src + 'styles/css/pagination.css',
         src + 'styles/css/default.css',
@@ -88,17 +90,20 @@ gulp.task('sass', function () {
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src([
-        src + 'js/jquery-2.2.1.min.js',
+        './node_modules/jquery/dist/jquery.min.js',
+        './node_modules/swiper/dist/js/swiper.min.js',
+        'node_modules/jquery.mmenu/dist/jquery.mmenu.all.js',
         src + 'js/bootstrap.min.js',
         src + 'js/moment.js',
         src + 'js/bootstrap-datepicker.static.min.js',
         src + 'js/jquery.accordion.js',
         src + 'js/jquery.royalslider.js',
         src + 'js/select2.full.min.js',
+        src + 'js/lightbox.min.js',
         src + 'js/jquery.sidr.min.js',
         src + 'js/main.js'
     ])
-        .pipe(uglify())
+    //.pipe(uglify())
         .pipe(concat('all.min.js'))
         .pipe(gulp.dest(dest + 'js'));
 });
@@ -109,9 +114,9 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest(dest + 'fonts'));
 });
 
-// Images 
+// // Images
 gulp.task('images', function () {
-    return gulp.src(src + 'images/**/*.+(png|jpg|jpeg|gif|svg)')
+    return gulp.src(src + 'images/**/*')
         .pipe(imagemin({
             interlaced: true
         }))
@@ -136,7 +141,8 @@ gulp.task('build', function (callback) {
         'css',
         'sass',
         'scripts',
-        ['fonts', 'images'],
+        'fonts',
+        'images',
         callback);
 });
 

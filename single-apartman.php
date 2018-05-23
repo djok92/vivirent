@@ -151,55 +151,7 @@ get_header();
 
 
                 <div class="col-md-3">
-                    <div class="booking-box">
-                        <p><?php _e( 'Kalendar dostupnosti', 'wpog' ); ?></p>
-                        <div id="af-calendar"></div>
-
-                        <form action="<?php if ( function_exists( 'af_booking' ) ) {
-							echo af_booking()->getBookingURL();
-						} ?>" method="get" onsubmit="return af_booking.checkForm();">
-                            <input type="hidden" id="af-acm-id" name="acm_id" value="<?php the_id(); ?>">
-                            <input id="af-selection" type="hidden" name="checkin" value="">
-
-                            <div class="form-item">
-                                <p><?php _e('Datum dolaska', 'wpog'); ?>:</p>
-                                <div class="datepicker-holder">
-                                    <i class="fa fa-calendar-o"></i>
-                                    <div id="af-date"><?php _e('Izaberite iz kalendara', 'wpog'); ?></div>
-                                </div>
-                            </div> <!-- /.form-item -->
-                            <div class="form-item">
-                                <p><?php _e('Broj noci', 'wpog'); ?>:</p>
-                                <select id="count_nights" type="text" name="nights" class="select2 night"></select>
-                            </div> <!-- /.form-item -->
-                            <div class="form-item">
-                                <p><?php _e('Broj osoba', 'wpog'); ?>:</p>
-                                <select id="count_persons" type="text" name="guests" class="select2 person">
-                                	<?php
-                                	if (function_exists('af_booking')) {
-                                		
-                                		$max_guests = af_booking()->getMaxGuests();
-                                		
-                                		for ($i = 1; $i <= $max_guests; $i++) {
-                                			$str = $i == 1 ? __('osoba', 'wpog') : __('osobe', 'wpog');
-                                			echo '<option value="' . $i . '">' . $i . ' ' . $str . '</option>';                                			
-                                		}
-                                	}
-                                	?>
-                                </select>
-                            </div> <!-- /.form-item -->
-                            <div class="form-item">
-                                <p><?php _e('Kalkulator', 'wpog'); ?>:</p>
-                                <div id="af-calc-price"></div>
-                            </div> <!-- /.form-item -->
-                            <div class="form-item">
-                                <input id="af-reserve" type="submit" value="<?php _e('REZERVIŠI', 'wpog'); ?>">
-                            </div> <!-- /.form-item -->
-                        </form>
-                        <script>document.addEventListener('DOMContentLoaded', function () {
-                                af_booking.init('<?php _e('noć', 'wpog'); ?>', '<?php _e('noći', 'wpog'); ?>');
-                            });</script>
-                    </div> <!-- /.booking-box -->
+                	<?php get_template_part('parts/booking-box'); ?>
                 </div> <!-- /.col-md-3 -->
 
             </div> <!-- /.row -->

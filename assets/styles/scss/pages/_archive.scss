@@ -1,17 +1,35 @@
-
 .Article {
-    margin-bottom: 75px;
-    .archive-content {
-        h2 {
-            @include h-3;
-            line-height: 1.1;
-            margin-top: 13px;
-            margin-bottom: 25px;
-        }
-        div {
-            margin-bottom: 25px;
-            font-size: 16px;
-            line-height: 1.4; 
-        }
-    } 
+  margin-bottom: 75px;
+  @include breakpoint(_800) {
+    margin-bottom: 40px;
+  }
+
+  .img-holder {
+    @include breakpoint(_800) {
+      text-align: center
+    }
+    img {
+      @include breakpoint(_800) {
+        max-height: 280px;
+      }
+    }
+  }
+
+  .archive-content {
+    @include breakpoint(_800) {
+      text-align: center;
+    }
+    h2 {
+      @include h-3;
+      line-height: 1.1;
+      margin-top: 13px;
+      margin-bottom: 25px;
+    }
+
+    div {
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
 }
