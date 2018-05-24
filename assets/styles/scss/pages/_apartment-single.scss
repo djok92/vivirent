@@ -1,3 +1,6 @@
+.apartmenHolder {
+  height: 100%;
+}
 .apartmentNameHolder {
   position: absolute;
   bottom: 110px;
@@ -59,6 +62,10 @@
   }
   .apartment-description {
     margin-bottom: 15px;
+  }
+
+  .pricesBoxHolder {
+    margin-left: 0;
   }
 }
 
