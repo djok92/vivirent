@@ -45,7 +45,6 @@
       }
     }
     &_links {
-      margin-top: 25px;
       color: #24aae1;
       a {
         margin-right: 12px;
@@ -80,6 +79,7 @@
   padding: 10px;
   text-align: center;
   margin-left: 15px;
+  max-width: 255px;
 }
 
 .singlePriceBox {

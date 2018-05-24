@@ -37,17 +37,8 @@
 					<?php get_template_part('navigation'); ?>
                 </nav><!-- /.main-nav -->
                 <span id="menu-button"><i class="fa fa-bars"></i></span>
-
             </div> <!-- /.menu-holder -->
-            <div class="right-holder">
-<!--                <div class="search">-->
-<!--                    <i class="fa fa-search"></i>-->
-<!--					--><?php //get_template_part('searchform'); ?>
-<!--                </div>-->
-                <div class="language">
-
-                </div>
-            </div> <!-- /.right-holder -->
+            
         </div> <!-- /.top-header -->
 
 

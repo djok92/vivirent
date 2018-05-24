@@ -159,35 +159,3 @@
 
     </div><!-- /.container -->
 </section>
-
-
-<!--                                <div class="apartments-box__content_specification">-->
-    <!--                                    <p>--><?php //_e('Karakteristike', 'wpog'); ?><!--:</p>-->
-    <!--                                    <span>--><?php //_e('max broj osoba', 'wpog'); ?>
-    <!--                                        : --><?php //the_field('broj_gostiju'); ?><!--</span>,-->
-    <!--                                    <span>--><?php //the_field('kvadratura'); ?><!--</span>,-->
-    <!--                                    <span>--><?php //the_field('soba'); ?><!----><?php //_e('sobe', 'wpog'); ?><!--</span>,-->
-    <!--                                    <span>--><?php //the_field('kupaonica'); ?><!----><?php //_e('kupatila', 'wpog'); ?><!--</span>-->
-    <!--                                </div><!-- /.apartments-box__content_specification -->
-
-
-                                                <?php if(get_field('pristup_bazenu')) { ?>
-                                                    <!-- <div class="table-row">
-                                                        <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
-                                                        <div><?php the_field('vrednost'); ?></div>
-                                                    </div> /.table-row -->
-                                                <?php } ?>
-
-                                                <?php if(get_field('terasa')) { ?>
-                                                    <!-- <div class="table-row">
-                                                        <div><?php _e('Broj terasa', 'wpog'); ?></div>
-                                                        <div><?php the_field('terasa'); ?></div>
-                                                    </div> /.table-row -->
-                                                <?php } ?>
-
-                                                <?php if(get_field('jacuzzi')) { ?>
-                                                    <!-- <div class="table-row">
-                                                        <div><?php _e('Broj jacuzzi kada', 'wpog'); ?></div>
-                                                        <div><?php the_field('jacuzzi'); ?></div>
-                                                    </div> /.table-row -->
-                                                <?php } ?>
