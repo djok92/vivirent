@@ -14,13 +14,16 @@
   transition: all 0.2s linear;
   margin-bottom: 70px;
   display: flex;
+  height: 327px;
   &_img {
     overflow: hidden;
     position: relative;
+    height: 327px!important;
     img {
       max-width: 100%;
       max-height: 100%;
       object-fit: cover;
+      height: 327px!important;
     }
   }
   &__content {

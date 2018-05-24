@@ -13,7 +13,6 @@
     <!--    </div> <!-- /.container -->
 
     <div class="container">
-        <h2>ostali apartmani</h2>
 		<?php
 		// WP_Query arguments
 		$args = array(
