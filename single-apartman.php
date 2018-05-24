@@ -104,51 +104,37 @@ get_header();
                         <div class="col-md-9">
                             <div class='accordion-holder'>
                                 <p class="section-name"><?php _e('KARAKTERISTIKE', 'wpog') ?></p>
+                                <div class="apartment-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis iste nam nulla
+                                    quas saepe veniam? Autem cupiditate ea eligendi esse eveniet, facilis illo iste non
+                                    placeat praesentium provident quibusdam veniam!
+                                </div>
+                                <div class="accordion-spec">
+                                    <img alt="sprite"
+                                         src="<?php echo get_template_directory_uri(); ?>/dist/images/sprite.jpg"/>
+                                </div>
                                 <div data-accordion-group>
-                                    <div class="accordion" data-accordion>
-                                        <div data-control>Spavaca soba 1</div>
-                                        <div data-content>
-                                            <div class="accordion-content">
-                                                <div class="img-holder">
-                                                    <img alt="slider-img"
-                                                         src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/a-small-img.jpg"/>
-                                                </div> <!-- /.img-holder -->
-                                                <div class="accordion-desc">
-                                                    <div>
-                                                        <p>Dvokrevetna soba</p>
-                                                        <p>Bračni krevet: 200x160</p>
-                                                        <p>Popločano, s terasom, klima-uređaj: 1</p>
-                                                    </div>
-                                                    <div class="accordion-spec">
-                                                        <img alt="sprite"
-                                                             src="<?php echo get_template_directory_uri(); ?>/dist/images/sprite.jpg"/>
-                                                    </div>
-                                                </div> <!-- /.accordion-desc -->
-                                            </div><!-- /.accordion-content -->
-                                        </div> <!-- /[data-content] -->
-                                    </div> <!-- /.accordion -->
-                                    <div class="accordion" data-accordion>
-                                        <div data-control>Spavaca soba 1</div>
-                                        <div data-content>
-                                            <div class="accordion-content">
-                                                <div class="img-holder">
-                                                    <img alt="slider-img"
-                                                         src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/a-small-img.jpg"/>
-                                                </div> <!-- /.img-holder -->
-                                                <div class="accordion-desc">
-                                                    <div>
-                                                        <p>Dvokrevetna soba</p>
-                                                        <p>Bračni krevet: 200x160</p>
-                                                        <p>Popločano, s terasom, klima-uređaj: 1</p>
-                                                    </div>
-                                                    <div class="accordion-spec">
-                                                        <img alt="sprite"
-                                                             src="<?php echo get_template_directory_uri(); ?>/dist/images/sprite.jpg"/>
-                                                    </div>
-                                                </div> <!-- /.accordion-desc -->
-                                            </div><!-- /.accordion-content -->
-                                        </div> <!-- /[data-content] -->
-                                    </div> <!-- /.accordion -->
+									<?php for($i = 0; $i < 6; $i ++): ?>
+                                        <div class="accordion" data-accordion>
+                                            <div data-control>Spavaca soba 1</div>
+                                            <div data-content>
+                                                <div class="accordion-content">
+                                                    <div class="img-holder">
+                                                        <img alt="slider-img"
+                                                             src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/a-small-img.jpg"/>
+                                                    </div> <!-- /.img-holder -->
+                                                    <div class="accordion-desc">
+                                                        <div>
+                                                            <p>Dvokrevetna soba</p>
+                                                            <p>Bračni krevet: 200x160</p>
+                                                            <p>Popločano, s terasom, klima-uređaj: 1</p>
+                                                        </div>
+
+                                                    </div> <!-- /.accordion-desc -->
+                                                </div><!-- /.accordion-content -->
+                                            </div> <!-- /[data-content] -->
+                                        </div> <!-- /.accordion -->
+									<?php endfor; ?>
                                 </div> <!-- /[data-accordion-group] -->
                             </div> <!-- /.apartment-desc -->
                         </div> <!-- /.col-md-9 -->
@@ -164,8 +150,22 @@ get_header();
                 </div><!-- /#tab-2 Utisci -->
 
                 <div id="tab-4" class="tabs-content">
+                    <div class="reservationDescription">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta fugit
+                        libero nobis. Accusantium adipisci ex fugiat illum minima nam, omnis quaerat quia quis
+                        reiciendis suscipit unde vitae!
+                    </div><!-- /.reservationDescription -->
+
+                    <div class="Wizzard">
+                        <ul class="Wizzard__Nav">
+                            <li><a href="#">Odaberite datum</a></li>
+                            <li><a href="#">Unos informacija</a></li>
+                            <li><a href="#">Potvrda</a></li>
+                        </ul><!-- /.Wizzard__Nav -->
+                    </div><!-- /.Wizzard -->
 
                 </div><!-- /#tab-2 Rezervacija -->
+
                 <div id="tab-5" class="tabs-content">
                     <div class="Contact__Description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eum fugit illo natus non

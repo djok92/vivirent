@@ -53,13 +53,38 @@
       margin-bottom: 20px;
     }
   }
+
+  .accordion-spec {
+    display: block;
+    margin-bottom: 15px;
+  }
+  .apartment-description {
+    margin-bottom: 15px;
+  }
+}
+
+.Wizzard {
+  &__Nav {
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 1px solid #ccc;
+    li {
+      flex-grow: 1;
+      height: 55px;
+      line-height: 57px;
+      a {
+
+      }
+    }
+  }
 }
 
 .section-name {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
+  margin-top: 55px;
 }
 
 .apartmenHolder {
