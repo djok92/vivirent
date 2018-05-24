@@ -8,14 +8,12 @@
 get_header();
 ?>
 
+<?php get_template_part('parts/booking', 'form'); ?>
+
 <!-- sekcija - lista 5 apartmana -->
 <?php get_template_part('parts/section', 'apartments') ?>
 
-<!-- sekcija - lokacija -->
-<?php get_template_part('parts/section', 'location') ?>
 
-<!-- sekcija - lokacija -->
-<?php get_template_part('parts/section', 'news') ?>
 
 
 

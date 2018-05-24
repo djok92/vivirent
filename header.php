@@ -56,7 +56,7 @@
 				<?php if(is_home()) { ?>
                     <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
                                                                     aria-hidden="true"></i></a>
-					<?php get_template_part('parts/booking', 'form'); ?>
+					
 
                     <div class="hero-holder__content">
                         <div class="hero-holder__content_logo">

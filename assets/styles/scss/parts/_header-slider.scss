@@ -20,22 +20,22 @@
     }
     &_text {
       h1 {
-        font-size: 32px;
+        font-size: 24px;
         color: #fff;
         text-shadow: 2px 2px 2px #000;
         @include breakpoint(_1200) {
-          font-size: 28px;
+          font-size: 22px;
         }
         @include breakpoint(_768) {
-          font-size: 24px;
+          font-size: 20px;
         }
         @include breakpoint(_480) {
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       .more-info {
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 20px;
         border: 1px solid #fff;
         padding: 8px 13px 6px;
         color: #fff;

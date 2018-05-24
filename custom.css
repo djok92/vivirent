@@ -6,9 +6,9 @@ Developer iz ovog CSSa korekcije treba da integrise u glavni style.css
 
 */
 
-.apartments-box_img img {
+/* .apartments-box_img img {
 	height: auto !important;
-}
+} */
 
 .header-img {
 	background-color: #333;
@@ -33,9 +33,9 @@ Developer iz ovog CSSa korekcije treba da integrise u glavni style.css
 	height: 100%;
 }
 
-.datepicker table {
-/* background-color: #000 !important; */
-}
+/* .datepicker table {
+/* background-color: #000 !important; 
+} */
 
 .apartment-desc p {
  margin-bottom: 20px;

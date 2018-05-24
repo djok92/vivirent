@@ -4,6 +4,9 @@ if (!function_exists('af_booking')) {
 }
 ?>
 <div class="booking-form">
+    <div class="bookingFormCaptionHolder">
+        <p>Pretraga Apartmana</p>
+    </div>
     <form action="<?php echo af_booking()->getSearchURL(); ?>" method="get">
         <div class="booking-form__item">
             <label><?php _e('Datum dolaska', 'wpog'); ?></label>
