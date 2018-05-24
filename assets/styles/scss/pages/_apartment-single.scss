@@ -131,6 +131,7 @@
   .wpcf7 {
     p {
       background: #ddd;
+      padding: 0 20px;
       &:nth-child(odd) {
         background: #a9a9a9;
       }
@@ -138,7 +139,8 @@
     label {
       display: flex;
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 10px 0;
+      width: 100%;
     }
     span {
       font-size: 18px;
@@ -147,7 +149,8 @@
     span {
       input,
       textarea {
-        width: 750px;
+        width: 100%;
+        height: 100%;
         border: none;
       }
     }
@@ -169,4 +172,19 @@
 
 #wpcf7-f520-p49-o1>form>p:nth-child(6) {
   background: none;
+  padding: 0;
+}
+
+form {
+  p {
+    label {
+      span:first-child {
+        margin: 5px 0;
+        width: 30%;
+      }
+      span:last-child {
+       width: 100%;
+      }
+    }
+  }
 }
