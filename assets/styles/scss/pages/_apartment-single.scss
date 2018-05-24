@@ -18,7 +18,6 @@
 
 .apartment-single {
   padding: 35px 0 75px;
-
   .apartment-desc {
     a {
       display: block;
@@ -116,8 +115,58 @@
   }
 }
 
+.Contact__Description {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contactCaptionHolder {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 40px 0;
+}
+
 .apartment-single {
   .wpcf7 {
-
+    p {
+      background: #ddd;
+      &:nth-child(odd) {
+        background: #a9a9a9;
+      }
+    }
+    label {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    span {
+      input,
+      textarea {
+        width: 750px;
+        border: none;
+      }
+    }
+    textarea {
+      resize: none;
+    }
+    input[type=submit] {
+      color: #fff;
+      background: rgb(36, 170, 225);
+      padding: 7px 100px;
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+    }
   }
+}
+
+#wpcf7-f520-p49-o1>form>p:nth-child(6) {
+  background: none;
 }
