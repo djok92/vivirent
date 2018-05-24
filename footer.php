@@ -10,9 +10,9 @@
 </main>
 <footer>
 	<?php if ( ! is_home() ) { ?>
-        <div class="top-footer">
-			<?php get_template_part( 'parts/section', 'apartments' ) ?>
-        </div>
+<!--        <div class="top-footer">-->
+<!--			--><?php //get_template_part( 'parts/section', 'apartments' ) ?>
+<!--        </div>-->
 	<?php } ?>
     <div class="bottom-footer">
         <div class="container">

@@ -249,6 +249,53 @@ $(document).ready(function () {
     })();
 
 
+    /**
+     *  Tabs
+     */
+
+    (function () {
+
+        var tabs = $('ul.tabs');
+        if (!tabs.length) {
+            return;
+        }
+
+        function getElementType(object) {
+            return object.get(0).tagName.toLowerCase();
+        }
+
+        var markTarget = function (targets, index) {
+            var previous;
+            $.each(targets, function (i, target) {
+
+                if (getElementType(target) === 'div') {
+
+                    previous = target.parent().find('.current');
+                    previous.removeAttr('style').fadeOut(500);
+
+                    target.eq(index).fadeIn(500);
+                }
+
+                target.removeClass('current');
+                target.eq(index).addClass('current');
+            });
+        };
+        if (tabs.length) {
+            var nav = tabs.children('li');
+            var targets = tabs.parent().find('.tabs-holder').children();
+            var index, current = nav.find('.current').index();
+            tabs.find('> li').each(function () {
+                $(this).click(function () {
+                    if ($(this).index() !== index) {
+                        index = current = $(this).index();
+                        markTarget([nav, targets], index);
+                    }
+                });
+            });
+        }
+    })();
+
+
 }); // $document.ready
 
 
