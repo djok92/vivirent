@@ -61,7 +61,10 @@
                                             </div><!--/.vilaCaptionAndContent-->
                                         </div><!--/.col-md-12-->
 
-                                        <div class="col-md-7">
+                                        <div class="col-md-12">
+                                            <div class="tableAndPrices">
+
+                                            
                                             <div class='apartment-table'>    
                                                 <div class="table-row">
                                                     <div><?php _e('Maksimalan broj osoba', 'wpog'); ?></div>
@@ -88,17 +91,7 @@
                                                     <div><?php the_field('parking'); ?></div>
                                                 </div> <!--/.table-row-->
                                             </div> <!-- /.apartment-table -->
-
-                                            <div class="apartments-box__content_links">
-                                                <a href="<?php the_permalink(); ?>"
-                                                class="link"><?php _e('više informacija', 'wpog'); ?></a>
-                                                <!-- <a href="<?php if(function_exists('af_booking')) {
-                                                    echo add_query_arg(array('acm_id' => $post->ID), af_booking()->getBookingURL());
-                                                } ?>" class="link"><?php _e('rezerviši', 'wpog'); ?></a> -->
-                                            </div>  <!-- /.apartments-box__content_links -->  
-                                        </div><!--/.col-md-7-->
-
-                                        <div class="col-md-5">
+                                        
                                             <div class="pricesBoxHolder">
                                                 <div class="row">
 
@@ -138,7 +131,18 @@
 
                                                 </div><!--/.row-->
                                             </div><!--/.pricesBoxHolder-->
-                                        </div><!--/.col-md-5-->
+                                            </div>
+                                        </div><!--/.col-md-12-->
+
+                                        <div class="col-md-12">
+                                            <div class="apartments-box__content_links">
+                                                <a href="<?php the_permalink(); ?>"
+                                                class="link"><?php _e('više informacija', 'wpog'); ?></a>
+                                                <!-- <a href="<?php if(function_exists('af_booking')) {
+                                                    echo add_query_arg(array('acm_id' => $post->ID), af_booking()->getBookingURL());
+                                                } ?>" class="link"><?php _e('rezerviši', 'wpog'); ?></a> -->
+                                            </div>  <!-- /.apartments-box__content_links -->  
+                                        </div>
 
                                     </div><!--/.row-->
                                 </div> <!-- /.apartments-box__content -->

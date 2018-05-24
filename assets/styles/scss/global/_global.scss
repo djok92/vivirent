@@ -265,6 +265,8 @@ body {
 .apartment-table {
   display: table;
   width: 100%;
+  flex: 1;
+  margin-right: 15px;
   .table-row {
     display: table-row;
     background: #a9a9a9;

@@ -73,11 +73,18 @@
   }
 }
 
+.tableAndPrices {
+  display: flex;
+}
+
 .pricesBoxHolder {
   background: #fff;
   text-transform: uppercase;
   padding: 10px;
   text-align: center;
+  flex: 1;
+  max-width: 265px;
+  margin-left: 15px;
 }
 
 .singlePriceBox {
@@ -107,4 +114,6 @@
     padding: 5px 0;
   }
 }
+
+
 
