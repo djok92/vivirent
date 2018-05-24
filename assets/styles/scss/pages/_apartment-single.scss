@@ -92,6 +92,7 @@
 
 .Contact__Description {
   margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .contactCaptionHolder {
@@ -108,15 +109,14 @@
       &:nth-child(odd) {
         background: #a9a9a9;
       }
-      
     }
     label {
       display: flex;
       justify-content: space-between;
+      padding: 10px 20px;
     }
     span {
-      padding: 10px 20px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
     }
     span {
@@ -140,9 +140,8 @@
       border: none;
     }
   }
-  
 }
 
-#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
+#wpcf7-f520-p49-o1>form>p:nth-child(6) {
   background: none;
 }
