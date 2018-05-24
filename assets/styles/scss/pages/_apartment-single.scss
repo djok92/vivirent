@@ -25,6 +25,34 @@
       margin-top: 20px;
     }
   }
+  ul.tabs {
+    font-size: 0;
+    border-bottom: 1px solid #222;
+    margin-bottom: 60px;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      text-transform: uppercase;
+      padding: 10px 40px;
+      font-size: 14px;
+      color: #222;
+      font-weight: 700;
+      cursor: pointer;
+      &.current {
+        background: #222;
+        color: #fff;
+      }
+    }
+  }
+  .tabs-content {
+    display: none;
+    &.current {
+      display: block;
+    }
+    h3 {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .section-name {
@@ -36,7 +64,7 @@
 
 .apartmenHolder {
   .gallery-top {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     img {
       width: 100%;
@@ -60,5 +88,11 @@
   }
   .gallery-thumbs .swiper-slide-active {
     opacity: 1;
+  }
+}
+
+.apartment-single {
+  .wpcf7 {
+
   }
 }

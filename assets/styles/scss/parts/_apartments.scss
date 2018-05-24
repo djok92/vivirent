@@ -18,12 +18,12 @@
   &_img {
     overflow: hidden;
     position: relative;
-    height: 327px!important;
+    height: 327px !important;
     img {
       max-width: 100%;
       max-height: 100%;
       object-fit: cover;
-      height: 327px!important;
+      height: 327px !important;
     }
   }
   &__content {
@@ -80,10 +80,19 @@
   text-align: center;
   margin-left: 15px;
   max-width: 255px;
+  .Prices {
+    > * {
+      display: inline-block;
+      width: 49%;
+      padding: 5px;
+    }
+    &--Old {
+      //margin-bottom: 10px;
+    }
+  }
 }
 
 .singlePriceBox {
-  margin: 5px;
   span {
     font-size: 28px;
     font-weight: bold;

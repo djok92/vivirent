@@ -224,7 +224,10 @@ $(document).ready(function () {
             /**
              *  Apartment Slider
              */
-
+            var handler = $('.gallery-top');
+            if (!handler.length) {
+                return;
+            }
             var galleryTop = new Swiper('.gallery-top', {
                 spaceBetween: 10,
                 effect: 'fade',
