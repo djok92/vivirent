@@ -36,7 +36,7 @@ body.home {
 
 body.page-template-page-apartman {
   header {
-    height: 100vh;
+    height: 700px;
   }
 }
 
@@ -84,35 +84,35 @@ body.page-template-page-apartman {
     margin-left: auto;
     margin-right: 15px;
   }
-  .search {
-    position: relative;
-    .fa-search {
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-    input {
-      height: 30px;
-      line-height: 30px;
-      background: none;
-      border: none;
-      padding-left: 10px;
-      padding-right: 40px;
-      border-left: 1px solid #535f6d;
-      border-right: 1px solid #535f6d;
-      width: 50px;
-      position: relative;
-      z-index: 50;
-      transition: all .3s ease-in-out;
-      &:focus {
-        width: 150px;
-      }
-      @include breakpoint (_1200) {
-        border: none;
-      }
-    }
-  }
+  // .search {
+  //   position: relative;
+  //   .fa-search {
+  //     position: absolute;
+  //     right: 18px;
+  //     top: 50%;
+  //     transform: translate(0, -50%);
+  //   }
+  //   input {
+  //     height: 30px;
+  //     line-height: 30px;
+  //     background: none;
+  //     border: none;
+  //     padding-left: 10px;
+  //     padding-right: 40px;
+  //     border-left: 1px solid #535f6d;
+  //     border-right: 1px solid #535f6d;
+  //     width: 50px;
+  //     position: relative;
+  //     z-index: 50;
+  //     transition: all .3s ease-in-out;
+  //     &:focus {
+  //       width: 150px;
+  //     }
+  //     @include breakpoint (_1200) {
+  //       border: none;
+  //     }
+  //   }
+  // }
 }
 
 .left-holder {
