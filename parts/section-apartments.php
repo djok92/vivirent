@@ -39,7 +39,7 @@
                                         </a>
                                     <?php } ?>
                                     <div class="discountBanner">
-                                        <a href="#">15% Discount Last Minute</a>
+                                        <p>15% Discount Last Minute</p>
                                     </div><!--/.discountBanner-->
                                 </div><!--/."apartments-box_img-->
                             </div><!-- /.col-md-5 -->

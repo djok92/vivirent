@@ -263,12 +263,13 @@ body {
 
 //Apartment detail table
 .apartment-table {
-  display: table;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  flex: 1;
   margin-right: 15px;
   .table-row {
-    display: table-row;
+    display: flex;
+    justify-content: space-between;
     background: #a9a9a9;
     &:nth-child(odd) {
       background: #ddd;
