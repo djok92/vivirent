@@ -161,21 +161,24 @@ get_header();
 
                 <div id="tab-3" class="tabs-content">
 
-                </div><!-- /#tab-2 Utisci -->
+                </div><!-- /#tab-3 Utisci -->
 
                 <div id="tab-4" class="tabs-content">
 
-                </div><!-- /#tab-2 Rezervacija -->
+                </div><!-- /#tab-4 Rezervacija -->
                 <div id="tab-5" class="tabs-content">
                     <div class="Contact__Description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eum fugit illo natus non
                         obcaecati perferendis recusandae repellendus rerum tenetur? Animi consequatur doloribus enim
                         impedit officia quaerat sed sunt voluptas?
                     </div>
+                    <div class="contactCaptionHolder">
+                        <h3><?php _e('kontakt za apartman 3', 'wpog') ?></h3>
+                    </div>
                     <div class="Contact__Form">
 						<?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
                     </div><!-- /.Contact__Form -->
-                </div><!-- /#tab-2 Kontakt -->
+                </div><!-- /#tab-5 Kontakt -->
             </div> <!-- /.tabs-holder -->
 
         </div> <!-- /.container -->
