@@ -223,6 +223,21 @@ get_header();
                             <li class="active"><a href="#">Unos informacija</a></li>
                             <li><a href="#">Potvrda</a></li>
                         </ul><!-- /.Wizzard__Nav -->
+
+                        <div id="step-1" class="Wizzard__Content">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3>Odaberite datum dolaska - Apartman 3</h3>
+                                    <div class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam est
+                                        odit vitae. Culpa doloremque dolores excepturi minus quam. Accusantium assumenda
+                                        dignissimos dolore error id ipsam quam quod suscipit vel?
+                                    </div><!-- /.description -->
+
+                                </div><!-- /.col-md-9 -->
+                            </div><!-- /.row -->
+                        </div><!-- /#step-1.Wizzard__Nav -->
+
                     </div><!-- /.Wizzard -->
                 </div><!-- /#tab-4 Rezervacija -->
 
