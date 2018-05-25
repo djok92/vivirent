@@ -160,13 +160,18 @@ get_header();
                         <h3><?php _e('Ostavite utisak za apartman 3', 'wpog') ?></h3>
                     </div><!--/.tabCaptionHolder-->
                     <div class="tabButtonHolder">
-                        <a href="#">posalji utisak</a>
+                        <a id="contactToggle" href="#">posalji utisak</a>
                     </div><!--/.buttonCaptionHolder-->
 
                     <div class="row">
                         <div class="col-md-12">
-							<?php for($i = 0; $i < 3; $i ++) { ?>
 
+                            <div class="Contact__Form">
+						        <?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
+                            </div><!-- /.Contact__Form -->
+
+                            <?php for ($i=0; $i < 3 ; $i++) {?>
+                                
                                 <div class="commentHolder">
                                     <div class="row">
                                         <div class="col-md-2">

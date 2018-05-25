@@ -56,7 +56,6 @@
       margin-bottom: 20px;
     }
   }
-
   .accordion-spec {
     display: block;
     margin-bottom: 15px;
@@ -64,9 +63,11 @@
   .apartment-description {
     margin-bottom: 15px;
   }
-
   .pricesBoxHolder {
     margin-left: 0;
+  }
+  .singlePriceBox {
+    padding: 7px;
   }
 }
 
@@ -87,7 +88,8 @@
         height: 60px;
         line-height: 40px;
         text-align: center;
-        &:before, &:after {
+        &:before,
+        &:after {
           content: " ";
           display: block;
           width: 0;
@@ -98,9 +100,6 @@
           border-top: 30px solid transparent;
           border-bottom: 30px solid transparent;
           margin-top: -30px;
-        }
-        &:before {
-
         }
       }
       &.active {
@@ -115,13 +114,13 @@
         }
       }
       &:last-child.active {
-        a:before, a:after {
+        a:before,
+        a:after {
           display: none;
         }
       }
     }
   }
-
 }
 
 .section-name {
@@ -234,7 +233,7 @@
   }
 }
 
-#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
+#wpcf7-f520-p49-o1>form>p:nth-child(6) {
   background: none;
   padding: 0;
 }
@@ -269,7 +268,7 @@ form {
 
 .commentHolder {
   padding: 25px;
-  margin-bottom: 15px;
+  margin-top: 20px;
   background: #fff;
   .commentLeftHolder {
     display: flex;
@@ -284,7 +283,6 @@ form {
       top: 10px;
       background: rgba(221, 221, 221, 0.3)
     }
-
     p {
       font-weight: bold;
       font-size: 20px;
@@ -297,13 +295,12 @@ form {
       margin-bottom: 10px;
     }
   }
-
   .commentMainHolder {
-
     p {
       font-size: 16px;
     }
-    p, h3 {
+    p,
+    h3 {
       font-style: italic;
     }
     .commentCaption,
