@@ -92,6 +92,30 @@ $(document).ready(function () {
 
 
     /**
+     * Rating stars
+     */
+
+    var Rating = function () {
+        var handler = $('.Rating .Rating__Star');
+
+        if (!handler.length) {
+            return;
+        }
+
+        handler.click(function () {
+            var total = $(this).parent().children('.Rating__Star').length;
+            var index = $(this).index();
+            console.log(index);
+            $('.Rating .Rating__Star').removeClass('filled');
+            for (var i = index; i < total; i++) {
+                $('.Rating .Rating__Star').eq(i).addClass('filled');
+            }
+            var Rating = $('input[name="rating"]').val(parseInt($('.Rating .Rating__Star.filled').length));
+            console.log(Rating);
+        });
+    };
+    Rating();
+    /**
      *  Accordion
      */
 

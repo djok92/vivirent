@@ -270,6 +270,7 @@
     align-items: center;
   }
 }
+
 //
 .step-3InfoHolder {
   margin-bottom: 30px;
@@ -354,6 +355,9 @@
 // tab Kontakt
 .apartment-single {
   .wpcf7 {
+    br {
+      display: none;
+    }
     p {
       background: #ddd;
       padding: 0 20px;
@@ -402,7 +406,7 @@
   }
 }
 
-#wpcf7-f520-p49-o1>form>p:nth-child(6) {
+#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
   background: none;
   padding: 0;
 }
