@@ -411,6 +411,7 @@ get_header();
                                         <div class="Contact__Form mt-60">
                                             <h3>Licne Informacije</h3>
                                             <?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
+                                            <!--OVDE PLJUNI KONTAKT FORMU NOVU -->
                                          </div><!-- /.Contact__Form mt-60-->
 
                                          <div class="checkBox">
