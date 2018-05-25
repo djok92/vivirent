@@ -75,12 +75,50 @@
   &__Nav {
     display: flex;
     flex-wrap: wrap;
-    border-right: 1px solid #ccc;
     li {
       flex-grow: 1;
-      height: 55px;
-      line-height: 57px;
-      a {}
+      a {
+        position: relative;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: #ddd;
+        display: block;
+        height: 60px;
+        line-height: 40px;
+        text-align: center;
+        &:before,
+        &:after {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          left: 100%;
+          position: absolute;
+          top: 50%;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid transparent;
+          margin-top: -30px;
+        }
+      }
+      &.active {
+        a {
+          background: #24aae1;
+          color: #fff;
+          &:before {
+            border-left: 20px solid #24aae1;
+            margin-left: 0;
+            z-index: 1;
+          }
+        }
+      }
+      &:last-child.active {
+        a:before,
+        a:after {
+          display: none;
+        }
+      }
     }
   }
 }
