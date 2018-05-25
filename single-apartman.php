@@ -157,7 +157,7 @@ get_header();
                         <h3><?php _e('Ostavite utisak za apartman 3', 'wpog') ?></h3>
                     </div><!--/.tabCaptionHolder-->
                     <div class="tabButtonHolder">
-                        <a href="#">posalji utisak</a>
+                        <a id="contactToggle" href="#">posalji utisak</a>
                     </div><!--/.buttonCaptionHolder-->
 
                     <div class="row">
