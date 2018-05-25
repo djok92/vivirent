@@ -160,42 +160,105 @@ get_header();
                         <a href="#">posalji utisak</a>
                     </div><!--/.buttonCaptionHolder-->
 
-                
-                    <div class="commentHolder">
-                        <div class="row">
+                    <div class="row">
+                        <div class="col-md-12">
 
-                            <div class="col-md-2">
-                                <div class="commentLeftHolder">
-                                    <div class="commentFlagHolder">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/flagTR.png">
-                                    </div><!--/.commentFlagHolder-->
-                                    <div class="commentNameHolder">
-                                        <p>Dragan Petrovic</p>
-                                    </div><!--/.commentNameHolder-->
-                                    <div class="commentDateHolder">
-                                        <span>04/2016</span>
-                                    </div><!--/.commentDateHolder-->
-                                </div><!--/.commentLeftHolder-->
-                            </div><!--/.col-md-2-->
+                            <div class="commentHolder">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="commentLeftHolder">
+                                            <div class="commentFlagHolder">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/flagTR.png">
+                                            </div><!--/.commentFlagHolder-->
+                                            <div class="commentNameHolder">
+                                                <p>Dragan Petrovic</p>
+                                            </div><!--/.commentNameHolder-->
+                                            <div class="commentDateHolder">
+                                                <span>04/2016</span>
+                                            </div><!--/.commentDateHolder-->
+                                        </div><!--/.commentLeftHolder-->
+                                    </div><!--/.col-md-2-->
+                                    <div class="col-md-10">
+                                        <div class="commentMainHolder">
+                                            <div class="commentCaption">
+                                                <h3><?php _e('Animi consequatur doloribus enimimpedit', 'wpog') ?></h3>
+                                            </div><!--/.commentCaption-->
+                                            <div class="commentRating">
+                                                <p>aaaaaaa</p>
+                                            </div><!--/.commentRating-->
+                                            <div class="commentContent">
+                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.</p>
+                                            </div><!--/.commentContent-->
+                                        </div><!--/.commentMainHolder-->
+                                    </div><!--/.col-md-10-->
+                                </div><!--/.row-->
+                            </div><!--/.commentHolder-->
 
-                            <div class="col-md-10">
-                                <div class="commentMainHolder">
-                                    <div class="commentCaption">
-                                        <h3><?php _e('Animi consequatur doloribus enimimpedit', 'wpog') ?></h3>
-                                    </div><!--/.commentCaption-->
-                                    <div class="commentRating">
-                                        <p>aaaaaaa</p>
-                                    </div><!--/.commentRating-->
-                                    <div class="commentContent">
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.</p>
-                                    </div><!--/.commentContent-->
-                                </div><!--/.commentMainHolder-->
-                            </div><!--/.col-md-10-->
-                            
+                            <div class="commentHolder">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="commentLeftHolder">
+                                            <div class="commentFlagHolder">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/flagTR.png">
+                                            </div><!--/.commentFlagHolder-->
+                                            <div class="commentNameHolder">
+                                                <p>Dragan Petrovic</p>
+                                            </div><!--/.commentNameHolder-->
+                                            <div class="commentDateHolder">
+                                                <span>04/2016</span>
+                                            </div><!--/.commentDateHolder-->
+                                        </div><!--/.commentLeftHolder-->
+                                    </div><!--/.col-md-2-->
+                                    <div class="col-md-10">
+                                        <div class="commentMainHolder">
+                                            <div class="commentCaption">
+                                                <h3><?php _e('Animi consequatur doloribus enimimpedit', 'wpog') ?></h3>
+                                            </div><!--/.commentCaption-->
+                                            <div class="commentRating">
+                                                <p>aaaaaaa</p>
+                                            </div><!--/.commentRating-->
+                                            <div class="commentContent">
+                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.</p>
+                                            </div><!--/.commentContent-->
+                                        </div><!--/.commentMainHolder-->
+                                    </div><!--/.col-md-10-->
+                                </div><!--/.row-->
+                            </div><!--/.commentHolder-->
+
+                            <div class="commentHolder">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="commentLeftHolder">
+                                            <div class="commentFlagHolder">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/flagTR.png">
+                                            </div><!--/.commentFlagHolder-->
+                                            <div class="commentNameHolder">
+                                                <p>Dragan Petrovic</p>
+                                            </div><!--/.commentNameHolder-->
+                                            <div class="commentDateHolder">
+                                                <span>04/2016</span>
+                                            </div><!--/.commentDateHolder-->
+                                        </div><!--/.commentLeftHolder-->
+                                    </div><!--/.col-md-2-->
+                                    <div class="col-md-10">
+                                        <div class="commentMainHolder">
+                                            <div class="commentCaption">
+                                                <h3><?php _e('Animi consequatur doloribus enimimpedit', 'wpog') ?></h3>
+                                            </div><!--/.commentCaption-->
+                                            <div class="commentRating">
+                                                <p>aaaaaaa</p>
+                                            </div><!--/.commentRating-->
+                                            <div class="commentContent">
+                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet vero sit ab delectus tenetur in odit temporibus ut vitae dicta itaque, quibusdam asperiores expedita quam.</p>
+                                            </div><!--/.commentContent-->
+                                        </div><!--/.commentMainHolder-->
+                                    </div><!--/.col-md-10-->
+                                </div><!--/.row-->
+                            </div><!--/.commentHolder-->
+
                         </div><!--/.row-->
-                    </div><!--/.commentHolder-->
-                       
-                   
+                    </div><!--/.col-md-12-->
+                    
                 </div><!-- /#tab-3 Utisci -->
 
                 <div id="tab-4" class="tabs-content">
