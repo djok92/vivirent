@@ -71,8 +71,17 @@
   }
 }
 
+//reservationDescription
+.reservationDescription {
+  margin: 30px 0;
+}
+
+//Wizzard
 .Wizzard {
-  margin-top: 30px;
+  &__Main {
+    padding: 50px 0 50px 30px;
+    background: #fff;
+  }
   &__Nav {
     display: flex;
     flex-wrap: wrap;
@@ -121,6 +130,155 @@
         }
       }
     }
+  }
+}
+
+//Wizzard Footer
+.Wizzard__Footer {
+  background-color: #ddd;
+  padding: 10px;
+  display: flex;
+  .previous,
+  .next {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 7px 60px;
+    font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .next {
+    margin-left: auto;
+    background: #24aae1;
+  }
+  .previous {
+    margin-right: auto;
+    background: #a2a2a2;
+  }
+}
+
+#three-calendars {
+  margin: 30px 0;
+}
+
+// Prices Table
+.pricesTable {
+  margin-bottom: 30px;
+  width: 100%;
+  tbody {
+    width: 100%;
+  }
+  th {
+    font-style: italic;
+    text-align: left;
+    text-transform: capitalize;
+    padding: 8px 5px;
+  }
+  tr {
+    background: #ddd;
+    &:nth-child(odd) {
+      background: #fff;
+    }
+  }
+  td {
+    padding: 8px 10px;
+  }
+  .activeRow {
+    background: #222;
+    color: #fff;
+  }
+}
+
+//Wizzard single Box
+.wizzardSingleBox {
+  margin-top: 60px;
+}
+
+.withInput,
+.infoBackground {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.withInput {
+  background: #ddd;
+  input[type=text],
+  input[type=number] {
+    width: 15%;
+  }
+  select {
+    width: 50%
+  }
+}
+
+.withInput,
+.statusMessage {
+  padding: 10px 20px;
+}
+
+.statusMessage {
+  color: #fff;
+}
+
+.otherOption {
+  background: #ccc;
+}
+
+//checkbox
+.checkBox {
+  margin-top: 20px;
+  span {
+    padding-left: 10px;
+    a {
+      text-decoration: underline;
+      color: #24aae1;
+    }
+  }
+}
+
+//Side Box
+.sideBoxInfo {
+  padding: 20px;
+  background: #ddd;
+  .sideBoxCaption {
+    color: #24aae1;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .secondStep {
+    .sideBoxRow {
+      &:last-of-type {
+        margin-top: 30px;
+      }
+    }
+  }
+  .total {
+    color: #24aae1;
+  }
+  .sideBoxRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+//
+.step-3InfoHolder {
+  margin-bottom: 30px;
+}
+
+.reservationSummary {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 16px;
+    padding: 5px 0;
+  }
+  .summaryData {
+    font-weight: bold;
   }
 }
 
@@ -195,6 +353,9 @@
       &:nth-child(odd) {
         background: #ccc;
       }
+      &:last-of-type {
+        padding: 0;
+      }
     }
     label {
       display: flex;
@@ -234,7 +395,7 @@
   }
 }
 
-#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
+#wpcf7-f520-p49-o1>form>p:nth-child(6) {
   background: none;
   padding: 0;
 }
