@@ -142,11 +142,71 @@ get_header();
                 </div> <!-- /#tab-1  Informacije -->
 
                 <div id="tab-2" class="tabs-content">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.710329084998!2d13.801474315913792!3d44.92922597909818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDU1JzQ1LjIiTiAxM8KwNDgnMTMuMiJF!5e0!3m2!1ssr!2srs!4v1527175620365"
-                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                    <div class="googleMapHolder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.3526510871725!2d13.80457421979795!3d44.92602791351589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477cd2dd6127a5e3%3A0x9d046dde165240b2!2sTourist+Association+of+Fa%C5%BEana!5e0!3m2!1ssr!2srs!4v1527232536628"
+                                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
                 </div><!-- /#tab-2 Lokacija -->
 
                 <div id="tab-3" class="tabs-content">
+                    <div class="Contact__Description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eum fugit illo natus non
+                        obcaecati perferendis recusandae repellendus rerum tenetur? Animi consequatur doloribus enim
+                        impedit officia quaerat sed sunt voluptas?
+                    </div><!--/.Contact__Description-->
+                    <div class="tabCaptionHolder">
+                        <h3><?php _e('Ostavite utisak za apartman 3', 'wpog') ?></h3>
+                    </div><!--/.tabCaptionHolder-->
+                    <div class="tabButtonHolder">
+                        <a href="#">posalji utisak</a>
+                    </div><!--/.buttonCaptionHolder-->
+
+                    <div class="row">
+                        <div class="col-md-12">
+							<?php for($i = 0; $i < 3; $i ++) { ?>
+
+                                <div class="commentHolder">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="commentLeftHolder">
+                                                <div class="commentFlagHolder">
+                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/flagTR.png">
+                                                </div><!--/.commentFlagHolder-->
+                                                <div class="commentNameHolder">
+                                                    <p>Dragan Petrovic</p>
+                                                </div><!--/.commentNameHolder-->
+                                                <div class="commentDateHolder">
+                                                    <span>04/2016</span>
+                                                </div><!--/.commentDateHolder-->
+                                            </div><!--/.commentLeftHolder-->
+                                        </div><!--/.col-md-2-->
+                                        <div class="col-md-10">
+                                            <div class="commentMainHolder">
+                                                <div class="commentCaption">
+                                                    <h3><?php _e('Animi consequatur doloribus enimimpedit', 'wpog') ?></h3>
+                                                </div><!--/.commentCaption-->
+                                                <div class="commentRating">
+                                                    <p>aaaaaaa</p>
+                                                </div><!--/.commentRating-->
+                                                <div class="commentContent">
+                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
+                                                        saepe laboriosam obcaecati amet eveniet vero sit ab delectus
+                                                        tenetur in odit temporibus ut vitae dicta itaque, quibusdam
+                                                        asperiores expedita quam.Lorem, ipsum dolor sit amet consectetur
+                                                        adipisicing elit. Optio saepe laboriosam obcaecati amet eveniet
+                                                        vero sit ab delectus tenetur in odit temporibus ut vitae dicta
+                                                        itaque, quibusdam asperiores expedita quam.</p>
+                                                </div><!--/.commentContent-->
+                                            </div><!--/.commentMainHolder-->
+                                        </div><!--/.col-md-10-->
+                                    </div><!--/.row-->
+                                </div><!--/.commentHolder-->
+
+							<?php } ?> <!--End For Loop-->
+                        </div><!--/.row-->
+                    </div><!--/.col-md-12-->
 
                 </div><!-- /#tab-3 Utisci -->
 
@@ -172,7 +232,7 @@ get_header();
                         obcaecati perferendis recusandae repellendus rerum tenetur? Animi consequatur doloribus enim
                         impedit officia quaerat sed sunt voluptas?
                     </div>
-                    <div class="contactCaptionHolder">
+                    <div class="tabCaptionHolder">
                         <h3><?php _e('kontakt za apartman 3', 'wpog') ?></h3>
                     </div>
                     <div class="Contact__Form">
