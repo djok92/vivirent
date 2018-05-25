@@ -1,6 +1,7 @@
 .apartmenHolder {
   height: 100%;
 }
+
 .apartmentNameHolder {
   position: absolute;
   bottom: 110px;
@@ -73,16 +74,54 @@
   &__Nav {
     display: flex;
     flex-wrap: wrap;
-    border-right: 1px solid #ccc;
     li {
       flex-grow: 1;
-      height: 55px;
-      line-height: 57px;
       a {
+        position: relative;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: #ddd;
+        display: block;
+        height: 60px;
+        line-height: 40px;
+        text-align: center;
+        &:before, &:after {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          left: 100%;
+          position: absolute;
+          top: 50%;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid transparent;
+          margin-top: -30px;
+        }
+        &:before {
 
+        }
+      }
+      &.active {
+        a {
+          background: #24aae1;
+          color: #fff;
+          &:before {
+            border-left: 20px solid #24aae1;
+            margin-left: 0;
+            z-index: 1;
+          }
+        }
+      }
+      &:last-child.active {
+        a:before, a:after {
+          display: none;
+        }
       }
     }
   }
+
 }
 
 .section-name {
@@ -195,7 +234,7 @@
   }
 }
 
-#wpcf7-f520-p49-o1>form>p:nth-child(6) {
+#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
   background: none;
   padding: 0;
 }
@@ -208,7 +247,7 @@ form {
         width: 30%;
       }
       span:last-child {
-       width: 100%;
+        width: 100%;
       }
     }
   }
@@ -245,7 +284,7 @@ form {
       top: 10px;
       background: rgba(221, 221, 221, 0.3)
     }
-   
+
     p {
       font-weight: bold;
       font-size: 20px;
@@ -258,13 +297,13 @@ form {
       margin-bottom: 10px;
     }
   }
-  
+
   .commentMainHolder {
-    
+
     p {
       font-size: 16px;
     }
-    p,h3 {
+    p, h3 {
       font-style: italic;
     }
     .commentCaption,

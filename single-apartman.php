@@ -219,8 +219,8 @@ get_header();
 
                     <div class="Wizzard">
                         <ul class="Wizzard__Nav">
-                            <li><a href="#">Odaberite datum</a></li>
-                            <li><a href="#">Unos informacija</a></li>
+                            <li><a href="#"> Odaberite datum</a></li>
+                            <li class="active"><a href="#">Unos informacija</a></li>
                             <li><a href="#">Potvrda</a></li>
                         </ul><!-- /.Wizzard__Nav -->
                     </div><!-- /.Wizzard -->

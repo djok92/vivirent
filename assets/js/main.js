@@ -187,7 +187,8 @@ $(document).ready(function () {
             /**
              *  Home Slider
              */
-            if ($(sliders.homeSlider).length) {
+
+            if (!$(sliders.homeSlider).length) {
                 return;
             }
 
@@ -207,7 +208,7 @@ $(document).ready(function () {
             /**
              *  Region Slider
              */
-            if ($(sliders.regionSlider).length) {
+            if (!$(sliders.regionSlider).length) {
                 return;
             }
 
@@ -281,6 +282,7 @@ $(document).ready(function () {
 
                 target.removeClass('current');
                 target.eq(index).addClass('current');
+
             });
         };
         if (tabs.length) {
@@ -295,6 +297,11 @@ $(document).ready(function () {
                     }
                 });
             });
+
+            if (window.location.hash) {
+                var index = window.location.hash.substring(1);
+                markTarget([nav, targets], index);
+            }
         }
     })();
 
