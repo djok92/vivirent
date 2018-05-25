@@ -162,7 +162,6 @@ get_header();
 
                     <div class="row">
                         <div class="col-md-12">
-
                             <?php for ($i=0; $i < 3 ; $i++) {?>
                                 
                                 <div class="commentHolder">
@@ -196,8 +195,7 @@ get_header();
                                 </div><!--/.row-->
                             </div><!--/.commentHolder-->
 
-                           <?php } ?>
-
+                           <?php } ?> <!--End For Loop-->
                         </div><!--/.row-->
                     </div><!--/.col-md-12-->
                     
