@@ -208,7 +208,8 @@
     width: 15%;
   }
   select {
-    width: 50%
+    width: 50%;
+    font-weight: bold;
   }
 }
 
@@ -219,10 +220,16 @@
 
 .statusMessage {
   color: #fff;
+  font-weight: bold;
 }
 
 .otherOption {
   background: #ccc;
+  p {
+    &:last-of-type {
+      font-weight: bold;
+    }
+  }
 }
 
 //checkbox

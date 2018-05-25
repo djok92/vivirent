@@ -413,8 +413,14 @@ get_header();
 
                                         <div class="Contact__Form mt-60">
                                             <h3>Licne Informacije</h3>
+<<<<<<< HEAD
 											<?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
                                         </div><!-- /.Contact__Form mt-60-->
+=======
+                                            <?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
+                                            <!--OVDE PLJUNI KONTAKT FORMU NOVU -->
+                                         </div><!-- /.Contact__Form mt-60-->
+>>>>>>> 15e25f668f5938a8171bae09aecc354378c5e7e5
 
                                         <div class="checkBox">
                                             <input type="checkbox"><span>Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana</span>
