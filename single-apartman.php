@@ -142,7 +142,8 @@ get_header();
                 </div> <!-- /#tab-1  Informacije -->
 
                 <div id="tab-2" class="tabs-content">
-
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.710329084998!2d13.801474315913792!3d44.92922597909818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDU1JzQ1LjIiTiAxM8KwNDgnMTMuMiJF!5e0!3m2!1ssr!2srs!4v1527175620365"
+                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div><!-- /#tab-2 Lokacija -->
 
                 <div id="tab-3" class="tabs-content">
