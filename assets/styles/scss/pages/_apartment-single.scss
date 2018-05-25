@@ -154,7 +154,7 @@
       background: #ddd;
       padding: 0 20px;
       &:nth-child(odd) {
-        background: #a9a9a9;
+        background: #ccc;
       }
     }
     label {
@@ -235,7 +235,17 @@ form {
   .commentLeftHolder {
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 5px 5px 60px 5px;
+    &::after {
+      content: '';
+      height: 100%;
+      width: 1px;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      background: rgba(221, 221, 221, 0.3)
+    }
+   
     p {
       font-weight: bold;
       font-size: 20px;
@@ -248,7 +258,9 @@ form {
       margin-bottom: 10px;
     }
   }
+  
   .commentMainHolder {
+    
     p {
       font-size: 16px;
     }

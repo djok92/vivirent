@@ -167,7 +167,7 @@ get_header();
                             <div class="col-md-2">
                                 <div class="commentLeftHolder">
                                     <div class="commentFlagHolder">
-                                        <i class="fa fa-flag"></i>
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/flagTR.png">
                                     </div><!--/.commentFlagHolder-->
                                     <div class="commentNameHolder">
                                         <p>Dragan Petrovic</p>
