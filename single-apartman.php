@@ -235,12 +235,14 @@ get_header();
                                     <div class="col-md-9">
                                         <h3>Odaberite datum dolaska - Apartman 3</h3>
                                         <div class="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam est
-                                            odit vitae. Culpa doloremque dolores excepturi minus quam. Accusantium assumenda
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam
+                                            est
+                                            odit vitae. Culpa doloremque dolores excepturi minus quam. Accusantium
+                                            assumenda
                                             dignissimos dolore error id ipsam quam quod suscipit vel?
                                         </div><!-- /.description -->
                                         <div id="three-calendars"></div><!-- /#three-calendars -->
-                                        
+
                                         <h3>Cene smestaja</h3>
                                         <table class="pricesTable">
                                             <tr>
@@ -315,8 +317,8 @@ get_header();
                                                     <p>8 noci</p>
                                                 </div><!--/.sideBoxRow-->
                                                 <div class="sideBoxRow">
-                                                    <p>Rentiranje</p>  
-                                                    <p>684 evra</p> 
+                                                    <p>Rentiranje</p>
+                                                    <p>684 evra</p>
                                                 </div><!--/.sideBoxRow-->
                                             </div>
 
@@ -349,18 +351,18 @@ get_header();
 
                                         </div> <!-- /.sideBoxInfo -->
                                     </div><!-- /.col-md-3 -->
-                                    
+
                                 </div>
                             </div><!--/.Wizzard__Main-->
-                                    
+
                             <div class="Wizzard__Footer">
                                 <div class="next">
                                     <a href="#">sledeci korak</a>
                                 </div><!--/.next-->
                             </div><!-- /.Wizzard__Footer -->
-                               
+
                         </div><!-- /#step-1.Wizzard__Nav -->
-                        
+
 
                         <div id="step-2" class="Wizzard__Content">
                             <div class="Wizzard__Main">
@@ -374,7 +376,8 @@ get_header();
                                                 <input type="text">
                                             </div><!--/.withInput-->
                                             <div class="statusMessage successBackground">
-                                                <p>Vaucer je ispravan. Aktivirano je 10% popusta na celoupan iznos aranzmana</p>
+                                                <p>Vaucer je ispravan. Aktivirano je 10% popusta na celoupan iznos
+                                                    aranzmana</p>
                                             </div><!--/.statusMessage successBackground-->
                                         </div><!--/.wizzardSingleBox-->
 
@@ -394,8 +397,8 @@ get_header();
                                             <div class="withInput">
                                                 <p>Uplata</p>
                                                 <select>
-                                                    <option >Sada 30% depozit - bank transfer</option>
-                                                    <option >70% ostatak - bank transfer</option>
+                                                    <option>Sada 30% depozit - bank transfer</option>
+                                                    <option>70% ostatak - bank transfer</option>
                                                 </select>
                                             </div><!--/.withInput-->
                                             <div class="withInput otherOption">
@@ -410,12 +413,12 @@ get_header();
 
                                         <div class="Contact__Form mt-60">
                                             <h3>Licne Informacije</h3>
-                                            <?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
-                                         </div><!-- /.Contact__Form mt-60-->
+											<?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
+                                        </div><!-- /.Contact__Form mt-60-->
 
-                                         <div class="checkBox">
+                                        <div class="checkBox">
                                             <input type="checkbox"><span>Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana</span>
-                                         </div><!--/.checkBox-->
+                                        </div><!--/.checkBox-->
                                     </div><!-- /.col-md-9 -->
 
                                     <div class="col-md-3">
@@ -445,8 +448,8 @@ get_header();
                                                     <p>8 noci</p>
                                                 </div><!--/.sideBoxRow-->
                                                 <div class="sideBoxRow">
-                                                    <p>Rentiranje</p>  
-                                                    <p>684 evra</p> 
+                                                    <p>Rentiranje</p>
+                                                    <p>684 evra</p>
                                                 </div><!--/.sideBoxRow-->
                                             </div>
 
@@ -481,7 +484,7 @@ get_header();
                                     </div><!-- /.col-md-3 -->
                                 </div><!-- /.row -->
                             </div><!--/.Wizzard__Main-->
-                          
+
                             <div class="Wizzard__Footer">
                                 <div class="previous">
                                     <a href="#">prethodni korak</a>
@@ -491,13 +494,15 @@ get_header();
                                 </div><!--/.next-->
                             </div><!-- /.Wizzard__Footer -->
                         </div><!-- /#step-2.Wizzard__Nav -->
-                        
+
                         <div id="step-3" class="Wizzard__Content">
-                            
+
                             <div class="Wizzard__Main">
                                 <div class="step-3InfoHolder">
                                     <h3>Popust vaucer (opciono)</h3>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti doloremque itaque, saepe in quidem animi voluptatibus. Consequuntur praesentium quia ad laboriosam hic minus ut, delectus officiis, libero consequatur iusto earum!</p>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti doloremque
+                                        itaque, saepe in quidem animi voluptatibus. Consequuntur praesentium quia ad
+                                        laboriosam hic minus ut, delectus officiis, libero consequatur iusto earum!</p>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
@@ -527,11 +532,11 @@ get_header();
                                                     <p>8 noci</p>
                                                 </div><!--/.sideBoxRow-->
                                                 <div class="sideBoxRow">
-                                                    <p>Rentiranje</p>  
-                                                    <p>684 evra</p> 
+                                                    <p>Rentiranje</p>
+                                                    <p>684 evra</p>
                                                 </div><!--/.sideBoxRow-->
                                             </div>
-                                            
+
                                             <div class="thirdStep">
                                                 <div class="sideBoxRow successColor">
                                                     <p>Vaucer</p>
@@ -558,7 +563,7 @@ get_header();
                                                     <p>716 evra</p>
                                                 </div><!--/.sideBoxRow bold-->
                                             </div>
-                                            
+
                                         </div> <!-- /.sideBoxInfo -->
                                     </div><!--/.col-md-3-->
                                     <div class="col-md-6">
@@ -590,7 +595,7 @@ get_header();
                                         </div>
                                     </div>
                                 </div><!--/.row-->
-                                
+
                             </div><!--/.Wizzard__Main-->
 
                             <div class="Wizzard__Footer">
