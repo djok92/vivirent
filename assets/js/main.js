@@ -58,24 +58,37 @@ $(document).ready(function () {
     /**
      *  Datepicker
      */
-
-    $('#datepicker').datepicker({
-        format: 'dd.mm.yyyy',
-        container: '.datepicker-holder'
-    });
-
-
     (function () {
 
-        var handler = $('#date_arival');
+        var handler = $('#three-calendars');
         if (!handler.length) {
             return;
         }
-        $('#date_arival').datepicker({
-            format: 'DD.MM.YYYY',
-        });
+        pickmeup('#three-calendars', {
+            flat: true,
 
+            mode: 'range',
+            calendars: 3
+        });
     })();
+
+    // $('#datepicker').datepicker({
+    //     format: 'dd.mm.yyyy',
+    //     container: '.datepicker-holder'
+    // });
+    //
+    //
+    // (function () {
+    //
+    //     var handler = $('#date_arival');
+    //     if (!handler.length) {
+    //         return;
+    //     }
+    //     $('#date_arival').datepicker({
+    //         format: 'DD.MM.YYYY',
+    //     });
+    //
+    // })();
 
 
     /**
