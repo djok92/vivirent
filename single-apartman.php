@@ -162,6 +162,11 @@ get_header();
 
                     <div class="row">
                         <div class="col-md-12">
+
+                            <div class="Contact__Form">
+						        <?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
+                            </div><!-- /.Contact__Form -->
+
                             <?php for ($i=0; $i < 3 ; $i++) {?>
                                 
                                 <div class="commentHolder">
