@@ -167,11 +167,11 @@ get_header();
                         <div class="col-md-12">
 
                             <div class="Contact__Form">
-						        <?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
+								<?php echo do_shortcode('[contact-form-7 id="520" title="Contact form"]'); ?>
                             </div><!-- /.Contact__Form -->
 
-                            <?php for ($i=0; $i < 3 ; $i++) {?>
-                                
+							<?php for($i = 0; $i < 3; $i ++) { ?>
+
                                 <div class="commentHolder">
                                     <div class="row">
                                         <div class="col-md-2">
@@ -231,6 +231,7 @@ get_header();
 
                         <div id="step-1" class="Wizzard__Content">
                             <div class="row">
+
                                 <div class="col-md-9">
                                     <h3>Odaberite datum dolaska - Apartman 3</h3>
                                     <div class="description">
@@ -238,8 +239,39 @@ get_header();
                                         odit vitae. Culpa doloremque dolores excepturi minus quam. Accusantium assumenda
                                         dignissimos dolore error id ipsam quam quod suscipit vel?
                                     </div><!-- /.description -->
+                                    <div id="three-calendars"></div>
+                                    <!-- /#three-calendars -->
+                                </div><!-- /.col-md-9 -->
+
+                                <div class="col-md-3">
+                                    <div class="sideBoxInfo">
+
+                                    </div>
+                                    <!-- /.sideBoxInfo -->
+                                </div>
+                                <!-- /.col-md-3 -->
+
+                            </div><!-- /.row -->
+                            <div class="Wizzard__Footer">
+                                <a href="#">sledeci korak</a>
+                            </div><!-- /.Wizzard__Footer -->
+                        </div><!-- /#step-1.Wizzard__Nav -->
+
+                        <div id="step-2" class="Wizzard__Content">
+                            <div class="row">
+
+                                <div class="col-md-9">
 
                                 </div><!-- /.col-md-9 -->
+
+                                <div class="col-md-3">
+                                    <div class="sideBoxInfo">
+
+                                    </div>
+                                    <!-- /.sideBoxInfo -->
+                                </div>
+                                <!-- /.col-md-3 -->
+
                             </div><!-- /.row -->
                         </div><!-- /#step-1.Wizzard__Nav -->
 
