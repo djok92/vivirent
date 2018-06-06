@@ -112,6 +112,58 @@ $(document).ready(function () {
             "transitionSpeed": 400
         });
 
+
+        (function () {
+
+            var handler = $('.Villa.accordion');
+            if (!handler.length) {
+                return;
+            }
+
+            function getPosition(element) {
+                var xPosition = 0;
+                var yPosition = 0;
+
+                while (element) {
+                    xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+                    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+                    //Loop through as long as element have parents
+                    element = element.offsetParent;
+                }
+                return {x: xPosition, y: yPosition};
+            }
+
+            //Get Elements positions object
+            var positions = [];
+            handler.each(function () {
+                positions.push(getPosition($(this)[0]));
+            });
+
+            handler.each(function (index) {
+                $(this).on('click', function () {
+
+                    var isOpen = $(this).hasClass('open');
+
+                    if (isOpen) {
+                        $.each(positions, function (positionIndex, positionValue) {
+                            if (index === positionIndex) {
+                                $('html,body').animate({scrollTop: positionValue.y}, 300);
+                            }
+                        });
+                    }
+
+
+                });
+            });
+
+            $('.ApartmentsVilla').each(function () {
+                $(this).click(function (e) {
+                    e.stopPropagation();
+                });
+            })
+        })();
+
+
     })();
 
     var config = {

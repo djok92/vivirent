@@ -107,7 +107,7 @@ get_header();
                                 </div>
                                 <div data-accordion-group>
 									<?php for($i = 0; $i < 6; $i ++): ?>
-                                        <div class="accordion" data-accordion>
+                                        <div class="accordion Specification" data-accordion>
                                             <div data-control>Spavaca soba 1</div>
                                             <div data-content>
                                                 <div class="accordion-content">

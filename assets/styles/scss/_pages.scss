@@ -66,11 +66,12 @@ main {
   }
   // Left aside navigation
 }
+
 // Left aside
 .page-content {
   padding-bottom: 60px;
   @include breakpoint (_480px) {
-    padding-bottom: 21px; 
+    padding-bottom: 21px;
   }
 
   &-header {
@@ -127,6 +128,7 @@ main {
     }
   }
 }
+
 // page-content
 // Aside
 aside {
@@ -135,6 +137,7 @@ aside {
     margin-bottom: 20px;
   }
 }
+
 // Accordion
 .accordion-content {
   display: flex;
@@ -157,11 +160,10 @@ aside {
       margin-bottom: 5px;
     }
 
-
   }
 }
 
-.accordion {
+.accordion.Specification {
   margin-bottom: 7px;
 
   div[data-control] {

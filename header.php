@@ -53,7 +53,7 @@
                         <div class="hero-holder__content_logo">
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.png"
                                  alt="Logo ViviRent"
-                                 srcset="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo@2x.png x2">
+                                 srcset="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo@2x.png 2x">
                         </div> <!-- /.home-logo -->
                         <div class="hero-holder__content_text">
                             <h1><?php the_field('hs1_slider_txt', 'options') ?></h1>

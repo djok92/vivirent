@@ -76,11 +76,12 @@
   text-align: center;
   height: 192px;
   .Prices {
-    >* {
+    > * {
       display: inline-block;
       width: 49%;
       padding: 7px;
-    } // &--Old {
+    }
+    // &--Old {
     //   //margin-bottom: 10px;
     // }
   }
@@ -127,4 +128,16 @@
 
 .apartments-box__content_links {
   margin-top: 20px;
+}
+
+.ApartmentsVilla {
+  .apartments-box {
+    .apartments-box_img {
+      padding-left: 10px;
+      border-left: 10px solid rgba(36, 170, 225, 0.8);
+    }
+    .discountBanner {
+      left: 10px;
+    }
+  }
 }

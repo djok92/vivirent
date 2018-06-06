@@ -485,3 +485,41 @@ form {
     }
   }
 }
+
+#three-calendars {
+  .pickmeup {
+    background: #AAAAAA;
+    .pmu-instance nav {
+      background: #9D9D9D;
+    }
+    .pmu-button {
+      background: #EFEFEF;
+      color: #000;
+      &.pmu-prev {
+        position: relative;
+        img {
+          display: none !important;
+        }
+        &:after {
+          content: '\25C0';
+        }
+      }
+      &.pmu-next {
+        img {
+          display: none !important;
+        }
+        &:after {
+          content: '\0025B6';
+        }
+      }
+      &.pmu-not-in-month {
+        color: #ccc;
+      }
+    }
+    .pmu-day-of-week {
+      color: #000;
+      font-weight: 700;
+    }
+  }
+}
+
