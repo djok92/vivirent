@@ -38,7 +38,7 @@
                 </nav><!-- /.main-nav -->
                 <span id="menu-button"><i class="fa fa-bars"></i></span>
             </div> <!-- /.menu-holder -->
-            
+
         </div> <!-- /.top-header -->
 
 
@@ -47,7 +47,7 @@
 				<?php if(is_home()) { ?>
                     <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
                                                                     aria-hidden="true"></i></a>
-					
+
 
                     <div class="hero-holder__content">
                         <div class="hero-holder__content_logo">
@@ -109,7 +109,6 @@
 
 
             <div class="header-img">
-                <div class="header-gradient"></div>
                 <div class="bottom-gradient"></div>
 				<?php
 				$image    = get_field('headimg'); // u slucaju

@@ -60,11 +60,8 @@ gulp.task('css', function () {
         'node_modules/swiper/dist/css/swiper.min.css',
         'node_modules/jquery.mmenu/dist/jquery.mmenu.all.css',
         src + 'styles/css/pickmeup.css',
-        //src + 'styles/css/bootstrap-datepicker3.min.css',
         src + 'styles/css/font-awesome.min.css',
         src + 'styles/css/jquery.accordion.css',
-        //src + 'styles/css/royalslider.css',
-        //src + 'styles/css/rs-universal.css',
         src + 'styles/css/lightbox.css',
         src + 'styles/css/select2.css',
         src + 'styles/css/pagination.css',
@@ -95,14 +92,9 @@ gulp.task('scripts', function () {
         'node_modules/swiper/dist/js/swiper.min.js',
         'node_modules/jquery.mmenu/dist/jquery.mmenu.all.js',
         src + 'js/pickmeup.min.js',
-        //src + 'js/bootstrap.min.js',
-        //src + 'js/moment.js',
-        //src + 'js/bootstrap-datepicker.static.min.js',
         src + 'js/jquery.accordion.js',
-        //src + 'js/jquery.royalslider.js',
         src + 'js/select2.full.min.js',
         src + 'js/lightbox.min.js',
-        //src + 'js/jquery.sidr.min.js',
         src + 'js/main.js'
     ])
     //.pipe(uglify())

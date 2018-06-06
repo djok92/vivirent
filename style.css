@@ -15,6 +15,34 @@ Tags:
 	af_booking plugin
 */
 
+.pickmeup .date-unavailable { background: #000; }
+.pickmeup .date-reserved { background: #53d2f0; }
+.pickmeup .date-occupied { background: #a70000; }
+
+table#duration-select tr.selectable:hover,
+table#duration-select tr.selected {
+	background: #000;
+	cursor: pointer;
+}
+
+table#duration-select tr.selectable:hover td,
+table#duration-select tr.selected td {
+	color: #fff;
+}
+
+#input_first_name,
+#input_last_name,
+#input_phone,
+#input_email,
+#input_address,
+#input_city {
+	width: 300px;
+}
+
+/*
+OLD
+ */
+
 #af-date {
 	padding: 7px;
 	padding-left: 30px;

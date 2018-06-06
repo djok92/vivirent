@@ -16,7 +16,6 @@
 				<?php foreach($images as $image): ?>
 
                     <div class="swiper-slide">
-                        <div class="header-gradient"></div>
                         <img alt="slider-img" src="<?php echo $image['url']; ?>"/>
                     </div>
 

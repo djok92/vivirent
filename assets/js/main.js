@@ -45,13 +45,11 @@ $(document).ready(function () {
             return;
         }
 
-        $('select.select2').select2({
-            minimumResultsForSearch: -1
+        handler.each(function () {
+            $(this).select2({
+                minimumResultsForSearch: -1
+            });
         });
-        // $('select.select2').select2().on('select2:open', function () {
-        //     var container = $('.select2-container').last();
-        //     container.addClass('');
-        // });
     })();
 
 
@@ -71,24 +69,6 @@ $(document).ready(function () {
             calendars: 3
         });
     })();
-
-    // $('#datepicker').datepicker({
-    //     format: 'dd.mm.yyyy',
-    //     container: '.datepicker-holder'
-    // });
-    //
-    //
-    // (function () {
-    //
-    //     var handler = $('#date_arival');
-    //     if (!handler.length) {
-    //         return;
-    //     }
-    //     $('#date_arival').datepicker({
-    //         format: 'DD.MM.YYYY',
-    //     });
-    //
-    // })();
 
 
     /**
@@ -115,6 +95,8 @@ $(document).ready(function () {
         });
     };
     Rating();
+
+
     /**
      *  Accordion
      */
@@ -170,45 +152,6 @@ $(document).ready(function () {
             $('html,body').animate({scrollTop: offset}, 1000);
         });
     })($);
-
-
-    /**
-     * Apartman slider
-     */
-
-    (function () {
-
-        var handler = $('#apartman-slider');
-        if (!handler.length) {
-            return;
-        }
-
-        var slider = $('#apartman-slider').royalSlider({
-            transitionType: 'fade',
-            usePreloader: true,
-            imageScaleMode: 'none',
-            imageAlignCenter: false,
-            autoScaleSlider: true,
-            autoScaleSliderWidth: 1920,
-            autoScaleSliderHeight: 920,
-            loop: true,
-            arrowsNav: false,
-            controlNavigation: 'thumbnails',
-            thumbs: {
-                spacing: 8
-            },
-            keyboardNavEnabled: true,
-            autoPlay: {
-                enabled: true,
-                pauseOnHover: false,
-                delay: 4000
-            }
-
-        });
-        $('#apartman-slider').find('.rsNav').wrapInner('<div class="container"><div class="row"><div class="col-md-9"></div></div></div>');
-        slider.find('.rsOverflow').prepend(slider.find('.rsNav'));
-
-    })();
 
 
     /**

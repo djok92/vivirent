@@ -7,30 +7,20 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  top: 20px;
+  top: 0;
   text-align: center;
   color: #fff;
   z-index: 500;
-  height: 60px;
-  line-height: 60px;
+  height: 81px;
   display: flex;
   justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
 }
 
 body.home {
   header {
     height: 700px;
-  }
-  .menu-holder {
-    display: inline-block;
-    vertical-align: middle;
-    position: static;
-
-  }
-  .right-holder {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
   }
 }
 
@@ -41,9 +31,6 @@ body.page-template-page-apartman {
 }
 
 .menu-holder {
-  position: absolute;
-  left: 0;
-  right: 0;
   margin: auto;
   @include breakpoint(_1200) {
     position: static;
@@ -84,41 +71,12 @@ body.page-template-page-apartman {
     margin-left: auto;
     margin-right: 15px;
   }
-  // .search {
-  //   position: relative;
-  //   .fa-search {
-  //     position: absolute;
-  //     right: 18px;
-  //     top: 50%;
-  //     transform: translate(0, -50%);
-  //   }
-  //   input {
-  //     height: 30px;
-  //     line-height: 30px;
-  //     background: none;
-  //     border: none;
-  //     padding-left: 10px;
-  //     padding-right: 40px;
-  //     border-left: 1px solid #535f6d;
-  //     border-right: 1px solid #535f6d;
-  //     width: 50px;
-  //     position: relative;
-  //     z-index: 50;
-  //     transition: all .3s ease-in-out;
-  //     &:focus {
-  //       width: 150px;
-  //     }
-  //     @include breakpoint (_1200) {
-  //       border: none;
-  //     }
-  //   }
-  // }
 }
 
 .left-holder {
-  float: left;
-  position: relative;
-  z-index: 50;
+  position: absolute;
+  left: 0;
+  top: 11px;
 }
 
 .header-logo {

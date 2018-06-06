@@ -14,9 +14,7 @@
 		if($images):
 			foreach($images as $image): ?>
                 <div class="swiper-slide">
-                    <div class="header-gradient"></div>
                     <img alt="<?php echo $image['alt']; ?>" src="<?php echo $image['url']; ?>"/>
-
                 </div>
 			<?php endforeach; ?>
 		<?php endif; ?>
