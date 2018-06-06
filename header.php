@@ -76,8 +76,8 @@
 		<?php } elseif(is_archive()) { ?>
 
             <div class="header-img">
-                <div class="header-gradient"></div>
-                <div class="bottom-gradient"></div>
+                <!-- <div class="header-gradient"></div>
+                <div class="bottom-gradient"></div> -->
 
 
 				<?php // povlacanje acf slike iz kategorije
