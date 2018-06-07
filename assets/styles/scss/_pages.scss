@@ -183,3 +183,9 @@ aside {
     }
   }
 }
+
+[data-accordion] [data-control] {
+  @include breakpoint(_480) {
+    padding-right: 0;
+  }
+}

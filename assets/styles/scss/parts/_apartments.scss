@@ -14,10 +14,16 @@
   transition: all 0.2s linear;
   margin-bottom: 70px;
   display: flex;
+  @include breakpoint(_991) {
+    margin-bottom: 30px;
+  }
   &_img {
     overflow: hidden;
     position: relative;
     height: 355px;
+    @include breakpoint(_480) {
+      height: 250px;
+    }
     img {
       max-width: 100%;
       max-height: 100%;
@@ -58,30 +64,33 @@
     left: 0;
   }
   .vilaCaptionAndContent {
+    margin-bottom: 15px;
+    @include breakpoint(_991) {
+      margin: 20px 0;
+    }
     h3 {
       margin-bottom: 10px;
     }
-    margin-bottom: 15px;
   }
-}
-
-.tableAndPrices {
-  display: flex;
 }
 
 .pricesBoxHolder {
   background: #fff;
   text-transform: uppercase;
-  padding: 7px;
+  padding: 7px 10px;
   text-align: center;
   height: 192px;
+  @include breakpoint(_480) {
+    height: auto;
+    padding: 10px;
+    margin-top: 20px;
+  }
   .Prices {
-    > * {
+    >* {
       display: inline-block;
       width: 49%;
       padding: 7px;
-    }
-    // &--Old {
+    } // &--Old {
     //   //margin-bottom: 10px;
     // }
   }
@@ -90,7 +99,10 @@
 .singlePriceBox {
   display: inline-block;
   width: 49%;
-  padding: 3px 9px;
+  padding: 5px;
+  @include breakpoint(_480) {
+    padding: 5px 10px
+  }
   span {
     font-size: 32px;
     font-weight: bold;
@@ -98,7 +110,16 @@
   p {
     font-size: 14px;
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    @include breakpoint(_768) {
+      font-size: 15px;
+    }
+    @include breakpoint(_480) {
+      font-size: 18px;
+    }
+    @include breakpoint(_400) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -124,6 +145,9 @@
 .pricesOnly {
   padding: 10px 0;
   height: 136px;
+  @include breakpoint(_480) {
+    height: auto;
+  }
 }
 
 .apartments-box__content_links {

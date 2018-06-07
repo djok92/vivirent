@@ -206,6 +206,11 @@
       @content;
     }
   } @else
+  if $point == _400 {
+    @media (max-width: 400px) {
+      @content;
+    }
+  } @else
   if $point == _360 {
     @media (max-width: 360px) {
       @content;

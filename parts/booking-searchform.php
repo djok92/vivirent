@@ -9,6 +9,17 @@ if (!function_exists('af_booking')) {
     </div>
     <form action="<?php echo af_booking()->getSearchURL(); ?>" method="get">
         <div class="booking-form__item">
+            <label><?php _e('Destinacija', 'wpog'); ?>:</label>
+            <select id="count_nights" type="text" name="nights" class="select2 night" >
+							<?php
+							for ($i = 1; $i <= 3; $i++) {
+								$str = $i == 1 ? __('noć', 'wpog') : __('noći', 'wpog');
+								echo '<option value="' . $i . '">' . $i . ' ' . $str . '</option>';
+							}
+							?>
+            </select> 
+        </div> <!-- /.booking-form__item -->
+        <div class="booking-form__item">
             <label><?php _e('Datum dolaska', 'wpog'); ?></label>
 						<div class="datepicker-holder">
 							<i class="fa fa-calendar-o"></i>
@@ -16,15 +27,11 @@ if (!function_exists('af_booking')) {
 						</div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">
-            <label><?php _e('Broj noći', 'wpog'); ?>:</label>
-            <select id="count_nights" type="text" name="nights" class="select2 night" >
-							<?php
-							for ($i = 1; $i <= 7; $i++) {
-								$str = $i == 1 ? __('noć', 'wpog') : __('noći', 'wpog');
-								echo '<option value="' . $i . '">' . $i . ' ' . $str . '</option>';
-							}
-							?>
-            </select> 
+            <label><?php _e('Datum odlaska', 'wpog'); ?></label>
+						<div class="datepicker-holder">
+							<i class="fa fa-calendar-o"></i>
+							<input id="af-search-calendar" type="text" name="checkin" class="datepicker date-icon form-control" />
+						</div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">
             <label><?php _e('Broj osoba', 'wpog'); ?>:</label>

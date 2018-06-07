@@ -34,8 +34,10 @@ body.page-template-page-apartman {
   margin: auto;
   @include breakpoint(_1200) {
     position: static;
-    order: 3;
-    margin: 0 45px 0 0;
+    margin: auto 45px auto auto;
+  }
+  @include breakpoint(_480) {
+    margin: auto 10px auto auto;
   }
   li {
     display: inline-block;
@@ -101,6 +103,7 @@ body.page-template-page-apartman {
     width: 100%;
     object-fit: cover;
     position: fixed;
+    height: 100%;
   }
   h1 {
     position: absolute;
