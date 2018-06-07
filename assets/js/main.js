@@ -130,7 +130,10 @@ $(document).ready(function () {
                     //Loop through as long as element have parents
                     element = element.offsetParent;
                 }
-                return {x: xPosition, y: yPosition};
+                return {
+                //    x: xPosition,
+                    y: yPosition
+                };
             }
 
             //Get Elements positions object

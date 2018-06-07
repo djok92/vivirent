@@ -38,7 +38,7 @@
                 </nav><!-- /.main-nav -->
                 <span id="menu-button"><i class="fa fa-bars"></i></span>
             </div> <!-- /.menu-holder -->
-
+            
         </div> <!-- /.top-header -->
 
 
@@ -47,13 +47,13 @@
 				<?php if(is_home()) { ?>
                     <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
                                                                     aria-hidden="true"></i></a>
-
+					
 
                     <div class="hero-holder__content">
                         <div class="hero-holder__content_logo">
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.png"
                                  alt="Logo ViviRent"
-                                 srcset="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo@2x.png 2x">
+                                 srcset="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo@2x.png x2">
                         </div> <!-- /.home-logo -->
                         <div class="hero-holder__content_text">
                             <h1><?php the_field('hs1_slider_txt', 'options') ?></h1>
@@ -76,8 +76,8 @@
 		<?php } elseif(is_archive()) { ?>
 
             <div class="header-img">
-                <!-- <div class="header-gradient"></div>
-                <div class="bottom-gradient"></div> -->
+                <div class="header-gradient"></div>
+                <div class="bottom-gradient"></div>
 
 
 				<?php // povlacanje acf slike iz kategorije
@@ -109,6 +109,7 @@
 
 
             <div class="header-img">
+                <div class="header-gradient"></div>
                 <div class="bottom-gradient"></div>
 				<?php
 				$image    = get_field('headimg'); // u slucaju
