@@ -20,7 +20,7 @@ if(!function_exists('af_booking')) {
     <div id="step-1" class="Wizzard__Content">
         <div class="Wizzard__Main">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-lg-9">
                     <h3>Odaberite datum dolaska - <?php the_title(); ?></h3>
                     <div class="description">
 
@@ -50,9 +50,9 @@ if(!function_exists('af_booking')) {
                             <th>cena</th>
                         </tr>
                     </table><!--/.pricesTable-->
-                </div><!-- /.col-md-9 -->
+                </div><!-- /.col-lg-9 -->
 
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="sideBoxInfo">
 
                         <div class="firstStep">
@@ -112,7 +112,7 @@ if(!function_exists('af_booking')) {
                         </div>
 
                     </div> <!-- /.sideBoxInfo -->
-                </div><!-- /.col-md-3 -->
+                </div><!-- /.col-lg-3 -->
 
             </div>
         </div><!--/.Wizzard__Main-->
@@ -129,7 +129,7 @@ if(!function_exists('af_booking')) {
     <div id="step-2" class="Wizzard__Content">
         <div class="Wizzard__Main">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-lg-9">
 
                     <div class="wizzardSingleBox">
                         <h3>Popust Vaucer (opciono)</h3>
@@ -238,9 +238,9 @@ if(!function_exists('af_booking')) {
                     <div class="checkBox">
                         <input type="checkbox" id="input_tos"><span>Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana</span>
                     </div><!--/.checkBox-->
-                </div><!-- /.col-md-9 -->
+                </div><!-- /.col-lg-9 -->
 
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="sideBoxInfo">
 
                         <div class="firstStep">
@@ -300,7 +300,7 @@ if(!function_exists('af_booking')) {
                         </div>
 
                     </div> <!-- /.sideBoxInfo -->
-                </div><!-- /.col-md-3 -->
+                </div><!-- /.col-lg-3 -->
             </div><!-- /.row -->
         </div><!--/.Wizzard__Main-->
 
@@ -324,7 +324,7 @@ if(!function_exists('af_booking')) {
                     laboriosam hic minus ut, delectus officiis, libero consequatur iusto earum!</p>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="sideBoxInfo">
 
                         <div class="firstStep">
@@ -387,26 +387,40 @@ if(!function_exists('af_booking')) {
                 </div><!--/.col-md-3-->
                 <div class="col-md-6">
                     <div class="reservationSummary">
-                        <div class="summaryCategories">
+                        <div class="category">
                             <p>Ime</p>
-                            <p>Prezime</p>
-                            <p>Ulica i broj</p>
-                            <p>Grad</p>
-                            <p>Drzava</p>
-                            <p>Kontakt Telefon</p>
-                            <p>Email</p>
-                            <p>Napomena</p>
-                            <p>Placanje</p>
-                        </div>
-                        <div class="summaryData">
                             <p id="display_first_name"></p>
+                        </div>
+                        <div class="category">
+                            <p>Prezime</p>
                             <p id="display_last_name"></p>
+                        </div>
+                        <div class="category">
+                            <p>Ulica i broj</p>
                             <p id="display_address"></p>
+                        </div>
+                        <div class="category">
+                            <p>Grad</p>
                             <p id="display_city"></p>
+                        </div>
+                        <div class="category">
+                            <p>Drzava</p>
                             <p id="display_country"></p>
+                        </div>
+                        <div class="category">
+                            <p>Kontakt Telefon</p>
                             <p id="display_phone"></p>
+                        </div>
+                        <div class="category">
+                            <p>Email</p>
                             <p id="display_email"></p>
+                        </div>
+                        <div class="category">
+                            <p>Napomena</p>
                             <p></p>
+                        </div>
+                        <div class="category">
+                            <p>Placanje</p>
                             <p>30% - bank transfer</p>
                         </div>
                     </div>

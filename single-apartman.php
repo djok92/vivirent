@@ -39,14 +39,16 @@ get_header();
                 <div id="tab-1" class="tabs-content current">
                     <div class="row">
                         <div class="col-md-5">
-                            <h3><?php the_title(); ?></h3>
-                            <div class='apartment-desc'>
-								<?php the_content(); ?>
-                                <a href="#" class='link blue'><?php _e('Više informacija', 'wpog'); ?></a>
-                            </div> <!-- /.apartment-desc -->
+                            <div class="tab-1-infoHolder">
+                                <h3><?php the_title(); ?></h3>
+                                <div class='apartment-desc'>
+                                    <?php the_content(); ?>
+                                    <a href="#" class='link blue'><?php _e('Više informacija', 'wpog'); ?></a>
+                                </div> <!-- /.apartment-desc -->
+                            </div><!--/.tab-1-infoHolder-->
                         </div> <!-- /.col-md-5 -->
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-xs-7" id="tab-1-table">
                             <h3><?php _e('Detalji', 'wpog') ?></h3>
                             <div class='apartment-table'>
                                 <div class="table-row">
@@ -74,9 +76,11 @@ get_header();
                                     <div><?php the_field('parking'); ?></div>
                                 </div> <!--/.table-row-->
                             </div> <!-- /.apartment-table -->
-                        </div> <!-- /.col-md-4 -->
-                        <div class="col-md-3">
-                            <h3><?php _e('Cenovnik', 'wpog') ?></h3>
+                        </div> <!-- /.col-md-4 col-xs-7 -->
+                        <div class="col-md-3 col-xs-5" id="tab-1-prices">
+                            <div class="pricesBoxCaption">
+                                <h3><?php _e('Cenovnik', 'wpog') ?></h3>
+                            </div>
                             <div class="pricesBoxHolder">
                                 <div class="Prices Prices--New">
 																	<?php echo do_shortcode('[afb-prices]'); ?>
@@ -89,7 +93,7 @@ get_header();
                                     <a href="#"><?php _e('Rezervisi', 'wpog'); ?></a>
                                 </div><!--/.pricesBoxButonHolder-->
                             </div><!--/.pricesBoxHolder-->
-                        </div><!-- /.col-md-3 -->
+                        </div><!-- /.col-md-3 col-xs-5 -->
                     </div> <!-- /.row -->
 
                     <div class="row">

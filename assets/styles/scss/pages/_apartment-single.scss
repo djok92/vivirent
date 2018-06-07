@@ -22,16 +22,32 @@
 
 .apartment-single {
   padding: 35px 0 75px;
+  @include breakpoint(_480) {
+    padding: 15px 0 30px;
+  }
   .apartment-desc {
     a {
       display: block;
       margin-top: 20px;
+      @include breakpoint(_480) {
+        margin-top: 10px;
+      }
     }
   }
   ul.tabs {
     font-size: 0;
     border-bottom: 1px solid #222;
     margin-bottom: 60px;
+    @include breakpoint(_991) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      @include breakpoint(_550) {
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+    }
     li {
       display: inline-block;
       vertical-align: top;
@@ -41,6 +57,13 @@
       color: #222;
       font-weight: 700;
       cursor: pointer;
+      @include breakpoint(_991) {
+        flex-basis: 33%;
+      }
+      @include breakpoint(_480) {
+        flex-basis: 100%;
+        width: 100%;
+      }
       &.current {
         background: #222;
         color: #fff;
@@ -54,6 +77,10 @@
     }
     h3 {
       margin-bottom: 20px;
+      @include breakpoint(_550) {
+        text-align: center;
+        font-size: 26px;
+      }
     }
   }
   .accordion-spec {
@@ -74,9 +101,27 @@
   }
 }
 
+.accordion-spec {
+  @include breakpoint(_550) {
+    text-align: center;
+  }
+}
+
 //reservationDescription
 .reservationDescription {
   margin: 30px 0;
+}
+
+.tab-1-infoHolder {
+  @include breakpoint(_991) {
+    margin-bottom: 30px;
+  }
+}
+
+.pricesBoxCaption {
+  @include breakpoint(_480) {
+    margin-top: 30px;
+  }
 }
 
 //Wizzard
@@ -84,10 +129,16 @@
   &__Main {
     padding: 50px 0 50px 30px;
     background: #fff;
+    @include breakpoint(_768) {
+      padding: 20px 10px 20px 10px;
+    }
   }
   &__Nav {
     display: flex;
     flex-wrap: wrap;
+    @include breakpoint(_480) {
+      flex-direction: column;
+    }
     li {
       flex-grow: 1;
       a {
@@ -101,6 +152,9 @@
         height: 60px;
         line-height: 40px;
         text-align: center;
+        @include breakpoint(_480) {
+          font-size: 16px;
+        }
         &:before,
         &:after {
           content: " ";
@@ -113,6 +167,9 @@
           border-top: 30px solid transparent;
           border-bottom: 30px solid transparent;
           margin-top: -30px;
+          @include breakpoint(_480) {
+            border: none;
+          }
         }
       }
       &.active {
@@ -141,6 +198,9 @@
   background-color: #ddd;
   padding: 10px;
   display: flex;
+  @include breakpoint(_600) {
+    flex-direction: column;
+  }
   .previous,
   .next {
     color: #fff;
@@ -149,6 +209,14 @@
     font-size: 18px;
     display: inline-block;
     font-weight: bold;
+    @include breakpoint(_600) {
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
   }
   .next {
     margin-left: auto;
@@ -195,6 +263,12 @@
 //Wizzard single Box
 .wizzardSingleBox {
   margin-top: 60px;
+  @include breakpoint(_480) {
+    margin-top: 30px;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 }
 
 .withInput,
@@ -209,6 +283,9 @@
   input[type=text],
   input[type=number] {
     width: 15%;
+  }
+  p {
+    margin-right: 15px;
   }
   select {
     width: 50%;
@@ -235,9 +312,20 @@
   }
 }
 
+#input_first_name,
+#input_last_name,
+#input_phone,
+#input_email,
+#input_address,
+#input_city {
+  @include breakpoint(_480) {
+    width: 200px;
+  }
+}
+
 //checkbox
 .checkBox {
-  margin-top: 20px;
+  margin: 20px 0;
   span {
     padding-left: 10px;
     a {
@@ -251,6 +339,13 @@
 .sideBoxInfo {
   padding: 20px;
   background: #ddd;
+  @media (min-width: 600px) and (max-width: 1200px) {
+    width: 415px;
+    margin: 20px auto 0 auto;
+  }
+  @include breakpoint(_480) {
+    margin-top: 20px;
+  }
   .sideBoxCaption {
     color: #24aae1;
     text-transform: uppercase;
@@ -282,14 +377,19 @@
 .reservationSummary {
   padding: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  p {
-    font-size: 16px;
-    padding: 5px 0;
-  }
-  .summaryData {
-    font-weight: bold;
+  flex-direction: column;
+  .category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 16px;
+      padding: 5px 0;
+      &:last-of-type {
+        font-weight: bold;
+      }
+    }
   }
 }
 
@@ -299,6 +399,10 @@
   text-transform: uppercase;
   margin-bottom: 10px;
   margin-top: 55px;
+  @include breakpoint(_550) {
+    margin-top: 20px;
+    text-align: center;
+  }
 }
 
 .apartmenHolder {
@@ -344,15 +448,19 @@
 }
 
 .tabButtonHolder {
-  color: #fff;
-  background: rgb(36, 170, 225);
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 18px;
-  border: none;
-  padding: 7px 100px;
-  display: inline-block;
   margin-bottom: 30px;
+  a {
+    color: #fff;
+    background: rgb(36, 170, 225);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    padding: 7px 100px;
+    @include breakpoint(_480) {
+      font-size: 16px;
+    }
+  }
 }
 
 // tab Kontakt
@@ -364,6 +472,9 @@
     p {
       background: #ddd;
       padding: 0 20px;
+      @include breakpoint(_991) {
+        padding: 0 10px;
+      }
       &:nth-child(odd) {
         background: #ccc;
       }
@@ -405,11 +516,16 @@
       font-weight: bold;
       font-size: 18px;
       border: none;
+      @include breakpoint(_480) {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
 
-#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
+#wpcf7-f520-p49-o1>form>p:nth-child(6) {
   background: none;
   padding: 0;
 }
@@ -428,6 +544,31 @@ form {
   }
 }
 
+//tab Informacije
+#tab-1 {
+  h3 {
+    @include breakpoint(_550) {
+      text-align: center;
+    }
+  }
+  #tab-1-table,
+  #tab-1-prices {
+    @include breakpoint(_550) {
+      width: 100%;
+    }
+  }
+  .apartment-table {
+    margin-bottom: 20px;
+  }
+  .pricesBoxButtonHolder {
+    @include breakpoint(_550) {
+      width: 75%;
+      font-size: 16px;
+      margin: 10px auto 0 auto;
+    }
+  }
+}
+
 //tab Lokacija
 #tab-2 {
   iframe {
@@ -439,6 +580,15 @@ form {
 #tab-3 {
   .tabCaptionHolder {
     text-transform: none;
+    @include breakpoint(_550) {
+      margin: 20px 0;
+    }
+  }
+  .tabButtonHolder {
+    @include breakpoint(_550) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -450,6 +600,9 @@ form {
     display: flex;
     flex-direction: column;
     padding: 5px 5px 60px 5px;
+    @include breakpoint(_991) {
+      padding-bottom: 15px;
+    }
     &::after {
       content: '';
       height: 100%;
@@ -469,19 +622,37 @@ form {
     .commentFlagHolder,
     .commentNameHolder {
       margin-bottom: 10px;
+      @include breakpoint(_991) {
+        margin-bottom: 5px;
+      }
     }
   }
   .commentMainHolder {
     p {
       font-size: 16px;
+      @include breakpoint(_480) {
+        font-size: 14px
+      }
     }
     p,
     h3 {
       font-style: italic;
     }
+    h3 {
+      @include breakpoint(_991) {
+        margin-bottom: 10px;
+      }
+      @include breakpoint(_480) {
+        font-size: 26px;
+        text-align: left;
+      }
+    }
     .commentCaption,
     .commentRating {
       margin-bottom: 20px;
+      @include breakpoint(_991) {
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -489,6 +660,11 @@ form {
 #three-calendars {
   .pickmeup {
     background: #AAAAAA;
+    @include breakpoint(_680) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center
+    }
     .pmu-instance nav {
       background: #9D9D9D;
     }
@@ -522,4 +698,3 @@ form {
     }
   }
 }
-

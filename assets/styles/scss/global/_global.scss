@@ -42,7 +42,6 @@ main {
   color: #fff;
 }
 
-
 .link {
   position: relative;
   text-transform: uppercase;
@@ -85,7 +84,8 @@ main {
   }
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   outline: none;
 }
 
@@ -122,13 +122,16 @@ textarea:focus, input:focus {
 }
 
 .page-content {
-  ul, ol {
+  ul,
+  ol {
     margin-left: 15px;
     padding-top: 15px;
-    ul, ol {
+    ul,
+    ol {
       margin-left: 15px;
       padding-top: 15px;
-      ul, ol {
+      ul,
+      ol {
         margin-left: 15px;
         padding-top: 15px;
       }
@@ -137,7 +140,6 @@ textarea:focus, input:focus {
 }
 
 // bread crumbs
-
 .breadcrumbs {
   margin-bottom: 50px;
   li {
@@ -278,7 +280,7 @@ textarea:focus, input:focus {
           content: "\f005";
         }
         color: gold;
-        ~ .Rating__Star:before {
+        ~.Rating__Star:before {
           content: "\f005";
         }
         color: gold;
@@ -299,12 +301,25 @@ textarea:focus, input:focus {
   }
 }
 
-#eq-height-row {
-  display: table;
-  .panel {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
-    width: 50%;
+#gallery-1 {
+  margin-top: 20px;
+  @include breakpoint(_480) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .gallery-item {
+    text-align: left;
+    @include breakpoint(_480) {
+      flex-basis: 25%;
+      margin: 10px 10px 10px 0;
+      max-width: 100%;
+    }
+  }
 }
+
+.page-content {
+  h3 {
+    margin-top: 20px;
+  }
 }
