@@ -18,7 +18,7 @@
 										<?php if(get_the_post_thumbnail()) {
 											the_post_thumbnail();
 										} else { ?>
-                                            <a href="<?php the_permalink(); ?> ">
+                                            <a href="# ">
                                                 <img src="<?php the_field('defimg', 'options'); ?>"/>
                                             </a>
 										<?php } ?>
@@ -33,7 +33,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="vilaCaptionAndContent">
-                                                    <h3><a href="<?php the_permalink(); ?>">Vila Fasana</a></h3>
+                                                    <h3><a href="#">Vila Fasana</a></h3>
                                                     <div>
                                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                                         Voluptates
@@ -45,7 +45,7 @@
                                                     </div>
                                                 </div><!--/.vilaCaptionAndContent-->
                                             </div><!--/.col-sm-12-->
-                                           
+
                                             <div class="col-sm-7">
                                                 <div class='apartment-table'>
                                                     <div class="table-row">
@@ -98,15 +98,15 @@
                                                     </div><!--/.pricesBoxButonHolder-->
                                                 </div><!--/.pricesBoxHolder panel-->
                                             </div><!--/.col-sm-5-->
-                                        
-                                           
+
+
                                             <div class="col-sm-12">
                                                 <div class="apartments-box__content_links">
-                                                    <a href="<?php the_permalink(); ?>"
-                                                        class="link"><?php _e('više informacija', 'wpog'); ?></a>
+                                                    <a href="#"
+                                                       class="link"><?php _e('više informacija', 'wpog'); ?></a>
                                                     <!-- <a href="<?php if(function_exists('af_booking')) {
-                                                        echo add_query_arg(array('acm_id' => $post->ID), af_booking()->getBookingURL());
-                                                    } ?>" class="link"><?php _e('rezerviši', 'wpog'); ?></a> -->
+														echo add_query_arg(array('acm_id' => $post->ID), af_booking()->getBookingURL());
+													} ?>" class="link"><?php _e('rezerviši', 'wpog'); ?></a> -->
                                                 </div>  <!-- /.apartments-box__content_links -->
                                             </div><!--/.col-sm-12-->
 
@@ -141,7 +141,7 @@
 												<?php if(get_the_post_thumbnail()) {
 													the_post_thumbnail();
 												} else { ?>
-                                                    <a href="<?php the_permalink(); ?> ">
+                                                    <a href="#">
                                                         <img src="<?php the_field('defimg', 'options'); ?>"/>
                                                     </a>
 												<?php } ?>
@@ -172,60 +172,60 @@
                                                                 elit</p>
                                                         </div><!--/.vilaCaptionAndContent-->
                                                     </div><!--/.col-sm-12-->
-                                                   
-                                                        <div class="col-sm-7">
-                                                            <div class='apartment-table'>
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Maksimalan broj osoba', 'wpog'); ?></div>
-                                                                    <div><?php the_field('broj_gostiju'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Kvadratura apartmana', 'wpog'); ?></div>
-                                                                    <div><?php the_field('kvadratura'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Lokacija u objektu', 'wpog'); ?></div>
-                                                                    <div><?php the_field('lokacija'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Broj soba', 'wpog'); ?></div>
-                                                                    <div><?php the_field('soba'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Broj kupaonica', 'wpog'); ?></div>
-                                                                    <div><?php the_field('kupaonica'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
-                                                                    <div><?php the_field('parking'); ?></div>
-                                                                </div> <!--/.table-row-->
-                                                            </div> <!-- /.apartment-table -->
-                                                        </div><!--/.col-sm-7-->
 
-                                                        <div class="col-sm-5">
-                                                            <div class="pricesBoxHolder">
-                                                                <div class="pricesOnly">
-                                                                    <div class="singlePriceBox pricesBoxCrossed">
-                                                                        <p>cena dnevno od</p>
-                                                                        <!-- <span>272&euro;</span>-->
-                                                                    </div><!--/.singlePriceBox pricesBoxCrossed-->
-                                                                    <div class="singlePriceBox pricesBoxCrossed">
-                                                                        <p>cena nedeljno od</p>
-                                                                        <!-- <span>2472&euro;</span>-->
-                                                                    </div><!--/.singlePriceBox pricesBoxCrossed-->
-                                                                    <div class="singlePriceBox">
-                                                                        <span>212&euro;</span>
-                                                                    </div><!--/.singlePriceBox-->
-                                                                    <div class="singlePriceBox">
-                                                                        <span>2272&euro;</span>
-                                                                    </div><!--/.singlePriceBox-->
-                                                                </div>
-                                                                <div class="pricesBoxButtonHolder">
-                                                                    <a href="#">rezervisi</a>
-                                                                </div><!--/.pricesBoxButonHolder-->
-                                                            </div><!--/.pricesBoxHolder panel-->
-                                                        </div><!--/.col-sm-5-->
-                                                   
+                                                    <div class="col-sm-7">
+                                                        <div class='apartment-table'>
+                                                            <div class="table-row">
+                                                                <div><?php _e('Maksimalan broj osoba', 'wpog'); ?></div>
+                                                                <div><?php the_field('broj_gostiju'); ?></div>
+                                                            </div> <!-- /.table-row -->
+                                                            <div class="table-row">
+                                                                <div><?php _e('Kvadratura apartmana', 'wpog'); ?></div>
+                                                                <div><?php the_field('kvadratura'); ?></div>
+                                                            </div> <!-- /.table-row -->
+                                                            <div class="table-row">
+                                                                <div><?php _e('Lokacija u objektu', 'wpog'); ?></div>
+                                                                <div><?php the_field('lokacija'); ?></div>
+                                                            </div> <!-- /.table-row -->
+                                                            <div class="table-row">
+                                                                <div><?php _e('Broj soba', 'wpog'); ?></div>
+                                                                <div><?php the_field('soba'); ?></div>
+                                                            </div> <!-- /.table-row -->
+                                                            <div class="table-row">
+                                                                <div><?php _e('Broj kupaonica', 'wpog'); ?></div>
+                                                                <div><?php the_field('kupaonica'); ?></div>
+                                                            </div> <!-- /.table-row -->
+                                                            <div class="table-row">
+                                                                <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
+                                                                <div><?php the_field('parking'); ?></div>
+                                                            </div> <!--/.table-row-->
+                                                        </div> <!-- /.apartment-table -->
+                                                    </div><!--/.col-sm-7-->
+
+                                                    <div class="col-sm-5">
+                                                        <div class="pricesBoxHolder">
+                                                            <div class="pricesOnly">
+                                                                <div class="singlePriceBox pricesBoxCrossed">
+                                                                    <p>cena dnevno od</p>
+                                                                    <!-- <span>272&euro;</span>-->
+                                                                </div><!--/.singlePriceBox pricesBoxCrossed-->
+                                                                <div class="singlePriceBox pricesBoxCrossed">
+                                                                    <p>cena nedeljno od</p>
+                                                                    <!-- <span>2472&euro;</span>-->
+                                                                </div><!--/.singlePriceBox pricesBoxCrossed-->
+                                                                <div class="singlePriceBox">
+                                                                    <span>212&euro;</span>
+                                                                </div><!--/.singlePriceBox-->
+                                                                <div class="singlePriceBox">
+                                                                    <span>2272&euro;</span>
+                                                                </div><!--/.singlePriceBox-->
+                                                            </div>
+                                                            <div class="pricesBoxButtonHolder">
+                                                                <a href="#">rezervisi</a>
+                                                            </div><!--/.pricesBoxButonHolder-->
+                                                        </div><!--/.pricesBoxHolder panel-->
+                                                    </div><!--/.col-sm-5-->
+
 
                                                     <div class="col-sm-12">
                                                         <div class="apartments-box__content_links">
