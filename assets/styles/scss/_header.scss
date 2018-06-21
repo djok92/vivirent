@@ -82,10 +82,13 @@ body.page-template-page-apartman {
 }
 
 .header-logo {
-  @include background-image-retina(header-logo, png, 48, 59);
+  @include background-image-retina(logo, png, 48px, 59px);
   width: 48px;
   height: 59px;
   margin-left: 45px;
+  @include breakpoint(_480) {
+    margin-left: 20px;
+  }
 }
 
 .header-img {

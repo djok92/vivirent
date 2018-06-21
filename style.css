@@ -11,82 +11,119 @@ Text Domain: wpog
 Tags:
 */
 
-/*
-	af_booking plugin
-*/
+/* cell colors & legend */
 
-.pickmeup .date-unavailable { background: #000; }
-.pickmeup .date-reserved { background: #53d2f0; }
-.pickmeup .date-occupied { background: #a70000; }
-
-table#duration-select tr.selectable:hover,
-table#duration-select tr.selected {
-	background: #000;
-	cursor: pointer;
+.af-booking-legend.available,
+#three-calendars .pickmeup .pmu-button {
+  background: #EFEFEF;
+  color: #000;
 }
 
-table#duration-select tr.selectable:hover td,
-table#duration-select tr.selected td {
-	color: #fff;
+.af-booking-legend.unavailable,
+#three-calendars .pickmeup .date-unavailable {
+  background: #666;
+  color: #333 !important;
 }
 
-#input_first_name,
-#input_last_name,
-#input_phone,
-#input_email,
-#input_address,
-#input_city {
-	width: 300px;
+.af-booking-legend.reserved,
+#three-calendars .pickmeup .date-reserved {
+  background: #fffd6f;
 }
 
-/*
-OLD
- */
-
-#af-date {
-	padding: 7px;
-	padding-left: 30px;
-	background: #fff;
+.af-booking-legend.occupied,
+#three-calendars .pickmeup .date-occupied {
+  background: #ff866e;
 }
 
-#af-reserve {
-	width: 100%;
-	margin-top: 20px;
-	border: 0;
-	padding: 7px;
-	background: #ff8809;
-	color: #fff;
-	font-weight: bold;
+.af-booking-legend {
+  margin-bottom: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  display: inline-block;
 }
 
-#af-reserve:disabled {
-	background: #2096c6;
-	color: #24AAE1;
+#three-calendars .pickmeup .pmu-selected {
+  background: #36e246;
 }
 
-.af-booking-errors {
-	margin: 10px 0;
-	padding: 10px;
-	border: 1px solid #e00000;
-	background: #fff;
+/* pricing table */
+
+#af-booking-pricing tr.selectable:hover,
+#af-booking-pricing tr.selected {
+  background: #000;
+  cursor: pointer;
 }
 
-#af-calc-price {
-	color: #fff;
-	font-weight: bold;
-	font-size: 64px;
-	text-align: center;
+#af-booking-pricing tr.selectable:hover td,
+#af-booking-pricing tr.selected td {
+  color: #fff;
 }
 
-#af-calc-price .af-calc-currency {
-	vertical-align: super;
-	font-size: 40px;
+#af-booking-pricing .col-period {}
+#af-booking-pricing .col-nights { text-align: center;}
+#af-booking-pricing .col-price { text-align: right; }
+
+/* adults & children info table */
+
+#af-booking-adults-info th,
+#af-booking-adults-info td,
+#af-booking-children-info th,
+#af-booking-children-info td {
+  padding: 2px 8px;
 }
 
-#af-calendar-loader {
-	position: absolute;
-	top: 150px;
-	left: 40%;
-	left: calc(50% - 40px);
+#af-booking-adults-info .col-nr { }
+#af-booking-adults-info .col-name input { width: 200px; }
+#af-booking-adults-info .col-age select { width: 100px; }
+#af-booking-adults-info .col-country {}
+
+#af-booking-children-info .col-nr { }
+#af-booking-children-info .col-age select { width: 100px; }
+
+
+/* loading indicators */
+
+#three-calendars.loading,
+#period-prices-wrapper.loading,
+#af-booking-pricing.loading,
+.af-booking-cart.loading {
+  position: relative;
 }
 
+#three-calendars.loading:after,
+#period-prices-wrapper.loading:after,
+#af-booking-pricing.loading:after,
+.af-booking-cart.loading:after {
+
+  top: 0;
+  left: 0;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Fontawesome, sans-serif;
+  font-size: 72px;
+  content: "\f017";
+
+  color: #999;
+  background: rgba(255,255,255,0.7);
+}
+
+#three-calendars.loading {
+  min-height: 193px;
+}
+
+/* ispravka velicine polja */
+/*#input_first_name,*/
+/*#input_last_name,*/
+/*#input_phone,*/
+/*#input_email,*/
+/*#input_address,*/
+/*#input_city {*/
+  /*width: 300px;*/
+/*}*/

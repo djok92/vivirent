@@ -1,5 +1,6 @@
 $ = jQuery.noConflict();
 $(document).ready(function () {
+
     hidePageLoading();
 
     /**
@@ -54,24 +55,6 @@ $(document).ready(function () {
 
 
     /**
-     *  Datepicker
-     */
-    (function () {
-
-        var handler = $('#three-calendars');
-        if (!handler.length) {
-            return;
-        }
-        pickmeup('#three-calendars', {
-            flat: true,
-
-            mode: 'range',
-            calendars: 3
-        });
-    })();
-
-
-    /**
      * Rating stars
      */
 
@@ -96,14 +79,30 @@ $(document).ready(function () {
     };
     Rating();
 
-
     /**
-     *  Accordion
+     *  Accordion for Homepage
      */
 
     (function () {
 
-        var handler = $('.accordion');
+        var handler = $('.Specification.accordion');
+        if (!handler.length) {
+            return;
+        }
+
+        handler.accordion({
+            "transitionSpeed": 400
+        });
+
+    })();
+
+    /**
+     *  Accordion for Homepage
+     */
+
+    (function () {
+
+        var handler = $('.Villa.accordion');
         if (!handler.length) {
             return;
         }
@@ -119,19 +118,18 @@ $(document).ready(function () {
             if (!handler.length) {
                 return;
             }
-
             function getPosition(element) {
-                var xPosition = 0;
+                //  var xPosition = 0;
                 var yPosition = 0;
 
                 while (element) {
-                    xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+                    //  xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
                     yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
                     //Loop through as long as element have parents
                     element = element.offsetParent;
                 }
                 return {
-                //    x: xPosition,
+                    //    x: xPosition,
                     y: yPosition
                 };
             }
@@ -144,18 +142,16 @@ $(document).ready(function () {
 
             handler.each(function (index) {
                 $(this).on('click', function () {
-
+                    var itemHeight = $(this).find('.apartments-box').outerHeight();
                     var isOpen = $(this).hasClass('open');
 
                     if (isOpen) {
                         $.each(positions, function (positionIndex, positionValue) {
                             if (index === positionIndex) {
-                                $('html,body').animate({scrollTop: positionValue.y}, 300);
+                                $('html,body').animate({scrollTop: positionValue.y + itemHeight}, 600);
                             }
                         });
                     }
-
-
                 });
             });
 
@@ -163,7 +159,7 @@ $(document).ready(function () {
                 $(this).click(function (e) {
                     e.stopPropagation();
                 });
-            })
+            });
         })();
 
 
@@ -187,26 +183,6 @@ $(document).ready(function () {
         $(this).find('ul.sub-menu').fadeOut(300);
         $(this).removeClass('active');
     }, config);
-
-
-    (function () {
-        // Scroll down smoothly (menu items)
-        $('a[href^="#"]').click(function (e) {
-
-            e.preventDefault();
-
-            var target = $($(this).attr('href'));
-            if (target.length === 0) {
-                return false;
-            }
-
-            var offset = target.offset().top;
-            var margin = parseInt(target.css('margin-top').replace('px', ''));
-            var padding = parseInt(target.css('padding-top').replace('px', ''));
-
-            $('html,body').animate({scrollTop: offset}, 1000);
-        });
-    })($);
 
 
     /**
@@ -269,7 +245,7 @@ $(document).ready(function () {
                 effect: 'fade',
                 navigation: {
                     nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    prevEl: '.swiper-button-prev'
                 }
             });
             var galleryThumbs = new Swiper('.gallery-thumbs', {
@@ -277,7 +253,7 @@ $(document).ready(function () {
                 centeredSlides: true,
                 slidesPerView: 'auto',
                 touchRatio: 0.2,
-                slideToClickedSlide: true,
+                slideToClickedSlide: true
             });
             galleryTop.controller.control = galleryThumbs;
             galleryThumbs.controller.control = galleryTop;
@@ -334,12 +310,16 @@ $(document).ready(function () {
             });
 
             if (window.location.hash) {
-                var index = window.location.hash.substring(1);
+                index = window.location.hash.substring(1);
                 markTarget([nav, targets], index);
             }
         }
     })();
 
+
+    // $('.acf-map').each(function () {
+    //     map = new_map($(this));
+    // });
 
 }); // $document.ready
 
@@ -348,106 +328,144 @@ hidePageLoading = function () {
     $('#xLoader').fadeOut(300);
 };
 
-
 // Google map
 
-(function ($) {
-    /*
-     *  new_map
-     *
-     *  This function will render a Google Map onto the selected jQuery element
-     *
-     *  @type	function
-     *  @date	8/11/2013
-     *  @since	4.3.0
-     *
-     *  @param	$el (jQuery element)
-     *  @return	n/a
-     */
+/*
+ *  new_map
+ *
+ *  This function will render a Google Map onto the selected jQuery element
+ *
+ *  @type	function
+ *  @date	8/11/2013
+ *  @since	4.3.0
+ *
+ *  @param	$el (jQuery element)
+ *  @return	n/a
+ */
 
-    function new_map($el) {
-        // var
-        var $markers = $el.find('.marker');
-        // vars
-        var args = {
-            zoom: 16,
-            center: new google.maps.LatLng(0, 0),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        // create map
-        var map = new google.maps.Map($el[0], args);
-        // add a markers reference
-        map.markers = [];
+function new_map($el) {
 
-        // add markers
-        $markers.each(function () {
+    // var
+    var $markers = $el.find('.marker');
 
-            add_marker($(this), map);
-        });
 
-        // center map
-        center_map(map);
-        // return
-        return map;
-    }
+    // vars
+    var args = {
+        zoom: 16,
+        center: new google.maps.LatLng(0, 0),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 
-    /*
-     *  add_marker
-     *
-     */
-    function add_marker($marker, map) {
-        // var
-        var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
-        // create marker
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map
-        });
-        // add to array
-        map.markers.push(marker);
-        // if marker contains HTML, add it to an infoWindow
-        if ($marker.html()) {
-            // create info window
-            var infowindow = new google.maps.InfoWindow({
-                content: $marker.html()
-            });
-            // show info window when marker is clicked
-            google.maps.event.addListener(marker, 'click', function () {
 
-                infowindow.open(map, marker);
-            });
-        }
-    }
+    // create map
+    var map = new google.maps.Map($el[0], args);
 
-    function center_map(map) {
-        // vars
-        var bounds = new google.maps.LatLngBounds();
-        // loop through all markers and create bounds
-        $.each(map.markers, function (i, marker) {
-            var latlng = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
-            bounds.extend(latlng);
-        });
 
-        // only 1 marker?
-        if (map.markers.length == 1) {
-            // set center of map
-            map.setCenter(bounds.getCenter());
-            map.setZoom(16);
-        } else {
-            // fit to bounds
-            map.fitBounds(bounds);
-        }
-    }
+    // add a markers reference
+    map.markers = [];
 
-    // global var
-    var map = null;
 
-    $(document).ready(function () {
+    // add markers
+    $markers.each(function () {
 
-        $('.acf-map').each(function () {
+        add_marker($(this), map);
 
-            // create map
-            map = new_map($(this));
-        });
     });
-})(jQuery);
+
+
+    // center map
+    center_map(map);
+
+
+    // return
+    return map;
+
+}
+
+/*
+ *  add_marker
+ *
+ *  This function will add a marker to the selected Google Map
+ *
+ *  @type	function
+ *  @date	8/11/2013
+ *  @since	4.3.0
+ *
+ *  @param	$marker (jQuery element)
+ *  @param	map (Google Map object)
+ *  @return	n/a
+ */
+
+function add_marker($marker, map) {
+
+    // var
+    var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
+
+    // create marker
+    var marker = new google.maps.Marker({
+        position: latlng,
+        map: map
+    });
+
+    // add to array
+    map.markers.push(marker);
+
+    // if marker contains HTML, add it to an infoWindow
+    if ($marker.html()) {
+        // create info window
+        var infowindow = new google.maps.InfoWindow({
+            content: $marker.html()
+        });
+
+        // show info window when marker is clicked
+        google.maps.event.addListener(marker, 'click', function () {
+
+            infowindow.open(map, marker);
+
+        });
+    }
+
+}
+
+/*
+ *  center_map
+ *
+ *  This function will center the map, showing all markers attached to this map
+ *
+ *  @type	function
+ *  @date	8/11/2013
+ *  @since	4.3.0
+ *
+ *  @param	map (Google Map object)
+ *  @return	n/a
+ */
+
+function center_map(map) {
+
+    // vars
+    var bounds = new google.maps.LatLngBounds();
+
+    // loop through all markers and create bounds
+    $.each(map.markers, function (i, marker) {
+
+        var latlng = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+
+        bounds.extend(latlng);
+
+    });
+
+    // only 1 marker?
+    if (map.markers.length === 1) {
+        // set center of map
+        map.setCenter(bounds.getCenter());
+        map.setZoom(16);
+    }
+    else {
+        // fit to bounds
+        map.fitBounds(bounds);
+    }
+
+}
+
+// global var
+var map = null;

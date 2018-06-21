@@ -14,8 +14,4 @@ get_header();
 <?php get_template_part('parts/section', 'apartments') ?>
 
 
-
-
-
-
 <?php get_footer(); ?>

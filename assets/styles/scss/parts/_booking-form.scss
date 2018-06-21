@@ -9,7 +9,8 @@
   transition: transform .2s ease-in-out;
   @include breakpoint(_768) {
     padding: 15px 0;
-  } // @include breakpoint(_768) {
+  }
+  // @include breakpoint(_768) {
   //   transform: translate3d(0, calc(100% - 15px), 0);
   // }
   // @include breakpoint(_560) {
@@ -23,7 +24,7 @@
     vertical-align: bottom;
     font-size: 14px;
     margin: 0 5px;
-    width: 130px;
+    width: 150px;
     @include breakpoint(_991) {
       display: inline-block;
       width: 47%;
@@ -34,40 +35,40 @@
       margin: 0 auto 10px auto;
       width: 90%;
     }
-    &:last-of-type {
-      @include breakpoint(_991) {
-        display: block;
-        width: 90%;
-        margin: 0 auto;
-      }
-    }
-    &:nth-last-child(2) {
-      width: 190px;
-      @include breakpoint(_991) {
-        display: inline-block;
-        width: 47%;
-        margin: 10px;
-      }
-      @include breakpoint(_768) {
-        display: block;
-        margin: 0 auto 10px auto;
-        width: 90%;
-      }
-    }
-    &:nth-last-child(3) {
-      width: 100px;
-      @include breakpoint(_991) {
-        display: inline-block;
-        width: 47%;
-        margin: 10px;
-      }
-      @include breakpoint(_768) {
-        display: block;
-        margin: 0 auto 10px auto;
-        width: 90%;
-      }
-    }
-    
+    //&:last-of-type {
+    //  @include breakpoint(_991) {
+    //    display: block;
+    //    width: 90%;
+    //    margin: 0 auto;
+    //  }
+    //}
+    //&:nth-last-child(2) {
+    //  width: 190px;
+    //  @include breakpoint(_991) {
+    //    display: inline-block;
+    //    width: 47%;
+    //    margin: 10px;
+    //  }
+    //  @include breakpoint(_768) {
+    //    display: block;
+    //    margin: 0 auto 10px auto;
+    //    width: 90%;
+    //  }
+    //}
+    //&:nth-last-child(3) {
+    //  width: 100px;
+    //  @include breakpoint(_991) {
+    //    display: inline-block;
+    //    width: 47%;
+    //    margin: 10px;
+    //  }
+    //  @include breakpoint(_768) {
+    //    display: block;
+    //    margin: 0 auto 10px auto;
+    //    width: 90%;
+    //  }
+    //}
+
     label {
       display: block;
       color: #fff;
@@ -75,7 +76,7 @@
       margin-bottom: 4px;
     }
     input {
-      width: 130px;
+      width: 100%;
       border: none;
       height: 30px;
       line-height: 30px;
@@ -98,11 +99,11 @@
         }
       }
     }
-    select {
-      border: none;
-      height: 30px;
-      line-height: 30px;
-    }
+    //select {
+    //  border: none;
+    //  height: 30px;
+    //  line-height: 30px;
+    //}
     .bootstrap-datetimepicker-widget {
       width: 210px;
       position: absolute;
@@ -115,7 +116,7 @@
   position: absolute;
   top: 30px !important;
   bottom: auto !important;
-  left: 0px;
+  left: 0;
   right: auto;
   z-index: 200;
   width: 100%;
@@ -128,8 +129,13 @@
 
 .select2-selection__rendered {
   position: relative;
-  padding-left: 27px !important;
   text-align: left;
+}
+
+.booking-form__item.personsCount {
+  .select2-selection__rendered {
+    padding-left: 24px;
+  }
 }
 
 .select2-container .select2-selection--single {
@@ -137,7 +143,7 @@
 }
 
 %form-icon {
-  font-family: 'FontAwesome';
+  font-family: 'FontAwesome', sans-serif;
   font-size: 16px;
   position: absolute;
   left: 8px;
@@ -190,97 +196,97 @@
   }
 }
 
-.Booking {
-  h3 {
-    border-bottom: 1px solid $main-text-color;
-    padding-bottom: 2px;
-    margin-bottom: 10px;
-  }
-  form {
-    margin-top: 40px;
-  }
-  &__Input {
-    margin-bottom: 12px;
-    p {
-      display: inline-block;
-      vertical-align: middle;
-      min-width: 65px;
-    }
-    input:not([type='submit']) {
-      display: inline-block;
-      vertical-align: middle;
-      border: none;
-      background: #fff;
-      height: 32px;
-      line-height: 30px;
-      width: 30%;
-      padding: 7px 7px 7px 10px;
-      transition: all .2s ease-in-out;
-      &:hover {
-        box-shadow: 2px 2px 2px #aaa;
-      }
-      &:focus {
-        box-shadow: 2px 2px 8px #aaa;
-      }
-    }
-    &_Select {
-      display: inline-block;
-      vertical-align: middle;
-      width: 30%;
-      .select2-selection__rendered {
-        padding-left: 10px !important;
-      }
-      .select2-container {
-        &:hover {
-          box-shadow: 2px 2px 2px #aaa;
-        }
-        &.select2-container--open {
-          box-shadow: 2px 2px 8px #aaa;
-        }
-      }
-    }
-    &.Promo {
-      p {
-        min-width: 100px;
-      }
-      input {
-        width: 15%;
-      }
-    }
-    &.Submit {
-      input {
-        width: 20%;
-        margin-top: 20px;
-        border: 0;
-        padding: 7px;
-        background: #333;
-        color: #fff;
-        font-weight: bold;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 16px;
-      }
-    }
-    &.Back-btn {
-      margin-top: 35px;
-      a {
-        display: block;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-      i,
-      span {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      span {
-        font-size: 21px;
-        margin-left: 5px;
-      }
-    }
-  }
-}
+//.Booking {
+//  h3 {
+//    border-bottom: 1px solid $main-text-color;
+//    padding-bottom: 2px;
+//    margin-bottom: 10px;
+//  }
+//  form {
+//    margin-top: 40px;
+//  }
+//  &__Input {
+//    margin-bottom: 12px;
+//    p {
+//      display: inline-block;
+//      vertical-align: middle;
+//      min-width: 65px;
+//    }
+//    input:not([type='submit']) {
+//      display: inline-block;
+//      vertical-align: middle;
+//      border: none;
+//      background: #fff;
+//      height: 32px;
+//      line-height: 30px;
+//      width: 30%;
+//      padding: 7px 7px 7px 10px;
+//      transition: all .2s ease-in-out;
+//      &:hover {
+//        box-shadow: 2px 2px 2px #aaa;
+//      }
+//      &:focus {
+//        box-shadow: 2px 2px 8px #aaa;
+//      }
+//    }
+//    &_Select {
+//      display: inline-block;
+//      vertical-align: middle;
+//      width: 38%;
+//      .select2-selection__rendered {
+//        padding-left: 10px !important;
+//      }
+//      .select2-container {
+//        &:hover {
+//          box-shadow: 2px 2px 2px #aaa;
+//        }
+//        &.select2-container--open {
+//          box-shadow: 2px 2px 8px #aaa;
+//        }
+//      }
+//    }
+//    &.Promo {
+//      p {
+//        min-width: 100px;
+//      }
+//      input {
+//        width: 15%;
+//      }
+//    }
+//    &.Submit {
+//      input {
+//        width: 20%;
+//        margin-top: 20px;
+//        border: 0;
+//        padding: 7px;
+//        background: #333;
+//        color: #fff;
+//        font-weight: bold;
+//        text-align: center;
+//        text-transform: uppercase;
+//        font-size: 16px;
+//      }
+//    }
+//    &.Back-btn {
+//      margin-top: 35px;
+//      a {
+//        display: block;
+//        &:hover {
+//          text-decoration: none;
+//        }
+//      }
+//      i,
+//      span {
+//        display: inline-block;
+//        vertical-align: middle;
+//      }
+//      span {
+//        font-size: 21px;
+//        margin-left: 5px;
+//      }
+//    }
+//  }
+//}
 
 .bookingFormCaptionHolder {
   color: #fff;

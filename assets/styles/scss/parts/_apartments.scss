@@ -20,13 +20,13 @@
   &_img {
     overflow: hidden;
     position: relative;
-    height: 355px;
+    height: 290px;
     @include breakpoint(_480) {
       height: 250px;
     }
     img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
@@ -86,13 +86,18 @@
     margin-top: 20px;
   }
   .Prices {
-    >* {
+    > * {
       display: inline-block;
       width: 49%;
       padding: 7px;
-    } // &--Old {
+    }
+    // &--Old {
     //   //margin-bottom: 10px;
     // }
+  }
+  &--Gray {
+    background: #222;
+    color: #fff;
   }
 }
 
@@ -140,6 +145,26 @@
     font-weight: bold;
     font-size: 16px
   }
+  span {
+    position: relative;
+    display: block;
+    background: #fff;
+    color: #222;
+    padding: 6px 0;
+    font-weight: bold;
+    font-size: 16px;
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 40%;
+      right: 30px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #222;
+    }
+  }
 }
 
 .pricesOnly {
@@ -154,6 +179,12 @@
   margin-top: 20px;
 }
 
+.Villa.accordion {
+  .MainVilla {
+    cursor: pointer;
+  }
+}
+
 .ApartmentsVilla {
   .apartments-box {
     .apartments-box_img {
@@ -164,4 +195,8 @@
       left: 10px;
     }
   }
+}
+
+.ApartmentsVilla > *, .MainVilla {
+  padding: 0 !important;
 }

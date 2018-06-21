@@ -280,15 +280,18 @@
 
 .withInput {
   background: #ddd;
-  input[type=text],
-  input[type=number] {
-    width: 15%;
+  input:not([type='submit']) {
+    width: 290px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 7px;
   }
   p {
     margin-right: 15px;
+    width: 60%;
   }
-  select {
-    width: 50%;
+  .select2-container {
+    width: 290px !important;
     font-weight: bold;
   }
 }
@@ -339,10 +342,10 @@
 .sideBoxInfo {
   padding: 20px;
   background: #ddd;
-  @media (min-width: 600px) and (max-width: 1200px) {
-    width: 415px;
-    margin: 20px auto 0 auto;
-  }
+  //@media (min-width: 600px) and (max-width: 1200px) {
+  //  width: 415px;
+  //  margin: 20px auto 0 auto;
+  //}
   @include breakpoint(_480) {
     margin-top: 20px;
   }
@@ -366,6 +369,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 5px;
   }
 }
 
@@ -478,9 +482,6 @@
       &:nth-child(odd) {
         background: #ccc;
       }
-      &:last-of-type {
-        padding: 0;
-      }
     }
     label {
       display: flex;
@@ -525,7 +526,7 @@
   }
 }
 
-#wpcf7-f520-p49-o1>form>p:nth-child(6) {
+#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
   background: none;
   padding: 0;
 }
@@ -659,7 +660,7 @@ form {
 
 #three-calendars {
   .pickmeup {
-    background: #AAAAAA;
+    background: none;
     @include breakpoint(_680) {
       display: flex;
       flex-wrap: wrap;
@@ -697,4 +698,11 @@ form {
       font-weight: 700;
     }
   }
+}
+
+.acf-map {
+  width: 100%;
+  height: 400px;
+  border: #ccc solid 1px;
+  margin: 20px 0;
 }
