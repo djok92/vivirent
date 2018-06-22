@@ -85,6 +85,7 @@ body.page-template-page-apartman {
   @include background-image-retina(logo, png, 48px, 59px);
   width: 48px;
   height: 59px;
+  background-size: 48px 59px;
   margin-left: 45px;
   @include breakpoint(_480) {
     margin-left: 20px;

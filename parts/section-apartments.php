@@ -8,10 +8,28 @@
 				'taxonomy' => 'vila'
 			]); ?>
 
-			<?php foreach($terms as $term): ?>
+			<?php foreach($terms as $term):
+				$isVilaApartments = $term->count >= 2;
+	
+				$postslist = null;
+				$link      = null;
+				if(!$isVilaApartments):
+					$args      = [
+						'post_type' => 'apartman',
+						'tax_query' => [
+							[
+								'taxonomy' => 'vila',
+								'terms'    => $term->term_id,
+							]
+						]
+					];
+					$postslist = get_posts($args);
+					$link      = $postslist[0]->guid;
+				endif;
+				?>
 
 
-                <div class="<?php if($term->count >= 2): echo 'Villa'; endif; ?> accordion" data-accordion>
+                <div class="<?php if($isVilaApartments): echo 'Villa'; endif; ?> accordion" data-accordion>
                     <div data-control class="MainVilla">
                         <div class="apartments-box">
                             <div class="row">
@@ -19,10 +37,17 @@
                                     <div class="apartments-box_img">
 										<?php
 										$imgVila = get_field('vila_img', $term);
-										if($imgVila) { ?>
+										if($imgVila) {
+											if($link): ?>
+                                                <a href="<?php echo $postslist[0]->guid ?>">
+											<?php endif; ?>
                                             <img alt="vilaImage" src="<?php echo $imgVila ?>"/>
-										<?php } else { ?>
-                                            <img src="<?php the_field('defimg', 'options'); ?>"/>
+                                            </a>
+											<?php
+										} else { ?>
+                                            <a href="<?php echo $postslist[0]->guid ?>">
+                                                <img src="<?php the_field('defimg', 'options'); ?>"/>
+                                            </a>
 										<?php } ?>
                                         <div class="discountBanner">
                                             <p>15% Discount Last Minute</p>
@@ -35,9 +60,13 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="vilaCaptionAndContent">
-                                                    <h3><?php echo $term->name;
-														if($term->count >= 2):
-															_e(' / Apartmani', 'wpog'); endif; ?></h3>
+                                                    <h3><?php
+														if($link): ?>
+                                                        <a href="<?php echo $link; ?>">
+															<?php endif;
+															echo $term->name;
+															if($isVilaApartments):
+																_e(' / Apartmani', 'wpog'); endif; ?></a></h3>
                                                 </div><!--/.vilaCaptionAndContent-->
                                             </div><!--/.col-sm-12-->
 
@@ -48,7 +77,7 @@
                                             </div><!--/.col-sm-7-->
 
                                             <div class="col-sm-5">
-                                                <div class="pricesBoxHolder <?php if($term->count >= 2):
+                                                <div class="pricesBoxHolder <?php if($isVilaApartments):
 													echo 'pricesBoxHolder--Gray'; endif; ?>">
                                                     <div class="pricesOnly">
                                                         <div class="singlePriceBox pricesBoxCrossed">
@@ -67,20 +96,9 @@
                                                         </div><!--/.singlePriceBox-->
                                                     </div>
                                                     <div class="pricesBoxButtonHolder">
-														<?php if($term->count >= 2): ?>
+														<?php if($isVilaApartments): ?>
                                                             <span><?php _e('Više Informacija', 'wpog') ?></span>
-														<?php else:
-															$args = [
-																'post_type' => 'apartman',
-																'tax_query' => [
-																	[
-																		'taxonomy' => 'vila',
-																		'terms'    => $term->term_id,
-																	]
-																]
-															];
-															$postslist = get_posts($args);
-															?>
+														<?php else: ?>
                                                             <a href="<?php echo $postslist[0]->guid ?>"><?php _e('Rezerviši', 'wpog') ?></a>
 														<?php endif; ?>
                                                     </div><!--/.pricesBoxButonHolder-->
@@ -94,7 +112,7 @@
                             </div><!-- /.row -->
                         </div> <!-- /.apartments-box -->
                     </div> <!-- /.MainVilla -->
-					<?php if($term->count >= 2): ?>
+					<?php if($isVilaApartments): ?>
                         <div data-content class="ApartmentsVilla">
 							<?php
 							$args  = [
