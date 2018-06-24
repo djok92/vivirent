@@ -40,6 +40,12 @@ Tags:
 
 .pickmeup .pmu-instance {
     width: 19em;
+    height: auto;
+}
+
+.pickmeup.pmu-flat.pmu-view-months .pmu-instance .pmu-months *,
+.pickmeup.pmu-flat.pmu-view-years .pmu-instance .pmu-years * {
+    width: 4.5em;
 }
 
 .af-booking-legend.reserved,
