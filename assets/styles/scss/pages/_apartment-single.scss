@@ -324,6 +324,9 @@
   .select2-container {
     width: 290px !important;
     font-weight: bold;
+    @include breakpoint(_480) {
+      width: 172px!important;
+    }
   }
 }
 
@@ -594,7 +597,6 @@ form {
   }
   .pricesBoxButtonHolder {
     @include breakpoint(_550) {
-      width: 75%;
       font-size: 16px;
       margin: 10px auto 0 auto;
     }

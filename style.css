@@ -154,6 +154,29 @@ body.home .three-calendars .pickmeup .pmu-disabled {
     width: 10%;
 }
 
+@media (max-width: 480px) {
+    #af-booking-adults-info .col-age,
+    #af-booking-adults-info .col-name,
+    #af-booking-adults-info .col-country {
+       display: flex;
+       justify-content: space-between;
+       width: auto!important;
+    }
+
+    #af-booking-adults-info .col-name .select2-container,
+    #af-booking-adults-info .col-country .select2-container {
+        width: 160px!important;
+    }
+
+    #af-booking-adults-info .col-name input {
+        width: 172px!important;
+    }
+    
+    #af-booking-adults-info .col-age {
+        padding: 0!important;
+    }
+}
+
 #af-booking-adults-info .col-name {
     width: 40%;
 }
@@ -170,7 +193,7 @@ body.home .three-calendars .pickmeup .pmu-disabled {
 #af-booking-adults-info .col-name input,
 #af-booking-adults-info .col-age .select2-container,
 #af-booking-adults-info .col-country .select2-container {
-    width: 100% !important
+    width: 100%
 }
 
 /*#af-booking-children-info .col-nr {*/
