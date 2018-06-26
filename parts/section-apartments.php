@@ -79,29 +79,22 @@
                                             <div class="col-sm-5">
                                                 <div class="pricesBoxHolder <?php if($isVilaApartments):
 													echo 'pricesBoxHolder--Gray'; endif; ?>">
-                                                    <div class="pricesOnly">
-                                                        <div class="singlePriceBox pricesBoxCrossed">
-                                                            <p>cena dnevno od</p>
-                                                            <span>272&euro;</span>
-                                                        </div><!--/.singlePriceBox pricesBoxCrossed-->
-                                                        <div class="singlePriceBox pricesBoxCrossed">
-                                                            <p>cena nedeljno od</p>
-                                                            <span>2472&euro;</span>
-                                                        </div><!--/.singlePriceBox pricesBoxCrossed-->
-                                                        <div class="singlePriceBox">
-                                                            <span>212&euro;</span>
-                                                        </div><!--/.singlePriceBox-->
-                                                        <div class="singlePriceBox">
-                                                            <span>2272&euro;</span>
-                                                        </div><!--/.singlePriceBox-->
-                                                    </div>
-                                                    <div class="pricesBoxButtonHolder">
-														<?php if($isVilaApartments): ?>
-                                                            <span><?php _e('Više Informacija', 'wpog') ?></span>
-														<?php else: ?>
-                                                            <a href="<?php echo $postslist[0]->guid ?>"><?php _e('Rezerviši', 'wpog') ?></a>
-														<?php endif; ?>
-                                                    </div><!--/.pricesBoxButonHolder-->
+                                                    <?php
+                                                    if($isVilaApartments) {
+                                                      echo do_shortcode('[afb-prices term_id="' . $term->term_id . '"]');
+                                                    } else {
+                                                      echo do_shortcode('[afb-prices post_id="' . $postslist[0]->ID . '"]');
+                                                    }
+                                                    ?>
+
+                                                    <?php if($isVilaApartments): ?>
+                                                      <div class="pricesBoxButtonHolder">
+                                                        <span><?php _e('Više Informacija', 'wpog') ?></span>
+                                                      </div><!--/.pricesBoxButonHolder-->
+                                                    <?php else: ?>
+                                                      <?php echo do_shortcode('[afb-reserve post_id="' . $postslist[0]->ID . '"]'); ?>
+                                                    <?php endif; ?>
+
                                                 </div><!--/.pricesBoxHolder panel-->
                                             </div><!--/.col-sm-5-->
 
@@ -191,33 +184,18 @@
 
                                                         <div class="col-sm-5">
                                                             <div class="pricesBoxHolder">
-                                                                <div class="pricesOnly">
-                                                                    <div class="singlePriceBox pricesBoxCrossed">
-                                                                        <p>cena dnevno od</p>
-                                                                        <!-- <span>272&euro;</span>-->
-                                                                    </div><!--/.singlePriceBox pricesBoxCrossed-->
-                                                                    <div class="singlePriceBox pricesBoxCrossed">
-                                                                        <p>cena nedeljno od</p>
-                                                                        <!-- <span>2472&euro;</span>-->
-                                                                    </div><!--/.singlePriceBox pricesBoxCrossed-->
-                                                                    <div class="singlePriceBox">
-                                                                        <span>212&euro;</span>
-                                                                    </div><!--/.singlePriceBox-->
-                                                                    <div class="singlePriceBox">
-                                                                        <span>2272&euro;</span>
-                                                                    </div><!--/.singlePriceBox-->
-                                                                </div>
-                                                                <div class="pricesBoxButtonHolder">
-                                                                    <a href="<?php the_permalink(); ?>"><?php _e('Rezerviši', 'wpog'); ?></a>
-                                                                </div><!--/.pricesBoxButonHolder-->
+                                                                <?php echo do_shortcode('[afb-prices post_id="' . get_the_ID() . '"]'); ?>
+                                                                <?php echo do_shortcode('[afb-reserve post_id="' . get_the_ID() . '"]'); ?>
                                                             </div><!--/.pricesBoxHolder panel-->
                                                         </div><!--/.col-sm-5-->
 
 
                                                         <div class="col-sm-12">
                                                             <div class="apartments-box__content_links">
+                                                              <!--
                                                                 <a href="<?php the_permalink(); ?>"
                                                                    class="link"><?php _e('Rezerviši', 'wpog'); ?></a>
+                                                                   -->
                                                             </div>  <!-- /.apartments-box__content_links -->
                                                         </div><!--/.col-sm-12-->
 

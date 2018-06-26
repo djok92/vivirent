@@ -47,8 +47,11 @@ $(document).ready(function () {
         }
 
         handler.each(function () {
+            // var parent = $(this).parent('.selectHolder');
+            // console.log(parent);
             $(this).select2({
-                minimumResultsForSearch: -1
+                minimumResultsForSearch: -1,
+               // dropdownParent: parent
             });
         });
     })();
@@ -310,8 +313,11 @@ $(document).ready(function () {
             });
 
             if (window.location.hash) {
+
                 index = window.location.hash.substring(1);
-                markTarget([nav, targets], index);
+                if (index === 'reserve') {
+                    markTarget([nav, targets], 3);
+                }
             }
         }
     })();

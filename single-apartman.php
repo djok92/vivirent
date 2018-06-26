@@ -212,7 +212,7 @@ get_header();
 
                 <div id="tab-4" class="tabs-content">
                     <div class="reservationDescription">
-	                    <?php the_field('opis_rezervacije'); ?>
+						<?php the_field('opis_rezervacije'); ?>
                     </div><!-- /.reservationDescription -->
 
 					<?php get_template_part('parts/booking', 'form'); ?>
@@ -221,7 +221,7 @@ get_header();
 
                 <div id="tab-5" class="tabs-content">
                     <div class="Contact__Description">
-	                    <?php the_field('opis_kontakt'); ?>
+						<?php the_field('opis_kontakt'); ?>
                     </div>
                     <div class="tabCaptionHolder">
                         <h3><?php _e('kontakt za apartman 3', 'wpog') ?></h3>

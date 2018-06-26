@@ -129,7 +129,13 @@
   &__Main {
     padding: 50px 0 50px 30px;
     background: #fff;
+    @include breakpoint(_991) {
+      padding: 40px 20px 40px 20px;
+    }
     @include breakpoint(_768) {
+      padding: 30px 15px 30px 15px;
+    }
+    @include breakpoint(_480) {
       padding: 20px 10px 20px 10px;
     }
   }
@@ -228,8 +234,22 @@
   }
 }
 
-#three-calendars {
+.three-calendars {
   margin: 30px 0;
+}
+
+//availability 
+
+.availabilityStatusHolder {
+  @include breakpoint(_480) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  span {
+    @include breakpoint(_480) {
+      flex-basis: 50%;
+    }
+  }
 }
 
 // Prices Table
@@ -382,7 +402,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  .category {
+  .summaryCategory {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -658,7 +678,7 @@ form {
   }
 }
 
-#three-calendars {
+.three-calendars {
   .pickmeup {
     background: none;
     @include breakpoint(_680) {
@@ -698,6 +718,11 @@ form {
       font-weight: 700;
     }
   }
+}
+
+.selectHolder {
+  position: relative;
+  z-index: 200;
 }
 
 .acf-map {

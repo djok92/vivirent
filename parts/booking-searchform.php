@@ -3,6 +3,11 @@ if(!function_exists('af_booking')) {
 	return;
 }
 ?>
+<script>
+	jQuery(document).ready(function () {
+		af_booking_search.init();
+	});
+</script>
 <div class="booking-form">
     <div class="bookingFormCaptionHolder">
         <p>Pretraga Apartmana</p>
@@ -10,29 +15,30 @@ if(!function_exists('af_booking')) {
     <form action="<?php echo af_booking()->getSearchURL(); ?>" method="get">
         <div class="booking-form__item">
             <label><?php _e('Destinacija', 'wpog'); ?>:</label>
-            <select id="Destination" type="text" name="destination" class="select2">
+            <select id="Destination" type="text" name="dest" class="select2">
 				<?php
 				$terms = get_terms([
 					'taxonomy'   => 'vila',
 					'hide_empty' => false
 				]);
 				foreach($terms as $term): ?>
-                    <option value="<?php echo $term->slug ?>"><?php echo $term->name ?></option>
+                    <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
 				<?php endforeach; ?>
             </select>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">
             <label><?php _e('Datum dolaska', 'wpog'); ?></label>
             <div class="datepicker-holder">
+
                 <i class="fa fa-calendar-o"></i>
-                <input id="af-search-calendar" type="text" name="checkin" class="datepicker date-icon form-control"/>
+                <input type="text" name="checkin" class="datepicker date-icon form-control" id="af-search-checkin"/>
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">
             <label><?php _e('Datum odlaska', 'wpog'); ?></label>
             <div class="datepicker-holder">
                 <i class="fa fa-calendar-o"></i>
-                <input id="af-search-calendar" type="text" name="checkin" class="datepicker date-icon form-control"/>
+                <input type="text" name="checkout" class="datepicker date-icon form-control" id="af-search-checkout"/>
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item personsCount">
@@ -59,10 +65,4 @@ if(!function_exists('af_booking')) {
             <input type="submit" name="submit" value="pretraži"/>
         </div> <!-- /.booking-form__item -->
     </form>
-
-    <script>
-        jQuery(document).ready(function () {
-            //af_booking_search.init();
-        });
-    </script>
 </div> <!-- /.booking-form -->

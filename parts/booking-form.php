@@ -2,17 +2,19 @@
 if(!function_exists('af_booking')) {
 	return;
 }
+$max_adults   = get_field('broj_gostiju');
+$max_children = $max_adults - 1 + get_field('broj_dece');
 ?>
 <script>
     jQuery(document).ready(function () {
-        af_booking.init();
+        af_booking.init(<?php echo get_field('broj_gostiju'); ?>, <?php echo get_field('broj_dece'); ?>);
     });
 </script>
 <div class="Wizzard">
     <ul class="Wizzard__Nav">
-        <li id="step-1-nav"><a href="#">Odaberite datum</a></li>
-        <li id="step-2-nav"><a href="#">Unos informacija</a></li>
-        <li id="step-3-nav"><a href="#">Potvrda</a></li>
+        <li id="step-1-nav"><a href="#" onclick="return false;">Odaberite datum</a></li>
+        <li id="step-2-nav"><a href="#" onclick="return false;">Unos informacija</a></li>
+        <li id="step-3-nav"><a href="#" onclick="return false;">Potvrda</a></li>
     </ul><!-- /.Wizzard__Nav -->
 
     <form id="af-booking-form">
@@ -35,22 +37,24 @@ if(!function_exists('af_booking')) {
                             assumenda
                             dignissimos dolore error id ipsam quam quod suscipit vel?
                         </div><!-- /.description -->
-                        <div id="three-calendars"></div><!-- /#three-calendars -->
+                        <div id="three-calendars" class="three-calendars"></div><!-- /#three-calendars -->
 
-                        <span class="af-booking-legend available">Slobodno</span>
-                        <span class="af-booking-legend reserved">Rezervisano</span>
-                        <span class="af-booking-legend occupied">Zauzeto</span>
-                        <span class="af-booking-legend unavailable">Nedostupno</span>
+                        <div class="availabilityStatusHolder">
+                            <span class="af-booking-legend available">Slobodno</span>
+                            <span class="af-booking-legend reserved">Rezervisano</span>
+                            <span class="af-booking-legend occupied">Zauzeto</span>
+                            <span class="af-booking-legend unavailable">Nedostupno</span>
+                        </div>
 
                         <div id="period-prices-wrapper">
                             <h3>Cene smestaja</h3>
                             <table class="pricesTable" id="period-prices">
                                 <thead>
                                 <tr>
-                                    <th>period boravka</th>
-                                    <th>min nocenja</th>
-                                    <th>cena od</th>
-                                    <th>nedeljno od</th>
+                                    <th class="col-period">period boravka</th>
+                                    <th class="col-nights">min nocenja</th>
+                                    <th class="col-price">cena od</th>
+                                    <th class="col-price">nedeljno od</th>
                                 </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -123,10 +127,6 @@ if(!function_exists('af_booking')) {
                                     <p>Turisticka Taksa</p>
                                     <p class="af-display-tourist-tax">-</p>
                                 </div><!--/.sideBoxRow-->
-                                <div class="sideBoxRow">
-                                    <p>PDV</p>
-                                    <p class="af-display-vat">-</p>
-                                </div><!--/.sideBoxRow-->
                                 <div class="sideBoxRow bold infoColor mt-30">
                                     <p>Total</p>
                                     <p class="af-display-total">-</p>
@@ -137,6 +137,7 @@ if(!function_exists('af_booking')) {
                     </div><!-- /.col-md-3 -->
 
                 </div>
+                <div class="booking-error"></div>
             </div><!--/.Wizzard__Main-->
 
             <div class="Wizzard__Footer">
@@ -159,11 +160,15 @@ if(!function_exists('af_booking')) {
                                 <p>Unesite broj na vauceru</p>
                                 <input type="text" name="promo" autocomplete="off">
                             </div><!--/.withInput-->
-                            <div class="statusMessage successBackground af-promo-row">
+                            <div class="statusMessage successBackground af-promo-ok">
                                 <p>Vaucer je ispravan. Aktivirano je <span class="af-display-promo"></span>% popusta na
                                     celoupan iznos
                                     aranzmana</p>
                             </div><!--/.statusMessage successBackground-->
+                            <div class="statusMessage failedBackground af-promo-error">
+                                <p>Loše ste uneli vaučer.</p>
+                            </div><!--/.statusMessage failedBackground-->
+
                         </div><!--/.wizzardSingleBox-->
 
                         <div class="wizzardSingleBox">
@@ -172,20 +177,25 @@ if(!function_exists('af_booking')) {
 
                             <div class="withInput">
                                 <p>Broj odraslih:</p>
-                                <select name="adults" id="af-booking-adults" class="select2">
-									<?php for($i = 1; $i <= 10; $i ++): ?>
-                                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-									<?php endfor; ?>
-                                </select>
+
+                                <div class="selectHolder">
+                                    <select name="adults" id="af-booking-adults" class="select2">
+										<?php for($i = 1; $i <= $max_adults; $i ++): ?>
+                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+										<?php endfor; ?>
+                                    </select>
+                                </div><!-- /.selectHolder -->
+
+
                             </div><!--/.withInput-->
                             <div class="withInput otherOption" id="af-booking-adults-wrapper">
-                                <table id="af-booking-adults-info">
+                                <table id="af-booking-adults-info" class="resp">
                                     <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Ime</th>
-                                        <th>Godina</th>
-                                        <th>Zemlja</th>
+                                        <th class="title-name">Ime</th>
+                                        <th class="title-age">Godina</th>
+                                        <th class="title-country">Zemlja</th>
                                     </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -195,13 +205,13 @@ if(!function_exists('af_booking')) {
                             <div class="withInput">
 
                                 <p>Broj dece:</p>
-
-                                <select name="children" id="af-booking-children" class="select2">
-									<?php for($i = 0; $i <= 10; $i ++): ?>
-                                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-									<?php endfor; ?>
-                                </select>
-
+                                <div class="selectHolder">
+                                    <select name="children" id="af-booking-children" class="select2">
+										<?php for($i = 0; $i <= $max_children; $i ++): ?>
+                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+										<?php endfor; ?>
+                                    </select>
+                                </div><!-- /.selectHolder -->
                             </div><!--/.withInput-->
                             <div class="withInput otherOption" id="af-booking-children-wrapper">
                                 <table id="af-booking-children-info">
@@ -215,8 +225,13 @@ if(!function_exists('af_booking')) {
                                 </table>
                             </div>
 
-                            <div class="statusMessage failedBackground" style="display:none">
-                                <p>Ukupan broj osoba za izabrani apartman ne moze prelaziti 8 osoba.</p>
+                            <div class="statusMessage failedBackground af-space-warning">
+                                <p>
+                                    Izabrali ste više osoba nego što apartman može primiti.
+                                    Za izabrani broj odraslih, apartman može primiti najviše <span
+                                            class="af-display-maxchildren">-</span> dece ispod 3 godine.
+                                    Deca preko 3 godine zauzimaju mesto isto kao i odrasli.
+                                </p>
                             </div><!--/.statusMessage failedBackground-->
                         </div><!--/.wizzardSingleBox-->
 
@@ -224,17 +239,21 @@ if(!function_exists('af_booking')) {
                             <h3>Odaberite nacin placanja</h3>
                             <div class="withInput">
                                 <p>Uplata</p>
-                                <select name="payment_option1" class="select2">
-                                    <option value="1">30% odmah</option>
-                                    <option value="2">100% odmah</option>
-                                </select>
+                                <div class="selectHolder">
+                                    <select name="payment_option1" class="select2">
+                                        <option value="1">30% odmah</option>
+                                        <option value="2">100% odmah</option>
+                                    </select>
+                                </div>
                             </div><!--/.withInput-->
-                            <div class="withInput otherOption">
+                            <div class="withInput otherOption payment2-row">
                                 <p>Ostatak uplate</p>
-                                <select name="payment_option2" class="select2">
-                                    <option value="1">Bank transfer</option>
-                                    <option value="2">Na licu mesta</option>
-                                </select>
+                                <div class="selectHolder">
+                                    <select name="payment_option2" class="select2">
+                                        <option value="1">Bank transfer</option>
+                                        <option value="2">Na licu mesta</option>
+                                    </select>
+                                </div>
                             </div><!--/.withInput otherOption-->
                             <div class="statusMessage infoBackground">
                                 <p>Ukupno za uplatu:</p>
@@ -243,7 +262,7 @@ if(!function_exists('af_booking')) {
                         </div><!--/.wizzardSingleBox-->
 
                         <div class="Contact__Form mt-60">
-                            <h3>Lične Informacije</h3>
+                            <h3>Informacije za plaćanje</h3>
 
 
                             <div class='withInput'>
@@ -278,8 +297,8 @@ if(!function_exists('af_booking')) {
 
                             <div class='withInput'>
                                 <p><?php _e('Zemlja', 'wpog'); ?></p>
-<!--                                <div class="Booking__Input_Select">-->
-
+                                <!--                                <div class="Booking__Input_Select">-->
+                                <div class="selectHolder">
                                     <select name="country" id="input_country" class="select2">
                                         <option value=""></option>
 										<?php
@@ -288,7 +307,8 @@ if(!function_exists('af_booking')) {
 										}
 										?>
                                     </select>
-<!--                                </div>-->
+                                </div>
+                                <!--                                </div>-->
                             </div>
 
 
@@ -296,7 +316,10 @@ if(!function_exists('af_booking')) {
 
 
                         <div class="checkBox">
-                            <input type="checkbox" name="tos" value="1" id="input_tos"><span>Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana</span>
+                            <input type="checkbox" name="tos" value="1" id="input_tos">
+                            <span>
+                                Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana
+                            </span>
                         </div><!--/.checkBox-->
                     </div><!-- /.col-md-9 -->
 
@@ -353,10 +376,6 @@ if(!function_exists('af_booking')) {
                                     <p>Turisticka Taksa</p>
                                     <p class="af-display-tourist-tax">-</p>
                                 </div><!--/.sideBoxRow-->
-                                <div class="sideBoxRow">
-                                    <p>PDV</p>
-                                    <p class="af-display-vat">-</p>
-                                </div><!--/.sideBoxRow-->
                                 <div class="sideBoxRow bold infoColor mt-30">
                                     <p>Total</p>
                                     <p class="af-display-total">-</p>
@@ -366,6 +385,7 @@ if(!function_exists('af_booking')) {
                         </div> <!-- /.sideBoxInfo -->
                     </div><!-- /.col-md-3 -->
                 </div><!-- /.row -->
+                <div class="booking-error"></div>
             </div><!--/.Wizzard__Main-->
 
             <div class="Wizzard__Footer">
@@ -441,10 +461,6 @@ if(!function_exists('af_booking')) {
                                     <p>Turisticka Taksa</p>
                                     <p class="af-display-tourist-tax">-</p>
                                 </div><!--/.sideBoxRow-->
-                                <div class="sideBoxRow">
-                                    <p>PDV</p>
-                                    <p class="af-display-vat">-</p>
-                                </div><!--/.sideBoxRow-->
                                 <div class="sideBoxRow bold infoColor mt-30">
                                     <p>Total</p>
                                     <p class="af-display-total">-</p>
@@ -455,32 +471,51 @@ if(!function_exists('af_booking')) {
                     </div><!--/.col-md-3-->
                     <div class="col-md-6">
                         <div class="reservationSummary">
-                            <div class="summaryCategories">
+                            <div class="summaryCategory">
                                 <p>Ime</p>
-                                <p>Prezime</p>
-                                <p>Ulica i broj</p>
-                                <p>Grad</p>
-                                <p>Drzava</p>
-                                <p>Kontakt Telefon</p>
-                                <p>Email</p>
-                                <p>Napomena</p>
-                                <p>Placanje</p>
-                            </div>
-                            <div class="summaryData">
                                 <p id="display-first-name"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Prezime</p>
                                 <p id="display-last-name"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Ulica i broj</p>
                                 <p id="display-address"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Grad</p>
                                 <p id="display-city"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Drzava</p>
                                 <p id="display-country"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Kontakt Telefon</p>
                                 <p id="display-phone"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Email</p>
                                 <p id="display-email"></p>
-                                <p>-</p>
-                                <p>-</p>
-                            </div>
-                        </div>
-                    </div>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Ime</p>
+                                <p id="display-first-name"></p>
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Napomena</p>
+                                <p>30% - Bank Transfer</p> <!--Ubacen tekst samo da probam da li radi-->
+                            </div><!--/.summaryCategory-->
+                            <div class="summaryCategory">
+                                <p>Placanje</p>
+                                <p></p>                    <!--Ostavljen prazan paragraf da ubacis sta je potrebno -->
+                            </div><!--/.summaryCategory-->
+                        </div><!--/.reservationSummary-->
+                    </div><!--/.col-md-6-->
                 </div><!--/.row-->
 
+                <div class="booking-error"></div>
             </div><!--/.Wizzard__Main-->
 
             <div class="Wizzard__Footer">
