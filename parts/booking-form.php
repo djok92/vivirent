@@ -137,7 +137,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                     </div><!-- /.col-md-3 -->
 
                 </div>
-                <div class="booking-error"></div>
+
+                <div class="statusMessage failedBackground booking-error"></div>
             </div><!--/.Wizzard__Main-->
 
             <div class="Wizzard__Footer">
@@ -385,7 +386,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                         </div> <!-- /.sideBoxInfo -->
                     </div><!-- /.col-md-3 -->
                 </div><!-- /.row -->
-                <div class="booking-error"></div>
+
+                <div class="statusMessage failedBackground booking-error"></div>
             </div><!--/.Wizzard__Main-->
 
             <div class="Wizzard__Footer">
@@ -515,7 +517,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                     </div><!--/.col-md-6-->
                 </div><!--/.row-->
 
-                <div class="booking-error"></div>
+                <div class="statusMessage failedBackground booking-error"></div>
             </div><!--/.Wizzard__Main-->
 
             <div class="Wizzard__Footer">

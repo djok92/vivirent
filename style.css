@@ -14,13 +14,13 @@ Tags:
 /* cell colors & legend */
 
 .af-booking-legend.available,
-.pickmeup .pmu-button {
+#three-calendars .pickmeup .pmu-button {
     background: #EFEFEF;
     color: #000;
 }
 
 .af-booking-legend.unavailable,
-.three-calendars .pickmeup .date-unavailable {
+#three-calendars .pickmeup .date-unavailable {
     background: #aaa;
     color: #333 !important;
 }
@@ -53,12 +53,12 @@ Tags:
 }
 
 .af-booking-legend.reserved,
-.three-calendars .pickmeup .date-reserved {
+#three-calendars .pickmeup .date-reserved {
     background: #fffd6f;
 }
 
 .af-booking-legend.occupied,
-.three-calendars .pickmeup .date-occupied {
+#three-calendars .pickmeup .date-occupied {
     background: #ff866e;
 }
 
@@ -69,7 +69,7 @@ Tags:
     display: inline-block;
 }
 
-.three-calendars .pickmeup .pmu-selected {
+#three-calendars .pickmeup .pmu-selected {
     background: #36e246;
 }
 
@@ -142,14 +142,14 @@ Tags:
 
 /* loading indicators */
 
-.three-calendars.loading,
+#three-calendars.loading,
 #period-prices-wrapper.loading,
 #af-booking-pricing.loading,
 .af-booking-cart.loading {
     position: relative;
 }
 
-.three-calendars.loading:after,
+#three-calendars.loading:after,
 #period-prices-wrapper.loading:after,
 #af-booking-pricing.loading:after,
 .af-booking-cart.loading:after {
@@ -173,21 +173,21 @@ Tags:
     background: rgba(255, 255, 255, 0.7);
 }
 
-.three-calendars.loading {
+#three-calendars.loading {
     min-height: 193px;
 }
 
-.three-calendars .pickmeup .pmu-button.pmu-not-in-month.pmu-selected {
+#three-calendars .pickmeup .pmu-button.pmu-not-in-month.pmu-selected {
     background: #EFEFEF;
 }
 
-.booking-error {
-    margin: 10px 0 -10px 0;
-    color: #f00000;
-    /*font-weight: bold;*/
-    font-size: 110%;
-    text-align: center;
-}
+/*.booking-error {*/
+    /*margin: 10px 0 -10px 0;*/
+    /*color: #f00000;*/
+    /*!*font-weight: bold;*!*/
+    /*font-size: 110%;*/
+    /*text-align: center;*/
+/*}*/
 
 /* form responsive table fix */
 
