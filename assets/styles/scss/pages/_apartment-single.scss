@@ -90,11 +90,14 @@
   .apartment-description {
     margin-bottom: 15px;
   }
+
+  //box cene na single apartmanu
   .pricesBoxHolder {
     margin-left: 0;
+    height: auto;
   }
   .singlePriceBox {
-    padding: 7px;
+    padding: 3px;
     p {
       font-size: 15px
     }
