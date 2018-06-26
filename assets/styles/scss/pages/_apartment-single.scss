@@ -311,6 +311,14 @@
     width: 60%;
   }
   .select2-container {
+    width: 160px !important;
+    font-weight: bold;
+  }
+
+}
+
+.Contact__Form {
+  .select2-container {
     width: 290px !important;
     font-weight: bold;
   }
