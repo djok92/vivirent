@@ -157,7 +157,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
                         <div class="wizzardSingleBox">
                             <h3>Popust Vaucer (opciono)</h3>
-                            <div class="withInput">
+                            <div class="withInput withInput--Small">
                                 <p>Unesite broj na vauceru</p>
                                 <input type="text" name="promo" autocomplete="off">
                             </div><!--/.withInput-->
@@ -301,7 +301,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
                             <div class='withInput'>
                                 <label><?php _e('Zemlja', 'wpog'); ?></label>
-                                <!--                                <div class="Booking__Input_Select">-->
                                 <div class="selectHolder">
                                     <select name="country" id="input_country" class="select2">
                                         <option value=""></option>
@@ -312,7 +311,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 										?>
                                     </select>
                                 </div>
-                                <!--                                </div>-->
                             </div>
 
 

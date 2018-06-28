@@ -328,6 +328,11 @@
     margin-right: 15px;
     width: 40%;
   }
+  &--Small {
+    input {
+      max-width: 80px;
+    }
+  }
 }
 
 .Contact__Form {
