@@ -31,14 +31,14 @@ if(!function_exists('af_booking')) {
             <div class="datepicker-holder">
 
                 <i class="fa fa-calendar-o"></i>
-                <input type="text" name="checkin" class="datepicker date-icon form-control" id="af-search-checkin"/>
+                <input type="text" name="checkin" class="datepicker date-icon form-control" id="af-search-checkin" autocomplete="off"/>
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">
             <label><?php _e('Datum odlaska', 'wpog'); ?></label>
             <div class="datepicker-holder">
                 <i class="fa fa-calendar-o"></i>
-                <input type="text" name="checkout" class="datepicker date-icon form-control" id="af-search-checkout"/>
+                <input type="text" name="checkout" class="datepicker date-icon form-control" id="af-search-checkout" autocomplete="off"/>
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item personsCount">

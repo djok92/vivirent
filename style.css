@@ -11,103 +11,21 @@ Text Domain: wpog
 Tags:
 */
 
-/* cell colors & legend */
-
-.af-booking-legend.available,
-.three-calendars .pickmeup .pmu-button {
-    background: #EFEFEF;
-    color: #000;
-}
-
-.af-booking-legend.unavailable,
-.three-calendars .pickmeup .date-unavailable {
-    background: #aaa;
-    color: #333 !important;
-}
-
-body.home .three-calendars .pickmeup .pmu-disabled {
-    background: #aaa;
-    color: #333 !important;
-}
-
-.pmu-month .pmu-button,
-.pickmeup .pmu-instance nav .pmu-month,
-.pickmeup .pmu-instance:first-child .pmu-month,
-.pickmeup .pmu-instance:last-child .pmu-month {
-    width: 100%;
-}
-
-.pickmeup .pmu-instance .pmu-day-of-week *, .pickmeup .pmu-instance .pmu-days * {
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-}
-
-/*.pickmeup .pmu-instance .pmu-not-in-month {*/
-/*color: #EFEFEF !important;*/
-/*background-color: #EFEFEF !important;*/
-/*pointer-events: none;*/
-/*}*/
-.three-calendars .pickmeup .pmu-button:hover {
-    color: #88c5eb;
-}
-
-.three-calendars .pickmeup .pmu-button.date-reserved:hover {
-    color: #000;
-}
-
-.three-calendars .pickmeup .pmu-instance .pmu-selected {
-    background: #136a9f;
-    color: #eee;
-}
-
-.pickmeup .pmu-instance {
-    width: 19em;
-    height: auto;
-}
-
 .withInput .col-age .select2-container {
     width: 60px !important;
 }
 
-.pickmeup.pmu-view-months .pmu-instance .pmu-months *,
-.pickmeup.pmu-view-years .pmu-instance .pmu-years * {
-    width: 4.5em;
-}
+/*!* pricing table *!*/
+/*#af-booking-pricing tr.selectable:hover,*/
+/*#af-booking-pricing tr.selected {*/
+/*background: #000;*/
+/*cursor: pointer;*/
+/*}*/
 
-.af-booking-legend.reserved,
-#three-calendars .pickmeup .date-reserved {
-    background: #fffd6f;
-}
-
-.af-booking-legend.occupied,
-#three-calendars .pickmeup .date-occupied {
-    background: #ff866e;
-}
-
-.af-booking-legend {
-    margin-bottom: 20px;
-    padding: 4px 12px;
-    font-size: 12px;
-    display: inline-block;
-}
-
-#three-calendars .pickmeup .pmu-selected {
-    background: #36e246;
-}
-
-/* pricing table */
-
-#af-booking-pricing tr.selectable:hover,
-#af-booking-pricing tr.selected {
-    background: #000;
-    cursor: pointer;
-}
-
-#af-booking-pricing tr.selectable:hover td,
-#af-booking-pricing tr.selected td {
-    color: #fff;
-}
+/*#af-booking-pricing tr.selectable:hover td,*/
+/*#af-booking-pricing tr.selected td {*/
+/*color: #fff;*/
+/*}*/
 
 #af-booking-pricing .col-period .cog-days {
     margin-left: 20px;
@@ -115,88 +33,85 @@ body.home .three-calendars .pickmeup .pmu-disabled {
     text-transform: lowercase;
 }
 
-#af-booking-pricing .col-nights {
-    text-align: center;
-}
+/*#af-booking-pricing .col-nights {*/
+    /*text-align: center;*/
+/*}*/
 
-#af-booking-pricing .col-price,
-#period-prices .col-price {
-    text-align: right;
-}
+/*#af-booking-pricing .col-price,*/
+/*#period-prices .col-price {*/
+    /*text-align: right;*/
+/*}*/
 
-#af-booking-pricing .col-price .old-price,
-#period-prices .col-price .old-price {
-    margin-right: 20px;
-    text-decoration: line-through;
-    display: inline-block;
-}
+/*#af-booking-pricing .col-price .old-price,*/
+/*#period-prices .col-price .old-price {*/
+    /*margin-right: 20px;*/
+    /*text-decoration: line-through;*/
+    /*display: inline-block;*/
+/*}*/
 
 /* adults & children info table */
 
-#af-booking-adults-info,
-#af-booking-children-info {
-    width: 100%;
-}
+/*#af-booking-adults-info,*/
+/*#af-booking-children-info {*/
+    /*width: 100%;*/
+/*}*/
 
-#af-booking-children-info td:last-child,
-#af-booking-children-info th:last-child {
-    text-align: right;
-}
+/*#af-booking-children-info td:last-child,*/
+/*#af-booking-children-info th:last-child {*/
+    /*text-align: right;*/
+/*}*/
 
-#af-booking-adults-info th,
-#af-booking-adults-info td,
-#af-booking-children-info th,
-#af-booking-children-info td {
-    padding: 5px 0;
-}
+/*#af-booking-adults-info th,*/
+/*#af-booking-adults-info td,*/
+/*#af-booking-children-info th,*/
+/*#af-booking-children-info td {*/
+    /*padding: 5px 0;*/
+/*}*/
 
-#af-booking-adults-info .col-nr {
-    width: 10%;
-}
+/*#af-booking-adults-info .col-nr {*/
+    /*width: 10%;*/
+/*}*/
 
 @media (max-width: 480px) {
     #af-booking-adults-info .col-age,
     #af-booking-adults-info .col-name,
     #af-booking-adults-info .col-country {
-       display: flex;
-       justify-content: space-between;
-       width: auto!important;
+        display: flex;
+        justify-content: space-between;
+        width: auto !important;
     }
 
     #af-booking-adults-info .col-name .select2-container,
     #af-booking-adults-info .col-country .select2-container {
-        width: 160px!important;
+        width: 160px !important;
     }
 
     #af-booking-adults-info .col-name input {
-        width: 172px!important;
+        width: 172px !important;
     }
-    
+
     #af-booking-adults-info .col-age {
-        padding: 0!important;
+        padding: 0 !important;
     }
 }
 
-#af-booking-adults-info .col-name {
-    width: 40%;
-}
+/*#af-booking-adults-info .col-name {*/
+    /*width: 40%;*/
+/*}*/
 
-#af-booking-adults-info .col-age {
-    width: 10%;
-    padding: 0 10px;
-}
+/*#af-booking-adults-info .col-age {*/
+    /*width: 10%;*/
+    /*padding: 0 10px;*/
+/*}*/
 
-#af-booking-adults-info .col-country {
-    width: 40%;
-}
+/*#af-booking-adults-info .col-country {*/
+    /*width: 40%;*/
+/*}*/
 
-#af-booking-adults-info .col-name input,
-#af-booking-adults-info .col-age .select2-container,
-#af-booking-adults-info .col-country .select2-container {
-    width: 100%
-}
-
-/*#af-booking-children-info .col-nr {*/
+/*#af-booking-adults-info .col-name input,*/
+/*#af-booking-adults-info .col-age .select2-container,*/
+/*#af-booking-adults-info .col-country .select2-container {*/
+        /*width: 100% !important;*/
 /*}*/
 
 #af-booking-children-info .col-age select {
@@ -240,9 +155,9 @@ body.home .three-calendars .pickmeup .pmu-disabled {
     min-height: 193px;
 }
 
-#three-calendars .pickmeup .pmu-button.pmu-not-in-month.pmu-selected {
-    background: #EFEFEF;
-}
+/*#three-calendars .pickmeup .pmu-button.pmu-not-in-month.pmu-selected {*/
+/*background: #EFEFEF;*/
+/*}*/
 
 /*.booking-error {*/
 /*margin: 10px 0 -10px 0;*/

@@ -228,30 +228,30 @@ input:focus {
     }
   }
 }
-
-.successBackground {
-  background: rgb(92, 184, 92);
-}
-
-.successColor {
-  color: rgb(92, 184, 92);
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.failedBackground {
-  background: rgb(217, 83, 79);
-}
-
-.infoBackground {
-  background: #24aae1;
-}
-
-.infoColor {
-  color: #24aae1;
-}
+//
+//.successBackground {
+//  background: rgb(92, 184, 92);
+//}
+//
+//.successColor {
+//  color: rgb(92, 184, 92);
+//}
+//
+//.bold {
+//  font-weight: bold;
+//}
+//
+//.failedBackground {
+//  background: rgb(217, 83, 79);
+//}
+//
+//.infoBackground {
+//  background: #24aae1;
+//}
+//
+//.infoColor {
+//  color: #24aae1;
+//}
 
 .mt-60 {
   margin-top: 60px;
@@ -326,8 +326,4 @@ input:focus {
   h3 {
     margin-top: 20px;
   }
-}
-
-.pickmeup {
-  z-index: 600;
 }

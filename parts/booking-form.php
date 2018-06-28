@@ -169,6 +169,9 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             <div class="statusMessage failedBackground af-promo-error">
                                 <p>Loše ste uneli vaučer.</p>
                             </div><!--/.statusMessage failedBackground-->
+                            <div class="statusMessage failedBackground af-promo-already">
+                                <p>U periodu koji ste odabrali već postoje popusti, vaučer se ne može koristiti.</p>
+                            </div><!--/.statusMessage failedBackground-->
 
                         </div><!--/.wizzardSingleBox-->
 
@@ -257,8 +260,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                 </div>
                             </div><!--/.withInput otherOption-->
                             <div class="statusMessage infoBackground">
-                                <p>Ukupno za uplatu:</p>
-                                <p>--- evra</p>
+                                <p>Za uplatu:</p>
+                                <p class="af-payable-now">-</p>
                             </div><!--/.statusMessage infoBackground-->
                         </div><!--/.wizzardSingleBox-->
 
@@ -267,37 +270,37 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
 
                             <div class='withInput'>
-                                <p><?php _e('Ime', 'wpog'); ?></p>
+                                <label><?php _e('Ime', 'wpog'); ?></label>
                                 <input type="text" name="first_name" id="input_first_name">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Prezime', 'wpog'); ?></p>
+                                <label><?php _e('Prezime', 'wpog'); ?></label>
                                 <input type="text" name="last_name" id="input_last_name">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Telefon', 'wpog'); ?></p>
+                                <label><?php _e('Telefon', 'wpog'); ?></label>
                                 <input type="text" name="phone" id="input_phone">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Email', 'wpog'); ?></p>
+                                <label><?php _e('Email', 'wpog'); ?></label>
                                 <input type="text" name="email" id="input_email">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Adresa', 'wpog'); ?></p>
+                                <label><?php _e('Adresa', 'wpog'); ?></label>
                                 <input type="text" name="address" id="input_address">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Grad', 'wpog'); ?></p>
+                                <label><?php _e('Grad', 'wpog'); ?></label>
                                 <input type="text" name="city" id="input_city">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Zemlja', 'wpog'); ?></p>
+                                <label><?php _e('Zemlja', 'wpog'); ?></label>
                                 <!--                                <div class="Booking__Input_Select">-->
                                 <div class="selectHolder">
                                     <select name="country" id="input_country" class="select2">

@@ -49,9 +49,11 @@
                                                 <img src="<?php the_field('defimg', 'options'); ?>"/>
                                             </a>
 										<?php } ?>
+                                      <?php if (!$isVilaApartments && get_field('popust_text', $postslist[0]->ID)): ?>
                                         <div class="discountBanner">
-                                            <p>15% Discount Last Minute</p>
+                                          <p><?php the_field('popust_text', $postslist[0]->ID); ?></p>
                                         </div><!--/.discountBanner-->
+                                      <?php endif; ?>
                                     </div><!--/."apartments-box_img-->
                                 </div><!-- /.col-md-5 -->
 
@@ -130,9 +132,12 @@
 													} else { ?>
                                                         <img src="<?php the_field('defimg', 'options'); ?>"/>
 													<?php } ?>
+                                                  <?php if (get_field('popust_text')): ?>
                                                     <div class="discountBanner">
-                                                        <p>15% Discount Last Minute</p>
+                                                        <p><?php the_field('popust_text'); ?></p>
                                                     </div><!--/.discountBanner-->
+                                                  <?php endif; ?>
+
                                                 </div><!--/."apartments-box_img-->
                                             </div><!-- /.col-md-5 -->
 

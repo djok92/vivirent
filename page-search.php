@@ -72,9 +72,11 @@ get_header(); ?>
 										<img src="<?php the_field( 'defimg', 'options' ); ?>"/>
 									<?php } ?>
 								</a>
-                <div class="discountBanner">
-                  <p>15% Discount Last Minute</p>
-                </div><!--/.discountBanner-->
+                <?php if (get_field('popust_text')): ?>
+                  <div class="discountBanner">
+                    <p><?php the_field('popust_text'); ?></p>
+                  </div><!--/.discountBanner-->
+                <?php endif; ?>
 							</div><!--/."apartments-box_img-->
 						</div> <!-- /.col-md-5 -->
 
