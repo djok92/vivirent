@@ -116,9 +116,6 @@
     font-size: 15px;
     font-weight: bold;
     padding-bottom: 10px;
-    // @include breakpoint(_768) {
-    //   font-size: 15px;
-    // }
     @include breakpoint(_480) {
       font-size: 18px;
     }

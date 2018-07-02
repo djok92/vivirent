@@ -89,17 +89,25 @@
   }
   .apartment-description {
     margin-bottom: 15px;
-  }
-
+  } 
   //box cene na single apartmanu
   .pricesBoxHolder {
     margin-left: 0;
+    height: auto;
+    //sklanjanje margin-top sa gornjeg buttona
+    div:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+   
+  .pricesOnly {
     height: auto;
   }
   .singlePriceBox {
     padding: 3px;
     p {
-      font-size: 15px
+      font-size: 15px;
+      padding-bottom: 7px;
     }
   }
 }
@@ -242,7 +250,6 @@
 }
 
 //availability 
-
 .availabilityStatusHolder {
   @include breakpoint(_480) {
     display: flex;
@@ -317,7 +324,6 @@
     width: 160px !important;
     font-weight: bold;
   }
-
 }
 
 .Contact__Form {
@@ -325,7 +331,7 @@
     width: 290px !important;
     font-weight: bold;
     @include breakpoint(_480) {
-      width: 172px!important;
+      width: 172px !important;
     }
   }
 }
@@ -375,8 +381,7 @@
 //Side Box
 .sideBoxInfo {
   padding: 20px;
-  background: #ddd;
-  //@media (min-width: 600px) and (max-width: 1200px) {
+  background: #ddd; //@media (min-width: 600px) and (max-width: 1200px) {
   //  width: 415px;
   //  margin: 20px auto 0 auto;
   //}
@@ -560,7 +565,7 @@
   }
 }
 
-#wpcf7-f520-p49-o1 > form > p:nth-child(6) {
+#wpcf7-f520-p49-o1>form>p:nth-child(6) {
   background: none;
   padding: 0;
 }
