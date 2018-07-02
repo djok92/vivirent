@@ -39,6 +39,10 @@ $(document).ready(function () {
     });
 
 
+    /**
+     * Select2
+     */
+
     (function () {
 
         var handler = $('select.select2');
@@ -51,11 +55,28 @@ $(document).ready(function () {
             // console.log(parent);
             $(this).select2({
                 minimumResultsForSearch: -1,
-               // dropdownParent: parent
+                // dropdownParent: parent
             });
         });
     })();
 
+
+    /**
+     * PickmeUp Calendar position Fix
+     */
+
+
+    // (function () {
+    //
+    //     var handler = $('.pickmeup');
+    //     if (!handler.length) {
+    //         return;
+    //     }
+    //
+    //     handler.each(function () {
+    //       $(this).appendTo('.datepicker-holder');
+    //     });
+    // })();
 
     /**
      * Rating stars

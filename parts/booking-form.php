@@ -157,7 +157,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
                         <div class="wizzardSingleBox">
                             <h3>Popust Vaucer (opciono)</h3>
-                            <div class="withInput">
+                            <div class="withInput withInput--Small">
                                 <p>Unesite broj na vauceru</p>
                                 <input type="text" name="promo" autocomplete="off">
                             </div><!--/.withInput-->
@@ -168,6 +168,9 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div><!--/.statusMessage successBackground-->
                             <div class="statusMessage failedBackground af-promo-error">
                                 <p>Loše ste uneli vaučer.</p>
+                            </div><!--/.statusMessage failedBackground-->
+                            <div class="statusMessage failedBackground af-promo-already">
+                                <p>U periodu koji ste odabrali već postoje popusti, vaučer se ne može koristiti.</p>
                             </div><!--/.statusMessage failedBackground-->
 
                         </div><!--/.wizzardSingleBox-->
@@ -191,14 +194,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div><!--/.withInput-->
                             <div class="withInput otherOption" id="af-booking-adults-wrapper">
                                 <table id="af-booking-adults-info" class="resp">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th class="title-name">Ime</th>
-                                        <th class="title-age">Godina</th>
-                                        <th class="title-country">Zemlja</th>
-                                    </tr>
-                                    </thead>
                                     <tbody></tbody>
                                 </table>
                             </div>
@@ -216,12 +211,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div><!--/.withInput-->
                             <div class="withInput otherOption" id="af-booking-children-wrapper">
                                 <table id="af-booking-children-info">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Godina</th>
-                                    </tr>
-                                    </thead>
                                     <tbody></tbody>
                                 </table>
                             </div>
@@ -257,8 +246,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                 </div>
                             </div><!--/.withInput otherOption-->
                             <div class="statusMessage infoBackground">
-                                <p>Ukupno za uplatu:</p>
-                                <p>--- evra</p>
+                                <p>Za uplatu:</p>
+                                <p class="af-payable-now">-</p>
                             </div><!--/.statusMessage infoBackground-->
                         </div><!--/.wizzardSingleBox-->
 
@@ -267,38 +256,37 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
 
                             <div class='withInput'>
-                                <p><?php _e('Ime', 'wpog'); ?></p>
+                                <label><?php _e('Ime', 'wpog'); ?></label>
                                 <input type="text" name="first_name" id="input_first_name">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Prezime', 'wpog'); ?></p>
+                                <label><?php _e('Prezime', 'wpog'); ?></label>
                                 <input type="text" name="last_name" id="input_last_name">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Telefon', 'wpog'); ?></p>
+                                <label><?php _e('Telefon', 'wpog'); ?></label>
                                 <input type="text" name="phone" id="input_phone">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Email', 'wpog'); ?></p>
+                                <label><?php _e('Email', 'wpog'); ?></label>
                                 <input type="text" name="email" id="input_email">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Adresa', 'wpog'); ?></p>
+                                <label><?php _e('Adresa', 'wpog'); ?></label>
                                 <input type="text" name="address" id="input_address">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Grad', 'wpog'); ?></p>
+                                <label><?php _e('Grad', 'wpog'); ?></label>
                                 <input type="text" name="city" id="input_city">
                             </div>
 
                             <div class='withInput'>
-                                <p><?php _e('Zemlja', 'wpog'); ?></p>
-                                <!--                                <div class="Booking__Input_Select">-->
+                                <label><?php _e('Zemlja', 'wpog'); ?></label>
                                 <div class="selectHolder">
                                     <select name="country" id="input_country" class="select2">
                                         <option value=""></option>
@@ -309,7 +297,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 										?>
                                     </select>
                                 </div>
-                                <!--                                </div>-->
                             </div>
 
 
@@ -502,16 +489,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                 <p id="display-email"></p>
                             </div><!--/.summaryCategory-->
                             <div class="summaryCategory">
-                                <p>Ime</p>
-                                <p id="display-first-name"></p>
-                            </div><!--/.summaryCategory-->
-                            <div class="summaryCategory">
-                                <p>Napomena</p>
-                                <p>30% - Bank Transfer</p> <!--Ubacen tekst samo da probam da li radi-->
-                            </div><!--/.summaryCategory-->
-                            <div class="summaryCategory">
                                 <p>Placanje</p>
-                                <p></p>                    <!--Ostavljen prazan paragraf da ubacis sta je potrebno -->
+                                <p id="display-payment"></p>
                             </div><!--/.summaryCategory-->
                         </div><!--/.reservationSummary-->
                     </div><!--/.col-md-6-->

@@ -10,7 +10,7 @@
 
 			<?php foreach($terms as $term):
 				$isVilaApartments = $term->count >= 2;
-	
+
 				$postslist = null;
 				$link      = null;
 				if(!$isVilaApartments):
@@ -49,9 +49,11 @@
                                                 <img src="<?php the_field('defimg', 'options'); ?>"/>
                                             </a>
 										<?php } ?>
-                                        <div class="discountBanner">
-                                            <p>15% Discount Last Minute</p>
-                                        </div><!--/.discountBanner-->
+										<?php if(!$isVilaApartments && get_field('popust_text', $postslist[0]->ID)): ?>
+                                            <div class="discountBanner">
+                                                <p><?php the_field('popust_text', $postslist[0]->ID); ?></p>
+                                            </div><!--/.discountBanner-->
+										<?php endif; ?>
                                     </div><!--/."apartments-box_img-->
                                 </div><!-- /.col-md-5 -->
 
@@ -74,26 +76,32 @@
                                                 <div>
 													<?php echo term_description($term->term_id, $term->taxonomy) ?>
                                                 </div>
+												<?php if(!$isVilaApartments): ?>
+                                                    <div class="apartments-box__content_links">
+                                                        <a href="<?php echo $postslist[0]->guid ?>"
+                                                           class="link"><?php _e('Više informacija', 'wpog'); ?></a>
+                                                    </div>  <!-- /.apartments-box__content_links -->
+												<?php endif; ?>
                                             </div><!--/.col-sm-7-->
 
                                             <div class="col-sm-5">
                                                 <div class="pricesBoxHolder <?php if($isVilaApartments):
 													echo 'pricesBoxHolder--Gray'; endif; ?>">
-                                                    <?php
-                                                    if($isVilaApartments) {
-                                                      echo do_shortcode('[afb-prices term_id="' . $term->term_id . '"]');
-                                                    } else {
-                                                      echo do_shortcode('[afb-prices post_id="' . $postslist[0]->ID . '"]');
-                                                    }
-                                                    ?>
+													<?php
+													if($isVilaApartments) {
+														echo do_shortcode('[afb-prices term_id="' . $term->term_id . '"]');
+													} else {
+														echo do_shortcode('[afb-prices post_id="' . $postslist[0]->ID . '"]');
+													}
+													?>
 
-                                                    <?php if($isVilaApartments): ?>
-                                                      <div class="pricesBoxButtonHolder">
-                                                        <span><?php _e('Više Informacija', 'wpog') ?></span>
-                                                      </div><!--/.pricesBoxButonHolder-->
-                                                    <?php else: ?>
-                                                      <?php echo do_shortcode('[afb-reserve post_id="' . $postslist[0]->ID . '"]'); ?>
-                                                    <?php endif; ?>
+													<?php if($isVilaApartments): ?>
+                                                        <div class="pricesBoxButtonHolder">
+                                                            <span><?php _e('Više Informacija', 'wpog') ?></span>
+                                                        </div><!--/.pricesBoxButonHolder-->
+													<?php else: ?>
+														<?php echo do_shortcode('[afb-reserve post_id="' . $postslist[0]->ID . '"]'); ?>
+													<?php endif; ?>
 
                                                 </div><!--/.pricesBoxHolder panel-->
                                             </div><!--/.col-sm-5-->
@@ -130,9 +138,12 @@
 													} else { ?>
                                                         <img src="<?php the_field('defimg', 'options'); ?>"/>
 													<?php } ?>
-                                                    <div class="discountBanner">
-                                                        <p>15% Discount Last Minute</p>
-                                                    </div><!--/.discountBanner-->
+													<?php if(get_field('popust_text')): ?>
+                                                        <div class="discountBanner">
+                                                            <p><?php the_field('popust_text'); ?></p>
+                                                        </div><!--/.discountBanner-->
+													<?php endif; ?>
+
                                                 </div><!--/."apartments-box_img-->
                                             </div><!-- /.col-md-5 -->
 
@@ -184,18 +195,18 @@
 
                                                         <div class="col-sm-5">
                                                             <div class="pricesBoxHolder">
-                                                                <?php echo do_shortcode('[afb-prices post_id="' . get_the_ID() . '"]'); ?>
-                                                                <?php echo do_shortcode('[afb-reserve post_id="' . get_the_ID() . '"]'); ?>
+																<?php echo do_shortcode('[afb-prices post_id="' . get_the_ID() . '"]'); ?>
+																<?php echo do_shortcode('[afb-reserve post_id="' . get_the_ID() . '"]'); ?>
                                                             </div><!--/.pricesBoxHolder panel-->
                                                         </div><!--/.col-sm-5-->
 
 
                                                         <div class="col-sm-12">
                                                             <div class="apartments-box__content_links">
-                                                              <!--
+
                                                                 <a href="<?php the_permalink(); ?>"
-                                                                   class="link"><?php _e('Rezerviši', 'wpog'); ?></a>
-                                                                   -->
+                                                                   class="link"><?php _e('Više informacija', 'wpog'); ?></a>
+
                                                             </div>  <!-- /.apartments-box__content_links -->
                                                         </div><!--/.col-sm-12-->
 

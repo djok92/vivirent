@@ -71,6 +71,7 @@ endif; // wpog_setup
 add_action('after_setup_theme', 'wpog_setup');
 
 
+//Excerpt
 function custom_field_excerpt() {
 	global $post;
 	$text = get_sub_field('opis'); //Replace 'your_field_name'
@@ -86,6 +87,18 @@ function custom_field_excerpt() {
 	return apply_filters('the_excerpt', $text);
 }
 
+
+function wpdocs_custom_excerpt_length($length) {
+	return 20;
+}
+
+add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+
+function wpdocs_excerpt_more($more) {
+	return '...';
+}
+
+add_filter('excerpt_more', 'wpdocs_excerpt_more');
 
 /**
  * Register widget area.
