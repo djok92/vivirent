@@ -194,14 +194,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div><!--/.withInput-->
                             <div class="withInput otherOption" id="af-booking-adults-wrapper">
                                 <table id="af-booking-adults-info" class="resp">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th class="title-name">Ime</th>
-                                        <th class="title-age">Godina</th>
-                                        <th class="title-country">Zemlja</th>
-                                    </tr>
-                                    </thead>
                                     <tbody></tbody>
                                 </table>
                             </div>
@@ -219,12 +211,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div><!--/.withInput-->
                             <div class="withInput otherOption" id="af-booking-children-wrapper">
                                 <table id="af-booking-children-info">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Godina</th>
-                                    </tr>
-                                    </thead>
                                     <tbody></tbody>
                                 </table>
                             </div>
@@ -503,16 +489,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                 <p id="display-email"></p>
                             </div><!--/.summaryCategory-->
                             <div class="summaryCategory">
-                                <p>Ime</p>
-                                <p id="display-first-name"></p>
-                            </div><!--/.summaryCategory-->
-                            <div class="summaryCategory">
-                                <p>Napomena</p>
-                                <p>30% - Bank Transfer</p> <!--Ubacen tekst samo da probam da li radi-->
-                            </div><!--/.summaryCategory-->
-                            <div class="summaryCategory">
                                 <p>Placanje</p>
-                                <p></p>                    <!--Ostavljen prazan paragraf da ubacis sta je potrebno -->
+                                <p id="display-payment"></p>
                             </div><!--/.summaryCategory-->
                         </div><!--/.reservationSummary-->
                     </div><!--/.col-md-6-->

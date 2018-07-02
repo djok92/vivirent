@@ -20,7 +20,7 @@
   &_img {
     overflow: hidden;
     position: relative;
-    height: 290px;
+    height: 319px;
     @include breakpoint(_480) {
       height: 250px;
     }
@@ -50,6 +50,7 @@
     }
     &_links {
       color: #24aae1;
+      margin-top: 15px;
       a {
         margin-right: 12px;
       }
@@ -175,9 +176,6 @@
   }
 }
 
-.apartments-box__content_links {
-  margin-top: 20px;
-}
 
 .Villa.accordion {
   .MainVilla {

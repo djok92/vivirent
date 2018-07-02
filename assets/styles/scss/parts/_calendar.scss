@@ -4,6 +4,8 @@
   line-height: $height;
 }
 
+// Colors
+
 //Calendar Header Nav
 .pickmeup {
   .pmu-instance {
@@ -114,11 +116,11 @@
       }
       //Today
       &.pmu-today {
-        border: 5px solid #17384d;
+        border: 5px solid #4A4A4A;
         line-height: 28px;
       }
       //Selected
-      &.pmu-selected {
+      &.pmu-selected, &.date-selection {
         background: #36e246;
       }
       //Reserved
@@ -162,4 +164,11 @@
 .pickmeup:not(.pmu-view-months) .pmu-months,
 .pickmeup:not(.pmu-view-years) .pmu-years {
   display: none;
+}
+
+body.home .pickmeup {
+  box-shadow: 0 2px 25px 5px #606060;
+  .pmu-instance {
+    margin: 0;
+  }
 }

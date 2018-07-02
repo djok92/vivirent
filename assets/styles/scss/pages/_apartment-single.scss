@@ -339,6 +339,9 @@
   .selectHolder {
     width: 100%;
   }
+  .withInput:nth-child(odd) {
+    //background: #fff;
+  }
 }
 
 .withInput,
@@ -715,8 +718,7 @@ form {
   margin: 20px 0;
 }
 
-#af-booking-adults-info,
-#af-booking-children-info {
+#af-booking-adults-info {
   width: 100%;
   td, th {
     padding: 5px 0;
@@ -727,20 +729,30 @@ form {
       width: 10%;
     }
     &.col-age {
-      width: 10%;
+      width: 20%;
       padding: 0 10px;
-      //.select2-container {
-      //  width: 100% !important;
-      //}
     }
     &.col-name {
       width: 40%;
     }
     &.col-country {
       width: 40%;
-      //.select2-container {
-      //  width: 100% !important;
-      //}
+    }
+  }
+}
+
+#af-booking-children-info {
+  width: 100%;
+  td {
+    padding: 5px 0;
+    &:last-child {
+      text-align: right;
+    }
+    &.col-nr {
+      width: 85%;
+    }
+    &.col-age {
+      width: 15%;
     }
   }
 }

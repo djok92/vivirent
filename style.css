@@ -11,9 +11,13 @@ Text Domain: wpog
 Tags:
 */
 
-.withInput .col-age .select2-container {
-    width: 60px !important;
-}
+/*.withInput .col-age .select2-container {*/
+    /*width: 60px !important;*/
+/*}*/
+
+/*.three-calendars .pickmeup .date-selection {*/
+    /*background: #36e246;*/
+/*}*/
 
 /*!* pricing table *!*/
 /*#af-booking-pricing tr.selectable:hover,*/
@@ -169,10 +173,6 @@ Tags:
 
 /* form responsive table fix */
 
-table.resp .mobile-helper {
-    display: none;
-}
-
 @media (max-width: 768px) {
 
     table.resp,
@@ -192,10 +192,6 @@ table.resp .mobile-helper {
         margin-bottom: 16px;
     }
 
-    table.resp .mobile-helper {
-        margin: 8px 0 4px 0;
-        display: block;
-    }
 }
 
 /* todo dev */
