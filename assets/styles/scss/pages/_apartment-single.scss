@@ -84,34 +84,28 @@
     }
   }
   .accordion-spec {
-    display: block;
+    display: flex;
     margin-bottom: 15px;
+    @include breakpoint(_550) {
+      text-align: center;
+    }
+    .AccordionIcon {
+      width: 40px;
+      height: 40px;
+      background: #5B5B5B;
+      margin-right: 5px;
+    }
   }
   .apartment-description {
     margin-bottom: 15px;
   } //box cene na single apartmanu
   .pricesBoxHolder {
-    margin-left: 0;
-    height: auto; //sklanjanje margin-top sa gornjeg buttona
     div:nth-child(2) {
       margin-top: 0;
     }
-  }
-  .pricesOnly {
-    height: auto;
-  }
-  .singlePriceBox {
-    padding: 3px;
-    p {
-      font-size: 15px;
-      padding-bottom: 7px;
+    .singlePriceBox {
+      padding: 5px 1px; 
     }
-  }
-}
-
-.accordion-spec {
-  @include breakpoint(_550) {
-    text-align: center;
   }
 }
 
@@ -349,12 +343,12 @@
   //   //background: #fff;
   // }
 }
+
 // kontakt forma za licne informacije
 .Contact__FormInfo {
   input {
     font-weight: bold
   }
-  
   .withInput {
     textarea {
       width: 70%;
@@ -435,12 +429,11 @@
 //     width: 200px;
 //   }
 // }
-
-
 //checkbox
 .checkBoxHolder {
   margin: 20px 0;
 }
+
 .checkBox {
   margin: 10px 0;
   span {

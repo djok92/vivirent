@@ -86,14 +86,7 @@
     margin-top: 20px;
   }
   .Prices {
-    > * {
-      display: inline-block;
-      // width: 49%;
-      padding: 7px;
-    }
-    // &--Old {
-    //   //margin-bottom: 10px;
-    // }
+    
   }
   &--Gray {
     background: #222;
@@ -171,7 +164,6 @@
     height: auto;
   }
 }
-
 
 .Villa.accordion {
   .MainVilla {
