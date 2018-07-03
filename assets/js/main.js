@@ -51,11 +51,8 @@ $(document).ready(function () {
         }
 
         handler.each(function () {
-            // var parent = $(this).parent('.selectHolder');
-            // console.log(parent);
             $(this).select2({
-                minimumResultsForSearch: -1,
-                // dropdownParent: parent
+                minimumResultsForSearch: -1
             });
         });
     })();
@@ -66,17 +63,22 @@ $(document).ready(function () {
      */
 
 
-    // (function () {
-    //
-    //     var handler = $('.pickmeup');
-    //     if (!handler.length) {
-    //         return;
-    //     }
-    //
-    //     handler.each(function () {
-    //       $(this).appendTo('.datepicker-holder');
-    //     });
-    // })();
+    (function () {
+
+        var handler = $('.pickmeup');
+        if (!handler.length) {
+            return;
+        }
+
+        handler.each(function (index) {
+            var currentHandler = $(this);
+            $('.datepicker-holder').each(function (position) {
+                if (index === position) {
+                    currentHandler.appendTo($(this));
+                }
+            });
+        });
+    })();
 
     /**
      * Rating stars
@@ -216,7 +218,7 @@ $(document).ready(function () {
     (function () {
         var sliders = {
             homeSlider: '#home-slider',
-            regionSlider: '#region-slider',
+            regionSlider: '#region-slider'
         };
         (function () {
             /**

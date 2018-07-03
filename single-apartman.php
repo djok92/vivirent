@@ -103,10 +103,17 @@ get_header();
                                 <div class="apartment-description">
 									<?php the_field('karakteristike'); ?>
                                 </div>
-                                <div class="accordion-spec">
-                                    <img alt="sprite"
-                                         src="<?php echo get_template_directory_uri(); ?>/dist/images/sprite.jpg"/>
-                                </div>
+								<?php $icons = get_field('karakteristike_ikonice');
+								if($icons): ?>
+                                    <div class="accordion-spec">
+										<?php foreach($icons as $icon): ?>
+                                            <div class="AccordionIcon">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/ico-<?php echo $icon; ?>.svg"
+                                                     alt="">
+                                            </div>
+										<?php endforeach; ?>
+                                    </div>
+								<?php endif; ?>
                                 <div data-accordion-group>
 									<?php $i = 1;
 									if(have_rows('sobe_repeater')):

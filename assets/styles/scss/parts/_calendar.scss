@@ -11,7 +11,7 @@
   .pmu-instance {
     nav {
       position: relative;
-      background: #9D9D9D;
+      background: #24aae1;
       .pmu-button {
         background: #EFEFEF;
         color: #000;
@@ -22,7 +22,7 @@
           position: absolute;
           height: 100%;
           width: 1em;
-          img {
+          > * {
             display: none !important;
           }
         }
@@ -65,8 +65,7 @@
     //Days Of the Week
     .pmu-day-of-week * {
       @include layout(7, 38px);
-      font-weight: 700;
-      color: #000;
+      color: #fff;
     }
     //Days Layout
     .pmu-days .pmu-button {
@@ -105,10 +104,12 @@
       }
       //Not in month
       &.pmu-not-in-month {
-        color: #ccc;
-        &.pmu-selected {
-          background: #EFEFEF;
-        }
+        color: #fbfbfb !important;
+        background: #fbfbfb !important;
+        pointer-events: none;
+        //&.pmu-selected {
+        //  background: #EFEFEF;
+        //}
         &.pmu-today {
           border: none
         }
@@ -121,7 +122,7 @@
       }
       //Selected
       &.pmu-selected, &.date-selection {
-        background: #36e246;
+        background: #B8E986;
       }
       //Reserved
       &.date-reserved.pmu-disabled {
@@ -168,6 +169,9 @@
 
 body.home .pickmeup {
   box-shadow: 0 2px 25px 5px #606060;
+  left: 30px !important;
+  top: 30px !important;
+  z-index: 999999;
   .pmu-instance {
     margin: 0;
   }

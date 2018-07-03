@@ -81,6 +81,9 @@
   padding: 10px;
   text-align: center;
   height: 192px;
+  @include breakpoint(_768) {
+    margin-top: 15px;
+  }
   @include breakpoint(_480) {
     height: auto;
     padding: 10px;
@@ -172,7 +175,6 @@
     height: auto;
   }
 }
-
 
 .Villa.accordion {
   .MainVilla {
