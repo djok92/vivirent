@@ -79,8 +79,7 @@
   background: #fff;
   text-transform: uppercase;
   padding: 10px;
-  text-align: center;
-  height: 192px;
+  text-align: center; 
   @include breakpoint(_480) {
     height: auto;
     padding: 10px;
@@ -105,24 +104,25 @@
 .singlePriceBox {
   display: inline-block;
   width: 49%;
-  padding: 5px;
-  @include breakpoint(_480) {
-    padding: 5px 10px
-  }
+  padding: 5px 0;
   span {
     font-size: 32px;
     font-weight: bold;
   }
   p {
-    font-size: 14px;
+    width: 114px;
+    font-size: 16px;
     font-weight: bold;
     padding-bottom: 10px;
-    @include breakpoint(_480) {
-      font-size: 18px;
+    @include breakpoint(_1200) {
+      font-size: 13px;
+      width: auto;
     }
-    @include breakpoint(_400) {
-      font-size: 16px;
+    @include breakpoint(_991) {
+      font-size: 12px;
+      width: auto;
     }
+   
   }
 }
 
@@ -134,7 +134,7 @@
 }
 
 .pricesBoxButtonHolder {
-  margin-top: 10px;
+  margin-top: 5px;
   a {
     display: block;
     background: rgb(36, 170, 225);
@@ -167,7 +167,6 @@
 
 .pricesOnly {
   padding: 10px 0;
-  height: 136px;
   @include breakpoint(_480) {
     height: auto;
   }
