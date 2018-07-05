@@ -98,8 +98,7 @@
   }
   .apartment-description {
     margin-bottom: 15px;
-  }
-  //box cene na single apartmanu
+  } //box cene na single apartmanu
   .pricesBoxHolder {
     div:nth-child(2) {
       margin-top: 0;
@@ -401,6 +400,46 @@
   p {
     &:last-of-type {
       font-weight: bold;
+    }
+  }
+}
+
+//Odaberite broj osoba sekcija 
+#af-booking-adults-info {
+  .col-name {
+    padding-left: 10px;
+    input {
+      width: 100%;
+    }
+  }
+  @include breakpoint (_991) {
+    .col-name,
+    .col-age,
+    .col-country {
+      display: inline-block;
+      width: 33% !important
+    }
+    .col-nr {
+      display: block;
+      text-align: center;
+      width: 100% !important;
+    }
+    .col-name {
+      padding-left: 0;
+    }
+  }
+  @include breakpoint (_550) {
+    .col-name,
+    .col-age,
+    .col-country {
+      display: block;
+      width: 100%!important;
+      input {
+        width: 100%!important;
+      }
+    }
+    .col-age {
+      padding: 5px 0!important;
     }
   }
 }
