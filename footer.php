@@ -9,41 +9,41 @@
 ?>
 </main>
 <footer>
-	<?php if ( ! is_home() ) { ?>
-<!--        <div class="top-footer">-->
-<!--			--><?php //get_template_part( 'parts/section', 'apartments' ) ?>
-<!--        </div>-->
+	<?php if(!is_home()) { ?>
+        <!--        <div class="top-footer">-->
+        <!--			--><?php //get_template_part( 'parts/section', 'apartments' ) ?>
+        <!--        </div>-->
 	<?php } ?>
     <div class="bottom-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-									<div class="footer-items-wrapper">
-                    <div class="bottom-footer__left">
-                        <a href="#">
-                            <div class="footer-logo"></div>
-                        </a>
-                        <p><?php the_field( 'f_copy', 'options' ); ?></p>
-                    </div> <!-- /.bottom-footer__left -->
-                    <div class="bottom-footer__right">
-						<?php the_field( 'f_kontakt', 'options' ); ?>
-                        <!-- <div class="social">
-                            <a href="<?php the_field( 'f_fb', 'options' ); ?>" target="_blank"><i
+                    <div class="footer-items-wrapper">
+                        <div class="bottom-footer__left">
+                            <a href="#">
+                                <div class="footer-logo"></div>
+                            </a>
+                            <p><?php the_field('f_copy', 'options'); ?></p>
+                        </div> <!-- /.bottom-footer__left -->
+                        <div class="bottom-footer__right">
+							<?php the_field('f_kontakt', 'options'); ?>
+                            <!-- <div class="social">
+                            <a href="<?php the_field('f_fb', 'options'); ?>" target="_blank"><i
                                         class="fa fa-facebook-square"></i></a>
-                            <a href="<?php the_field( 'f_tw', 'options' ); ?>" target="_blank"><i
+                            <a href="<?php the_field('f_tw', 'options'); ?>" target="_blank"><i
                                         class="fa fa-twitter-square"></i></a>
-                            <a href="<?php the_field( 'f_ln', 'options' ); ?>" target="_blank"><i
+                            <a href="<?php the_field('f_ln', 'options'); ?>" target="_blank"><i
                                         class="fa fa-linkedin-square"></i></a>
                         </div> -->
-                    </div> <!-- /.bottom-footer__right -->
-									</div>
+                        </div> <!-- /.bottom-footer__right -->
+                    </div>
                 </div> <!-- /.col-md-12 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div><!-- /.bottom-footer -->
 </footer>
 <?php
-if ( is_page_template( 'page-location.php' ) ): ?>
+if(is_page_template('page-location.php')): ?>
     <div class="locations">
 		<?php
 		$args  = [
@@ -53,12 +53,12 @@ if ( is_page_template( 'page-location.php' ) ): ?>
 			'meta_key'   => '_wp_page_template',
 			'meta_value' => 'page-location.php'
 		];
-		$pages = get_posts( $args );
-		foreach ( $pages as $page ) {
+		$pages = get_posts($args);
+		foreach($pages as $page) {
 			$i = 1;
-			if ( have_rows( 'sekcije_repeater', $page ) ):
+			if(have_rows('sekcije_repeater', $page)):
 				// loop through the rows of data
-				while ( have_rows( 'sekcije_repeater' ) ) : the_row(); ?>
+				while(have_rows('sekcije_repeater')) : the_row(); ?>
                     <div class="modal fade" id="modal<?php echo $i; ?>" tabindex="-1" role="dialog"
                          aria-labelledby="modal<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -71,11 +71,11 @@ if ( is_page_template( 'page-location.php' ) ): ?>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-									<?php the_sub_field( 'opis' ); ?>
+									<?php the_sub_field('opis'); ?>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal"><?php _e( 'Zatvori', 'wpog' ); ?>
+                                            data-dismiss="modal"><?php _e('Zatvori', 'wpog'); ?>
                                     </button>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@ if ( is_page_template( 'page-location.php' ) ): ?>
 
 				<?php endwhile;
 			else :
-				_e( 'Materijal nije trenutno dostupan.', 'wpog' );
+				_e('Materijal nije trenutno dostupan.', 'wpog');
 			endif;
 
 		}

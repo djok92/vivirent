@@ -59,6 +59,33 @@ $(document).ready(function () {
 
 
     /**
+     *  Smooth scroll
+     */
+
+    (function () {
+
+        var handler = $('[data-scroll]');
+        if (!handler.length) {
+            return;
+        }
+
+        handler.each(function () {
+            $(this).click(function (e) {
+                e.preventDefault();
+
+                var target = $($(this).data('scroll'));
+                //console.log(target);
+                var offset = target.offset().top;
+                var margin = parseInt(target.css('margin-top').replace('px', ''));
+                var padding = parseInt(target.css('padding-top').replace('px', ''));
+
+                $('html,body').stop().animate({scrollTop: (offset - 100)}, 900);
+            });
+        });
+    })();
+
+
+    /**
      * PickmeUp Calendar position Fix
      */
 
@@ -238,6 +265,15 @@ $(document).ready(function () {
                     prevEl: '.homeSliderPrev'
                 }
             });
+
+            // var imgs = $(sliders.homeSlider).find('.swiper-slide');
+            //
+            // function resizeBackground() {
+            //     imgs.height($(sliders.homeSlider)).height();
+            // }
+            //
+            // $(window).resize(resizeBackground);
+            // resizeBackground();
 
         })();
 

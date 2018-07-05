@@ -11,70 +11,11 @@ Text Domain: wpog
 Tags:
 */
 
-/*.withInput .col-age .select2-container {*/
-    /*width: 60px !important;*/
-/*}*/
-
-/*.three-calendars .pickmeup .date-selection {*/
-    /*background: #36e246;*/
-/*}*/
-
-/*!* pricing table *!*/
-/*#af-booking-pricing tr.selectable:hover,*/
-/*#af-booking-pricing tr.selected {*/
-/*background: #000;*/
-/*cursor: pointer;*/
-/*}*/
-
-/*#af-booking-pricing tr.selectable:hover td,*/
-/*#af-booking-pricing tr.selected td {*/
-/*color: #fff;*/
-/*}*/
-
 #af-booking-pricing .col-period .cog-days {
     margin-left: 20px;
     display: inline-block;
     text-transform: lowercase;
 }
-
-/*#af-booking-pricing .col-nights {*/
-    /*text-align: center;*/
-/*}*/
-
-/*#af-booking-pricing .col-price,*/
-/*#period-prices .col-price {*/
-    /*text-align: right;*/
-/*}*/
-
-/*#af-booking-pricing .col-price .old-price,*/
-/*#period-prices .col-price .old-price {*/
-    /*margin-right: 20px;*/
-    /*text-decoration: line-through;*/
-    /*display: inline-block;*/
-/*}*/
-
-/* adults & children info table */
-
-/*#af-booking-adults-info,*/
-/*#af-booking-children-info {*/
-    /*width: 100%;*/
-/*}*/
-
-/*#af-booking-children-info td:last-child,*/
-/*#af-booking-children-info th:last-child {*/
-    /*text-align: right;*/
-/*}*/
-
-/*#af-booking-adults-info th,*/
-/*#af-booking-adults-info td,*/
-/*#af-booking-children-info th,*/
-/*#af-booking-children-info td {*/
-    /*padding: 5px 0;*/
-/*}*/
-
-/*#af-booking-adults-info .col-nr {*/
-    /*width: 10%;*/
-/*}*/
 
 @media (max-width: 480px) {
     #af-booking-adults-info .col-age,
@@ -100,22 +41,22 @@ Tags:
 }
 
 /*#af-booking-adults-info .col-name {*/
-    /*width: 40%;*/
+/*width: 40%;*/
 /*}*/
 
 /*#af-booking-adults-info .col-age {*/
-    /*width: 10%;*/
-    /*padding: 0 10px;*/
+/*width: 10%;*/
+/*padding: 0 10px;*/
 /*}*/
 
 /*#af-booking-adults-info .col-country {*/
-    /*width: 40%;*/
+/*width: 40%;*/
 /*}*/
 
 /*#af-booking-adults-info .col-name input,*/
 /*#af-booking-adults-info .col-age .select2-container,*/
 /*#af-booking-adults-info .col-country .select2-container {*/
-        /*width: 100% !important;*/
+/*width: 100% !important;*/
 /*}*/
 
 #af-booking-children-info .col-age select {
@@ -159,40 +100,28 @@ Tags:
     min-height: 193px;
 }
 
-/*#three-calendars .pickmeup .pmu-button.pmu-not-in-month.pmu-selected {*/
-/*background: #EFEFEF;*/
-/*}*/
-
-/*.booking-error {*/
-/*margin: 10px 0 -10px 0;*/
-/*color: #f00000;*/
-/*!*font-weight: bold;*!*/
-/*font-size: 110%;*/
-/*text-align: center;*/
-/*}*/
-
 /* form responsive table fix */
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {*/
 
-    table.resp,
-    table.resp tr,
-    table.resp th,
-    table.resp td,
-    table.resp thead,
-    table.resp tbody {
-        display: block;
-    }
+    /*table.resp,*/
+    /*table.resp tr,*/
+    /*table.resp th,*/
+    /*table.resp td,*/
+    /*table.resp thead,*/
+    /*table.resp tbody {*/
+        /*display: block;*/
+    /*}*/
 
-    table.resp thead {
-        display: none;
-    }
+    /*table.resp thead {*/
+        /*display: none;*/
+    /*}*/
 
-    table.resp tr {
-        margin-bottom: 16px;
-    }
+    /*table.resp tr {*/
+        /*margin-bottom: 16px;*/
+    /*}*/
 
-}
+/*}*/
 
 /* todo dev */
 /*header {*/

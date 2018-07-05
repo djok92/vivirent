@@ -79,7 +79,10 @@
   background: #fff;
   text-transform: uppercase;
   padding: 10px;
-  text-align: center; 
+  text-align: center;
+  @include breakpoint(_768) {
+    margin-top: 20px;
+  }
   @include breakpoint(_480) {
     height: auto;
     padding: 10px;
