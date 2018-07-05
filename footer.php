@@ -27,14 +27,14 @@
                     </div> <!-- /.bottom-footer__left -->
                     <div class="bottom-footer__right">
 						<?php the_field( 'f_kontakt', 'options' ); ?>
-                        <div class="social">
+                        <!-- <div class="social">
                             <a href="<?php the_field( 'f_fb', 'options' ); ?>" target="_blank"><i
                                         class="fa fa-facebook-square"></i></a>
                             <a href="<?php the_field( 'f_tw', 'options' ); ?>" target="_blank"><i
                                         class="fa fa-twitter-square"></i></a>
                             <a href="<?php the_field( 'f_ln', 'options' ); ?>" target="_blank"><i
                                         class="fa fa-linkedin-square"></i></a>
-                        </div>
+                        </div> -->
                     </div> <!-- /.bottom-footer__right -->
 									</div>
                 </div> <!-- /.col-md-12 -->
