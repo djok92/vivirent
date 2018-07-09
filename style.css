@@ -17,7 +17,7 @@ Tags:
     text-transform: lowercase;
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     #af-booking-adults-info .col-age,
     #af-booking-adults-info .col-name,
     #af-booking-adults-info .col-country {
@@ -38,7 +38,7 @@ Tags:
     #af-booking-adults-info .col-age {
         padding: 0 !important;
     }
-}
+} */
 
 /*#af-booking-adults-info .col-name {*/
 /*width: 40%;*/
