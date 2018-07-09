@@ -5,22 +5,20 @@
  * @package WP_Ogitive
  */
 ?>
-<div id="home-slider" class="swiper-container">
+<div id="home-slider" class="flexslider">
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
+    <ul class="slides">
         <!-- Slides -->
 		<?php
 		$images = get_field('hs1_slider', 'options');
 		if($images):
 			foreach($images as $image): ?>
-                <div class="swiper-slide">
-                    <div class="header-gradient"></div>
+                <li class="slide">
                     <img alt="<?php echo $image['alt']; ?>" src="<?php echo $image['url']; ?>"/>
-
-                </div>
+                </li>
 			<?php endforeach; ?>
 		<?php endif; ?>
-    </div>
+    </ul>
 
     <div class="homeSliderPrev swiper-button-prev swiper-button-white"></div>
     <div class="homeSliderNext swiper-button-next swiper-button-white"></div>

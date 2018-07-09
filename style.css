@@ -76,28 +76,28 @@ Tags:
     /*width: 10%;*/
 /*}*/
 
-@media (max-width: 480px) {
-    #af-booking-adults-info .col-age,
-    #af-booking-adults-info .col-name,
-    #af-booking-adults-info .col-country {
-        display: flex;
-        justify-content: space-between;
-        width: auto !important;
-    }
+/*@media (max-width: 480px) {*/
+    /*#af-booking-adults-info .col-age,*/
+    /*#af-booking-adults-info .col-name,*/
+    /*#af-booking-adults-info .col-country {*/
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+        /*width: auto !important;*/
+    /*}*/
 
-    #af-booking-adults-info .col-name .select2-container,
-    #af-booking-adults-info .col-country .select2-container {
-        width: 160px !important;
-    }
+    /*#af-booking-adults-info .col-name .select2-container,*/
+    /*#af-booking-adults-info .col-country .select2-container {*/
+        /*width: 160px !important;*/
+    /*}*/
 
-    #af-booking-adults-info .col-name input {
-        width: 172px !important;
-    }
+    /*#af-booking-adults-info .col-name input {*/
+        /*width: 172px !important;*/
+    /*}*/
 
-    #af-booking-adults-info .col-age {
-        padding: 0 !important;
-    }
-}
+    /*#af-booking-adults-info .col-age {*/
+        /*padding: 0 !important;*/
+    /*}*/
+/*}*/
 
 /*#af-booking-adults-info .col-name {*/
     /*width: 40%;*/

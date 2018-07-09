@@ -55,8 +55,9 @@
                             <a href="<?php the_field('hs1_slider_btnlink', 'options') ?>" class="more-info">
 								<?php the_field('hs1_slider_btntxt', 'options') ?>
                             </a>
-                            <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
-                                                                            aria-hidden="true"></i></a>
+                            <span id="scroll-btn" data-scroll="#bookingForm">
+                                <i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
+                            </span>
                         </div>
                     </div> <!-- /.hero-holder__content -->
 
@@ -78,7 +79,6 @@
 
 
 				<?php // povlacanje acf slike iz kategorije
-				$catimg         = '';
 				$queried_object = get_queried_object();
 				$taxonomy       = $queried_object->taxonomy;
 				$term_id        = $queried_object->term_id;
@@ -91,10 +91,7 @@
                     <img alt="header-img" src="<?php the_field('defimg', 'options'); ?>"/>
 				<?php } ?>
 
-				<?php
-				single_term_title('<h1>', '</h1>');
-				//the_archive_description('<div>', '</div>');
-				?>
+				<?php single_term_title('<h1>', '</h1>'); ?>
 
             </div>
 

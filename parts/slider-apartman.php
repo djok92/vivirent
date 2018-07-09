@@ -7,50 +7,30 @@
 ?>
 
 <div class="apartmenHolder">
-    <div class="swiper-container gallery-top">
-        <div class="swiper-wrapper">
+    <div id="galleryWithThumbs" class="flexslider">
+        <ul class="slides">
 			<?php $images = get_field('galerija');
 
 			if($images): ?>
 
 				<?php foreach($images as $image): ?>
 
-                    <div class="swiper-slide">
+                    <li class="slide" data-thumb="<?php echo $image['url']; ?>">
                         <div class="header-gradient"></div>
                         <img alt="slider-img" src="<?php echo $image['url']; ?>"/>
-                    </div>
+                    </li>
 
 				<?php endforeach; ?>
 
 			<?php endif; ?>
-        </div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next swiper-button-white"></div>
-        <div class="swiper-button-prev swiper-button-white"></div>
+        </ul>
     </div>
-    <div class="swiper-container gallery-thumbs">
-        <div class="swiper-wrapper">
-			<?php $images = get_field('galerija');
 
-			if($images): ?>
-
-				<?php foreach($images as $image): ?>
-
-                    <div class="swiper-slide">
-                        <img alt="slider-img" src="<?php echo $image['url']; ?>"/>
-                    </div>
-
-				<?php endforeach; ?>
-
-			<?php endif; ?>
-        </div>
-    </div>
     <div class="apartmentNameHolder">
         <div class="container">
-            <p class="apartment-name"><?php $terms = get_the_terms($post->ID, 'vila');
-				foreach($terms as $term) {
-					echo $term->name;
-				} ?>
+            <p class="apartment-name">
+				<?php $term = get_the_terms($post->ID, 'vila');
+				echo $term[0]->name; ?>
             </p>
             <h1><?php the_title(); ?></h1>
         </div><!-- /.container -->

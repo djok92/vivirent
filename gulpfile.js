@@ -57,12 +57,12 @@ gulp.task('css', function () {
         src + 'styles/css/reset.css',
         src + 'styles/css/bootstrap.css',
         src + 'styles/css/pickmeup.css',
-        'node_modules/swiper/dist/css/swiper.min.css',
+        src + 'styles/css/flexslider.css',
         'node_modules/jquery.mmenu/dist/jquery.mmenu.all.css',
         src + 'styles/css/font-awesome.min.css',
         src + 'styles/css/jquery.accordion.css',
         src + 'styles/css/select2.css',
-        src + 'styles/css/default.css',
+        src + 'styles/css/default.css'
     ])
         .pipe(minifyCSS())
         .pipe(concat('plugins.css'))
@@ -85,7 +85,7 @@ gulp.task('sass', function () {
 gulp.task('scripts', function () {
     return gulp.src([
         'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/swiper/dist/js/swiper.min.js',
+        src + 'js/jquery.flexslider-min.js',
         'node_modules/jquery.mmenu/dist/jquery.mmenu.all.js',
         src + 'js/gmap.js',
         src + 'js/lightbox.min.js',

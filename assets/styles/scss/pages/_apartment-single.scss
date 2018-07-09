@@ -1,13 +1,12 @@
-.apartmenHolder {
-  height: 100%;
-}
-
 .apartmentNameHolder {
   position: absolute;
   bottom: 110px;
   width: 100%;
   z-index: 50;
   color: #fff;
+  @include breakpoint(_1200) {
+    bottom: 30px;
+  }
   h1 {
     @include h-2;
     text-transform: uppercase;
@@ -565,32 +564,8 @@
 }
 
 .apartmenHolder {
-  .gallery-top {
-    height: 100%;
-    width: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .gallery-thumbs {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100px;
-    max-width: 1140px;
-    padding: 10px 0;
-  }
-  .gallery-thumbs .swiper-slide {
-    width: 100px;
-    height: 100%;
-    opacity: 0.4;
-  }
-  .gallery-thumbs .swiper-slide-active {
-    opacity: 1;
-  }
+  height: 100%;
+
 }
 
 .Contact__Description,

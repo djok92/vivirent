@@ -98,6 +98,30 @@ $(document).ready(function () {
 
 
     /**
+     *  Smooth scroll
+     */
+
+    (function () {
+
+        var handler = $('[data-scroll]');
+        if (!handler.length) {
+            return;
+        }
+
+        handler.each(function () {
+            $(this).click(function (e) {
+                e.preventDefault();
+
+                var target = $($(this).data('scroll'));
+                var offset = target.offset().top;
+
+                $('html,body').stop().animate({scrollTop: (offset)}, 900);
+            });
+        });
+    })();
+
+
+    /**
      * PickmeUp Calendar position Fix
      */
 
@@ -226,14 +250,9 @@ $(document).ready(function () {
                 return;
             }
 
-            var slider = new Swiper(sliders.homeSlider, {
-                speed: 400,
-                spaceBetween: 100,
-                effect: 'fade',
-                navigation: {
-                    nextEl: '.homeSliderNext',
-                    prevEl: '.homeSliderPrev'
-                }
+            $(sliders.homeSlider).flexslider({
+                animation: "fade",
+                controlNav: "thumbnails"
             });
 
         })();
@@ -259,27 +278,17 @@ $(document).ready(function () {
             /**
              *  Apartment Slider
              */
-            var handler = $('.gallery-top');
+            var handler = $('#galleryWithThumbs');
             if (!handler.length) {
                 return;
             }
-            var galleryTop = new Swiper('.gallery-top', {
-                spaceBetween: 10,
-                effect: 'fade',
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                }
+            handler.flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
             });
-            var galleryThumbs = new Swiper('.gallery-thumbs', {
-                spaceBetween: 10,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                touchRatio: 0.2,
-                slideToClickedSlide: true
-            });
-            galleryTop.controller.control = galleryThumbs;
-            galleryThumbs.controller.control = galleryTop;
+
+
+            $('.flex-control-thumbs').wrap("<div class='galleryThumbs'><div class='container'></div></div>")
 
         })();
 
@@ -293,14 +302,9 @@ $(document).ready(function () {
                 return;
             }
 
-            var GallerySlider = new Swiper('.GallerySlider', {
-                spaceBetween: 10,
-                effect: 'fade',
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets'
-                },
-                autoHeight: true
+            handler.flexslider({
+                animation: "fade",
+                controlNav: "bullets"
             });
 
         })();
