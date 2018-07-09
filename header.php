@@ -44,9 +44,6 @@
 		<?php if(is_singular('apartman') || is_home()) { ?>
             <div class="hero-holder">
 				<?php if(is_home()) { ?>
-                    <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
-                                                                    aria-hidden="true"></i></a>
-
                     <div class="hero-holder__content">
                         <div class="hero-holder__content_logo">
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.png"
@@ -58,6 +55,8 @@
                             <a href="<?php the_field('hs1_slider_btnlink', 'options') ?>" class="more-info">
 								<?php the_field('hs1_slider_btntxt', 'options') ?>
                             </a>
+                            <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
+                                                                            aria-hidden="true"></i></a>
                         </div>
                     </div> <!-- /.hero-holder__content -->
 

@@ -1,3 +1,16 @@
+body.home .hero-holder {
+  height: 820px;
+  @include breakpoint(_768) {
+    height: 600px;
+  }
+  @include breakpoint(_600) {
+    height: 500px;
+  }
+  @include breakpoint(_480) {
+    height: 470px;
+  }
+}
+
 .hero-holder {
   height: 700px;
   @include breakpoint(_768) {
@@ -7,7 +20,7 @@
     height: 500px;
   }
   @include breakpoint(_480) {
-    height: 440px;
+    height: 470px;
   }
   &__content {
     position: absolute;
@@ -17,6 +30,10 @@
     max-width: 700px;
     z-index: 600;
     text-align: center;
+    margin-top: 40px;
+    @include breakpoint(_480) {
+      width: 95%;
+    }
     &_logo {
       margin-bottom: 40px;
       @include breakpoint(_991) {
@@ -65,16 +82,17 @@
     }
   }
   #scroll-btn {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    bottom: 97px;
+    //position: absolute;
+    //left: 50%;
+    //transform: translate(-50%, 0);
+    //bottom: 97px;
+    margin-top: 20px;
     display: block;
     text-align: center;
     text-shadow: 2px 2px 2px #000;
     color: #fff;
     z-index: 8888;
-    @include breakpoint(_740) {
+    @include breakpoint(_768) {
       display: none;
     }
   }
@@ -82,11 +100,20 @@
 
 #home-slider {
   width: 100%;
-  height: 90vh;
+  height: 820px;
   max-height: 100%;
   position: fixed;
   top: 0;
   max-width: 1920px;
+  @include breakpoint(_768) {
+    height: 600px;
+  }
+  @include breakpoint(_600) {
+    height: 500px;
+  }
+  @include breakpoint(_480) {
+    height: 470px;
+  }
   img {
     object-fit: cover;
     height: 100%;

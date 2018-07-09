@@ -18,18 +18,6 @@ header {
   padding: 10px 0;
 }
 
-body.home {
-  header {
-    height: 700px;
-  }
-}
-
-body.page-template-page-apartman {
-  header {
-    height: 700px;
-  }
-}
-
 .menu-holder {
   margin: auto;
   @include breakpoint(_1200) {
