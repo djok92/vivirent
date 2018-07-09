@@ -47,11 +47,8 @@ $(document).ready(function () {
         }
 
         handler.each(function () {
-            // var parent = $(this).parent('.selectHolder');
-            // console.log(parent);
             $(this).select2({
-                minimumResultsForSearch: -1,
-                // dropdownParent: parent
+                minimumResultsForSearch: 20
             });
         });
     })();
@@ -295,13 +292,15 @@ $(document).ready(function () {
             if (!handler.length) {
                 return;
             }
+
             var GallerySlider = new Swiper('.GallerySlider', {
                 spaceBetween: 10,
                 effect: 'fade',
                 pagination: {
                     el: '.swiper-pagination',
                     type: 'bullets'
-                }
+                },
+                autoHeight: true
             });
 
         })();

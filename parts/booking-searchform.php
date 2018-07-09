@@ -16,6 +16,7 @@ if(!function_exists('af_booking')) {
         <div class="booking-form__item">
             <label><?php _e('Destinacija', 'wpog'); ?>:</label>
             <select id="Destination" type="text" name="dest" class="select2">
+              <option value="" selected disabled><?php _e('Odaberi', 'wpog'); ?></option>
 				<?php
 				$terms = get_terms([
 					'taxonomy'   => 'vila',
@@ -31,14 +32,14 @@ if(!function_exists('af_booking')) {
             <div class="datepicker-holder">
 
                 <i class="fa fa-calendar-o"></i>
-                <input type="text" name="checkin" class="datepicker date-icon form-control" id="af-search-checkin" autocomplete="off" readonly="true"/>
+                <input type="text" name="checkin" class="datepicker date-icon form-control" id="af-search-checkin" autocomplete="off" readonly="true" placeholder="<?php esc_attr_e('Odaberi', 'wpog'); ?>"/>
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item">
             <label><?php _e('Datum odlaska', 'wpog'); ?></label>
             <div class="datepicker-holder">
                 <i class="fa fa-calendar-o"></i>
-                <input type="text" name="checkout" class="datepicker date-icon form-control" id="af-search-checkout" autocomplete="off" readonly="true"/>
+                <input type="text" name="checkout" class="datepicker date-icon form-control" id="af-search-checkout" autocomplete="off" readonly="true" placeholder="<?php esc_attr_e('Odaberi', 'wpog'); ?>"/>
             </div>
         </div> <!-- /.booking-form__item -->
         <div class="booking-form__item personsCount">

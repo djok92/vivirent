@@ -107,7 +107,8 @@
   }
   .apartment-description {
     margin-bottom: 15px;
-  } //box cene na single apartmanu
+  }
+  //box cene na single apartmanu
   .pricesBoxHolder {
     div:nth-child(2) {
       margin-top: 0;
@@ -327,7 +328,7 @@
 }
 
 .withInput {
-  background: #ddd;
+  background: #DCDDDE;
   input:not([type='submit']) {
     width: 70%;
     height: 30px;
@@ -363,17 +364,23 @@
     textarea {
       width: 70%;
       padding: 10px;
+      resize: none;
       @media (max-width: 400px) {
         width: 100%;
       }
     }
   }
   .withInput:nth-child(odd) {
+    background-color: #ddd;
+  }
+  .withInput:nth-child(even) {
     background-color: #ccc;
   }
   .withInput:last-child {
+    align-items: flex-start;
     @media (max-width: 400px) {
       flex-direction: column;
+      align-items: center;
       label {
         margin: 0 0 10px 0;
         text-align: center
@@ -442,13 +449,13 @@
     .col-age,
     .col-country {
       display: block;
-      width: 100%!important;
+      width: 100% !important;
       input {
-        width: 100%!important;
+        width: 100% !important;
       }
     }
     .col-age {
-      padding: 5px 0!important;
+      padding: 5px 0 !important;
     }
   }
 }

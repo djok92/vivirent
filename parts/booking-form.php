@@ -266,16 +266,6 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div>
 
                             <div class='withInput'>
-                                <label><?php _e('Telefon', 'wpog'); ?></label>
-                                <input type="text" name="phone" id="input_phone">
-                            </div>
-
-                            <div class='withInput'>
-                                <label><?php _e('Email', 'wpog'); ?></label>
-                                <input type="text" name="email" id="input_email">
-                            </div>
-
-                            <div class='withInput'>
                                 <label><?php _e('Adresa', 'wpog'); ?></label>
                                 <input type="text" name="address" id="input_address">
                             </div>
@@ -283,6 +273,11 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             <div class='withInput'>
                                 <label><?php _e('Grad', 'wpog'); ?></label>
                                 <input type="text" name="city" id="input_city">
+                            </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Poštanski broj', 'wpog'); ?></label>
+                                <input type="text" name="post_code" id="post_code">
                             </div>
 
                             <div class='withInput'>
@@ -298,6 +293,23 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                     </select>
                                 </div>
                             </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Telefon', 'wpog'); ?></label>
+                                <input type="text" name="phone" id="input_phone">
+                            </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Email', 'wpog'); ?></label>
+                                <input type="text" name="email" id="input_email">
+                            </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Napomena', 'wpog'); ?></label>
+                                <textarea name="note" id="note" cols="30" rows="10"></textarea>
+                                <!-- /#note -->
+                            </div>
+
 
                         </div><!-- /.Contact__Form mt-60-->
 

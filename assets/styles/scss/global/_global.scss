@@ -284,20 +284,19 @@ input:focus {
         &:before {
           content: "\f005";
         }
-        color: gold;
+        color: rgb(246,161,5);
         ~ .Rating__Star:before {
           content: "\f005";
         }
-        color: gold;
       }
       &:before {
         content: "\f006";
         padding-right: 5px;
-        color: gold;
+        color: rgb(246,161,5);
       }
       &.filled:before {
         content: "\f005";
-        color: gold;
+        color: rgb(246,161,5);
       }
     }
     &.static {

@@ -41,13 +41,11 @@
 
         </div> <!-- /.top-header -->
 
-
 		<?php if(is_singular('apartman') || is_home()) { ?>
             <div class="hero-holder">
 				<?php if(is_home()) { ?>
                     <a id="scroll-btn" href="#apartment-section"><i class="fa fa-chevron-down  fa-2x"
                                                                     aria-hidden="true"></i></a>
-
 
                     <div class="hero-holder__content">
                         <div class="hero-holder__content_logo">
@@ -88,18 +86,15 @@
 				$catimg         = get_field('catimg', $taxonomy . '_' . $term_id);
 				?>
 
-
-
 				<?php if($catimg) { ?>
                     <img alt="header-img" src="<?php echo $catimg; ?>"/>
 				<?php } else { ?>
                     <img alt="header-img" src="<?php the_field('defimg', 'options'); ?>"/>
 				<?php } ?>
 
-
 				<?php
-				the_archive_title('<h1>', '</h1>');
-				the_archive_description('<div>', '</div>');
+				single_term_title('<h1>', '</h1>');
+				//the_archive_description('<div>', '</div>');
 				?>
 
             </div>
@@ -128,9 +123,9 @@
 
 					if(is_page_template()) {
 						echo get_the_title($page_id);
-					} elseif(is_singular()) {
+					} else if(is_singular()) {
 						echo get_the_title($page_id);
-					} elseif(is_404()) {
+					} else if(is_404()) {
 						echo '404';
 					} else {
 						echo $post_type->label;
