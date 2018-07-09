@@ -47,9 +47,9 @@ if(have_rows('sekcije_repeater')):
 											<?php endif; ?>
                                         </div> <!-- /.thumbs-holder -->
 
-                                        <a href="" class="link black" data-toggle="modal"
+<!--                                         <a href="" class="link black" data-toggle="modal"
                                            data-target="#modal<?php echo $i; ?>"><?php _e('više informacija', 'wpog'); ?>
-                                        </a>
+                                        </a> -->
 
 
                                     </div> <!-- section content -->
@@ -92,9 +92,9 @@ if(have_rows('sekcije_repeater')):
 												<?php endforeach; ?>
 											<?php endif; ?>
                                         </div> <!-- /.thumbs-holder -->
-                                        <a href="" class="link white" data-toggle="modal"
+<!--                                         <a href="" class="link white" data-toggle="modal"
                                            data-target="#modal<?php echo $i; ?>"><?php _e('više informacija', 'wpog'); ?>
-                                        </a>
+                                        </a> -->
 
                                     </div> <!-- section content -->
 

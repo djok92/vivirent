@@ -55,6 +55,15 @@
         margin-right: 12px;
       }
     }
+    .displayInline {
+      display: inline-block;
+      background: #24aae1;
+      color: #fff;
+      padding: 7px 17px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 30px;
+    }
   }
   .discountBanner {
     color: #fff;
@@ -89,7 +98,7 @@
     margin-top: 20px;
   }
   .Prices {
-    
+
   }
   &--Gray {
     background: #222;
@@ -118,7 +127,7 @@
       font-size: 12px;
       width: auto;
     }
-   
+
   }
 }
 

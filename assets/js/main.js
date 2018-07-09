@@ -39,10 +39,6 @@ $(document).ready(function () {
     });
 
 
-    /**
-     * Select2
-     */
-
     (function () {
 
         var handler = $('select.select2');
@@ -51,61 +47,15 @@ $(document).ready(function () {
         }
 
         handler.each(function () {
+            // var parent = $(this).parent('.selectHolder');
+            // console.log(parent);
             $(this).select2({
-                minimumResultsForSearch: -1
+                minimumResultsForSearch: -1,
+                // dropdownParent: parent
             });
         });
     })();
 
-
-    /**
-     *  Smooth scroll
-     */
-
-    (function () {
-
-        var handler = $('[data-scroll]');
-        if (!handler.length) {
-            return;
-        }
-
-        handler.each(function () {
-            $(this).click(function (e) {
-                e.preventDefault();
-
-                var target = $($(this).data('scroll'));
-                //console.log(target);
-                var offset = target.offset().top;
-                var margin = parseInt(target.css('margin-top').replace('px', ''));
-                var padding = parseInt(target.css('padding-top').replace('px', ''));
-
-                $('html,body').stop().animate({scrollTop: (offset - 100)}, 900);
-            });
-        });
-    })();
-
-
-    /**
-     * PickmeUp Calendar position Fix
-     */
-
-
-    (function () {
-
-        var handler = $('.pickmeup');
-        if (!handler.length) {
-            return;
-        }
-
-        handler.each(function (index) {
-            var currentHandler = $(this);
-            $('.datepicker-holder').each(function (position) {
-                if (index === position) {
-                    currentHandler.appendTo($(this));
-                }
-            });
-        });
-    })();
 
     /**
      * Rating stars
@@ -148,6 +98,29 @@ $(document).ready(function () {
         });
 
     })();
+
+
+    /**
+     * PickmeUp Calendar position Fix
+     */
+
+    (function () {
+
+        var handler = $('.pickmeup');
+        if (!handler.length) {
+            return;
+        }
+
+        handler.each(function (index) {
+            var currentHandler = $(this);
+            $('.datepicker-holder').each(function (position) {
+                if (index === position) {
+                    currentHandler.appendTo($(this));
+                }
+            });
+        });
+    })();
+
 
     /**
      *  Accordion for Homepage
@@ -245,7 +218,7 @@ $(document).ready(function () {
     (function () {
         var sliders = {
             homeSlider: '#home-slider',
-            regionSlider: '#region-slider'
+            regionSlider: '#region-slider',
         };
         (function () {
             /**
@@ -265,15 +238,6 @@ $(document).ready(function () {
                     prevEl: '.homeSliderPrev'
                 }
             });
-
-            // var imgs = $(sliders.homeSlider).find('.swiper-slide');
-            //
-            // function resizeBackground() {
-            //     imgs.height($(sliders.homeSlider)).height();
-            // }
-            //
-            // $(window).resize(resizeBackground);
-            // resizeBackground();
 
         })();
 
@@ -366,19 +330,44 @@ $(document).ready(function () {
                 $(this).click(function () {
                     if ($(this).index() !== index) {
                         index = current = $(this).index();
-                        markTarget([nav, targets], index);
+                        //markTarget([nav, targets], index);
+                        hashUpdate($(this).data('hash'));
                     }
                 });
             });
 
-            if (window.location.hash) {
+            $(window).on('hashchange', function () {
+                hashChange();
+            });
 
-                index = window.location.hash.substring(1);
-                if (index === 'reserve') {
-                    markTarget([nav, targets], 3);
-                }
+            hashChange();
+        }
+
+
+        function hashUpdate(hash) {
+
+            if (typeof hash !== 'undefined') {
+                window.location.hash = '#' + hash;
             }
         }
+
+        function hashChange() {
+
+            var i = 0;
+
+            tabs.find('> li').each(function () {
+
+                var hash = $(this).data('hash') || '';
+
+                if (hash === window.location.hash.substring(1)) {
+                    markTarget([nav, targets], i);
+                    index = i;
+                }
+
+                i++;
+            });
+        }
+
     })();
 
 
