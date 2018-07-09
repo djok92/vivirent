@@ -12,6 +12,15 @@
     @include h-2;
     text-transform: uppercase;
     text-shadow: 5px 3px 5px #000;
+    @include breakpoint(_768) {
+      font-size: 40px;
+    }
+    @include breakpoint(_600) {
+      font-size: 32px;
+    }
+    @include breakpoint(_480) {
+      font-size: 28px;
+    }
   }
   .apartment-name {
     font-size: 18px;

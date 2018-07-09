@@ -1,5 +1,14 @@
 .hero-holder {
   height: 700px;
+  @include breakpoint(_768) {
+    height: 600px;
+  }
+  @include breakpoint(_600) {
+    height: 500px;
+  }
+  @include breakpoint(_480) {
+    height: 440px;
+  }
   &__content {
     position: absolute;
     left: 50%;
@@ -90,38 +99,3 @@
     }
   }
 }
-
-//#apartman-slider {
-//  .rsOverflow {
-//    height: 100vh !important;
-//  }
-//  .rsNav {
-//    // height: 76px; - po dizajnu
-//    height: auto;
-//    background: none;
-//    position: absolute;
-//    bottom: 30px;
-//    .rsThumbsContainer {
-//      float: left;
-//      transform: none !important;
-//      width: 850px
-//    }
-//    .rsThumb {
-//      width: 78px;
-//      //  height: 76px; po dizajnu
-//      height: auto;
-//      background: none;
-//      img {
-//        opacity: .7;
-//        filter: alpha(opacity=30);
-//      }
-//      &.rsNavSelected {
-//        background: none;
-//        img {
-//          opacity: 1;
-//          filter: alpha(opacity=100);
-//        }
-//      }
-//    }
-//  }
-//}

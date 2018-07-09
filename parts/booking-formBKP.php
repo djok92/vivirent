@@ -143,7 +143,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
             <div class="Wizzard__Footer">
                 <div class="next">
-                    <a href="#" class="af-booking-next">sledeci korak</a>
+                    <a href="#" class="af-booking-next">sledeći korak</a>
                 </div><!--/.next-->
             </div><!-- /.Wizzard__Footer -->
 
@@ -158,7 +158,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                         <div class="wizzardSingleBox">
                             <h3>Popust Vaucer (opciono)</h3>
                             <div class="withInput withInput--Small">
-                                <p>Unesite broj na vauceru</p>
+                                <label>Unesite broj na vauceru</label>
                                 <input type="text" name="promo" autocomplete="off">
                             </div><!--/.withInput-->
                             <div class="statusMessage successBackground af-promo-ok">
@@ -179,8 +179,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
                             <h3>Odaberite broj osoba</h3>
 
-                            <div class="withInput">
-                                <p>Broj odraslih:</p>
+                            <div class="withInput numOfPersons">
+                                <label>Broj odraslih:</label>
 
                                 <div class="selectHolder">
                                     <select name="adults" id="af-booking-adults" class="select2">
@@ -198,9 +198,9 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                 </table>
                             </div>
 
-                            <div class="withInput">
+                            <div class="withInput numOfPersons">
 
-                                <p>Broj dece:</p>
+                                <label>Broj dece:</label>
                                 <div class="selectHolder">
                                     <select name="children" id="af-booking-children" class="select2">
 										<?php for($i = 0; $i <= $max_children; $i ++): ?>
@@ -227,8 +227,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 
                         <div class="wizzardSingleBox">
                             <h3>Odaberite nacin placanja</h3>
-                            <div class="withInput">
-                                <p>Uplata</p>
+                            <div class="withInput paymentMethod">
+                                <label>Uplata</label>
                                 <div class="selectHolder">
                                     <select name="payment_option1" class="select2">
                                         <option value="1">30% odmah</option>
@@ -236,8 +236,8 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                     </select>
                                 </div>
                             </div><!--/.withInput-->
-                            <div class="withInput otherOption payment2-row">
-                                <p>Ostatak uplate</p>
+                            <div class="withInput paymentMethod otherOption payment2-row">
+                                <label>Ostatak uplate</label>
                                 <div class="selectHolder">
                                     <select name="payment_option2" class="select2">
                                         <option value="1">Bank transfer</option>
@@ -246,12 +246,12 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                                 </div>
                             </div><!--/.withInput otherOption-->
                             <div class="statusMessage infoBackground">
-                                <p>Za uplatu:</p>
-                                <p class="af-payable-now">-</p>
+                                <label>Za uplatu:</label>
+                                <label class="af-payable-now">-</label>
                             </div><!--/.statusMessage infoBackground-->
                         </div><!--/.wizzardSingleBox-->
 
-                        <div class="Contact__Form Contact__FormInfo mt-60">
+                        <div class="Contact__Form Contact__FormInfo mt-60 info">
                             <h3>Informacije za plaćanje</h3>
 
 
@@ -266,23 +266,18 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                             </div>
 
                             <div class='withInput'>
-                                <label><?php _e('Telefon', 'wpog'); ?></label>
-                                <input type="text" name="phone" id="input_phone">
-                            </div>
-
-                            <div class='withInput'>
-                                <label><?php _e('Email', 'wpog'); ?></label>
-                                <input type="text" name="email" id="input_email">
-                            </div>
-
-                            <div class='withInput'>
-                                <label><?php _e('Adresa', 'wpog'); ?></label>
+                                <label><?php _e('Ulica i broj', 'wpog'); ?></label>
                                 <input type="text" name="address" id="input_address">
                             </div>
 
                             <div class='withInput'>
                                 <label><?php _e('Grad', 'wpog'); ?></label>
                                 <input type="text" name="city" id="input_city">
+                            </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Postanski broj', 'wpog'); ?></label> <!-- Novo polje -->
+                                <input type="text" name="" id="">
                             </div>
 
                             <div class='withInput'>
@@ -293,21 +288,42 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
 										<?php
 										foreach(af_booking()->getCountries() as $cc => $cname) {
 											printf('<option value="%s">%s</option>', $cc, $cname);
-										}
-										?>
+										} ?>
                                     </select>
                                 </div>
                             </div>
 
+                            <div class='withInput'>
+                                <label><?php _e('Kontakt telefon', 'wpog'); ?></label>
+                                <input type="text" name="phone" id="input_phone">
+                            </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Email', 'wpog'); ?></label>
+                                <input type="text" name="email" id="input_email">
+                            </div>
+
+                            <div class='withInput'>
+                                <label><?php _e('Napomena', 'wpog'); ?></label> <!-- Novo polje -->
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </div>
+
                         </div><!-- /.Contact__Form mt-60-->
 
-
-                        <div class="checkBox">
-                            <input type="checkbox" name="tos" value="1" id="input_tos">
-                            <span>
-                                Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana
-                            </span>
-                        </div><!--/.checkBox-->
+                        <div class="checkBoxHolder">
+                            <div class="checkBox">
+                                <input type="checkbox" name="tos" value="1" id="input_tos">
+                                <span>
+                                    Prihvatam <a href="#">generalne uslove </a>koriscenja apartmana
+                                </span>
+                            </div><!--/.checkBox-->
+                            <div class="checkBox">
+                                <input type="checkbox" name="tos" value="1" id="input_tos">
+                                <span>
+                                    Zelim da primam obavestenja
+                                </span>
+                            </div><!--/.checkBox-->
+                        </div><!--/.checkBoxHolder-->
                     </div><!-- /.col-md-9 -->
 
                     <div class="col-md-3">
@@ -381,7 +397,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                     <a href="#" class="af-booking-prev">prethodni korak</a>
                 </div><!--/.previous-->
                 <div class="next">
-                    <a href="#" class="af-booking-next">sledeci korak</a>
+                    <a href="#" class="af-booking-next">sledeći korak</a>
                 </div><!--/.next-->
             </div><!-- /.Wizzard__Footer -->
         </div><!-- /#step-2.Wizzard__Nav -->
@@ -503,7 +519,7 @@ $max_children = $max_adults - 1 + get_field('broj_dece');
                     <a href="#" class="af-booking-prev">prethodni korak</a>
                 </div><!--/.previous-->
                 <div class="next">
-                    <a href="#" class="af-booking-next">sledeci korak</a>
+                    <a href="#" class="af-booking-next">sledeći korak</a>
                 </div><!--/.next-->
             </div><!-- /.Wizzard__Footer -->
 

@@ -287,6 +287,25 @@ $(document).ready(function () {
         })();
 
 
+        (function () {
+            /**
+             *  Gallery Slider
+             */
+            var handler = $('.GallerySlider');
+            if (!handler.length) {
+                return;
+            }
+            var GallerySlider = new Swiper('.GallerySlider', {
+                spaceBetween: 10,
+                effect: 'fade',
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets'
+                }
+            });
+
+        })();
+
     })();
 
 
