@@ -107,9 +107,9 @@
 				$defimage = get_field('defimg', 'options');
 
 				if($image) : ?>
-                    <img alt="header-img" src="<?php echo $image ?>"/>
+                    <img id="fixedImg" alt="header-img" src="<?php echo $image ?>"/>
 				<?php else : ?>
-                    <img alt="header-img" src="<?php echo $defimage ?>"/>
+                    <img id="fixedImg" alt="header-img" src="<?php echo $defimage ?>"/>
 				<?php endif;
 				?>
 

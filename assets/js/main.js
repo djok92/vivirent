@@ -144,6 +144,31 @@ $(document).ready(function () {
 
 
     /**
+     * Fixed images for mobiles
+     */
+
+    (function () {
+
+        var handler = $('#fixedImg');
+        if (!handler.length) {
+            return;
+        }
+
+        function adaptHeight() {
+            var parent = handler.parent();
+            var parentHeight = parent.outerHeight();
+
+            handler.css('height', parentHeight);
+        }
+
+        adaptHeight();
+        $(window).resize(function () {
+            adaptHeight();
+        });
+    })();
+
+
+    /**
      *  Accordion for Homepage
      */
 
@@ -290,7 +315,7 @@ $(document).ready(function () {
             });
 
 
-            $('.flex-control-thumbs').wrap("<div class='galleryThumbs'><div class='container'></div></div>")
+            $('.flex-control-thumbs').wrap("<div class='galleryThumbs'><div class='container'></div></div>");
 
         })();
 

@@ -25,17 +25,22 @@
           > * {
             display: none !important;
           }
+          &:after {
+            font-family: Fontawesome, sans-serif;
+            color: #000;
+            font-size: 24px;
+          }
         }
         &.pmu-prev {
           left: 0;
           &:after {
-            content: '\25C0';
+            content: '\f0d9';
           }
         }
         &.pmu-next {
           right: 0;
           &:after {
-            content: '\0025B6';
+            content: '\f0da';
           }
         }
 

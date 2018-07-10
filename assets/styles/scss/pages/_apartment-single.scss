@@ -590,7 +590,11 @@
     font-weight: bold;
     font-size: 18px;
     border: none;
-    padding: 7px 100px;
+    padding: 7px 40px;
+    display: inline-block;
+    @include breakpoint(_550) {
+      display: block;
+    }
     @include breakpoint(_480) {
       font-size: 16px;
     }
