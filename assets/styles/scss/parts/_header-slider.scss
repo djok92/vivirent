@@ -98,18 +98,12 @@
   @include breakpoint(_480) {
     height: 470px;
   }
-  .slide, .slides {
-    height: 100%;
-  }
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-    @include breakpoint(_768) {
-      display: none;
+}
+
+.hero-holder {
+  .flex-direction-nav {
+    a {
+      z-index: 1000;
     }
   }
 }

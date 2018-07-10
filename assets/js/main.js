@@ -255,23 +255,25 @@ $(document).ready(function () {
                 controlNav: "thumbnails"
             });
 
-        })();
-
-        (function () {
-            /**
-             *  Region Slider
-             */
-            if (!$(sliders.regionSlider).length) {
-                return;
-            }
-
-            var slider = new Swiper(sliders.regionSlider, {
-                speed: 400,
-                spaceBetween: 0,
-                effect: 'fade'
-            });
+            $('.flex-direction-nav').appendTo('.hero-holder');
 
         })();
+
+        // (function () {
+        //     /**
+        //      *  Region Slider
+        //      */
+        //     if (!$(sliders.regionSlider).length) {
+        //         return;
+        //     }
+        //
+        //     var slider = new Swiper(sliders.regionSlider, {
+        //         speed: 400,
+        //         spaceBetween: 0,
+        //         effect: 'fade'
+        //     });
+        //
+        // })();
 
 
         (function () {

@@ -16,7 +16,6 @@
 				<?php foreach($images as $image): ?>
 
                     <li class="slide" data-thumb="<?php echo $image['url']; ?>">
-                        <div class="header-gradient"></div>
                         <img alt="slider-img" src="<?php echo $image['url']; ?>"/>
                     </li>
 

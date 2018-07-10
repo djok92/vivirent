@@ -53,7 +53,7 @@ get_header(); ?>
                                             <div class='apartment-table'>
                                                 <div class="table-row">
                                                     <div><?php _e('Maksimalan broj osoba', 'wpog'); ?></div>
-                                                    <div><?php the_field('broj_gostiju'); ?></div>
+                                                    <div><?php echo do_shortcode('[max_guests]'); ?></div>
                                                 </div> <!-- /.table-row -->
                                                 <div class="table-row">
                                                     <div><?php _e('Kvadratura apartmana', 'wpog'); ?></div>

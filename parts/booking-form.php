@@ -1,14 +1,15 @@
 <?php
 if(!function_exists('af_booking')) {
-	return;
+  return;
 }
-$max_adults   = get_field('broj_gostiju');
-$max_children = $max_adults - 1 + get_field('broj_dece');
+$capacity = af_booking()->getAcmCapacity();
+$max_adults   = $capacity['adults'];
+$max_children = $capacity['total'] - 1; // children can also take place of adults
 ?>
 <script>
-    jQuery(document).ready(function () {
-        af_booking.init(<?php echo get_field('broj_gostiju'); ?>, <?php echo get_field('broj_dece'); ?>);
-    });
+	jQuery(document).ready(function () {
+		af_booking.init(<?php printf('%d, %d', $capacity['adults'], $capacity['children']); ?>);
+	});
 </script>
 <div class="Wizzard">
     <ul class="Wizzard__Nav">
