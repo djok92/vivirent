@@ -19,20 +19,24 @@ get_header();
                 <h3>
 					<?php the_sub_field('naslov'); ?>
                 </h3>
+
                 <div class="flexslider GallerySlider">
                     <ul class="slides">
 						<?php $images = get_sub_field('fotografije');
+
 						if($images): ?>
 							<?php foreach($images as $image): ?>
                                 <li class="slide">
                                     <img alt="slider-img" src="<?php echo $image['url']; ?>"/>
                                 </li>
 							<?php endforeach; ?>
+
 						<?php endif; ?>
                     </ul>
                 </div>
 			<?php endwhile;
 		endif; ?>
+
     </div><!-- /.container -->
 </section><!-- /.GallerySection -->
 <?php get_footer(); ?>

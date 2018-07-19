@@ -101,6 +101,10 @@ $max_children = $capacity['total'] - 1; // children can also take place of adult
                                     <p>Smestaj</p>
                                     <p class="af-display-nights">-</p>
                                 </div><!--/.sideBoxRow-->
+                                <div class="sideBoxRow af-rent-extra-row">
+                                    <p>Dodatak</p>
+                                    <p class="af-display-rent-extra">-</p>
+                                </div><!--/.sideBoxRow-->
                                 <div class="sideBoxRow">
                                     <p>Rentiranje</p>
                                     <p class="af-display-rent">-</p>
@@ -349,6 +353,10 @@ $max_children = $capacity['total'] - 1; // children can also take place of adult
                                     <p>Smestaj</p>
                                     <p class="af-display-nights">-</p>
                                 </div><!--/.sideBoxRow-->
+                                <div class="sideBoxRow af-rent-extra-row">
+                                    <p>Dodatak</p>
+                                    <p class="af-display-rent-extra">-</p>
+                                </div><!--/.sideBoxRow-->
                                 <div class="sideBoxRow">
                                     <p>Rentiranje</p>
                                     <p class="af-display-rent">-</p>
@@ -434,6 +442,10 @@ $max_children = $capacity['total'] - 1; // children can also take place of adult
                                 <div class="sideBoxRow">
                                     <p>Smestaj</p>
                                     <p class="af-display-nights">-</p>
+                                </div><!--/.sideBoxRow-->
+                                <div class="sideBoxRow af-rent-extra-row">
+                                    <p>Dodatak</p>
+                                    <p class="af-display-rent-extra">-</p>
                                 </div><!--/.sideBoxRow-->
                                 <div class="sideBoxRow">
                                     <p>Rentiranje</p>

@@ -133,9 +133,9 @@
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <div class="apartments-box_img">
-													<?php if(get_the_post_thumbnail()) {
-														the_post_thumbnail();
-													} else { ?>
+													<?php if(get_the_post_thumbnail()) { ?>
+                                                        <a href="<?php the_permalink(); ?>"> <?php the_post_thumbnail(); ?> </a>
+													<?php } else { ?>
                                                         <img src="<?php the_field('defimg', 'options'); ?>"/>
 													<?php } ?>
 													<?php if(get_field('popust_text')): ?>
@@ -165,32 +165,34 @@
                                                         </div><!--/.col-sm-12-->
 
                                                         <div class="col-sm-7">
-                                                            <div class='apartment-table'>
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Maksimalan broj osoba', 'wpog'); ?></div>
-                                                                    <div><?php echo do_shortcode('[max_guests]'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Kvadratura apartmana', 'wpog'); ?></div>
-                                                                    <div><?php the_field('kvadratura'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Lokacija u objektu', 'wpog'); ?></div>
-                                                                    <div><?php the_field('lokacija'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Broj soba', 'wpog'); ?></div>
-                                                                    <div><?php the_field('soba'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Broj kupaonica', 'wpog'); ?></div>
-                                                                    <div><?php the_field('kupaonica'); ?></div>
-                                                                </div> <!-- /.table-row -->
-                                                                <div class="table-row">
-                                                                    <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
-                                                                    <div><?php the_field('parking'); ?></div>
-                                                                </div> <!--/.table-row-->
-                                                            </div> <!-- /.apartment-table -->
+                                                            <a href="<?php the_permalink(); ?>">
+                                                                <div class='apartment-table'>
+                                                                    <div class="table-row">
+                                                                        <div><?php _e('Maksimalan broj osoba', 'wpog'); ?></div>
+                                                                        <div><?php echo do_shortcode('[max_guests]'); ?></div>
+                                                                    </div> <!-- /.table-row -->
+                                                                    <div class="table-row">
+                                                                        <div><?php _e('Kvadratura apartmana', 'wpog'); ?></div>
+                                                                        <div><?php the_field('kvadratura'); ?></div>
+                                                                    </div> <!-- /.table-row -->
+                                                                    <div class="table-row">
+                                                                        <div><?php _e('Lokacija u objektu', 'wpog'); ?></div>
+                                                                        <div><?php the_field('lokacija'); ?></div>
+                                                                    </div> <!-- /.table-row -->
+                                                                    <div class="table-row">
+                                                                        <div><?php _e('Broj soba', 'wpog'); ?></div>
+                                                                        <div><?php the_field('soba'); ?></div>
+                                                                    </div> <!-- /.table-row -->
+                                                                    <div class="table-row">
+                                                                        <div><?php _e('Broj kupaonica', 'wpog'); ?></div>
+                                                                        <div><?php the_field('kupaonica'); ?></div>
+                                                                    </div> <!-- /.table-row -->
+                                                                    <div class="table-row">
+                                                                        <div><?php _e('Broj parking mesta', 'wpog'); ?></div>
+                                                                        <div><?php the_field('parking'); ?></div>
+                                                                    </div> <!--/.table-row-->
+                                                                </div> <!-- /.apartment-table -->
+                                                            </a>
                                                         </div><!--/.col-sm-7-->
 
                                                         <div class="col-sm-5">

@@ -171,6 +171,10 @@ Tags:
 /*text-align: center;*/
 /*}*/
 
+.booking-error a {
+    text-decoration: underline;
+}
+
 /* form responsive table fix */
 
 /* Reviews */

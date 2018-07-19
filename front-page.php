@@ -10,8 +10,16 @@ get_header();
 
 <?php get_template_part('parts/booking', 'searchform'); ?>
 
-<!-- sekcija - lista 5 apartmana -->
-<?php get_template_part('parts/section', 'apartments') ?>
+<?php
+
+$chk = get_field('hs2_vrsta','options'); 
+
+if ($chk == 0) {
+	get_template_part('parts/section', 'apartments');	
+} else {
+	get_template_part('parts/section', 'aselection');
+}
+?>
 
 
 <?php get_footer(); ?>

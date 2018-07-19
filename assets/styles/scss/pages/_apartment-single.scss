@@ -118,6 +118,20 @@
   }
 }
 
+.apartmenSpec {
+  .apartmenSpecIcon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .iconHolder {
+    width: 40px;
+    height: 40px;
+    background: #5B5B5B;
+    margin-right: 10px;
+  }
+}
+
 //reservationDescription
 .reservationDescription {
   margin: 30px 0;

@@ -89,29 +89,32 @@ get_header();
                                 <div class="pricesBoxButtonHolder">
                                     <a href="#"><?php _e('Kontakt', 'wpog'); ?></a>
                                 </div><!--/.pricesBoxButonHolder-->
-                                <?php echo do_shortcode('[afb-reserve]'); ?>
+								<?php echo do_shortcode('[afb-reserve]'); ?>
                             </div><!--/.pricesBoxHolder-->
                         </div><!-- /.col-md-3 col-xs-5 -->
                     </div> <!-- /.row -->
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="section-name"><?php _e('Karakteristike', 'wpog') ?></p>
+                            <div class="apartment-description">
+								<?php the_field('karakteristike'); ?>
+                            </div>
+							<?php $icons = get_field('ikonice');
+							if($icons): ?>
+                                <div class="accordion-spec">
+									<?php foreach($icons as $icon): ?>
+                                        <div class="AccordionIcon">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/<?php echo $icon['value']; ?>.svg"
+                                                 alt="icon" title="<?php echo $icon['label']; ?>">
+                                        </div>
+									<?php endforeach; ?>
+                                </div>
+							<?php endif; ?>
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
                     <div class="row">
                         <div class="col-md-9">
                             <div class='accordion-holder'>
-                                <p class="section-name"><?php _e('Karakteristike', 'wpog') ?></p>
-                                <div class="apartment-description">
-									<?php the_field('karakteristike'); ?>
-                                </div>
-								<?php $icons = get_field('ikonice');
-								if($icons): ?>
-                                    <div class="accordion-spec">
-										<?php foreach($icons as $icon): ?>
-                                            <div class="AccordionIcon">
-                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/<?php echo $icon; ?>.svg"
-                                                     alt="">
-                                            </div>
-										<?php endforeach; ?>
-                                    </div>
-								<?php endif; ?>
                                 <div data-accordion-group>
 									<?php $i = 1;
 									if(have_rows('sobe_repeater')):
@@ -135,6 +138,50 @@ get_header();
                                 </div> <!-- /[data-accordion-group] -->
                             </div> <!-- /.apartment-desc -->
                         </div> <!-- /.col-md-9 -->
+                        <div class="col-md-3">
+							<?php
+							$icoDistance = get_field('icoDistance');
+							if($icoDistance) { ?>
+                            <div class="apartmenSpec">
+								<?php if($icoDistance['do_mora']): ?>
+                                    <div class="apartmenSpecIcon">
+                                        <div class="iconHolder">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/ico-do-mora.svg"
+                                                 alt="do mora" title="Do mora">
+                                        </div><!-- /.iconHolder -->
+                                        <span>Udaljenost od plaze:  <b><?php echo $icoDistance['do_mora']; ?></b></span>
+                                    </div>
+								<?php endif; ?>
+								<?php if($icoDistance['do_centra']): ?>
+                                    <div class="apartmenSpecIcon">
+                                        <div class="iconHolder">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/ico-do-centra.svg"
+                                                 alt="Do centra" title="Do centra">
+                                        </div><!-- /.iconHolder -->
+                                        <span>Udaljenost od centra:  <b><?php echo $icoDistance['do_centra']; ?></b></span>
+                                    </div>
+								<?php endif; ?>
+								<?php if($icoDistance['do_prodavnice']): ?>
+                                    <div class="apartmenSpecIcon">
+                                        <div class="iconHolder">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/ico-do-prodavnice.svg"
+                                                 alt="Do prodavnice" title="Do prodavnice">
+                                        </div><!-- /.iconHolder -->
+                                        <span>Udaljenost od prodavnice: <b> <?php echo $icoDistance['do_prodavnice']; ?></b></span>
+                                    </div>
+								<?php endif; ?>
+								<?php if($icoDistance['do_restorana']): ?>
+                                    <div class="apartmenSpecIcon">
+                                        <div class="iconHolder">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/icons/ico-do-restorana.svg"
+                                                 alt="Do restorana" title="Do restorana">
+                                        </div><!-- /.iconHolder -->
+                                        <span>Udaljenost od restorana: <b><?php echo $icoDistance['do_restorana']; ?></b></span>
+                                    </div>
+								<?php endif;
+								} ?>
+                            </div>
+                        </div><!-- /.col-md-3 -->
                     </div> <!-- /.row -->
                 </div> <!-- /#tab-1  Informacije -->
 
@@ -157,12 +204,12 @@ get_header();
 						<?php the_field('opis_utiska'); ?>
                     </div><!--/.Contact__Description-->
 
-                    <?php echo do_shortcode('[afb-reviewform]'); ?>
+					<?php echo do_shortcode('[afb-reviewform]'); ?>
 
                     <div class="row">
                         <div class="col-md-12">
 
-                          <?php get_template_part('parts/reviews', 'apartments'); ?>
+							<?php get_template_part('parts/reviews', 'apartments'); ?>
 
                         </div><!--/.row-->
                     </div><!--/.col-md-12-->
