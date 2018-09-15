@@ -21,14 +21,19 @@ $paged = get_query_var('paged', 1);
 $d1 = \DateTime::createFromFormat('d. m. Y.', $checkin);
 $d2 = \DateTime::createFromFormat('d. m. Y.', $checkout);
 
-if (!$d1 || !$d2 || $guests < 1) {
-
-  // reset if input is wrong
-
+// check input
+if (!$d1) {
   $d1 = new \DateTime('now');
   $d2 = clone $d1;
-
   $d2->modify('+7 day');
+}
+
+if (!$d2) {
+  $d2 = clone $d1;
+  $d2->modify('+7 day');
+}
+
+if ($guests < 1) {
   $guests = 1;
 }
 

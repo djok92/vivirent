@@ -87,7 +87,6 @@ gulp.task('scripts', function () {
         'node_modules/jquery/dist/jquery.min.js',
         src + 'js/jquery.flexslider-min.js',
         'node_modules/jquery.mmenu/dist/jquery.mmenu.all.js',
-        src + 'js/gmap.js',
         src + 'js/lightbox.min.js',
         src + 'js/jquery.accordion.js',
         src + 'js/select2.full.min.js',

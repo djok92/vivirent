@@ -40,3 +40,13 @@ Developer iz ovog CSSa korekcije treba da integrise u glavni style.css
 .apartment-desc p {
  margin-bottom: 20px;
 }
+
+.mapainfo a {
+	color: #24aae1 !important;
+	text-decoration: underline !important;
+}
+
+.bluelink {
+	color: #24aae1 !important;
+	text-decoration: underline !important;
+}

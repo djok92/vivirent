@@ -22,7 +22,23 @@ get_header(); ?>
                 </div> <!-- /.col-md-5 -->
                 <div class="col-md-8">
                     <div class="Contact__Form">
-						<?php echo do_shortcode('[contact-form-7 id="608" title="Contact Form Page"]'); ?>
+                      <?php
+                      if (function_exists('pll_current_language')) {
+
+                        switch (pll_current_language()) {
+
+                          case 'en':
+                            $form_id = 684;
+                            break;
+
+                          default:
+                            $form_id = 634;
+                            break;
+                        }
+
+                        echo do_shortcode('[contact-form-7 id="' . $form_id . '"]');
+                      }
+                      ?>
                     </div>
                 </div> <!-- /.col-md-7 -->
             </div> <!-- /.row -->

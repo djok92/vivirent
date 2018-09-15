@@ -20,8 +20,6 @@
 		<?php endif; ?>
     </ul>
 
-    <div class="homeSliderPrev swiper-button-prev swiper-button-white"></div>
-    <div class="homeSliderNext swiper-button-next swiper-button-white"></div>
 </div>
 
 <!--<div class="full-height-slider royalSlider rsUni">-->

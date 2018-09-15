@@ -1,15 +1,34 @@
 <?php
 if(!function_exists('af_booking')) {
-  return;
+	return;
 }
-$capacity = af_booking()->getAcmCapacity();
+$capacity     = af_booking()->getAcmCapacity();
 $max_adults   = $capacity['adults'];
 $max_children = $capacity['total'] - 1; // children can also take place of adults
+$checkin      = isset($_REQUEST['checkin']) ? $_REQUEST['checkin'] : '';
+
+$dateobj = \DateTime::createFromFormat('d. m. Y.', $checkin);
+$ci      = '';
+
+if($dateobj) {
+
+	$ci = $dateobj->format('c');
+
+} else {
+
+	$date = af_booking()->getFirstBookableDate();
+
+	if($date) {
+		$dateobj = \DateTime::createFromFormat('Y-m-d', $date);
+		$ci      = $dateobj->format('c');
+	}
+}
+
 ?>
 <script>
-	jQuery(document).ready(function () {
-		af_booking.init(<?php printf('%d, %d', $capacity['adults'], $capacity['children']); ?>);
-	});
+    jQuery(document).ready(function () {
+        af_booking.init(<?php printf('%d, %d, "%s"', $capacity['adults'], $capacity['children'], $ci); ?>);
+    });
 </script>
 <div class="Wizzard">
     <ul class="Wizzard__Nav">
@@ -184,7 +203,7 @@ $max_children = $capacity['total'] - 1; // children can also take place of adult
 
                             <h3>Odaberite broj osoba</h3>
 
-                            <div class="withInput">
+                            <div class="withInput withInput--SelectSmall">
                                 <p>Broj odraslih:</p>
 
                                 <div class="selectHolder">
@@ -203,7 +222,7 @@ $max_children = $capacity['total'] - 1; // children can also take place of adult
                                 </table>
                             </div>
 
-                            <div class="withInput">
+                            <div class="withInput withInput--SelectSmall">
 
                                 <p>Broj dece:</p>
                                 <div class="selectHolder">
@@ -416,7 +435,7 @@ $max_children = $capacity['total'] - 1; // children can also take place of adult
                         itaque, saepe in quidem animi voluptatibus. Consequuntur praesentium quia ad
                         laboriosam hic minus ut, delectus officiis, libero consequatur iusto earum!</p>
                 </div>
-                <div class="row">
+                <div class="row mt-30">
                     <div class="col-md-3">
                         <div class="sideBoxInfo af-booking-cart">
 

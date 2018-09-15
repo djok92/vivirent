@@ -135,9 +135,9 @@ function wpog_scripts() {
 	wp_enqueue_style('wpog-plugins', get_template_directory_uri() . '/dist/css/plugins.css');
 	wp_enqueue_style('wpog-mainCss', $urlCss, '', filemtime($pathCss));
 	wp_enqueue_style('wpog-style', get_stylesheet_uri());
-	//wp_enqueue_style('wpog-customCss', get_template_directory_uri() . '/custom.css');
+	wp_enqueue_style('wpog-customCss', get_template_directory_uri() . '/custom.css');
 
-	wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCu3yvkKL33bI1iCJTfOKKaEx94APqdnLY&callback=initMap', array(), '3', true);
+	//wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBwEvDQW7QtNs9rJRrY-T2l-Rr991ACt_c&callback=initMap', array(), '3', true);
 	//	wp_enqueue_script('google-map-init', get_template_directory_uri() . '/gmap/gmap.js', array('google-map', 'jquery'), '0.1', true);
 	wp_enqueue_script('wpog-js', $urlJs, '', filemtime($pathJs), true);
 
@@ -260,7 +260,7 @@ function my_theme_setup() {
  */
 function my_acf_init() {
 
-	acf_update_setting('google_api_key', 'AIzaSyCu3yvkKL33bI1iCJTfOKKaEx94APqdnLY');
+	acf_update_setting('google_api_key', 'AIzaSyBwEvDQW7QtNs9rJRrY-T2l-Rr991ACt_c');
 }
 
 add_action('acf/init', 'my_acf_init');
@@ -273,9 +273,38 @@ add_action('acf/init', 'my_acf_init');
  */
 function my_acf_google_map_api($api) {
 
-	$api['key'] = 'AIzaSyCu3yvkKL33bI1iCJTfOKKaEx94APqdnLY';
+	$api['key'] = 'AIzaSyBwEvDQW7QtNs9rJRrY-T2l-Rr991ACt_c';
 
 	return $api;
 }
 
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+/**
+ * Google static map with single pin
+ *
+ * @param array $location
+ * @param int $zoom
+ * @param int $width
+ * @param int $height
+ * @param int $scale
+ * @return string
+ */
+function wpog_google_static_map_single($location, $zoom = 15, $width = 640, $height = 640, $scale = 2) {
+
+  $url = 'https://maps.googleapis.com/maps/api/staticmap';
+  $api_key = 'AIzaSyBwEvDQW7QtNs9rJRrY-T2l-Rr991ACt_c';
+
+  $markers = 'size:small|';
+  $markers .= sprintf('%s,%s', $location['lat'], $location['lng']);
+
+  $args = [
+    'zoom'   => (int) $zoom,
+    'size'   => (int) $width . 'x' . (int) $height,
+    'scale'  => (int) $scale,
+    'key'    => $api_key,
+    'markers' => $markers,
+  ];
+
+  return $url . '?' . http_build_query($args);
+}

@@ -43,7 +43,7 @@ get_header();
                                 <h3><?php the_title(); ?></h3>
                                 <div class='apartment-desc'>
 									<?php the_content(); ?>
-                                    <a href="#" class='link blue'><?php _e('Više informacija', 'wpog'); ?></a>
+                                    <!--<a href="#" class='link blue'><?php _e('Više informacija', 'wpog'); ?></a>-->
                                 </div> <!-- /.apartment-desc -->
                             </div><!--/.tab-1-infoHolder-->
                         </div> <!-- /.col-md-5 -->
@@ -118,8 +118,9 @@ get_header();
                                 <div data-accordion-group>
 									<?php $i = 1;
 									if(have_rows('sobe_repeater')):
-										while(have_rows('sobe_repeater')) : the_row(); ?>
-                                            <div class="accordion Specification" data-accordion>
+										while(have_rows('sobe_repeater')) : the_row();
+											$isFirst = $i === 1 ? 'open' : ''; ?>
+                                            <div class="accordion Specification <?php echo $isFirst; ?>" data-accordion>
                                                 <div data-control><?php the_sub_field('naziv_prostorije') ?></div>
                                                 <div data-content>
                                                     <div class="accordion-content">
@@ -183,18 +184,24 @@ get_header();
                             </div>
                         </div><!-- /.col-md-3 -->
                     </div> <!-- /.row -->
+					<?php get_template_part('parts/relatedApartments'); ?>
                 </div> <!-- /#tab-1  Informacije -->
 
                 <div id="tab-2" class="tabs-content">
 
                     <div class="googleMapHolder">
+                        <div class='mapainfo'>
+							<?php the_field('location_info'); ?> | <a href='<?php the_field('location_link'); ?>'
+                                                                      class='bluelink' target='_blank'>Google Map</a>
+                        </div>
 						<?php $location = get_field('location');
 
 						if(!empty($location)): ?>
-                            <div class="acf-map">
-                                <div class="marker" data-lat="<?php echo $location['lat']; ?>"
-                                     data-lng="<?php echo $location['lng']; ?>"></div>
-                            </div>
+              <div class="mapImage" style="background-image: url(<?php echo wpog_google_static_map_single($location); ?>);"></div>
+<!--                            <div class="acf-map">-->
+<!--                                <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--"-->
+<!--                                     data-lng="--><?php //echo $location['lng']; ?><!--"></div>-->
+<!--                            </div>-->
 						<?php endif; ?>
                     </div>
                 </div><!-- /#tab-2 Lokacija -->
@@ -230,10 +237,26 @@ get_header();
 						<?php the_field('opis_kontakt'); ?>
                     </div>
                     <div class="tabCaptionHolder">
-                        <h3><?php _e('kontakt za apartman 3', 'wpog') ?></h3>
+                        <h3><?php _e('kontakt za ', 'wpog') ?><?php the_title(); ?></h3>
                     </div>
                     <div class="Contact__Form">
-						<?php echo do_shortcode('[contact-form-7 id="560" title="Contact form"]'); ?>
+                      <?php
+                      if (function_exists('pll_current_language')) {
+                        
+                        switch (pll_current_language()) {
+
+                          case 'en':
+                            $form_id = 685;
+                            break;
+
+                          default:
+                            $form_id = 560;
+                            break;
+                        }
+
+                        echo do_shortcode('[contact-form-7 id="' . $form_id . '"]');
+                      }
+                      ?>
                     </div><!-- /.Contact__Form -->
                 </div><!-- /#tab-5 Kontakt -->
             </div> <!-- /.tabs-holder -->

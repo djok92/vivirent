@@ -76,6 +76,8 @@
     text-shadow: 2px 2px 2px #000;
     color: #fff;
     z-index: 8888;
+    animation: inifintyBlinking .7s infinite;
+    animation-direction: alternate;
     @include breakpoint(_768) {
       display: none;
     }
@@ -98,6 +100,9 @@
   @include breakpoint(_480) {
     height: 470px;
   }
+  .flex-control-nav {
+    display: none;
+  }
 }
 
 .hero-holder {
@@ -105,5 +110,14 @@
     a {
       z-index: 1000;
     }
+  }
+}
+
+@include keyframes(inifintyBlinking) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

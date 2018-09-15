@@ -67,7 +67,7 @@ if(!function_exists('af_booking')) {
             <span class="Rating__Star"></span>
             <span class="Rating__Star"></span>
             <span class="Rating__Star"></span>
-            <span class="Rating__Star filled"></span>
+            <span class="Rating__Star"></span>
           </span>
                     <br>
                     <input name="rating" hidden=""><br>

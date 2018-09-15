@@ -52,9 +52,10 @@
                         </div> <!-- /.home-logo -->
                         <div class="hero-holder__content_text">
                             <h1><?php the_field('hs1_slider_txt', 'options') ?></h1>
-                            <a href="<?php the_field('hs1_slider_btnlink', 'options') ?>" class="more-info">
-								<?php the_field('hs1_slider_btntxt', 'options') ?>
-                            </a>
+                            <!--                            <a href="-->
+							<?php //the_field('hs1_slider_btnlink', 'options') ?><!--" class="more-info">-->
+                            <!--								--><?php //the_field('hs1_slider_btntxt', 'options') ?>
+                            <!--                            </a>-->
                             <span id="scroll-btn" data-scroll="#bookingForm">
                                 <i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
                             </span>

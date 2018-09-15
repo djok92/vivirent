@@ -27,20 +27,24 @@
           }
           &:after {
             font-family: Fontawesome, sans-serif;
+            position: absolute;
+            top: -1px;
             color: #000;
-            font-size: 24px;
+            font-size: 26px;
           }
         }
         &.pmu-prev {
           left: 0;
           &:after {
             content: '\f0d9';
+            left: 2px;
           }
         }
         &.pmu-next {
           right: 0;
           &:after {
             content: '\f0da';
+            right: 3px;
           }
         }
 

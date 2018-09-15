@@ -360,6 +360,12 @@
       width: 130px;
     }
   }
+  &--SelectSmall {
+    .selectHolder {
+      width: 70px;
+      font-weight: 700;
+    }
+  }
 }
 
 .Contact__Form {
@@ -515,12 +521,23 @@
   }
 }
 
+#step-3 .sideBoxInfo {
+  position: static !important;
+  width: auto !important;
+}
+
 //Side Box
 .sideBoxInfo {
   padding: 20px;
   background: #ddd;
   @include breakpoint(_480) {
     margin-top: 20px;
+  }
+  &.Fixed {
+    position: fixed;
+    top: 49px;
+    //right: 382px;
+    width: 255px;
   }
   .sideBoxCaption {
     color: #24aae1;

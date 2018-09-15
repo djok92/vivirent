@@ -47,6 +47,7 @@ if(!function_exists('af_booking')) {
         <div class="booking-form__item personsCount">
             <label><?php _e('Broj osoba', 'wpog'); ?>:</label>
             <select id="count_persons" type="text" name="guests" class="select2 person">
+                <option value="" selected disabled><?php _e('Odaberi', 'wpog'); ?></option>
 				<?php
 				for($i = 1; $i <= 7; $i ++) {
 					$str = $i == 1 ? __('osoba', 'wpog') : __('osobe', 'wpog');
